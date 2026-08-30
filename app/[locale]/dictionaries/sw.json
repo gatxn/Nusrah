@@ -1,0 +1,251 @@
+{
+  "common": {
+    "tagline": { "line1": "Tafuta • Unganika • Oana", "line2": "Tovuti ya Kutafuta Ndoa Pekee" },
+    "nav": {
+      "home": "Nyumbani",
+      "howItWorks": "Jinsi Inavyofanyakazi",
+      "membership": "Kuwa Mwanachama",
+      "successStories": "Mafanikio",
+      "help": "Msaada",
+      "login": "Ingia",
+      "joinNow": "Jiunge Sasa",
+      "logout": "Toka",
+      "members": "Wanachama",
+      "messages": "Ujumbe",
+      "changePackage": "Badili Kifurushi"
+    },
+    "closeReturnHomeAria": "Funga na urudi Nyumbani",
+    "closeRestartSignupAria": "Funga na uanze usajili upya",
+    "languageSwitcher": { "label": "Lugha" },
+    "footer": {
+      "description": "Kuanza Maswaliano, Kufuatilia Maisha ya Pamoja — jukwaa la ndoa la Kiislamu lililojengwa juu ya usalama, heshima na faragha.",
+      "pagesHeading": "Kurasa",
+      "helpHeading": "Msaada",
+      "faq": "Maswali Yanayoulizwa Mara kwa Mara",
+      "contactUs": "Wasiliana Nasi",
+      "contactHeading": "Mawasiliano",
+      "hours": "Jumatatu–Jumapili, 08:00–22:00",
+      "copyright": "Haki zote zimehifadhiwa."
+    }
+  },
+  "home": {
+    "headline1": "Pata mwenzi wako",
+    "headline2": "wa maisha",
+    "subtitle": "Nusrah ni jukwaa salama la Kiislamu linalowaunganisha wanaotafuta mwenzi wa maisha kwa nia njema.",
+    "checklist": [
+      "Salama na la faragha",
+      "Uchaguzi sahihi kwa viwango",
+      "Taarifa halisi na za kweli",
+      "Nia ya ndoa pekee",
+      "Mawasiliano ya heshima",
+      "Kwa ajili ya maisha bora"
+    ],
+    "ctaJoin": "Jiunge Sasa - Bure",
+    "ctaMembers": "Nenda kwenye Wanachama",
+    "ctaLearnMore": "Jinsi Inavyofanyakazi",
+    "statsLinePrefix": "Wanachama zaidi ya",
+    "statsLineMiddle": "Mafanikio ya ndoa zaidi ya",
+    "welcomeBackNote": "⛨ Karibu tena, endelea na safari yako!",
+    "easySignupNote": "⛨ Usajili ni rahisi, wa haraka na bure!",
+    "trustBadgeTitle": "Wanachama Wetu",
+    "trustBadgeSubtitle": "Wanautafuta kama wewe",
+    "heroPhotoAlt": "Wanandoa wakiwa pamoja, wakitafakari safari yao ya kupata mwenzi wa maisha",
+    "statsBar": ["Wanachama Hai", "Mafanikio ya Ndoa", "Salama & La Faragha", "Taarifa Zilizo Hakikiwa", "Msaada wa Haraka"],
+    "features": [
+      { "title": "Salama & La Faragha", "body": "Taarifa zako zipo salama. Faragha yako ni kipaumbele chetu cha kwanza." },
+      { "title": "Profaili Halisi", "body": "Wanachama wote hupitia uthibitisho wa taarifa ili kuhakikisha uhalisia." },
+      { "title": "Uchaguzi wa Kijanja", "body": "Tafuta mwenzi kwa kutumia vichujio vya hali ya juu kwa matokeo sahihi zaidi." },
+      { "title": "Mawasiliano Bora", "body": "Wasiliana kwa heshima na kujenga uelewa kabla ya kuamua hatua zaidi." },
+      { "title": "Nia ya Ndoa", "body": "Jukwaa la watu wenye nia ya dhati ya kuoa na kuishi kwa maadili ya Kiislamu." },
+      { "title": "Mafanikio Halisi", "body": "Tuna historia ya mafanikio ya wanandoa waliopata furaha kupitia Nusrah." }
+    ],
+    "quote": {
+      "arabic": "وَإِنْ خِفْتُمْ أَلَّا تُقْسِطُوا فِي الْيَتَامَىٰ فَانْكِحُوا مَا طَابَ لَكُمْ مِنَ النِّسَاءِ مَثْنَىٰ وَثُلَاثَ وَرُبَاعَ",
+      "translation": "Na mkihofia kuwa hamtaweza kuwa waadilifu kwa wajane, basi oeni wanawake wengine wawili, watatu au wanne... (An-Nisa: 3)",
+      "cta": "Anza safari yako ya kupata mwenzi bora kwa ajili ya maisha bora."
+    }
+  },
+  "jisajili": {
+    "title": "Unda Akaunti",
+    "subtitle": "Anza safari yako ya kutafuta mwenzi wa maisha",
+    "form": {
+      "name": "Jina Kamili",
+      "namePlaceholder": "Amina Juma",
+      "phone": "Namba ya Simu",
+      "phonePlaceholder": "0712345678",
+      "email": "Barua Pepe",
+      "emailPlaceholder": "wewe@mfano.com",
+      "password": "Nenosiri",
+      "passwordPlaceholder": "Angalau herufi 8",
+      "gender": "Jinsia",
+      "female": "Mwanamke",
+      "male": "Mwanaume",
+      "submit": "Jisajili",
+      "submitting": "Inasajili..."
+    },
+    "alreadyHaveAccount": "Tayari una akaunti?",
+    "login": "Ingia",
+    "genericError": "Hitilafu imetokea",
+    "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena."
+  },
+  "ingia": {
+    "title": "Karibu Tena",
+    "subtitle": "Ingia kuendelea na safari yako",
+    "form": {
+      "identifier": "Namba ya Simu au Barua Pepe",
+      "identifierPlaceholder": "0712345678 au wewe@mfano.com",
+      "password": "Nenosiri",
+      "submit": "Ingia",
+      "submitting": "Inaingia..."
+    },
+    "forgotPassword": "Umesahau nenosiri?",
+    "noAccount": "Huna akaunti?",
+    "joinNow": "Jiunge Sasa",
+    "genericError": "Hitilafu imetokea",
+    "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena."
+  },
+  "thibitisha": {
+    "title": "Thibitisha Akaunti Yako",
+    "subtitle": "Tumetuma kodi ya tarakimu 6 kwenye barua pepe yako",
+    "devModeNote": "Modi ya majaribio (hakuna barua pepe halisi): kodi yako ni",
+    "form": {
+      "codeLabel": "Kodi ya Uthibitisho (OTP)",
+      "submit": "Thibitisha",
+      "submitting": "Inathibitisha...",
+      "resend": "Tuma kodi tena"
+    },
+    "resendSuccess": "Kodi mpya imetumwa",
+    "resendDevPrefix": "Kodi mpya (majaribio):",
+    "genericError": "Hitilafu imetokea",
+    "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena.",
+    "networkErrorShort": "Imeshindwa kuunganisha na seva."
+  },
+  "apiErrors": {
+    "auth": {
+      "tooManyAttempts": "Majaribio mengi sana. Jaribu tena baadaye.",
+      "duplicateAccount": "Namba ya simu au barua pepe tayari imesajiliwa",
+      "otpServiceDown": "Usajili haujawezeshwa kwa sasa. Tunakamilisha usanidi wa uthibitisho (OTP). Jaribu tena baadaye.",
+      "registerSuccess": "Tumetuma kodi ya uthibitisho (OTP) kwa barua pepe yako",
+      "devNote": "Modi ya majaribio: hakuna barua pepe halisi imetumwa.",
+      "invalidCredentials": "Namba ya simu/barua pepe au nenosiri sivyo",
+      "otpRequired": "Thibitisha akaunti yako kwanza kwa kutumia OTP",
+      "userNotFound": "Mtumiaji hajapatikana",
+      "alreadyVerified": "Akaunti tayari imethibitishwa",
+      "noEmailOnFile": "Akaunti hii haina barua pepe iliyosajiliwa. Wasiliana na msaada.",
+      "resendTooMany": "Umeomba kodi mara nyingi mno. Jaribu tena baadaye.",
+      "resendServiceDown": "Kutuma kodi hakujawezeshwa kwa sasa. Jaribu tena baadaye.",
+      "resendSuccess": "Kodi mpya imetumwa",
+      "loginSuccess": "Umeingia",
+      "codeNotFound": "Kodi haipo au tayari imetumika. Omba kodi mpya.",
+      "codeExpired": "Kodi imeisha muda wake. Omba kodi mpya.",
+      "tooManyOtpAttempts": "Umejaribu mara nyingi mno. Omba kodi mpya.",
+      "invalidCode": "Kodi si sahihi.",
+      "verifiedSuccess": "Akaunti imethibitishwa"
+    }
+  },
+  "validation": {
+    "nameTooShort": "Jina ni fupi mno",
+    "invalidPhone": "Namba ya simu si sahihi",
+    "invalidEmail": "Barua pepe si sahihi",
+    "passwordTooShort": "Nenosiri linahitaji herufi angalau 8",
+    "identifierRequired": "Weka namba ya simu au barua pepe",
+    "passwordRequired": "Nenosiri linahitajika",
+    "otpCodeFormat": "Kodi ni tarakimu 6"
+  },
+  "jinsiInavyofanyakazi": {
+    "title": "Jinsi Nusrah Inavyofanyakazi",
+    "subtitle": "Hatua rahisi kukusaidia kupata mwenzi wako wa maisha",
+    "steps": [
+      { "title": "Jisajili", "desc": "Unda akaunti yako bure kwa taarifa za msingi." },
+      { "title": "Jaza Profaili", "desc": "Eleza kuhusu wewe na unachotafuta kwa mwenzi." },
+      { "title": "Tafuta", "desc": "Vinjari wasifu unaolingana na mahitaji yako." },
+      { "title": "Mawasiliano", "desc": "Anzisha mazungumzo salama na ya heshima." },
+      { "title": "Thibitisha", "desc": "Thibitisha nia na taarifa kabla ya kuendelea." },
+      { "title": "Pata Maisha ya Pamoja", "desc": "Endelea na taratibu za ndoa kwa baraka." }
+    ],
+    "tiersHeading": "Taarifa kwa Ngazi (Free hadi Premium)",
+    "tiersSubtitle": "Kadiri unavyopanda kifurushi, ndivyo unavyopata taarifa na huduma zaidi",
+    "trustBadges": ["Usalama wa Juu", "Heshima & Maadili", "Kwa Ajili ya Ndoa Pekee", "Msaada wa Haraka"]
+  },
+  "kuwaMwanachama": {
+    "title": "Chagua Kifurushi Chako",
+    "subtitle": "Kadiri kifurushi kinavyopanda, ndivyo unavyopata mwonekano, mawasiliano na huduma zaidi kuelekea kupata mwenzi wako wa maisha.",
+    "footnote": "Unaweza kubadilisha (kupandisha au kushusha) kifurushi chako wakati wowote kutoka ukurasa wa Akaunti.",
+    "pricingCard": {
+      "free": "Bure",
+      "perMonth": "/mwezi",
+      "buttonLabels": {
+        "FREE": "Chagua Bure",
+        "BASIC": "Chagua Basic",
+        "SILVER": "Chagua Silver",
+        "GOLD": "Chagua Gold",
+        "PREMIUM": "Chagua Premium",
+        "default": "Chagua"
+      },
+      "submitting": "Inatuma...",
+      "genericError": "Hitilafu imetokea",
+      "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena."
+    }
+  },
+  "mafanikio": {
+    "title": "Mafanikio ya Wanachama Wetu",
+    "subtitle": "Hadithi za kweli za wanachama waliopata mwenzi wao wa maisha kupitia Nusrah",
+    "stats": [
+      { "value": "35,000+", "label": "Wanachama Hai" },
+      { "value": "2,000+", "label": "Mafanikio ya Ndoa" },
+      { "value": "98%", "label": "Wameridhika na Nusrah" },
+      { "value": "100%", "label": "Salama & Faragha" }
+    ],
+    "ctaHeading": "Uwe Hadithi Yetu Ijayo ya Mafanikio",
+    "ctaLoggedIn": "Endelea kuvinjari wanachama wenzako kwenye Nusrah kwa njia salama na ya heshima.",
+    "ctaLoggedOut": "Jiunge leo na Nusrah, uanze safari yako ya kutafuta mwenzi wa maisha kwa njia salama na ya heshima.",
+    "ctaButtonLoggedOut": "Jiunge Sasa"
+  },
+  "msaada": {
+    "title": "Msaada & Usaidizi",
+    "subtitle": "Tuko hapa kukusaidia. Angalia maswali yanayoulizwa mara kwa mara au wasiliana nasi moja kwa moja.",
+    "faqHeading": "Maswali Yanayoulizwa Mara kwa Mara",
+    "faqs": [
+      {
+        "question": "Nawezaje kujisajili Nusrah?",
+        "answer": "Bofya 'Jiunge Sasa', jaza taarifa zako za msingi, kisha thibitisha akaunti yako kwa kutumia kodi (OTP) inayotumwa kwenye barua pepe yako."
+      },
+      {
+        "question": "Kuna tofauti gani kati ya vifurushi?",
+        "answer": "Kila kifurushi (Free, Basic, Silver, Gold, Premium) kinatoa kiwango tofauti cha mwonekano wa wasifu, mawasiliano, na huduma za ziada kama simu za sauti na video. Angalia ukurasa wa 'Kuwa Mwanachama' kwa maelezo kamili."
+      },
+      {
+        "question": "Je, taarifa zangu ni salama?",
+        "answer": "Ndiyo. Nenosiri lako limehifadhiwa kwa usimbaji fiche, na taarifa nyeti kama namba ya simu huhifadhiwa zikiwa zimesimbwa na huonekana tu kwa idhini yako."
+      },
+      {
+        "question": "Naweza kughairi au kubadilisha kifurushi wakati wowote?",
+        "answer": "Ndiyo, unaweza kupandisha au kushusha kifurushi chako wakati wowote kutoka ukurasa wa Akaunti."
+      },
+      {
+        "question": "Nifanyeje nikiwa na malalamiko kuhusu mwanachama mwingine?",
+        "answer": "Tumia fomu ya 'Tuma Ujumbe' hapa chini au wasiliana nasi kwa simu/WhatsApp. Timu yetu itashughulikia malalamiko yako kwa haraka na kwa usiri."
+      },
+      {
+        "question": "Malipo yanafanywaje?",
+        "answer": "Malipo ya vifurushi vinavyolipiwa hufanyika kwa njia ya pesa za simu (M-Pesa na nyingine). Baada ya kulipa, akaunti yako inawashwa moja kwa moja mfumo unapothibitisha malipo."
+      }
+    ],
+    "contactHeading": "Wasiliana Nasi",
+    "hours": "Jumatatu–Jumapili, 08:00–22:00",
+    "ratingFrom": "kutoka wanachama 1,250+",
+    "contactFormHeading": "Tuma Ujumbe",
+    "contactFormSubtitle": "Tuma swali au maoni yako na timu yetu itakujibu hivi karibuni.",
+    "contactForm": {
+      "name": "Jina",
+      "email": "Barua Pepe",
+      "subject": "Somo (si lazima)",
+      "body": "Ujumbe",
+      "submit": "Tuma Ujumbe",
+      "submitting": "Inatuma...",
+      "success": "Asante! Ujumbe wako umepokelewa. Tutakujibu hivi karibuni.",
+      "genericError": "Hitilafu imetokea",
+      "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena."
+    }
+  }
+}

@@ -1,0 +1,59 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# prisma
+/prisma/*.db
+/prisma/*.db-journal
+/dev.db
+/dev.db-journal
+
+# old deployment backups
+*.zip
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# local reference/staging images (not app assets — those live in public/images)
+/images/
+/INSTRUCTIONS IMAGES/
+
+# local dev logs and tooling state
+.dev-server.log
+.claude/settings.local.json
+.claude/scheduled_tasks.lock

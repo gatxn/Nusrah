@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffafc;
+  --foreground: #2a2340;
+
+  --color-primary: #d1315f;
+  --color-primary-dark: #a11e46;
+  --color-primary-light: #e4416f;
+
+  --color-blush-50: #fdf4f8;
+  --color-blush-100: #fdf2f7;
+  --color-blush-200: #f6e3ea;
+
+  --color-navy: #241a3d;
+  --color-navy-light: #33234f;
+
+  --color-gold: #f0c98a;
+  --color-muted: #7d7190;
+
+  --color-tier-free: #6b7280;
+  --color-tier-basic: #d9799a;
+  --color-tier-silver: #7c8aa5;
+  --color-tier-gold: #c8952e;
+  --color-tier-premium: #7c4dbd;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-light: var(--color-primary-light);
+
+  --color-blush-50: var(--color-blush-50);
+  --color-blush-100: var(--color-blush-100);
+  --color-blush-200: var(--color-blush-200);
+
+  --color-navy: var(--color-navy);
+  --color-navy-light: var(--color-navy-light);
+
+  --color-gold: var(--color-gold);
+  --color-muted: var(--color-muted);
+
+  --color-tier-free: var(--color-tier-free);
+  --color-tier-basic: var(--color-tier-basic);
+  --color-tier-silver: var(--color-tier-silver);
+  --color-tier-gold: var(--color-tier-gold);
+  --color-tier-premium: var(--color-tier-premium);
+
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+/* Thin gold rules framing the page's left/right margins on every page. */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--color-gold);
+  box-shadow: 0 0 6px rgba(240, 201, 138, 0.6);
+  z-index: 40;
+  pointer-events: none;
+}
+
+body::before {
+  left: 0;
+}
+
+body::after {
+  right: 0;
+}
+
+.bg-mosque-pattern {
+  background-image: linear-gradient(115deg, #fffafc 0%, #fdf2f7 45%, #f4eefc 100%);
+}
+
+/* Register/login card background: the Nusrah brand mark as a faint watermark
+   over white, instead of a plain white fill, so form inputs stay fully
+   legible on top of it. */
+.bg-auth-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.bg-auth-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #fff url("/images/auth-watermark.jpeg") center / 62% no-repeat;
+  opacity: 0.1;
+}
+
+/* Full-bleed atmospheric photo background, shared by the homepage and the
+   other marketing pages (Jinsi Inavyofanyakazi, Kuwa Mwanachama, Mafanikio,
+   Msaada). Painted by a negative-z-index pseudo-element inside an isolated
+   stacking context, so it sits behind every section without touching any
+   component's own markup, z-index, or background. The scrim reuses the
+   .bg-mosque-pattern palette and is strongest near the top of the element
+   (where each page's plain-text header sits) so text and opaque cards on top
+   stay exactly as legible as before. */
+.bg-hero-photo {
+  position: relative;
+  isolation: isolate;
+}
+
+.bg-hero-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 250, 252, 0.78) 0%,
+      rgba(253, 242, 247, 0.7) 22%,
+      rgba(248, 240, 250, 0.4) 42%,
+      rgba(244, 238, 252, 0.26) 70%,
+      rgba(244, 238, 252, 0.26) 100%
+    ),
+    url("/images/love-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Pins the image to the viewport so it stays put while the foreground
+     content scrolls over it. Note: iOS Safari doesn't honor
+     background-attachment: fixed and silently falls back to normal
+     scrolling there — a platform limitation, not fixable from CSS alone. */
+  background-attachment: fixed;
+}
+
+.arabesque-divider {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--color-blush-200),
+    var(--color-blush-200) 2px,
+    transparent 2px,
+    transparent 10px
+  );
+}
+
+/* ---------------------------------------------------------------------
+   Hero decorative animation, ported 1:1 from the approved Nusrah Landing
+   design (floating hearts, pulsing heart glyph, falling sakura petals).
+   ------------------------------------------------------------------- */
+
+@keyframes floatA {
+  0%   { transform: translate(0,0) scale(.6) rotate(-8deg); opacity: 0; }
+  12%  { opacity: 1; }
+  50%  { transform: translate(90px,-70px) scale(1.05) rotate(6deg); opacity: 1; }
+  85%  { opacity: .85; }
+  100% { transform: translate(170px,-150px) scale(.5) rotate(-4deg); opacity: 0; }
+}
+@keyframes floatB {
+  0%   { transform: translate(160px,10px) scale(.55) rotate(10deg); opacity: 0; }
+  15%  { opacity: 1; }
+  55%  { transform: translate(70px,-80px) scale(1) rotate(-8deg); opacity: 1; }
+  100% { transform: translate(-10px,-170px) scale(.5) rotate(4deg); opacity: 0; }
+}
+@keyframes floatC {
+  0%   { transform: translate(70px,20px) scale(.4) rotate(0deg); opacity: 0; }
+  20%  { opacity: 1; }
+  60%  { transform: translate(100px,-90px) scale(1.15) rotate(12deg); opacity: 1; }
+  100% { transform: translate(80px,-200px) scale(.45) rotate(-10deg); opacity: 0; }
+}
+@keyframes pulseHeart {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.14); }
+}
+@keyframes petal {
+  0%   { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+  20%  { opacity: .9; }
+  100% { transform: translateY(220px) rotate(140deg); opacity: 0; }
+}
+
+.hero-float-a { animation: floatA 6s linear infinite; }
+.hero-float-b { animation: floatB 7.5s linear infinite; }
+.hero-float-c { animation: floatC 8s linear infinite; }
+.hero-pulse-heart { display: inline-block; animation: pulseHeart 1.8s ease-in-out infinite; }
+.hero-petal { animation: petal 9s linear infinite; }
+
+/* Click/tap burst on the hero photo — see components/HeroVisual.tsx */
+@keyframes heroBurst {
+  0%   { transform: translate(-50%, -50%) scale(0.4); opacity: 0; }
+  25%  { opacity: 1; }
+  100% { transform: translate(-50%, -160%) scale(1.15); opacity: 0; }
+}
+
+.hero-burst {
+  animation: heroBurst 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Full-bleed atmospheric photo background for the onboarding flow (see
+   app/(focused)/onboarding/layout.tsx) — same isolated-stacking-context /
+   negative-z-index-pseudo-element technique as .bg-hero-photo above, just
+   pointing at a different image, and scoped only to the onboarding layout
+   so it never leaks into /ingia or the rest of the (focused) group. */
+.bg-onboarding-photo {
+  position: relative;
+  isolation: isolate;
+}
+
+.bg-onboarding-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 250, 252, 0.8) 0%,
+      rgba(253, 242, 247, 0.72) 30%,
+      rgba(244, 238, 252, 0.68) 100%
+    ),
+    url("/images/onboarding-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Focused single-task views (see app/(focused)/layout.tsx) */
+@keyframes focusedEnter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.focused-enter {
+  animation: focusedEnter 0.25s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .focused-enter {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-float-a,
+  .hero-float-b,
+  .hero-float-c,
+  .hero-pulse-heart,
+  .hero-petal {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+
+  .hero-pulse-heart {
+    opacity: 1 !important;
+  }
+
+  .hero-burst {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+}

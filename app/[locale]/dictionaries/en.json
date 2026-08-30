@@ -1,0 +1,251 @@
+{
+  "common": {
+    "tagline": { "line1": "Search • Connect • Marry", "line2": "The Marriage-Only Matching Site" },
+    "nav": {
+      "home": "Home",
+      "howItWorks": "How It Works",
+      "membership": "Membership",
+      "successStories": "Success Stories",
+      "help": "Help",
+      "login": "Log In",
+      "joinNow": "Join Now",
+      "logout": "Log Out",
+      "members": "Members",
+      "messages": "Messages",
+      "changePackage": "Change Plan"
+    },
+    "closeReturnHomeAria": "Close and return home",
+    "closeRestartSignupAria": "Close and restart sign-up",
+    "languageSwitcher": { "label": "Language" },
+    "footer": {
+      "description": "Start Connecting, Build a Life Together — an Islamic matrimonial platform built on safety, respect, and privacy.",
+      "pagesHeading": "Pages",
+      "helpHeading": "Help",
+      "faq": "Frequently Asked Questions",
+      "contactUs": "Contact Us",
+      "contactHeading": "Contact",
+      "hours": "Monday–Sunday, 08:00–22:00",
+      "copyright": "All rights reserved."
+    }
+  },
+  "home": {
+    "headline1": "Find your",
+    "headline2": "life partner",
+    "subtitle": "Nusrah is a safe Islamic platform connecting people seeking a life partner with sincere intentions.",
+    "checklist": [
+      "Safe and private",
+      "Verified, quality matches",
+      "Genuine, real profiles",
+      "Marriage intentions only",
+      "Respectful communication",
+      "For a better life together"
+    ],
+    "ctaJoin": "Join Now - Free",
+    "ctaMembers": "Go to Members",
+    "ctaLearnMore": "How It Works",
+    "statsLinePrefix": "Over",
+    "statsLineMiddle": "successful marriages over",
+    "welcomeBackNote": "⛨ Welcome back, continue your journey!",
+    "easySignupNote": "⛨ Sign-up is easy, fast, and free!",
+    "trustBadgeTitle": "Our Members",
+    "trustBadgeSubtitle": "Looking for someone like you",
+    "heroPhotoAlt": "A couple together, reflecting on their journey to finding a life partner",
+    "statsBar": ["Active Members", "Successful Marriages", "Safe & Private", "Verified Profiles", "24/7 Support"],
+    "features": [
+      { "title": "Safe & Private", "body": "Your information stays protected. Your privacy is our first priority." },
+      { "title": "Real Profiles", "body": "Every member goes through verification to keep the community genuine." },
+      { "title": "Smart Matching", "body": "Search for a partner with advanced filters for more accurate results." },
+      { "title": "Respectful Communication", "body": "Get to know each other with respect before deciding on next steps." },
+      { "title": "Marriage Intentions", "body": "A platform for people with sincere intentions to marry within Islamic values." },
+      { "title": "Real Success", "body": "We have a track record of couples who found happiness through Nusrah." }
+    ],
+    "quote": {
+      "arabic": "وَإِنْ خِفْتُمْ أَلَّا تُقْسِطُوا فِي الْيَتَامَىٰ فَانْكِحُوا مَا طَابَ لَكُمْ مِنَ النِّسَاءِ مَثْنَىٰ وَثُلَاثَ وَرُبَاعَ",
+      "translation": "\"And if you fear that you will not deal justly with the orphan girls, then marry those that please you of [other] women, two or three or four...\" (An-Nisa: 3)",
+      "cta": "Begin your journey to finding the right partner for a better life."
+    }
+  },
+  "jisajili": {
+    "title": "Create Account",
+    "subtitle": "Start your journey to find your life partner",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Amina Juma",
+      "phone": "Phone Number",
+      "phonePlaceholder": "0712345678",
+      "email": "Email Address",
+      "emailPlaceholder": "you@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "At least 8 characters",
+      "gender": "Gender",
+      "female": "Female",
+      "male": "Male",
+      "submit": "Sign Up",
+      "submitting": "Signing up..."
+    },
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Log In",
+    "genericError": "Something went wrong",
+    "networkError": "Failed to connect to the server. Please try again."
+  },
+  "ingia": {
+    "title": "Welcome Back",
+    "subtitle": "Log in to continue your journey",
+    "form": {
+      "identifier": "Phone Number or Email",
+      "identifierPlaceholder": "0712345678 or you@example.com",
+      "password": "Password",
+      "submit": "Log In",
+      "submitting": "Logging in..."
+    },
+    "forgotPassword": "Forgot your password?",
+    "noAccount": "Don't have an account?",
+    "joinNow": "Join Now",
+    "genericError": "Something went wrong",
+    "networkError": "Failed to connect to the server. Please try again."
+  },
+  "thibitisha": {
+    "title": "Verify Your Account",
+    "subtitle": "We've sent a 6-digit code to your email",
+    "devModeNote": "Test mode (no real email sent): your code is",
+    "form": {
+      "codeLabel": "Verification Code (OTP)",
+      "submit": "Verify",
+      "submitting": "Verifying...",
+      "resend": "Resend code"
+    },
+    "resendSuccess": "A new code has been sent",
+    "resendDevPrefix": "New code (test mode):",
+    "genericError": "Something went wrong",
+    "networkError": "Failed to connect to the server. Please try again.",
+    "networkErrorShort": "Failed to connect to the server."
+  },
+  "apiErrors": {
+    "auth": {
+      "tooManyAttempts": "Too many attempts. Please try again later.",
+      "duplicateAccount": "That phone number or email is already registered",
+      "otpServiceDown": "Sign-up isn't available right now. We're finishing verification (OTP) setup. Please try again later.",
+      "registerSuccess": "We've sent a verification code (OTP) to your email",
+      "devNote": "Test mode: no real email was sent.",
+      "invalidCredentials": "Incorrect phone/email or password",
+      "otpRequired": "Please verify your account with the OTP first",
+      "userNotFound": "User not found",
+      "alreadyVerified": "Account is already verified",
+      "noEmailOnFile": "This account has no email on file. Please contact support.",
+      "resendTooMany": "You've requested a code too many times. Please try again later.",
+      "resendServiceDown": "Sending codes isn't available right now. Please try again later.",
+      "resendSuccess": "A new code has been sent",
+      "loginSuccess": "Logged in",
+      "codeNotFound": "That code isn't valid or was already used. Request a new one.",
+      "codeExpired": "That code has expired. Request a new one.",
+      "tooManyOtpAttempts": "Too many attempts. Request a new code.",
+      "invalidCode": "Incorrect code.",
+      "verifiedSuccess": "Account verified"
+    }
+  },
+  "validation": {
+    "nameTooShort": "Name is too short",
+    "invalidPhone": "Invalid phone number",
+    "invalidEmail": "Invalid email address",
+    "passwordTooShort": "Password must be at least 8 characters",
+    "identifierRequired": "Enter a phone number or email",
+    "passwordRequired": "Password is required",
+    "otpCodeFormat": "Code must be 6 digits"
+  },
+  "jinsiInavyofanyakazi": {
+    "title": "How Nusrah Works",
+    "subtitle": "Simple steps to help you find your life partner",
+    "steps": [
+      { "title": "Sign Up", "desc": "Create your free account with basic information." },
+      { "title": "Complete Your Profile", "desc": "Tell us about yourself and what you're looking for in a partner." },
+      { "title": "Search", "desc": "Browse profiles that match what you're looking for." },
+      { "title": "Communicate", "desc": "Start safe, respectful conversations." },
+      { "title": "Verify", "desc": "Confirm intentions and information before proceeding." },
+      { "title": "Build a Life Together", "desc": "Move forward with the marriage process, God willing." }
+    ],
+    "tiersHeading": "Features by Tier (Free to Premium)",
+    "tiersSubtitle": "The higher your plan, the more features and visibility you get",
+    "trustBadges": ["High Security", "Respect & Ethics", "For Marriage Only", "Fast Support"]
+  },
+  "kuwaMwanachama": {
+    "title": "Choose Your Plan",
+    "subtitle": "The higher the plan, the more visibility, communication, and features you get toward finding your life partner.",
+    "footnote": "You can change (upgrade or downgrade) your plan at any time from the Account page.",
+    "pricingCard": {
+      "free": "Free",
+      "perMonth": "/month",
+      "buttonLabels": {
+        "FREE": "Choose Free",
+        "BASIC": "Choose Basic",
+        "SILVER": "Choose Silver",
+        "GOLD": "Choose Gold",
+        "PREMIUM": "Choose Premium",
+        "default": "Choose"
+      },
+      "submitting": "Submitting...",
+      "genericError": "Something went wrong",
+      "networkError": "Failed to connect to the server. Please try again."
+    }
+  },
+  "mafanikio": {
+    "title": "Our Members' Success Stories",
+    "subtitle": "Real stories from members who found their life partner through Nusrah",
+    "stats": [
+      { "value": "35,000+", "label": "Active Members" },
+      { "value": "2,000+", "label": "Successful Marriages" },
+      { "value": "98%", "label": "Satisfied with Nusrah" },
+      { "value": "100%", "label": "Safe & Private" }
+    ],
+    "ctaHeading": "Be Our Next Success Story",
+    "ctaLoggedIn": "Keep browsing fellow members on Nusrah in a safe and respectful way.",
+    "ctaLoggedOut": "Join Nusrah today and start your journey to find a life partner, safely and respectfully.",
+    "ctaButtonLoggedOut": "Join Now"
+  },
+  "msaada": {
+    "title": "Help & Support",
+    "subtitle": "We're here to help. Check our frequently asked questions or contact us directly.",
+    "faqHeading": "Frequently Asked Questions",
+    "faqs": [
+      {
+        "question": "How do I sign up for Nusrah?",
+        "answer": "Click 'Join Now', fill in your basic information, then verify your account using the code (OTP) sent to your email."
+      },
+      {
+        "question": "What's the difference between the plans?",
+        "answer": "Each plan (Free, Basic, Silver, Gold, Premium) offers a different level of profile visibility, communication, and extra features like voice and video calls. See the 'Membership' page for full details."
+      },
+      {
+        "question": "Is my information safe?",
+        "answer": "Yes. Your password is stored encrypted, and sensitive information like your phone number is stored encrypted and only shown with your permission."
+      },
+      {
+        "question": "Can I cancel or change my plan at any time?",
+        "answer": "Yes, you can upgrade or downgrade your plan at any time from the Account page."
+      },
+      {
+        "question": "What should I do if I have a complaint about another member?",
+        "answer": "Use the 'Send Message' form below or contact us by phone/WhatsApp. Our team will handle your complaint quickly and confidentially."
+      },
+      {
+        "question": "How are payments made?",
+        "answer": "Paid plans are paid for via mobile money (M-Pesa and others). After paying, your account is activated automatically once the system confirms payment."
+      }
+    ],
+    "contactHeading": "Contact Us",
+    "hours": "Monday–Sunday, 08:00–22:00",
+    "ratingFrom": "from 1,250+ members",
+    "contactFormHeading": "Send a Message",
+    "contactFormSubtitle": "Send us your question or feedback and our team will get back to you soon.",
+    "contactForm": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject (optional)",
+      "body": "Message",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Thank you! Your message has been received. We'll get back to you soon.",
+      "genericError": "Something went wrong",
+      "networkError": "Failed to connect to the server. Please try again."
+    }
+  }
+}
