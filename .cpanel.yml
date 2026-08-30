@@ -5,8 +5,8 @@ deployment:
     - /bin/cp -R * $DEPLOYPATH
     - source /home/nusrlrsu/nodevenv/nusrah-app/20/bin/activate
     - cd $DEPLOYPATH
-    - npm install
+    - rm -rf node_modules
+    - npm ci
     - npx prisma generate
-    - npx prisma migrate deploy
     - npm run build
     - touch $DEPLOYPATH/tmp/restart.txt
