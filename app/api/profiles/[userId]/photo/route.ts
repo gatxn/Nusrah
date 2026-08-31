@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { getSessionUserId } from "@/lib/auth";
 import { isEligibleTarget } from "@/lib/profiles";
+import { isBlocked } from "@/lib/blocks";
 import { UNAUTHENTICATED, NOT_FOUND } from "@/lib/api";
 
 export async function GET(
@@ -23,6 +24,7 @@ export async function GET(
   if (!target?.photoEnc || !isEligibleTarget(viewer?.gender, target.gender)) {
     return NOT_FOUND();
   }
+  if (await isBlocked(viewerId, targetId)) return NOT_FOUND();
 
   return new NextResponse(new Uint8Array(target.photoEnc), {
     headers: {

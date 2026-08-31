@@ -20,6 +20,7 @@ model User {
   passwordHash String
   otpVerified  Boolean  @default(false)
   createdAt    DateTime @default(now())
+  termsAcceptedAt DateTime @default(now())
 
   profile          Profile?
   orders           Order[]
@@ -34,6 +35,11 @@ model User {
   favoritesReceived      Favorite[]     @relation("FavoritesReceived")
   notificationsReceived  Notification[] @relation("NotificationRecipient")
   notificationsSourced   Notification[] @relation("NotificationSource")
+
+  blocksGiven      Block[]  @relation("BlocksGiven")
+  blocksReceived   Block[]  @relation("BlocksReceived")
+  reportsFiled     Report[] @relation("ReportsFiled")
+  reportsReceived  Report[] @relation("ReportsReceived")
 }
 
 // gender: "MALE" | "FEMALE"
@@ -45,6 +51,34 @@ model Profile {
   dob      DateTime?
   city     String?
   bio      String?
+
+  // Step 1 (Taarifa Binafsi) additions
+  displayName   String?
+  maritalStatus String? // SIJAOA_SIJAOLEWA | TALAKA | MJANE | AMETENGANA
+
+  // Step 2 (Maelezo ya Dini) — all new
+  religion     String?
+  madhhab      String?
+  prayerHabit  String?
+  wearsHijab   String? // only asked/shown when gender = FEMALE
+  quranLevel   String?
+  substanceUse String?
+
+  // Step 3 (Maelezo ya Maisha) additions — intentions/bio already existed above
+  occupation     String?
+  educationLevel String?
+  height         Int? // cm
+  bodyType       String?
+  skinTone       String?
+  incomeRange    String? // optional field — the one exception to "required"
+  partnerAgeMin  Int?
+  partnerAgeMax  Int?
+
+  // Step 4 (Mlezi/Wali) — optional, toggle-gated
+  hasGuardian          Boolean @default(false)
+  guardianName         String?
+  guardianRelationship String?
+  guardianPhone        String?
 
   // Onboarding: Steps 1-3 (personal/address/intentions) are mandatory and
   // gate the rest of the site — see lib/onboarding.ts, which derives
@@ -61,6 +95,13 @@ model Profile {
   photoEnc       Bytes?
   photoMimeType  String?
   photoUpdatedAt DateTime?
+
+  // Step 5's second, independent upload — same storage shape as the photo
+  // above (also optional/skippable; no admin review tool exists yet to act
+  // on it, so nothing currently gates on idDocumentUpdatedAt being set).
+  idDocumentEnc       Bytes?
+  idDocumentMimeType  String?
+  idDocumentUpdatedAt DateTime?
 
   // Sensitive fields, encrypted at rest (see lib/crypto.ts). Never returned
   // by an API unless both the viewer's tier and showPhoneToTier allow it.
@@ -167,15 +208,23 @@ model Review {
   createdAt DateTime @default(now())
 }
 
+// category: one of SUPPORT_CATEGORIES (lib/support.ts) | status: "PENDING"
+// (no admin reply/status workflow exists yet — see lib/support.ts)
 model ContactMessage {
-  id        String   @id @default(cuid())
-  userId    String?
-  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
-  name      String
-  email     String
-  subject   String?
-  body      String
-  createdAt DateTime @default(now())
+  id                 String   @id @default(cuid())
+  userId             String?
+  user               User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  ticketSeq          Int      @unique @default(autoincrement())
+  name               String
+  email              String
+  phone              String?
+  category           String?
+  subject            String?
+  body               String
+  attachmentEnc      Bytes?
+  attachmentMimeType String?
+  status             String   @default("PENDING")
+  createdAt          DateTime @default(now())
 }
 
 model Favorite {
@@ -204,4 +253,34 @@ model Notification {
 
   @@index([recipientUserId, isRead])
   @@index([recipientUserId, createdAt])
+}
+
+model Block {
+  id            String   @id @default(cuid())
+  blockerId     String
+  blocker       User     @relation("BlocksGiven", fields: [blockerId], references: [id], onDelete: Cascade)
+  blockedUserId String
+  blockedUser   User     @relation("BlocksReceived", fields: [blockedUserId], references: [id], onDelete: Cascade)
+  createdAt     DateTime @default(now())
+
+  @@unique([blockerId, blockedUserId])
+  @@index([blockedUserId])
+}
+
+// reason: one of REPORT_REASONS (lib/reports.ts) | status: "PENDING" (no
+// reviewer/admin workflow exists yet to act on these — see lib/reports.ts)
+model Report {
+  id               String   @id @default(cuid())
+  reporterId       String
+  reporter         User     @relation("ReportsFiled", fields: [reporterId], references: [id], onDelete: Cascade)
+  reportedUserId   String
+  reportedUser     User     @relation("ReportsReceived", fields: [reportedUserId], references: [id], onDelete: Cascade)
+  reason           String
+  description      String
+  evidenceEnc      Bytes?
+  evidenceMimeType String?
+  status           String   @default("PENDING")
+  createdAt        DateTime @default(now())
+
+  @@index([reportedUserId])
 }

@@ -2,6 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { getSessionUserId, getEffectiveTier } from "@/lib/auth";
 import { isEligibleTarget, serializeProfileForViewer } from "@/lib/profiles";
+import { isBlocked } from "@/lib/blocks";
 import AvatarIllustration from "@/components/illustrations/AvatarIllustration";
 import MemberDetailActions from "@/components/wanachama/MemberDetailActions";
 import { LockIcon, MapPinIcon } from "@/components/icons";
@@ -30,6 +31,7 @@ export default async function MemberDetailPage({
   ]);
 
   if (!target || !isEligibleTarget(viewer?.gender, target.gender)) notFound();
+  if (await isBlocked(viewerId, targetId)) notFound();
 
   const profile = serializeProfileForViewer(target, tier);
   const location = [profile.city, profile.region].filter(Boolean).join(", ");
@@ -89,7 +91,7 @@ export default async function MemberDetailPage({
               )}
             </div>
 
-            <MemberDetailActions userId={profile.userId} initialFavorited={!!favorite} />
+            <MemberDetailActions userId={profile.userId} userName={profile.name} initialFavorited={!!favorite} />
           </div>
         </div>
       </div>

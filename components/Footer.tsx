@@ -30,6 +30,7 @@ export default async function Footer() {
             <h3 className="text-sm font-semibold text-white">{footer.helpHeading}</h3>
             <ul className="mt-3 space-y-2 text-sm text-white/60">
               <li><LocaleLink href="/msaada" className="hover:text-white">{footer.faq}</LocaleLink></li>
+              <li><LocaleLink href="/usalama" className="hover:text-white">{footer.safety}</LocaleLink></li>
               <li><LocaleLink href="/msaada" className="hover:text-white">{footer.contactUs}</LocaleLink></li>
               <li><LocaleLink href="/ingia" className="hover:text-white">{nav.login}</LocaleLink></li>
             </ul>

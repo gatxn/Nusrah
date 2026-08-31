@@ -8,7 +8,88 @@ const CANVAS_SIZE = 288;
 const MAX_FILE_BYTES = 8 * 1024 * 1024;
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
-export default function PhotoStep({ hasExistingPhoto }: { hasExistingPhoto: boolean }) {
+const MAX_DOCUMENT_BYTES = 5 * 1024 * 1024;
+const ALLOWED_DOCUMENT_TYPES = ["image/jpeg", "image/png", "image/webp", "application/pdf"];
+
+function IdDocumentUpload({
+  hasExistingDocument,
+  onUploaded,
+}: {
+  hasExistingDocument: boolean;
+  onUploaded: () => void;
+}) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [status, setStatus] = useState<"none" | "uploading" | "done">(
+    hasExistingDocument ? "done" : "none"
+  );
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleFile(file: File) {
+    setError(null);
+    if (!ALLOWED_DOCUMENT_TYPES.includes(file.type)) {
+      setError("Chagua faili la JPEG, PNG, WEBP au PDF");
+      return;
+    }
+    if (file.size > MAX_DOCUMENT_BYTES) {
+      setError("Faili ni kubwa mno (kiwango cha juu ni 5MB)");
+      return;
+    }
+
+    setStatus("uploading");
+    try {
+      const formData = new FormData();
+      formData.append("idDocument", file);
+      const res = await fetch("/api/onboarding/id-document", { method: "POST", body: formData });
+      const json = await res.json();
+      if (!res.ok) {
+        setError(json.error ?? "Hitilafu imetokea");
+        setStatus("none");
+        return;
+      }
+      setStatus("done");
+      onUploaded();
+    } catch {
+      setError("Imeshindwa kuunganisha na seva. Jaribu tena.");
+      setStatus("none");
+    }
+  }
+
+  return (
+    <div>
+      <h2 className="text-sm font-semibold text-navy">Uthibitisho wa Utambulisho</h2>
+      <p className="mt-1 text-xs text-neutral-500">NIDA / Leseni / Passport (Max 5MB)</p>
+
+      <button
+        type="button"
+        onClick={() => inputRef.current?.click()}
+        disabled={status === "uploading"}
+        className="mt-2 flex w-full flex-col items-center justify-center gap-1.5 rounded-xl border border-dashed border-black/15 px-4 py-6 text-center transition hover:bg-blush-50 disabled:opacity-60"
+      >
+        <UploadIcon className="h-5 w-5 text-neutral-400" />
+        <span className="text-sm font-medium text-navy">
+          {status === "uploading" ? "Inapakia..." : status === "done" ? "Kitambulisho Kimewekwa ✓ — Badilisha" : "Pakia Kitambulisho"}
+        </span>
+      </button>
+      <input
+        ref={inputRef}
+        type="file"
+        accept="image/*,application/pdf"
+        className="hidden"
+        onChange={(e) => e.target.files?.[0] && handleFile(e.target.files[0])}
+      />
+
+      {error && <p className="mt-1.5 text-sm text-red-600">{error}</p>}
+    </div>
+  );
+}
+
+export default function PhotoStep({
+  hasExistingPhoto,
+  hasExistingIdDocument,
+}: {
+  hasExistingPhoto: boolean;
+  hasExistingIdDocument: boolean;
+}) {
   const router = useRouter();
   const cameraInputRef = useRef<HTMLInputElement>(null);
   const galleryInputRef = useRef<HTMLInputElement>(null);
@@ -17,7 +98,9 @@ export default function PhotoStep({ hasExistingPhoto }: { hasExistingPhoto: bool
   const objectUrlRef = useRef<string | null>(null);
   const dragState = useRef<{ x: number; y: number } | null>(null);
 
-  const [mode, setMode] = useState<"choose" | "edit">("choose");
+  const [mode, setMode] = useState<"done" | "choose" | "edit">(hasExistingPhoto ? "done" : "choose");
+  const [photoSaved, setPhotoSaved] = useState(hasExistingPhoto);
+  const [idSaved, setIdSaved] = useState(hasExistingIdDocument);
   const [zoom, setZoom] = useState(1);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [baseScale, setBaseScale] = useState(1);
@@ -144,11 +227,9 @@ export default function PhotoStep({ hasExistingPhoto }: { hasExistingPhoto: bool
             setLoading(false);
             return;
           }
-          // Hard navigation: same reasoning as OtpForm/LoginForm — avoid any
-          // reliance on the client Router Cache for a security-relevant
-          // destination.
-          // eslint-disable-next-line @next/next/no-location-assign-relative-destination
-          window.location.href = "/wanachama";
+          setPhotoSaved(true);
+          setMode("done");
+          setLoading(false);
         } catch {
           setError("Imeshindwa kuunganisha na seva. Jaribu tena.");
           setLoading(false);
@@ -159,118 +240,143 @@ export default function PhotoStep({ hasExistingPhoto }: { hasExistingPhoto: bool
     );
   }
 
-  function handleSkip() {
-    // eslint-disable-next-line @next/next/no-location-assign-relative-destination -- see handleConfirm above
+  function handleContinue() {
+    // Hard navigation: same reasoning as OtpForm/LoginForm — avoid any
+    // reliance on the client Router Cache for a security-relevant
+    // destination.
+    // eslint-disable-next-line @next/next/no-location-assign-relative-destination
     window.location.href = "/wanachama";
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <div>
-        <h2 className="text-lg font-bold text-navy">Weka Picha Yako</h2>
+        <h1 className="text-xl font-bold text-navy">Pakia Picha na Uthibitisho</h1>
         <p className="mt-1 text-sm text-neutral-600">
-          Picha hii itaonekana hadharani na wanachama wengine wa Nusrah. Usiweke picha isiyo na
-          heshima au ya mtu mwingine.
+          Picha hii itaonekana hadharani na wanachama wengine wa Nusrah. Usiweke picha isiyo na heshima au ya mtu
+          mwingine.
         </p>
       </div>
 
-      {mode === "choose" && (
-        <div className="space-y-3">
-          <button
-            type="button"
-            onClick={() => cameraInputRef.current?.click()}
-            className="flex w-full items-center justify-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm font-semibold text-navy transition hover:bg-blush-50"
-          >
-            <CameraIcon className="h-5 w-5" /> Piga Picha
-          </button>
-          <button
-            type="button"
-            onClick={() => galleryInputRef.current?.click()}
-            className="flex w-full items-center justify-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm font-semibold text-navy transition hover:bg-blush-50"
-          >
-            <UploadIcon className="h-5 w-5" /> Pakia kutoka Kifaa
-          </button>
+      <div className="space-y-3">
+        <h2 className="text-sm font-semibold text-navy">Picha Yako</h2>
 
-          <input
-            ref={cameraInputRef}
-            type="file"
-            accept="image/*"
-            capture="environment"
-            className="hidden"
-            onChange={(e) => e.target.files?.[0] && loadFile(e.target.files[0])}
-          />
-          <input
-            ref={galleryInputRef}
-            type="file"
-            accept="image/*"
-            className="hidden"
-            onChange={(e) => e.target.files?.[0] && loadFile(e.target.files[0])}
-          />
-        </div>
-      )}
+        {mode === "done" && (
+          <div className="flex items-center justify-between rounded-xl border border-black/10 px-4 py-3">
+            <span className="text-sm font-medium text-navy">{photoSaved ? "Picha Imewekwa ✓" : "Hakuna Picha"}</span>
+            <button
+              type="button"
+              onClick={() => setMode("choose")}
+              className="text-sm font-semibold text-primary hover:underline"
+            >
+              Badilisha
+            </button>
+          </div>
+        )}
 
-      {mode === "edit" && (
-        <div className="space-y-3">
-          <div className="flex justify-center">
-            <canvas
-              ref={canvasRef}
-              width={CANVAS_SIZE}
-              height={CANVAS_SIZE}
-              onPointerDown={handlePointerDown}
-              onPointerMove={handlePointerMove}
-              onPointerUp={handlePointerUp}
-              onPointerLeave={handlePointerUp}
-              className="cursor-grab touch-none rounded-full border border-black/10 shadow-sm active:cursor-grabbing"
+        {mode === "choose" && (
+          <div className="space-y-3">
+            <button
+              type="button"
+              onClick={() => cameraInputRef.current?.click()}
+              className="flex w-full items-center justify-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm font-semibold text-navy transition hover:bg-blush-50"
+            >
+              <CameraIcon className="h-5 w-5" /> Piga Picha
+            </button>
+            <button
+              type="button"
+              onClick={() => galleryInputRef.current?.click()}
+              className="flex w-full items-center justify-center gap-2 rounded-full border border-black/10 px-5 py-3 text-sm font-semibold text-navy transition hover:bg-blush-50"
+            >
+              <UploadIcon className="h-5 w-5" /> Pakia kutoka Kifaa
+            </button>
+
+            <input
+              ref={cameraInputRef}
+              type="file"
+              accept="image/*"
+              capture="environment"
+              className="hidden"
+              onChange={(e) => e.target.files?.[0] && loadFile(e.target.files[0])}
+            />
+            <input
+              ref={galleryInputRef}
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={(e) => e.target.files?.[0] && loadFile(e.target.files[0])}
             />
           </div>
-          <p className="text-center text-xs text-neutral-500">Buruta ili kuweka vizuri, tumia kitelezi kukuza</p>
-          <input
-            type="range"
-            min={1}
-            max={2.5}
-            step={0.01}
-            value={zoom}
-            onChange={(e) => handleZoomChange(Number(e.target.value))}
-            className="w-full accent-primary"
-          />
-          <button
-            type="button"
-            onClick={handleRetake}
-            className="w-full rounded-full border border-black/10 px-5 py-2.5 text-sm font-semibold text-neutral-600 transition hover:bg-blush-50"
-          >
-            Weka Upya
-          </button>
-        </div>
-      )}
+        )}
 
-      {error && <p className="text-sm text-red-600">{error}</p>}
+        {mode === "edit" && (
+          <div className="space-y-3">
+            <div className="flex justify-center">
+              <canvas
+                ref={canvasRef}
+                width={CANVAS_SIZE}
+                height={CANVAS_SIZE}
+                onPointerDown={handlePointerDown}
+                onPointerMove={handlePointerMove}
+                onPointerUp={handlePointerUp}
+                onPointerLeave={handlePointerUp}
+                className="cursor-grab touch-none rounded-full border border-black/10 shadow-sm active:cursor-grabbing"
+              />
+            </div>
+            <p className="text-center text-xs text-neutral-500">Buruta ili kuweka vizuri, tumia kitelezi kukuza</p>
+            <input
+              type="range"
+              min={1}
+              max={2.5}
+              step={0.01}
+              value={zoom}
+              onChange={(e) => handleZoomChange(Number(e.target.value))}
+              className="w-full accent-primary"
+            />
+            <div className="flex gap-3">
+              <button
+                type="button"
+                onClick={handleRetake}
+                className="flex-1 rounded-full border border-black/10 px-5 py-2.5 text-sm font-semibold text-neutral-600 transition hover:bg-blush-50"
+              >
+                Weka Upya
+              </button>
+              <button
+                type="button"
+                onClick={handleConfirm}
+                disabled={loading}
+                className="flex-1 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-dark disabled:opacity-60"
+              >
+                {loading ? "Inapakia..." : "Tumia Picha Hii"}
+              </button>
+            </div>
+          </div>
+        )}
 
-      <div className="flex gap-3 pt-1">
+        {error && <p className="text-sm text-red-600">{error}</p>}
+      </div>
+
+      <IdDocumentUpload hasExistingDocument={hasExistingIdDocument} onUploaded={() => setIdSaved(true)} />
+
+      <div className="flex gap-3 border-t border-black/5 pt-4">
         <button
           type="button"
-          onClick={() => router.push("/onboarding/intentions")}
+          onClick={() => router.push("/onboarding/guardian")}
           className="flex items-center gap-1.5 rounded-full border border-black/10 px-5 py-3 text-sm font-semibold text-neutral-600 transition hover:bg-blush-50"
         >
           <ChevronLeftIcon className="h-4 w-4" /> Rudi Nyuma
         </button>
-        {mode === "edit" ? (
-          <button
-            type="button"
-            onClick={handleConfirm}
-            disabled={loading}
-            className="flex-1 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-dark disabled:opacity-60"
-          >
-            {loading ? "Inapakia..." : "Tumia Picha Hii"}
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={handleSkip}
-            className="flex-1 rounded-full bg-primary/10 px-6 py-3 text-sm font-semibold text-primary transition hover:bg-primary/20"
-          >
-            {hasExistingPhoto ? "Endelea" : "Ruka kwa Sasa"}
-          </button>
-        )}
+        <button
+          type="button"
+          onClick={handleContinue}
+          className={`flex-1 rounded-full px-6 py-3 text-sm font-semibold transition ${
+            photoSaved || idSaved
+              ? "bg-primary text-white hover:bg-primary-dark"
+              : "bg-primary/10 text-primary hover:bg-primary/20"
+          }`}
+        >
+          {photoSaved || idSaved ? "Endelea" : "Ruka kwa Sasa"}
+        </button>
       </div>
     </div>
   );

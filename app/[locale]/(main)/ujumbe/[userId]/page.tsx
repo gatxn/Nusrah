@@ -2,9 +2,11 @@ import { notFound, redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { getSessionUserId, getEffectiveTier } from "@/lib/auth";
 import { isEligibleTarget } from "@/lib/profiles";
+import { isBlocked } from "@/lib/blocks";
 import { getThreadMessages, getSendPermission } from "@/lib/messages";
 import AvatarIllustration from "@/components/illustrations/AvatarIllustration";
 import ThreadView from "@/components/ujumbe/ThreadView";
+import ReportUserModal from "@/components/wanachama/ReportUserModal";
 
 export default async function UjumbeThreadPage({
   params,
@@ -25,6 +27,7 @@ export default async function UjumbeThreadPage({
   ]);
 
   if (!target || !isEligibleTarget(viewer?.gender, target.gender)) notFound();
+  if (await isBlocked(viewerId, otherUserId)) notFound();
 
   const [messages, permission] = await Promise.all([
     getThreadMessages(viewerId, otherUserId),
@@ -34,20 +37,23 @@ export default async function UjumbeThreadPage({
   return (
     <div className="bg-hero-photo">
       <div className="mx-auto max-w-2xl px-4 py-10 sm:px-6">
-        <div className="mb-4 flex items-center gap-3">
-          <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full">
-            {target.photoUpdatedAt ? (
-              // eslint-disable-next-line @next/next/no-img-element -- private cookie-gated route
-              <img
-                src={`/api/profiles/${otherUserId}/photo`}
-                alt=""
-                className="h-full w-full object-cover"
-              />
-            ) : (
-              <AvatarIllustration name={target.user.name} className="h-10 w-10" />
-            )}
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div className="h-10 w-10 shrink-0 overflow-hidden rounded-full">
+              {target.photoUpdatedAt ? (
+                // eslint-disable-next-line @next/next/no-img-element -- private cookie-gated route
+                <img
+                  src={`/api/profiles/${otherUserId}/photo`}
+                  alt=""
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <AvatarIllustration name={target.user.name} className="h-10 w-10" />
+              )}
+            </div>
+            <h1 className="text-lg font-bold text-navy">{target.user.name}</h1>
           </div>
-          <h1 className="text-lg font-bold text-navy">{target.user.name}</h1>
+          <ReportUserModal userId={otherUserId} userName={target.user.name} />
         </div>
 
         <ThreadView

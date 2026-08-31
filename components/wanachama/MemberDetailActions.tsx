@@ -4,12 +4,15 @@ import { useState } from "react";
 import Link from "next/link";
 import { ChatIcon } from "@/components/icons";
 import FavoriteButton from "@/components/wanachama/FavoriteButton";
+import ReportUserModal from "@/components/wanachama/ReportUserModal";
 
 export default function MemberDetailActions({
   userId,
+  userName,
   initialFavorited,
 }: {
   userId: string;
+  userName: string;
   initialFavorited: boolean;
 }) {
   const [composing, setComposing] = useState(false);
@@ -99,6 +102,10 @@ export default function MemberDetailActions({
           )}
         </p>
       )}
+
+      <div className="mt-3">
+        <ReportUserModal userId={userId} userName={userName} />
+      </div>
     </div>
   );
 }

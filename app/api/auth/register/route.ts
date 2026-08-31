@@ -38,6 +38,7 @@ export async function POST(request: NextRequest) {
       phone,
       email,
       passwordHash,
+      termsAcceptedAt: new Date(),
       profile: { create: { gender } },
     },
   });

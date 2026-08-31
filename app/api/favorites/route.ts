@@ -3,6 +3,7 @@ import { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/db";
 import { getSessionUserId, getEffectiveTier } from "@/lib/auth";
 import { isEligibleTarget, queryMembers } from "@/lib/profiles";
+import { isBlocked } from "@/lib/blocks";
 import { maybeNotifyProfileLiked } from "@/lib/notifications";
 import { favoriteCreateSchema } from "@/lib/validation";
 import { jsonError, zodError, UNAUTHENTICATED, NOT_FOUND } from "@/lib/api";
@@ -48,6 +49,7 @@ export async function POST(request: NextRequest) {
     prisma.profile.findUnique({ where: { userId: favoritedUserId }, select: { gender: true } }),
   ]);
   if (!target || !isEligibleTarget(viewer?.gender, target.gender)) return NOT_FOUND();
+  if (await isBlocked(userId, favoritedUserId)) return NOT_FOUND();
 
   try {
     await prisma.favorite.create({ data: { userId, favoritedUserId } });

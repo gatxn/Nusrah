@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db";
 import { hasCapability, type Tier } from "@/lib/tiers";
+import { getBlockedUserIds } from "@/lib/blocks";
 
 // Demo-scale in-application reduction over a capped, sorted scan — same
 // precedent as queryMembers in lib/profiles.ts. senderId/receiverId are two
@@ -42,13 +43,14 @@ export async function getConversations(userId: string): Promise<ConversationPrev
   ]);
 
   const unreadBySender = new Map(unreadGroups.map((g) => [g.senderId, g._count._all]));
+  const blockedIds = new Set(await getBlockedUserIds(userId));
 
   const seen = new Set<string>();
   const previews: Omit<ConversationPreview, "otherUserHasPhoto">[] = [];
   for (const row of rows) {
     const isMine = row.senderId === userId;
     const otherUserId = isMine ? row.receiverId : row.senderId;
-    if (seen.has(otherUserId)) continue;
+    if (seen.has(otherUserId) || blockedIds.has(otherUserId)) continue;
     seen.add(otherUserId);
     previews.push({
       otherUserId,

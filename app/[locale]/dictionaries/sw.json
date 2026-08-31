@@ -22,6 +22,7 @@
       "pagesHeading": "Kurasa",
       "helpHeading": "Msaada",
       "faq": "Maswali Yanayoulizwa Mara kwa Mara",
+      "safety": "Usalama",
       "contactUs": "Wasiliana Nasi",
       "contactHeading": "Mawasiliano",
       "hours": "Jumatatu–Jumapili, 08:00–22:00",
@@ -77,9 +78,15 @@
       "emailPlaceholder": "wewe@mfano.com",
       "password": "Nenosiri",
       "passwordPlaceholder": "Angalau herufi 8",
+      "confirmPassword": "Thibitisha Nenosiri",
+      "confirmPasswordPlaceholder": "Andika tena nenosiri lako",
+      "togglePasswordAria": "Onyesha au ficha nenosiri",
+      "passwordsDoNotMatch": "Manenosiri hayafanani",
       "gender": "Jinsia",
       "female": "Mwanamke",
       "male": "Mwanaume",
+      "agreeToTermsPrefix": "Nakubaliana na",
+      "agreeToTermsLink": "Masharti ya Matumizi",
       "submit": "Jisajili",
       "submitting": "Inasajili..."
     },
@@ -150,7 +157,9 @@
     "passwordTooShort": "Nenosiri linahitaji herufi angalau 8",
     "identifierRequired": "Weka namba ya simu au barua pepe",
     "passwordRequired": "Nenosiri linahitajika",
-    "otpCodeFormat": "Kodi ni tarakimu 6"
+    "otpCodeFormat": "Kodi ni tarakimu 6",
+    "mustAgreeToTerms": "Lazima ukubaliane na Masharti ya Matumizi ili kujisajili",
+    "passwordsDoNotMatch": "Manenosiri hayafanani"
   },
   "jinsiInavyofanyakazi": {
     "title": "Jinsi Nusrah Inavyofanyakazi",
@@ -206,46 +215,287 @@
     "subtitle": "Tuko hapa kukusaidia. Angalia maswali yanayoulizwa mara kwa mara au wasiliana nasi moja kwa moja.",
     "faqHeading": "Maswali Yanayoulizwa Mara kwa Mara",
     "faqs": [
-      {
-        "question": "Nawezaje kujisajili Nusrah?",
-        "answer": "Bofya 'Jiunge Sasa', jaza taarifa zako za msingi, kisha thibitisha akaunti yako kwa kutumia kodi (OTP) inayotumwa kwenye barua pepe yako."
-      },
-      {
-        "question": "Kuna tofauti gani kati ya vifurushi?",
-        "answer": "Kila kifurushi (Free, Basic, Silver, Gold, Premium) kinatoa kiwango tofauti cha mwonekano wa wasifu, mawasiliano, na huduma za ziada kama simu za sauti na video. Angalia ukurasa wa 'Kuwa Mwanachama' kwa maelezo kamili."
-      },
-      {
-        "question": "Je, taarifa zangu ni salama?",
-        "answer": "Ndiyo. Nenosiri lako limehifadhiwa kwa usimbaji fiche, na taarifa nyeti kama namba ya simu huhifadhiwa zikiwa zimesimbwa na huonekana tu kwa idhini yako."
-      },
-      {
-        "question": "Naweza kughairi au kubadilisha kifurushi wakati wowote?",
-        "answer": "Ndiyo, unaweza kupandisha au kushusha kifurushi chako wakati wowote kutoka ukurasa wa Akaunti."
-      },
-      {
-        "question": "Nifanyeje nikiwa na malalamiko kuhusu mwanachama mwingine?",
-        "answer": "Tumia fomu ya 'Tuma Ujumbe' hapa chini au wasiliana nasi kwa simu/WhatsApp. Timu yetu itashughulikia malalamiko yako kwa haraka na kwa usiri."
-      },
-      {
-        "question": "Malipo yanafanywaje?",
-        "answer": "Malipo ya vifurushi vinavyolipiwa hufanyika kwa njia ya pesa za simu (M-Pesa na nyingine). Baada ya kulipa, akaunti yako inawashwa moja kwa moja mfumo unapothibitisha malipo."
-      }
+      { "question": "Nusrah.co.tz ni nini?", "answer": "Nusrah.co.tz ni jukwaa linalowaunganisha watu wenye nia ya dhati ya kutafuta mwenza wa maisha kwa ajili ya ndoa, kwa kuzingatia heshima, uaminifu, faragha na maadili ya Kiislamu." },
+      { "question": "Je, Nusrah ni dating site ya kawaida?", "answer": "Hapana. Nusrah inalenga zaidi kutafuta mwenza kwa ajili ya ndoa, si mahusiano ya muda mfupi au burudani." },
+      { "question": "Nani anaweza kujisajili Nusrah?", "answer": "Mtu anayekidhi masharti ya matumizi ya Nusrah na mwenye nia ya kweli ya kutafuta mwenza wa maisha anaweza kujisajili." },
+      { "question": "Je, lazima niwe Muislamu?", "answer": "Nusrah imejengwa kwa mtazamo wa Kiislamu na inalenga hasa watu wanaotafuta ndoa kwa misingi ya Kiislamu. Masharti ya aina ya wanachama yanaelezwa wakati wa usajili." },
+      { "question": "Ni taarifa gani ninahitaji wakati wa usajili?", "answer": "Utahitajika kutoa taarifa kama: jina na jina la kuonekana kwenye wasifu, tarehe ya kuzaliwa, jinsia, namba ya simu, barua pepe, eneo unaloishi, hali ya ndoa, taarifa za dini, elimu na kazi, vigezo unavyotafuta kwa mwenza, picha ya wasifu, na taarifa nyingine muhimu kwa ajili ya kutengeneza profile yako." },
+      { "question": "Je, ninaweza kutumia jina la utani?", "answer": "Nusrah inaweza kuruhusu jina la kuonekana (display name) ili kulinda faragha, lakini taarifa za usajili zinapaswa kuwa za kweli na sahihi." },
+      { "question": "Je, namba yangu ya simu itaonekana kwa kila mtu?", "answer": "Hapana. Taarifa binafsi kama namba ya simu na email zinapaswa kulindwa na hazipaswi kuonyeshwa hadharani bila ruhusa yako." },
+      { "question": "Je, ninaweza kuweka picha yangu?", "answer": "Ndiyo. Unaweza kuweka picha inayofaa kwa profile yako. Nusrah inaweza kupitia picha ili kuhakikisha inazingatia sheria na viwango vya jukwaa." },
+      { "question": "Uthibitisho wa profile ni nini?", "answer": "Uthibitisho unasaidia kuongeza uaminifu na usalama wa wanachama kwa kuhakikisha kuwa taarifa muhimu za mtumiaji zinaweza kuthibitishwa." },
+      { "question": "Je, Nusrah inahakikisha nitapata mwenza?", "answer": "Hapana. Nusrah haiwezi kuhakikisha ndoa au kupata mwenza fulani. Jukwaa linatoa mazingira ya kukutana, kuwasiliana na kuchagua kwa uangalifu." },
+      { "question": "Ninawezaje kumtafuta mwenza?", "answer": "Unaweza kutumia vigezo kama: jinsia, umri, eneo, hali ya ndoa, elimu, kazi, mazingira ya kidini, vigezo vya maisha, na vigezo vingine vya mwenza unavyovipendelea." },
+      { "question": "Je, ninaweza kuwasiliana na mtu ninayemvutia?", "answer": "Ndiyo, ikiwa profile zote mbili zinaruhusu mawasiliano kulingana na mfumo wa Nusrah. Unaweza kutumia ujumbe wa ndani wa jukwaa bila kulazimika kutoa namba yako ya simu." },
+      { "question": "Je, ninaweza kumzuia mtu?", "answer": "Ndiyo. Unaweza Block mtumiaji ambaye hutaki awasiliane nawe." },
+      { "question": "Je, ninaweza kuripoti profile?", "answer": "Ndiyo. Unaweza kuripoti profile, ujumbe au tabia inayokiuka sheria za Nusrah. Timu ya usimamizi inaweza kuchunguza taarifa hiyo na kuchukua hatua stahiki." },
+      { "question": "Nusrah inalindaje usalama wangu?", "answer": "Nusrah inalenga kutumia hatua mbalimbali za usalama, ikiwemo uthibitisho wa watumiaji, mfumo wa kuripoti, kuzuia akaunti zinazokiuka masharti na kulinda taarifa binafsi." },
+      { "question": "Wali/Mlezi ana nafasi gani?", "answer": "Kwa mtumiaji anayechagua, Nusrah inaweza kutoa sehemu ya kuweka taarifa za Wali/Mlezi ili kusaidia mchakato wa kutafuta mwenza kwa heshima na kwa kuzingatia mazingira ya familia." },
+      { "question": "Je, taarifa za Wali ni lazima?", "answer": "Hapana, sehemu hiyo inaweza kuwa hiari, kulingana na sera na mfumo wa Nusrah." },
+      { "question": "Nimesahau password yangu, nifanye nini?", "answer": "Bonyeza \"Umesahau Neno la Siri?\" kwenye Login Page na fuata hatua za kurejesha akaunti yako." },
+      { "question": "Je, naweza kubadilisha taarifa za profile yangu?", "answer": "Ndiyo. Unaweza kuhariri taarifa zako kupitia Profile Settings, isipokuwa taarifa fulani ambazo zinaweza kuhitaji uthibitisho wa ziada." },
+      { "question": "Je, ninaweza kufuta akaunti yangu?", "answer": "Ndiyo. Unaweza kuomba kufuta akaunti yako kupitia Account Settings au kuwasiliana na Nusrah Support." },
+      { "question": "Je, Nusrah ni bure?", "answer": "Nusrah inaweza kuwa na huduma za bure pamoja na huduma za kulipia kulingana na mpango wa uanachama unaopatikana." },
+      { "question": "Malipo yanafanywaje?", "answer": "Ikiwa huduma unayotumia inahitaji malipo, Nusrah inaweza kutoa njia mbalimbali za malipo kama vile Mobile Money, kadi au njia nyingine zinazokubaliwa na mfumo." },
+      { "question": "Je, malipo yanaweza kurejeshwa?", "answer": "Refund hutegemea aina ya huduma, mpango uliolipia na Refund Policy ya Nusrah." },
+      { "question": "Je, Nusrah inaruhusu utapeli au akaunti za uongo?", "answer": "Hapana. Akaunti za uongo, utapeli, udanganyifu, vitisho, unyanyasaji na matumizi mabaya ya jukwaa ni ukiukaji wa masharti ya Nusrah." },
+      { "question": "Nifanye nini nikihisi mtu ni tapeli?", "answer": "Usimtumie pesa wala taarifa zako nyeti. Mblock na mripoti mara moja kupitia mfumo wa Report, kisha Nusrah inaweza kufanya uchunguzi." },
+      { "question": "Je, ninaweza kuomba pesa kutoka kwa mtumiaji mwingine?", "answer": "Hapana. Kuomba au kushinikiza mtumiaji mwingine kutuma pesa, hasa kwa udanganyifu, kunaweza kusababisha akaunti kusimamishwa au kufungwa." },
+      { "question": "Je, mawasiliano yangu yanaweza kufuatiliwa?", "answer": "Nusrah inaweza kuchakata taarifa zinazohitajika kwa ajili ya usalama, uendeshaji wa huduma na kuzuia matumizi mabaya, kwa mujibu wa Privacy Policy yake." },
+      { "question": "Je, Nusrah inashiriki taarifa zangu na watu wengine?", "answer": "Nusrah inalenga kulinda taarifa zako binafsi na kuzishughulikia kwa mujibu wa Privacy Policy na sheria zinazotumika." },
+      { "question": "Je, ninaweza kukutana na mtu niliyempata Nusrah?", "answer": "Ndiyo, lakini unashauriwa kuchukua tahadhari: hakikisha umefanya mawasiliano ya kutosha, epuka kutuma pesa, na kwa mkutano wa kwanza chagua eneo salama na linalojulikana." },
+      { "question": "Ninawezaje kuwasiliana na Nusrah Support?", "answer": "Tumia sehemu ya Help & Support / Contact Us ndani ya Nusrah.co.tz kwa msaada kuhusu akaunti, profile, malipo, usalama au kuripoti tatizo." }
     ],
+    "safetyNote": {
+      "heading": "🛡️ Usalama Wako ni Muhimu",
+      "body": "Nusrah haitaki tu kukuunganisha na mtu; inalenga kukusaidia kuanza safari ya kutafuta mwenza wa maisha kwa heshima, uaminifu na nia ya ndoa. Usitoe password yako, OTP, taarifa za benki au taarifa nyingine nyeti kwa mtu mwingine.",
+      "linkLabel": "Tembelea Kituo cha Usalama →"
+    },
     "contactHeading": "Wasiliana Nasi",
     "hours": "Jumatatu–Jumapili, 08:00–22:00",
     "ratingFrom": "kutoka wanachama 1,250+",
     "contactFormHeading": "Tuma Ujumbe",
     "contactFormSubtitle": "Tuma swali au maoni yako na timu yetu itakujibu hivi karibuni.",
     "contactForm": {
+      "userInfoHeading": "Taarifa za Mtumiaji",
       "name": "Jina",
       "email": "Barua Pepe",
+      "phone": "Namba ya Simu",
+      "phonePlaceholder": "+255 XXX XXX XXX",
+      "categoryHeading": "Aina ya Msaada",
+      "categorySubheading": "Chagua unachohitaji:",
       "subject": "Somo (si lazima)",
       "body": "Ujumbe",
-      "submit": "Tuma Ujumbe",
+      "bodyPlaceholder": "Eleza tatizo lako kwa ufupi na kwa maelezo muhimu...",
+      "sensitiveWarning": "Usitume: Password • PIN • OTP • Card Security Code",
+      "attachmentHeading": "Attachments — Hiari",
+      "attachmentUploadLabel": "+ Upload Screenshot / File",
+      "attachmentHelp": "Unaweza kutuma screenshot inayosaidia kueleza tatizo.",
+      "safetyHeading": "Kwa Masuala ya Usalama",
+      "safetyBody": "Ikiwa unaripoti utapeli, vitisho, unyanyasaji, fake profile au tabia hatarishi, tumia pia:",
+      "reportUserButton": "🚩 REPORT USER",
+      "emergencyNote": "Ikiwa uko katika hatari ya haraka ya kimwili, tafuta msaada wa dharura kutoka kwa mamlaka husika badala ya kusubiri Nusrah Support.",
+      "submit": "SEND MESSAGE",
       "submitting": "Inatuma...",
       "success": "Asante! Ujumbe wako umepokelewa. Tutakujibu hivi karibuni.",
+      "ticketReceivedHeading": "✓ Support Request Received",
+      "ticketNumberLabel": "Ticket Number:",
+      "ticketReceivedBody": "Asante kwa kuwasiliana na Nusrah Support. Ombi lako limepokelewa na timu yetu itakagua taarifa ulizotuma.",
+      "viewMyRequests": "View My Support Requests",
       "genericError": "Hitilafu imetokea",
       "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena."
+    },
+    "helpCenter": {
+      "heading": "Help Center",
+      "intro": "Kabla ya kutuma ujumbe, unaweza kupata jibu kupitia:",
+      "faq": "FAQ",
+      "safetyCenter": "SAFETY CENTER",
+      "terms": "TERMS"
+    },
+    "myRequests": {
+      "title": "Maombi Yangu ya Msaada",
+      "subtitle": "Historia ya maombi uliyowahi kutuma kwa Nusrah Support",
+      "empty": "Hujawahi kutuma ombi lolote kwa Nusrah Support.",
+      "ticketNumber": "Ticket",
+      "status": "Hali",
+      "statusPending": "Inasubiri Majibu",
+      "backToMsaada": "Rudi kwenye Msaada"
+    }
+  },
+  "usalama": {
+    "title": "Nusrah Safety Center",
+    "subtitle": "Usalama Wako ni Jambo Letu la Kwanza",
+    "intro": "Nusrah.co.tz inalenga kukusaidia kupata mwenza wa maisha kwa njia yenye heshima, faragha, uaminifu na usalama.",
+    "sections": [
+      {
+        "icon": "🛡️",
+        "heading": "Linda Akaunti Yako",
+        "items": [
+          "Tumia password imara na ya kipekee.",
+          "Usimpe mtu password au OTP yako.",
+          "Usitumie password hiyo kwenye akaunti nyingine.",
+          "Toka kwenye akaunti unapokuwa unatumia kifaa cha mtu mwingine.",
+          "Washa Two-Factor Authentication (2FA) inapopatikana."
+        ],
+        "note": "Nusrah Support haitakuomba password yako."
+      },
+      {
+        "icon": "✅",
+        "heading": "Profile Verification",
+        "intro": [
+          "Nusrah inaweza kutumia Phone Verification, Photo Verification na Identity Verification ili kuongeza uaminifu wa profiles.",
+          "Profile iliyothibitishwa inaweza kuonyeshwa kwa Verified Badge ✓."
+        ],
+        "note": "Kumbuka: Verification inapunguza hatari lakini haimaanishi kwamba mtu huyo hana kabisa nia mbaya."
+      },
+      {
+        "icon": "🚩",
+        "heading": "Jihadhari na Dalili za Utapeli",
+        "intro": ["Kuwa makini ikiwa mtu:"],
+        "items": [
+          "Anaanza kukutamkia mapenzi haraka sana.",
+          "Anaomba pesa au msaada wa kifedha.",
+          "Anaomba taarifa za benki/kadi.",
+          "Anakutumia link usiyoijua.",
+          "Anakushinikiza uondoke Nusrah na kuwasiliana nje ya mfumo haraka.",
+          "Anakataa video call au kukutana kwa sababu zisizoeleweka.",
+          "Anaomba picha au video binafsi.",
+          "Anatumia hadithi za dharura ili upate kumtumia pesa."
+        ],
+        "outro": [
+          "Usimtumie mtu pesa kwa sababu tu mmeanza kuwasiliana Nusrah. Romance scams mara nyingi hutumia uaminifu wa kimapenzi ili kumshawishi mtu kutoa fedha au taarifa binafsi. (Internet Crime Complaint Center)"
+        ]
+      },
+      {
+        "icon": "🚫",
+        "heading": "Block & Report",
+        "intro": [
+          "Ukihisi mtu si salama:",
+          "BLOCK USER → Zuia mawasiliano kutoka kwa mtumiaji.",
+          "REPORT USER → Tuma taarifa kwa Nusrah Safety Team.",
+          "Unaweza kuripoti:"
+        ],
+        "items": [
+          "Fake profile",
+          "Scam",
+          "Harassment",
+          "Threats",
+          "Unwanted messages",
+          "Impersonation",
+          "Sexual harassment",
+          "Financial requests",
+          "Suspicious links",
+          "Maudhui yanayokiuka sheria za Nusrah."
+        ],
+        "outro": ["Report na Block ni vipengele muhimu vya usalama kwenye dating platforms. (Safety Centre)"]
+      },
+      {
+        "icon": "🔒",
+        "heading": "Linda Taarifa Zako Binafsi",
+        "intro": ["Usishiriki mapema:"],
+        "items": [
+          "Password",
+          "OTP",
+          "PIN",
+          "Taarifa za benki",
+          "Namba za kadi",
+          "Anwani kamili ya nyumbani",
+          "Mahali unapofanya kazi",
+          "Taarifa nyeti za familia",
+          "Nyaraka binafsi",
+          "Picha/video binafsi usizotaka zisambae."
+        ],
+        "outro": ["Taarifa za profile zinapaswa kuwa na kiwango cha chini kinachohitajika ili kulinda faragha yako. (eSafety Commissioner)"]
+      },
+      {
+        "icon": "💬",
+        "heading": "Wasiliana Ndani ya Nusrah",
+        "intro": [
+          "Tunashauri uendelee kutumia Nusrah Messages wakati bado unamfahamu mtu.",
+          "Hii inakupa uwezo wa kutumia Report, Block na Safety Tools kabla hujatoa namba yako ya simu au kuhamia kwenye platform nyingine."
+        ]
+      },
+      {
+        "icon": "📍",
+        "heading": "Usalama wa Location",
+        "intro": [
+          "Usitoe anwani yako kamili, mfano \"Ninaishi nyumba namba…, mtaa…, karibu na…\".",
+          "Badala yake tumia taarifa ya jumla kama Dodoma, Dar es Salaam, Arusha au Mwanza.",
+          "Epuka kuweka location yako halisi hadharani."
+        ]
+      },
+      {
+        "icon": "🤝",
+        "heading": "Kabla ya Kukutana",
+        "intro": ["Ikiwa umeamua kukutana na mtu, fanya hivi:"],
+        "items": [
+          "Mjulie mtu unayemwamini.",
+          "Mpe jina/profile ya mtu unayekutana naye.",
+          "Kutana sehemu ya wazi na yenye watu.",
+          "Tumia usafiri wako mwenyewe inapowezekana.",
+          "Weka muda wa kuondoka.",
+          "Wasiliana na mtu wako wa karibu wakati wa safari.",
+          "Sikiliza hisia zako."
+        ],
+        "ordered": true,
+        "outro": [
+          "Ukihisi hauko salama, ondoka.",
+          "Miongozo ya usalama inapendekeza kumjulisha rafiki/familia kuhusu mahali unapokwenda na kuweka mpango wa kutoka ikiwa hali haitakuwa nzuri. (eSafety Commissioner)"
+        ]
+      },
+      {
+        "icon": "👨‍👩‍👧",
+        "heading": "Family / Wali Support",
+        "intro": [
+          "Kwa kuwa Nusrah inalenga ndoa, mtumiaji anaweza kuchagua kumshirikisha Wali, Mlezi, Mzazi au Mtu wa Kuaminika katika hatua zinazofaa za mchakato wa kumtafuta mwenza.",
+          "Lengo: kuongeza uwazi, heshima na usalama katika mchakato wa kuelekea ndoa."
+        ]
+      },
+      {
+        "icon": "🚨",
+        "heading": "Ikiwa Uko Katika Hatari",
+        "intro": ["Ikiwa mtu anakutishia, anakufuatilia, anakulazimisha au anakudhuru:"],
+        "items": [
+          "Sitisha mawasiliano.",
+          "Hifadhi ushahidi muhimu.",
+          "Block na Report kwenye Nusrah.",
+          "Mjulishe mtu unayemwamini.",
+          "Ikiwa kuna hatari ya haraka ya kimwili, wasiliana na mamlaka za dharura za eneo lako."
+        ],
+        "ordered": true,
+        "outro": ["Nusrah si huduma ya dharura; kwa hatari ya haraka, tafuta msaada wa mamlaka husika. (Safety Centre)"]
+      },
+      {
+        "icon": "📸",
+        "heading": "Picha na Video Binafsi",
+        "intro": [
+          "Usitume picha au video ambayo inaweza kutumiwa kukutishia au kukulazimisha.",
+          "Ikiwa mtu anakutishia kusambaza picha au video yako: usilipe, usitume picha nyingine, sitisha mawasiliano, hifadhi ushahidi na report account."
+        ]
+      },
+      {
+        "icon": "💰",
+        "heading": "Hakuna \"Love Payment\"",
+        "intro": [
+          "Nusrah haipaswi kuwa sehemu ya kuombana pesa kwa kisingizio cha mapenzi.",
+          "Usitume pesa kwa mtu ambaye umekutana naye mtandaoni kwa sababu ya:"
+        ],
+        "items": ["Safari", "Matibabu", "Tiketi", "Biashara", "Investment", "Dharura", "Visa", "Msaada wa familia", "Ahadi ya ndoa."]
+      },
+      {
+        "icon": "⚖️",
+        "heading": "Kanuni za Heshima",
+        "intro": [
+          "Kila mwanachama anatakiwa azingatie: Heshima, Uaminifu, Faragha, Ridhaa, Maadili na Nia ya Ndoa.",
+          "Hairuhusiwi:"
+        ],
+        "items": [
+          "Unyanyasaji",
+          "Vitisho",
+          "Udanganyifu",
+          "Utapeli",
+          "Impersonation",
+          "Ubaguzi",
+          "Spam",
+          "Kulazimisha mtu",
+          "Kutumia Nusrah kwa madhumuni yasiyo ya ndoa."
+        ]
+      }
+    ],
+    "quickActions": {
+      "heading": "Quick Safety Actions",
+      "intro": "Ukiwa na tatizo, bonyeza:",
+      "items": [
+        { "icon": "🚩", "label": "REPORT", "body": "Ripoti mtumiaji." },
+        { "icon": "🚫", "label": "BLOCK", "body": "Zuia mawasiliano." },
+        { "icon": "🔒", "label": "PRIVACY", "body": "Badilisha mipangilio ya faragha." },
+        { "icon": "🔑", "label": "SECURE ACCOUNT", "body": "Badilisha password na kuwezesha 2FA." },
+        { "icon": "💬", "label": "CONTACT SUPPORT", "body": "Wasiliana na Nusrah Support." }
+      ]
+    },
+    "closing": {
+      "quote": "Usalama wako ni muhimu kuliko kuendelea na mazungumzo.",
+      "body": "Kama jambo linaonekana si sahihi, amini hisia zako, simamisha mawasiliano na report."
     }
   }
 }

@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
 
   const updated = await prisma.profile.update({
     where: { userId },
-    data: { dob: parsed.data.dob },
+    data: parsed.data,
   });
 
   return NextResponse.json({ nextStep: nextStepRoute(updated) });

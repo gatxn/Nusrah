@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { getSessionUserId, getEffectiveTier } from "@/lib/auth";
 import { isEligibleTarget, serializeProfileForViewer } from "@/lib/profiles";
+import { isBlocked } from "@/lib/blocks";
 import { UNAUTHENTICATED, NOT_FOUND } from "@/lib/api";
 
 export async function GET(
@@ -26,6 +27,7 @@ export async function GET(
   ]);
 
   if (!target || !isEligibleTarget(viewer?.gender, target.gender)) return NOT_FOUND();
+  if (await isBlocked(viewerId, targetId)) return NOT_FOUND();
 
   return NextResponse.json({
     profile: { ...serializeProfileForViewer(target, tier), isFavorited: !!favorite },

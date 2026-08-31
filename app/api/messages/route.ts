@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { getSessionUserId, getEffectiveTier } from "@/lib/auth";
 import { isEligibleTarget } from "@/lib/profiles";
+import { isBlocked } from "@/lib/blocks";
 import { getThreadMessages, getSendPermission } from "@/lib/messages";
 import { sendMessageSchema } from "@/lib/validation";
 import { jsonError, zodError, UNAUTHENTICATED, FORBIDDEN, NOT_FOUND } from "@/lib/api";
@@ -12,6 +13,7 @@ export async function GET(request: NextRequest) {
 
   const withUserId = request.nextUrl.searchParams.get("with");
   if (!withUserId) return jsonError("Query param 'with' inahitajika", 400);
+  if (await isBlocked(userId, withUserId)) return NOT_FOUND();
 
   const messages = await getThreadMessages(userId, withUserId);
   return NextResponse.json({ messages });
@@ -37,6 +39,7 @@ export async function POST(request: NextRequest) {
   // POST, since this route previously only checked the receiver existed, not
   // whether the caller was ever allowed to see/message them.
   if (!target || !isEligibleTarget(viewer?.gender, target.gender)) return NOT_FOUND();
+  if (await isBlocked(userId, parsed.data.receiverId)) return NOT_FOUND();
 
   const tier = await getEffectiveTier(userId);
   const { canSend, reason } = await getSendPermission(userId, parsed.data.receiverId, tier);

@@ -1,7 +1,24 @@
 import { z } from "zod";
-import { INTENTIONS, MIN_AGE, MAX_AGE } from "@/lib/onboarding";
+import {
+  INTENTIONS,
+  MIN_AGE,
+  MAX_AGE,
+  MARITAL_STATUSES,
+  MADHHABS,
+  PRAYER_HABITS,
+  HIJAB_OPTIONS,
+  QURAN_LEVELS,
+  SUBSTANCE_USE_OPTIONS,
+  EDUCATION_LEVELS,
+  BODY_TYPES,
+  SKIN_TONES,
+  INCOME_RANGES,
+  GUARDIAN_RELATIONSHIPS,
+} from "@/lib/onboarding";
 import { getAge } from "@/lib/dates";
 import { TANZANIA_REGIONS } from "@/lib/geo";
+import { REPORT_REASONS } from "@/lib/reports";
+import { SUPPORT_CATEGORIES } from "@/lib/support";
 
 // Tanzanian phone numbers: 07XXXXXXXX / 06XXXXXXXX or +2557XXXXXXXX / +2556XXXXXXXX
 const phoneRegex = /^(?:\+255|0)([67]\d{8})$/;
@@ -18,16 +35,25 @@ type ValidationMessages = {
   identifierRequired: string;
   passwordRequired: string;
   otpCodeFormat: string;
+  mustAgreeToTerms: string;
+  passwordsDoNotMatch: string;
 };
 
 export function createRegisterSchema(t: ValidationMessages) {
-  return z.object({
-    name: z.string().trim().min(2, t.nameTooShort).max(80),
-    phone: z.string().regex(phoneRegex, t.invalidPhone),
-    email: z.string().trim().email(t.invalidEmail),
-    password: z.string().min(8, t.passwordTooShort),
-    gender: z.enum(["MALE", "FEMALE"]),
-  });
+  return z
+    .object({
+      name: z.string().trim().min(2, t.nameTooShort).max(80),
+      phone: z.string().regex(phoneRegex, t.invalidPhone),
+      email: z.string().trim().email(t.invalidEmail),
+      password: z.string().min(8, t.passwordTooShort),
+      confirmPassword: z.string(),
+      gender: z.enum(["MALE", "FEMALE"]),
+      agreedToTerms: z.literal(true, { message: t.mustAgreeToTerms }),
+    })
+    .refine((data) => data.password === data.confirmPassword, {
+      message: t.passwordsDoNotMatch,
+      path: ["confirmPassword"],
+    });
 }
 
 export function createVerifyOtpSchema(t: ValidationMessages) {
@@ -58,9 +84,13 @@ export const sendMessageSchema = z.object({
   body: z.string().trim().min(1, "Andika ujumbe").max(2000),
 });
 
+// Parsed from FormData (multipart, since the attachment is an optional file
+// alongside these fields) — mirrors reportCreateSchema's shape.
 export const contactFormSchema = z.object({
   name: z.string().trim().min(2).max(80),
   email: z.string().trim().email(),
+  phone: z.string().trim().max(20).optional().or(z.literal("")),
+  category: z.enum(SUPPORT_CATEGORIES).optional().or(z.literal("")),
   subject: z.string().trim().max(120).optional().or(z.literal("")),
   body: z.string().trim().min(5).max(2000),
 });
@@ -71,26 +101,94 @@ export const devActivateSchema = z.object({
 });
 
 export const onboardingPersonalSchema = z.object({
+  displayName: z.string().trim().min(2, "Jina ni fupi mno").max(80),
   dob: z.coerce.date().refine(
     (d) => getAge(d) >= MIN_AGE,
     `Lazima uwe na umri wa miaka ${MIN_AGE} au zaidi kutumia Nusrah.`
   ),
-});
-
-export const onboardingAddressSchema = z.object({
   country: z.string().trim().length(2, "Chagua nchi").toUpperCase(),
   region: z.string().trim().min(2, "Jaza mkoa/jimbo").max(80),
-  city: z.string().trim().min(2, "Jaza mji/jiji").max(80),
+  city: z.string().trim().min(2, "Jaza wilaya/eneo").max(80),
+  maritalStatus: z.enum(MARITAL_STATUSES),
 });
 
-export const onboardingIntentionsSchema = z.object({
-  intentions: z
-    .array(z.enum(INTENTIONS))
-    .min(1, "Chagua angalau chaguo moja"),
-});
+/**
+ * wearsHijab is only required when the profile's stored gender (looked up
+ * server-side, never trusted from the client) is female — see
+ * app/api/onboarding/religion/route.ts.
+ */
+export function createOnboardingReligionSchema(requireHijab: boolean) {
+  const base = z.object({
+    religion: z.string().trim().min(2, "Jaza dini yako").max(80),
+    madhhab: z.enum(MADHHABS),
+    prayerHabit: z.enum(PRAYER_HABITS),
+    quranLevel: z.enum(QURAN_LEVELS),
+    substanceUse: z.enum(SUBSTANCE_USE_OPTIONS),
+    wearsHijab: z.enum(HIJAB_OPTIONS).optional(),
+  });
+  if (!requireHijab) return base;
+  return base.refine((data) => !!data.wearsHijab, {
+    message: "Chagua jibu",
+    path: ["wearsHijab"],
+  });
+}
+
+export const onboardingLifeSchema = z
+  .object({
+    occupation: z.string().trim().min(2, "Eleza kazi yako").max(120),
+    educationLevel: z.enum(EDUCATION_LEVELS),
+    height: z.coerce.number().int().min(100).max(250),
+    bodyType: z.enum(BODY_TYPES),
+    skinTone: z.enum(SKIN_TONES),
+    incomeRange: z.enum(INCOME_RANGES).optional(),
+    intentions: z.array(z.enum(INTENTIONS)).min(1, "Chagua angalau chaguo moja"),
+    partnerAgeMin: z.coerce.number().int().min(MIN_AGE).max(MAX_AGE),
+    partnerAgeMax: z.coerce.number().int().min(MIN_AGE).max(MAX_AGE),
+    bio: z.string().trim().min(10, "Eleza kidogo zaidi kuhusu wewe").max(300),
+  })
+  .refine((data) => data.partnerAgeMin <= data.partnerAgeMax, {
+    message: "Umri wa chini hauwezi kuzidi umri wa juu",
+    path: ["partnerAgeMin"],
+  });
+
+export const onboardingGuardianSchema = z
+  .object({
+    hasGuardian: z.boolean(),
+    guardianName: z.string().trim().max(80).optional(),
+    guardianRelationship: z.enum(GUARDIAN_RELATIONSHIPS).optional(),
+    guardianPhone: z.string().regex(phoneRegex, "Namba ya simu si sahihi").optional(),
+  })
+  .refine((data) => !data.hasGuardian || !!data.guardianName, {
+    message: "Jaza jina la mlezi",
+    path: ["guardianName"],
+  })
+  .refine((data) => !data.hasGuardian || !!data.guardianRelationship, {
+    message: "Chagua uhusiano",
+    path: ["guardianRelationship"],
+  })
+  .refine((data) => !data.hasGuardian || !!data.guardianPhone, {
+    message: "Jaza namba ya simu ya mlezi",
+    path: ["guardianPhone"],
+  });
 
 export const favoriteCreateSchema = z.object({
   favoritedUserId: z.string().min(1),
+});
+
+export const blockCreateSchema = z.object({
+  blockedUserId: z.string().min(1),
+});
+
+// Parsed from FormData (multipart, since evidence is an optional file
+// alongside these fields), so booleans arrive as the strings "true"/"false".
+export const reportCreateSchema = z.object({
+  reportedUserId: z.string().min(1),
+  reason: z.enum(REPORT_REASONS),
+  description: z.string().trim().min(10, "Eleza kilichotokea kwa ufupi zaidi").max(1000),
+  blockAfterSubmit: z
+    .string()
+    .default("false")
+    .transform((v) => v === "true"),
 });
 
 export const memberQuerySchema = z

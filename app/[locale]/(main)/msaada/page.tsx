@@ -1,13 +1,17 @@
 import { prisma } from "@/lib/db";
+import { getSessionUserId } from "@/lib/auth";
 import FaqAccordion from "@/components/FaqAccordion";
 import ContactForm from "@/components/ContactForm";
+import LocaleLink from "@/components/LocaleLink";
 import { StarIcon, MailIcon, PhoneCallIcon, ClockIcon } from "@/components/icons";
 import { getDictionary } from "../../dictionaries";
 
 export default async function HelpPage() {
-  const [reviews, dict] = await Promise.all([
+  const viewerId = await getSessionUserId();
+  const [reviews, dict, viewer] = await Promise.all([
     prisma.review.findMany({ orderBy: { createdAt: "desc" }, take: 3 }),
     getDictionary(),
+    viewerId ? prisma.user.findUnique({ where: { id: viewerId }, select: { name: true, email: true, phone: true } }) : null,
   ]);
   const t = dict.msaada;
   const avgRating =
@@ -22,8 +26,16 @@ export default async function HelpPage() {
 
       <div className="mt-12 grid gap-10 lg:grid-cols-3">
         <div className="lg:col-span-2">
-          <h2 className="mb-4 text-lg font-semibold text-navy">{t.faqHeading}</h2>
+          <h2 id="faq" className="mb-4 text-lg font-semibold text-navy scroll-mt-24">{t.faqHeading}</h2>
           <FaqAccordion items={t.faqs} />
+
+          <div className="mt-6 rounded-2xl border border-blush-200 bg-blush-50 p-6">
+            <h3 className="font-semibold text-navy">{t.safetyNote.heading}</h3>
+            <p className="mt-2 text-sm text-neutral-600">{t.safetyNote.body}</p>
+            <LocaleLink href="/usalama" className="mt-3 inline-block text-sm font-semibold text-primary hover:underline">
+              {t.safetyNote.linkLabel}
+            </LocaleLink>
+          </div>
         </div>
 
         <div className="space-y-6">
@@ -68,7 +80,35 @@ export default async function HelpPage() {
         <h2 className="text-lg font-semibold text-navy">{t.contactFormHeading}</h2>
         <p className="mt-1 text-sm text-neutral-600">{t.contactFormSubtitle}</p>
         <div className="mt-6">
-          <ContactForm dict={t.contactForm} />
+          <ContactForm
+            dict={t.contactForm}
+            loggedIn={!!viewer}
+            initialName={viewer?.name ?? ""}
+            initialEmail={viewer?.email ?? ""}
+            initialPhone={viewer?.phone ?? ""}
+          />
+        </div>
+      </div>
+
+      <div className="mt-8 rounded-2xl border border-black/5 bg-white p-6 text-center shadow-sm">
+        <h2 className="text-sm font-semibold text-navy">{t.helpCenter.heading}</h2>
+        <p className="mt-1 text-sm text-neutral-600">{t.helpCenter.intro}</p>
+        <div className="mt-4 flex flex-wrap justify-center gap-3">
+          <a href="#faq" className="rounded-full border border-black/10 px-4 py-2 text-sm font-semibold text-navy hover:bg-blush-50">
+            {t.helpCenter.faq}
+          </a>
+          <LocaleLink
+            href="/usalama"
+            className="rounded-full border border-black/10 px-4 py-2 text-sm font-semibold text-navy hover:bg-blush-50"
+          >
+            {t.helpCenter.safetyCenter}
+          </LocaleLink>
+          <LocaleLink
+            href="/masharti-ya-matumizi"
+            className="rounded-full border border-black/10 px-4 py-2 text-sm font-semibold text-navy hover:bg-blush-50"
+          >
+            {t.helpCenter.terms}
+          </LocaleLink>
         </div>
       </div>
     </div>

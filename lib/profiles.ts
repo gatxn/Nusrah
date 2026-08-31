@@ -5,6 +5,7 @@ import { isTier, meetsMinimumTier, type Tier } from "@/lib/tiers";
 import { TIER_CAPABILITIES } from "@/lib/tiers";
 import { getAge } from "@/lib/dates";
 import { MEMBERS_PAGE_SIZE, isIntention, type Intention } from "@/lib/onboarding";
+import { getBlockedUserIds } from "@/lib/blocks";
 
 // Demo-scale hard cap even for tiers with an "unlimited" profileViewLimit.
 const ABSOLUTE_MAX = 100;
@@ -150,10 +151,12 @@ export async function queryMembers(params: MembersQueryParams): Promise<MembersQ
   const take = Math.min(MEMBERS_PAGE_SIZE, remaining);
   const skip = (page - 1) * MEMBERS_PAGE_SIZE;
 
+  const blockedIds = await getBlockedUserIds(viewerId);
+
   const where: Prisma.ProfileWhereInput = {
     ...(favoritedOnly
-      ? { userId: { in: Array.from(viewerFavoriteIds) } }
-      : { userId: { not: viewerId } }),
+      ? { userId: { in: Array.from(viewerFavoriteIds), notIn: blockedIds } }
+      : { userId: { not: viewerId, notIn: blockedIds } }),
     ...(viewerGender ? { gender: { not: viewerGender } } : {}),
     dob: { not: null, ...ageRangeToDobFilter(minAge, maxAge) },
     region: { not: null, ...(regions.length ? { in: regions } : {}) },

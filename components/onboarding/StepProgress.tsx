@@ -1,5 +1,5 @@
-export default function StepProgress({ current }: { current: 1 | 2 | 3 | 4 }) {
-  const total = 4;
+export default function StepProgress({ current }: { current: 1 | 2 | 3 | 4 | 5 }) {
+  const total = 5;
   return (
     <div className="mb-6">
       <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted">

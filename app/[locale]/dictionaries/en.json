@@ -22,6 +22,7 @@
       "pagesHeading": "Pages",
       "helpHeading": "Help",
       "faq": "Frequently Asked Questions",
+      "safety": "Safety",
       "contactUs": "Contact Us",
       "contactHeading": "Contact",
       "hours": "Monday–Sunday, 08:00–22:00",
@@ -77,9 +78,15 @@
       "emailPlaceholder": "you@example.com",
       "password": "Password",
       "passwordPlaceholder": "At least 8 characters",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter your password",
+      "togglePasswordAria": "Show or hide password",
+      "passwordsDoNotMatch": "Passwords do not match",
       "gender": "Gender",
       "female": "Female",
       "male": "Male",
+      "agreeToTermsPrefix": "I agree to the",
+      "agreeToTermsLink": "Terms of Use",
       "submit": "Sign Up",
       "submitting": "Signing up..."
     },
@@ -150,7 +157,9 @@
     "passwordTooShort": "Password must be at least 8 characters",
     "identifierRequired": "Enter a phone number or email",
     "passwordRequired": "Password is required",
-    "otpCodeFormat": "Code must be 6 digits"
+    "otpCodeFormat": "Code must be 6 digits",
+    "mustAgreeToTerms": "You must agree to the Terms of Use to sign up",
+    "passwordsDoNotMatch": "Passwords do not match"
   },
   "jinsiInavyofanyakazi": {
     "title": "How Nusrah Works",
@@ -206,46 +215,287 @@
     "subtitle": "We're here to help. Check our frequently asked questions or contact us directly.",
     "faqHeading": "Frequently Asked Questions",
     "faqs": [
-      {
-        "question": "How do I sign up for Nusrah?",
-        "answer": "Click 'Join Now', fill in your basic information, then verify your account using the code (OTP) sent to your email."
-      },
-      {
-        "question": "What's the difference between the plans?",
-        "answer": "Each plan (Free, Basic, Silver, Gold, Premium) offers a different level of profile visibility, communication, and extra features like voice and video calls. See the 'Membership' page for full details."
-      },
-      {
-        "question": "Is my information safe?",
-        "answer": "Yes. Your password is stored encrypted, and sensitive information like your phone number is stored encrypted and only shown with your permission."
-      },
-      {
-        "question": "Can I cancel or change my plan at any time?",
-        "answer": "Yes, you can upgrade or downgrade your plan at any time from the Account page."
-      },
-      {
-        "question": "What should I do if I have a complaint about another member?",
-        "answer": "Use the 'Send Message' form below or contact us by phone/WhatsApp. Our team will handle your complaint quickly and confidentially."
-      },
-      {
-        "question": "How are payments made?",
-        "answer": "Paid plans are paid for via mobile money (M-Pesa and others). After paying, your account is activated automatically once the system confirms payment."
-      }
+      { "question": "What is Nusrah.co.tz?", "answer": "Nusrah.co.tz is a platform connecting people with sincere intentions of finding a life partner for marriage, built on respect, honesty, privacy, and Islamic values." },
+      { "question": "Is Nusrah a regular dating site?", "answer": "No. Nusrah is focused on finding a partner for marriage, not short-term relationships or entertainment." },
+      { "question": "Who can sign up for Nusrah?", "answer": "Anyone who meets Nusrah's Terms of Use and has genuine intentions of finding a life partner can sign up." },
+      { "question": "Do I have to be Muslim?", "answer": "Nusrah is built from an Islamic perspective and is primarily aimed at people seeking marriage on Islamic principles. Membership eligibility is explained during sign-up." },
+      { "question": "What information do I need for sign-up?", "answer": "You'll be asked to provide: your name and a display name for your profile, date of birth, gender, phone number, email, where you live, marital status, religious information, education and occupation, the qualities you're looking for in a partner, a profile photo, and other information needed to build your profile." },
+      { "question": "Can I use a nickname?", "answer": "Nusrah may allow a display name to protect your privacy, but the information you register with must be true and accurate." },
+      { "question": "Will my phone number be visible to everyone?", "answer": "No. Personal information like your phone number and email is protected and should not be shown publicly without your permission." },
+      { "question": "Can I upload my photo?", "answer": "Yes. You can add a photo suitable for your profile. Nusrah may review photos to ensure they meet the platform's rules and standards." },
+      { "question": "What is profile verification?", "answer": "Verification helps increase trust and safety among members by confirming that a user's key information can be verified." },
+      { "question": "Does Nusrah guarantee I'll find a partner?", "answer": "No. Nusrah cannot guarantee marriage or finding a particular partner. The platform provides an environment to meet, communicate, and choose carefully." },
+      { "question": "How do I search for a partner?", "answer": "You can use criteria such as: gender, age, location, marital status, education, occupation, religious practice, lifestyle, and other preferences for your partner." },
+      { "question": "Can I contact someone I'm interested in?", "answer": "Yes, if both profiles allow communication according to Nusrah's system. You can use the platform's internal messaging without needing to give out your phone number." },
+      { "question": "Can I block someone?", "answer": "Yes. You can block a member you don't want contacting you." },
+      { "question": "Can I report a profile?", "answer": "Yes. You can report a profile, message, or behavior that violates Nusrah's rules. Our team may investigate the report and take appropriate action." },
+      { "question": "How does Nusrah protect my safety?", "answer": "Nusrah aims to use a range of safety measures, including user verification, a reporting system, suspending accounts that violate the rules, and protecting personal information." },
+      { "question": "What role does a Wali/Guardian play?", "answer": "For users who choose to, Nusrah may offer a section to add Wali/Guardian information to support the process of finding a partner respectfully and with family involvement." },
+      { "question": "Is guardian information required?", "answer": "No, that section may be optional, depending on Nusrah's policy and system." },
+      { "question": "I forgot my password, what do I do?", "answer": "Click \"Forgot Password?\" on the Login page and follow the steps to recover your account." },
+      { "question": "Can I change my profile information?", "answer": "Yes. You can edit your information via Profile Settings, except for certain information that may require additional verification." },
+      { "question": "Can I delete my account?", "answer": "Yes. You can request to delete your account via Account Settings or by contacting Nusrah Support." },
+      { "question": "Is Nusrah free?", "answer": "Nusrah may offer free services alongside paid services, depending on the available membership plan." },
+      { "question": "How are payments made?", "answer": "If the service you're using requires payment, Nusrah may offer various payment methods such as mobile money, card, or other methods accepted by the system." },
+      { "question": "Can payments be refunded?", "answer": "Refunds depend on the type of service, the plan you paid for, and Nusrah's Refund Policy." },
+      { "question": "Does Nusrah allow scams or fake accounts?", "answer": "No. Fake accounts, scams, fraud, threats, harassment, and misuse of the platform are violations of Nusrah's Terms." },
+      { "question": "What should I do if I suspect someone is a scammer?", "answer": "Don't send them money or your sensitive information. Block and report them immediately through the Report system, and Nusrah may investigate." },
+      { "question": "Can I ask another user for money?", "answer": "No. Asking or pressuring another user to send money, especially through deception, can lead to your account being suspended or closed." },
+      { "question": "Can my communications be monitored?", "answer": "Nusrah may process information as needed for safety, service operation, and preventing misuse, in accordance with its Privacy Policy." },
+      { "question": "Does Nusrah share my information with others?", "answer": "Nusrah aims to protect your personal information and handle it in accordance with its Privacy Policy and applicable law." },
+      { "question": "Can I meet someone I found on Nusrah in person?", "answer": "Yes, but you're advised to take precautions: make sure you've communicated enough beforehand, avoid sending money, and choose a safe, well-known place for a first meeting." },
+      { "question": "How do I contact Nusrah Support?", "answer": "Use the Help & Support / Contact Us section within Nusrah.co.tz for help with your account, profile, payments, safety, or to report a problem." }
     ],
+    "safetyNote": {
+      "heading": "🛡️ Your Safety Matters",
+      "body": "Nusrah doesn't just want to connect you with someone; it aims to help you begin your search for a life partner with respect, honesty, and marriage in mind. Never give your password, OTP, banking details, or other sensitive information to anyone else.",
+      "linkLabel": "Visit the Safety Center →"
+    },
     "contactHeading": "Contact Us",
     "hours": "Monday–Sunday, 08:00–22:00",
     "ratingFrom": "from 1,250+ members",
     "contactFormHeading": "Send a Message",
     "contactFormSubtitle": "Send us your question or feedback and our team will get back to you soon.",
     "contactForm": {
+      "userInfoHeading": "Your Information",
       "name": "Name",
       "email": "Email",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+255 XXX XXX XXX",
+      "categoryHeading": "Type of Support",
+      "categorySubheading": "Choose what you need:",
       "subject": "Subject (optional)",
       "body": "Message",
-      "submit": "Send Message",
+      "bodyPlaceholder": "Describe your issue briefly, with the key details...",
+      "sensitiveWarning": "Do not send: Password • PIN • OTP • Card Security Code",
+      "attachmentHeading": "Attachments — Optional",
+      "attachmentUploadLabel": "+ Upload Screenshot / File",
+      "attachmentHelp": "You can attach a screenshot to help explain the issue.",
+      "safetyHeading": "For Safety Matters",
+      "safetyBody": "If you're reporting a scam, threats, harassment, a fake profile, or dangerous behavior, also use:",
+      "reportUserButton": "🚩 REPORT USER",
+      "emergencyNote": "If you're in immediate physical danger, seek emergency help from the relevant authorities instead of waiting for Nusrah Support.",
+      "submit": "SEND MESSAGE",
       "submitting": "Sending...",
       "success": "Thank you! Your message has been received. We'll get back to you soon.",
+      "ticketReceivedHeading": "✓ Support Request Received",
+      "ticketNumberLabel": "Ticket Number:",
+      "ticketReceivedBody": "Thank you for contacting Nusrah Support. Your request has been received and our team will review the information you sent.",
+      "viewMyRequests": "View My Support Requests",
       "genericError": "Something went wrong",
       "networkError": "Failed to connect to the server. Please try again."
+    },
+    "helpCenter": {
+      "heading": "Help Center",
+      "intro": "Before sending a message, you may find an answer via:",
+      "faq": "FAQ",
+      "safetyCenter": "SAFETY CENTER",
+      "terms": "TERMS"
+    },
+    "myRequests": {
+      "title": "My Support Requests",
+      "subtitle": "History of requests you've sent to Nusrah Support",
+      "empty": "You haven't sent any requests to Nusrah Support yet.",
+      "ticketNumber": "Ticket",
+      "status": "Status",
+      "statusPending": "Awaiting Response",
+      "backToMsaada": "Back to Help"
+    }
+  },
+  "usalama": {
+    "title": "Nusrah Safety Center",
+    "subtitle": "Your Safety Comes First",
+    "intro": "Nusrah.co.tz aims to help you find a life partner in a way that is respectful, private, honest, and safe.",
+    "sections": [
+      {
+        "icon": "🛡️",
+        "heading": "Protect Your Account",
+        "items": [
+          "Use a strong, unique password.",
+          "Never give anyone your password or OTP.",
+          "Don't reuse that password on other accounts.",
+          "Log out when using someone else's device.",
+          "Turn on Two-Factor Authentication (2FA) where available."
+        ],
+        "note": "Nusrah Support will never ask for your password."
+      },
+      {
+        "icon": "✅",
+        "heading": "Profile Verification",
+        "intro": [
+          "Nusrah may use Phone Verification, Photo Verification, and Identity Verification to increase trust in profiles.",
+          "A verified profile may display a Verified Badge ✓."
+        ],
+        "note": "Remember: verification reduces risk, but it doesn't mean a person has no bad intentions at all."
+      },
+      {
+        "icon": "🚩",
+        "heading": "Watch for Signs of a Scam",
+        "intro": ["Be careful if someone:"],
+        "items": [
+          "Declares love for you very quickly.",
+          "Asks for money or financial help.",
+          "Asks for your bank/card details.",
+          "Sends you a link you don't recognize.",
+          "Pressures you to leave Nusrah and communicate outside the platform right away.",
+          "Refuses video calls or meeting up for unclear reasons.",
+          "Asks for private photos or videos.",
+          "Uses emergency stories to get you to send money."
+        ],
+        "outro": [
+          "Don't send anyone money just because you've started talking on Nusrah. Romance scams often exploit romantic trust to convince someone to hand over money or personal information. (Internet Crime Complaint Center)"
+        ]
+      },
+      {
+        "icon": "🚫",
+        "heading": "Block & Report",
+        "intro": [
+          "If you feel someone isn't safe:",
+          "BLOCK USER → Stops that user from contacting you.",
+          "REPORT USER → Sends a report to the Nusrah Safety Team.",
+          "You can report:"
+        ],
+        "items": [
+          "Fake profile",
+          "Scam",
+          "Harassment",
+          "Threats",
+          "Unwanted messages",
+          "Impersonation",
+          "Sexual harassment",
+          "Financial requests",
+          "Suspicious links",
+          "Content that violates Nusrah's rules."
+        ],
+        "outro": ["Report and Block are essential safety features on any dating platform. (Safety Centre)"]
+      },
+      {
+        "icon": "🔒",
+        "heading": "Protect Your Personal Information",
+        "intro": ["Don't share early on:"],
+        "items": [
+          "Password",
+          "OTP",
+          "PIN",
+          "Bank details",
+          "Card numbers",
+          "Your full home address",
+          "Where you work",
+          "Sensitive family information",
+          "Personal documents",
+          "Private photos/videos you don't want shared."
+        ],
+        "outro": ["Your profile information should be kept to the minimum needed to protect your privacy. (eSafety Commissioner)"]
+      },
+      {
+        "icon": "💬",
+        "heading": "Communicate Within Nusrah",
+        "intro": [
+          "We recommend staying on Nusrah Messages while you're still getting to know someone.",
+          "This keeps Report, Block, and Safety Tools available to you before you share your phone number or move to another platform."
+        ]
+      },
+      {
+        "icon": "📍",
+        "heading": "Location Safety",
+        "intro": [
+          "Don't give out your exact address, like \"I live at house number…, street…, near…\".",
+          "Instead, use general information like Dodoma, Dar es Salaam, Arusha, or Mwanza.",
+          "Avoid making your exact location public."
+        ]
+      },
+      {
+        "icon": "🤝",
+        "heading": "Before You Meet",
+        "intro": ["If you've decided to meet someone, do this:"],
+        "items": [
+          "Tell someone you trust.",
+          "Share who you're meeting and their profile.",
+          "Meet in a public, populated place.",
+          "Use your own transportation where possible.",
+          "Set a time to leave.",
+          "Stay in touch with someone close to you during the trip.",
+          "Listen to your instincts."
+        ],
+        "ordered": true,
+        "outro": [
+          "If something feels unsafe, leave.",
+          "Safety guidelines recommend telling a friend/family member where you're going and having an exit plan in case things don't feel right. (eSafety Commissioner)"
+        ]
+      },
+      {
+        "icon": "👨‍👩‍👧",
+        "heading": "Family / Wali Support",
+        "intro": [
+          "Since Nusrah is focused on marriage, a user may choose to involve a Wali, Guardian, Parent, or trusted person at appropriate stages of the search for a partner.",
+          "The goal: more transparency, respect, and safety on the path toward marriage."
+        ]
+      },
+      {
+        "icon": "🚨",
+        "heading": "If You're in Danger",
+        "intro": ["If someone is threatening, stalking, pressuring, or harming you:"],
+        "items": [
+          "Stop communicating with them.",
+          "Save any important evidence.",
+          "Block and Report them on Nusrah.",
+          "Tell someone you trust.",
+          "If there's immediate physical danger, contact your local emergency authorities."
+        ],
+        "ordered": true,
+        "outro": ["Nusrah is not an emergency service; for immediate danger, seek help from the relevant authorities. (Safety Centre)"]
+      },
+      {
+        "icon": "📸",
+        "heading": "Personal Photos and Videos",
+        "intro": [
+          "Don't send a photo or video that could be used to threaten or pressure you.",
+          "If someone threatens to share your photo or video: don't pay, don't send more photos, stop communicating, save evidence, and report the account."
+        ]
+      },
+      {
+        "icon": "💰",
+        "heading": "There's No \"Love Payment\"",
+        "intro": [
+          "Nusrah should never become a place for asking each other for money under the guise of romance.",
+          "Don't send money to someone you met online for:"
+        ],
+        "items": ["Travel", "Medical treatment", "Tickets", "Business", "Investment", "An emergency", "A visa", "Family support", "A promise of marriage."]
+      },
+      {
+        "icon": "⚖️",
+        "heading": "Rules of Respect",
+        "intro": [
+          "Every member is expected to uphold: Respect, Honesty, Privacy, Consent, Good Character, and Marriage Intentions.",
+          "Not allowed:"
+        ],
+        "items": [
+          "Harassment",
+          "Threats",
+          "Deception",
+          "Fraud",
+          "Impersonation",
+          "Discrimination",
+          "Spam",
+          "Pressuring someone",
+          "Using Nusrah for purposes other than marriage."
+        ]
+      }
+    ],
+    "quickActions": {
+      "heading": "Quick Safety Actions",
+      "intro": "If you have a problem, tap:",
+      "items": [
+        { "icon": "🚩", "label": "REPORT", "body": "Report a user." },
+        { "icon": "🚫", "label": "BLOCK", "body": "Stop contact from a user." },
+        { "icon": "🔒", "label": "PRIVACY", "body": "Change your privacy settings." },
+        { "icon": "🔑", "label": "SECURE ACCOUNT", "body": "Change your password and enable 2FA." },
+        { "icon": "💬", "label": "CONTACT SUPPORT", "body": "Reach out to Nusrah Support." }
+      ]
+    },
+    "closing": {
+      "quote": "Your safety matters more than continuing a conversation.",
+      "body": "If something feels wrong, trust your instincts, stop the conversation, and report it."
     }
   }
 }

@@ -288,3 +288,35 @@ export function SlidersIcon({ className = base }: IconProps) {
     </svg>
   );
 }
+
+export function EyeIcon({ className = base }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <circle cx="12" cy="12" r="2.6" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  );
+}
+
+export function EyeOffIcon({ className = base }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M3.5 3.5l17 17M9.9 5.7c.7-.13 1.4-.2 2.1-.2 6.5 0 10 6.5 10 6.5a15.6 15.6 0 0 1-3.4 4.2M6.5 6.6C4 8.2 2 12 2 12s3.5 6.5 10 6.5c1.4 0 2.7-.3 3.8-.8M9.9 9.9a2.6 2.6 0 0 0 3.6 3.6"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function FlagIcon({ className = base }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path d="M5 21V4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M5 4h13l-2.8 3.5L18 11H5" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+    </svg>
+  );
+}
