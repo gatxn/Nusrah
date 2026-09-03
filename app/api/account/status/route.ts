@@ -1,15 +1,15 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { getSessionUserId, getActiveSubscription } from "@/lib/auth";
 import { daysRemainingUntil } from "@/lib/dates";
 import { UNAUTHENTICATED } from "@/lib/api";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   const userId = await getSessionUserId();
-  if (!userId) return UNAUTHENTICATED();
+  if (!userId) return UNAUTHENTICATED(request);
 
   const user = await prisma.user.findUnique({ where: { id: userId } });
-  if (!user) return UNAUTHENTICATED();
+  if (!user) return UNAUTHENTICATED(request);
 
   const subscription = await getActiveSubscription(userId);
 

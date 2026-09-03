@@ -10,7 +10,7 @@ export async function GET(
   { params }: { params: Promise<{ userId: string }> }
 ) {
   const viewerId = await getSessionUserId();
-  if (!viewerId) return UNAUTHENTICATED();
+  if (!viewerId) return UNAUTHENTICATED(request);
   const { userId: targetId } = await params;
 
   const [tier, viewer, target, favorite] = await Promise.all([
@@ -26,8 +26,8 @@ export async function GET(
     }),
   ]);
 
-  if (!target || !isEligibleTarget(viewer?.gender, target.gender)) return NOT_FOUND();
-  if (await isBlocked(viewerId, targetId)) return NOT_FOUND();
+  if (!target || !isEligibleTarget(viewer?.gender, target.gender)) return NOT_FOUND(request);
+  if (await isBlocked(viewerId, targetId)) return NOT_FOUND(request);
 
   return NextResponse.json({
     profile: { ...serializeProfileForViewer(target, tier), isFavorited: !!favorite },

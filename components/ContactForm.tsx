@@ -11,12 +11,17 @@ export default function ContactForm({
   initialName = "",
   initialEmail = "",
   initialPhone = "",
+  myRequestsHref = "/msaada/maombi-yangu",
 }: {
   dict: Dictionary["msaada"]["contactForm"];
   loggedIn?: boolean;
   initialName?: string;
   initialEmail?: string;
   initialPhone?: string;
+  // Defaults to the public Msaada page's ticket-history route; the app-shell
+  // Contact Support page passes its own equivalent so a logged-in user never
+  // gets bounced out to the marketing shell after submitting a ticket.
+  myRequestsHref?: string;
 }) {
   const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
@@ -65,7 +70,7 @@ export default function ContactForm({
         <p className="mt-2 text-sm text-neutral-600">&ldquo;{dict.ticketReceivedBody}&rdquo;</p>
         {loggedIn && (
           <LocaleLink
-            href="/msaada/maombi-yangu"
+            href={myRequestsHref}
             className="mt-4 inline-block rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-primary-dark"
           >
             {dict.viewMyRequests}

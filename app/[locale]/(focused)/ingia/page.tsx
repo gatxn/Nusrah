@@ -2,8 +2,12 @@ import LocaleLink from "@/components/LocaleLink";
 import LoginForm from "@/components/auth/LoginForm";
 import { getDictionary } from "../../dictionaries";
 
-export default async function LoginPage() {
-  const dict = await getDictionary();
+export default async function LoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ nimetoka?: string }>;
+}) {
+  const [{ nimetoka }, dict] = await Promise.all([searchParams, getDictionary()]);
 
   return (
     <div className="w-full max-w-md rounded-2xl border border-black/5 bg-auth-card p-8 shadow-sm">
@@ -11,6 +15,12 @@ export default async function LoginPage() {
         <h1 className="text-2xl font-bold text-navy">{dict.ingia.title}</h1>
         <p className="mt-1 text-sm text-neutral-600">{dict.ingia.subtitle}</p>
       </div>
+
+      {nimetoka === "muda" && (
+        <div className="mb-5 rounded-lg border border-blush-200 bg-blush-50 px-4 py-3 text-sm text-navy">
+          {dict.ingia.sessionExpiredNotice}
+        </div>
+      )}
 
       <LoginForm dict={dict.ingia} />
 

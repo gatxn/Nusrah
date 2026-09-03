@@ -8,7 +8,7 @@ export async function PATCH(
   { params }: { params: Promise<{ id: string }> }
 ) {
   const userId = await getSessionUserId();
-  if (!userId) return UNAUTHENTICATED();
+  if (!userId) return UNAUTHENTICATED(request);
   const { id } = await params;
 
   // updateMany with BOTH id and recipientUserId in the where clause is the

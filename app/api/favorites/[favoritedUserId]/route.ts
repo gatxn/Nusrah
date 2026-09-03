@@ -9,7 +9,7 @@ export async function DELETE(
   { params }: { params: Promise<{ favoritedUserId: string }> }
 ) {
   const userId = await getSessionUserId();
-  if (!userId) return UNAUTHENTICATED();
+  if (!userId) return UNAUTHENTICATED(request);
   const { favoritedUserId } = await params;
 
   try {

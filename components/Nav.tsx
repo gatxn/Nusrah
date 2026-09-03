@@ -74,7 +74,7 @@ export default async function Nav() {
           <LanguageSwitcher currentLocale={locale} label={dict.common.languageSwitcher.label} />
           {user ? (
             <>
-              <NotificationBell initialUnreadCount={unreadCount} />
+              <NotificationBell initialUnreadCount={unreadCount} dict={dict.common.topBar.notifications} />
               <Link
                 href="/akaunti"
                 className="flex items-center gap-2 rounded-full border-[1.5px] border-blush-200 py-1.5 ps-1.5 pe-4 text-sm font-semibold text-primary transition hover:bg-blush-50"

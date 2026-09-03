@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { getSessionUserId } from "@/lib/auth";
-import { devActivateSchema } from "@/lib/validation";
+import { createDevActivateSchema } from "@/lib/validation";
 import { jsonError, zodError, UNAUTHENTICATED } from "@/lib/api";
+import { validationMessages, apiErrors } from "@/lib/i18n/api";
 
 // Dev/test-only utility: lets a paid tier be activated locally WITHOUT going
 // through the payment gateway, so tier-gated features (§4.4) can be tested
@@ -16,18 +17,21 @@ export async function POST(request: NextRequest) {
   }
 
   const userId = await getSessionUserId();
-  if (!userId) return UNAUTHENTICATED();
+  if (!userId) return UNAUTHENTICATED(request);
 
   const body = await request.json().catch(() => null);
-  const parsed = devActivateSchema.safeParse(body);
+  const v = await validationMessages(request);
+  const parsed = createDevActivateSchema(v).safeParse(body);
   if (!parsed.success) return zodError(parsed.error);
 
+  const t = await apiErrors(request);
+
   if (parsed.data.userId !== userId) {
-    return jsonError("Dev tool inaweza tu kuwasha akaunti yako mwenyewe", 403);
+    return jsonError(t.devToolOwnAccountOnly, 403);
   }
 
   const pkg = await prisma.package.findUnique({ where: { tier: parsed.data.packageTier } });
-  if (!pkg) return jsonError("Kifurushi hakipatikani", 404);
+  if (!pkg) return jsonError(t.packageNotFound, 404);
 
   const expiryDate = new Date(Date.now() + pkg.durationDays * 24 * 60 * 60 * 1000);
   await prisma.subscription.upsert({

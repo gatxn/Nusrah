@@ -113,12 +113,14 @@ export async function determineIsReply(viewerId: string, otherUserId: string): P
   return Boolean(priorIncoming);
 }
 
-export type SendPermission = { canSend: boolean; isReply: boolean; reason: string | null };
+export type SendPermission = { canSend: boolean; isReply: boolean };
 
 /**
- * Single source of truth for "can X message Y" plus the exact Swahili
- * copy — shared by the POST route (enforcement) and the thread page (so the
- * composer can explain itself before the user even types).
+ * Single source of truth for "can X message Y" — shared by the POST route
+ * (enforcement) and the thread page (so the composer can explain itself
+ * before the user even types). Callers own the user-facing copy for a
+ * denied result themselves, since that copy is locale-dependent and this
+ * file has no request/locale context.
  */
 export async function getSendPermission(
   viewerId: string,
@@ -127,10 +129,5 @@ export async function getSendPermission(
 ): Promise<SendPermission> {
   const isReply = await determineIsReply(viewerId, otherUserId);
   const canSend = isReply ? hasCapability(tier, "canReplyToMessage") : hasCapability(tier, "canInitiateMessage");
-  const reason = canSend
-    ? null
-    : isReply
-      ? "Kifurushi chako hakiruhusu kujibu ujumbe. Boresha kifurushi chako."
-      : "Kifurushi chako hakiruhusu kuanzisha mazungumzo mapya. Boresha kifurushi chako.";
-  return { canSend, isReply, reason };
+  return { canSend, isReply };
 }

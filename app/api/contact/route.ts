@@ -1,24 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { getSessionUserId } from "@/lib/auth";
-import { contactFormSchema } from "@/lib/validation";
+import { createContactFormSchema } from "@/lib/validation";
 import { jsonError, zodError } from "@/lib/api";
 import { rateLimit, clientKey } from "@/lib/rate-limit";
 import { formatTicketNumber } from "@/lib/support";
+import { validationMessages, apiErrors } from "@/lib/i18n/api";
 
 const ALLOWED_ATTACHMENT_TYPES = ["image/jpeg", "image/png", "image/webp"];
 const MAX_ATTACHMENT_BYTES = 5 * 1024 * 1024;
 
 export async function POST(request: NextRequest) {
+  const t = await apiErrors(request);
+
   const limited = rateLimit(clientKey(request, "contact"), 5, 15 * 60 * 1000);
   if (!limited.allowed) {
-    return jsonError("Umetuma ujumbe mara nyingi mno. Jaribu tena baadaye.", 429);
+    return jsonError(t.contactRateLimited, 429);
   }
 
   const form = await request.formData().catch(() => null);
-  if (!form) return jsonError("Data si sahihi", 400);
+  if (!form) return jsonError(t.invalidFormData, 400);
 
-  const parsed = contactFormSchema.safeParse({
+  const v = await validationMessages(request);
+  const parsed = createContactFormSchema(v).safeParse({
     name: form.get("name"),
     email: form.get("email"),
     phone: form.get("phone") || undefined,
@@ -33,10 +37,10 @@ export async function POST(request: NextRequest) {
   const attachment = form.get("attachment");
   if (attachment instanceof File && attachment.size > 0) {
     if (!ALLOWED_ATTACHMENT_TYPES.includes(attachment.type)) {
-      return jsonError("Aina ya faili si sahihi", 400);
+      return jsonError(t.invalidFileType, 400);
     }
     if (attachment.size > MAX_ATTACHMENT_BYTES) {
-      return jsonError("Faili ni kubwa mno", 400);
+      return jsonError(t.fileTooLarge, 400);
     }
     attachmentEnc = Buffer.from(await attachment.arrayBuffer());
     attachmentMimeType = attachment.type;

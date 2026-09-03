@@ -1,19 +1,16 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import { withLocale } from "@/lib/i18n/href";
 import {
   EDUCATION_LEVELS,
-  EDUCATION_LEVEL_LABELS,
   HEIGHT_OPTIONS_CM,
   BODY_TYPES,
-  BODY_TYPE_LABELS,
   SKIN_TONES,
-  SKIN_TONE_LABELS,
   INCOME_RANGES,
-  INCOME_RANGE_LABELS,
+  DISABILITY_TYPES,
   INTENTIONS,
-  INTENTION_LABELS,
   isIntention,
   MIN_AGE,
   MAX_AGE,
@@ -21,8 +18,10 @@ import {
   type BodyType,
   type SkinTone,
   type IncomeRange,
+  type DisabilityType,
   type Intention,
 } from "@/lib/onboarding";
+import type { Dictionary } from "@/app/[locale]/dictionaries";
 import { ChevronLeftIcon } from "@/components/icons";
 
 const BIO_MAX = 300;
@@ -34,10 +33,15 @@ export default function LifeForm({
   initialBodyType,
   initialSkinTone,
   initialIncomeRange,
+  initialHasDisability,
+  initialDisabilityType,
   initialIntentions,
   initialPartnerAgeMin,
   initialPartnerAgeMax,
   initialBio,
+  standalone,
+  dict,
+  labels,
 }: {
   initialOccupation: string | null;
   initialEducationLevel: string | null;
@@ -45,12 +49,21 @@ export default function LifeForm({
   initialBodyType: string | null;
   initialSkinTone: string | null;
   initialIncomeRange: string | null;
+  initialHasDisability: boolean | null;
+  initialDisabilityType: string | null;
   initialIntentions: string[];
   initialPartnerAgeMin: number | null;
   initialPartnerAgeMax: number | null;
   initialBio: string | null;
+  standalone?: boolean;
+  dict: Dictionary["onboarding"];
+  labels: Dictionary["common"]["labels"];
 }) {
   const router = useRouter();
+  const pathname = usePathname();
+  const t = dict.life;
+  const c = dict.common;
+  const [justSaved, setJustSaved] = useState(false);
   const [occupation, setOccupation] = useState(initialOccupation ?? "");
   const [educationLevel, setEducationLevel] = useState<EducationLevel | "">(
     (initialEducationLevel as EducationLevel) ?? ""
@@ -59,6 +72,12 @@ export default function LifeForm({
   const [bodyType, setBodyType] = useState<BodyType | "">((initialBodyType as BodyType) ?? "");
   const [skinTone, setSkinTone] = useState<SkinTone | "">((initialSkinTone as SkinTone) ?? "");
   const [incomeRange, setIncomeRange] = useState<IncomeRange | "">((initialIncomeRange as IncomeRange) ?? "");
+  const [hasDisability, setHasDisability] = useState<"NDIYO" | "HAPANA" | "">(
+    initialHasDisability === true ? "NDIYO" : initialHasDisability === false ? "HAPANA" : ""
+  );
+  const [disabilityType, setDisabilityType] = useState<DisabilityType | "">(
+    (initialDisabilityType as DisabilityType) ?? ""
+  );
   const [intentions, setIntentions] = useState<Intention[]>(initialIntentions.filter(isIntention));
   const [partnerAgeMin, setPartnerAgeMin] = useState(initialPartnerAgeMin ? String(initialPartnerAgeMin) : "");
   const [partnerAgeMax, setPartnerAgeMax] = useState(initialPartnerAgeMax ? String(initialPartnerAgeMax) : "");
@@ -87,6 +106,7 @@ export default function LifeForm({
     !!height &&
     !!bodyType &&
     !!skinTone &&
+    (hasDisability !== "NDIYO" || !!disabilityType) &&
     intentions.length > 0 &&
     ageRangeValid &&
     bio.trim().length >= 10;
@@ -96,6 +116,7 @@ export default function LifeForm({
     if (!canContinue) return;
     setLoading(true);
     setError(null);
+    setJustSaved(false);
 
     try {
       const res = await fetch("/api/onboarding/life", {
@@ -107,6 +128,12 @@ export default function LifeForm({
           height,
           bodyType,
           skinTone,
+          ...(hasDisability
+            ? {
+                hasDisability: hasDisability === "NDIYO",
+                disabilityType: hasDisability === "NDIYO" ? disabilityType : null,
+              }
+            : {}),
           intentions,
           partnerAgeMin,
           partnerAgeMax,
@@ -116,13 +143,18 @@ export default function LifeForm({
       });
       const json = await res.json();
       if (!res.ok) {
-        setError(json.error ?? "Hitilafu imetokea");
+        setError(json.error ?? c.genericError);
         setLoading(false);
         return;
       }
-      router.push(json.nextStep);
+      if (standalone) {
+        setJustSaved(true);
+        setLoading(false);
+      } else {
+        router.push(withLocale(pathname ?? "/", json.nextStep));
+      }
     } catch {
-      setError("Imeshindwa kuunganisha na seva. Jaribu tena.");
+      setError(c.networkError);
       setLoading(false);
     }
   }
@@ -131,7 +163,7 @@ export default function LifeForm({
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <label htmlFor="occupation" className="mb-1 block text-sm font-medium text-navy">
-          Kazi / Shughuli Yako
+          {t.occupationLabel}
         </label>
         <input
           id="occupation"
@@ -139,14 +171,14 @@ export default function LifeForm({
           minLength={2}
           value={occupation}
           onChange={(e) => setOccupation(e.target.value)}
-          placeholder="Eleza kazi yako"
+          placeholder={t.occupationPlaceholder}
           className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
         />
       </div>
 
       <div>
         <label htmlFor="educationLevel" className="mb-1 block text-sm font-medium text-navy">
-          Elimu ya Juu
+          {t.educationLevelLabel}
         </label>
         <select
           id="educationLevel"
@@ -156,11 +188,11 @@ export default function LifeForm({
           className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none"
         >
           <option value="" disabled>
-            Chagua kiwango chako
+            {t.chooseLevelPlaceholder}
           </option>
           {EDUCATION_LEVELS.map((level) => (
             <option key={level} value={level}>
-              {EDUCATION_LEVEL_LABELS[level]}
+              {labels.educationLevel[level]}
             </option>
           ))}
         </select>
@@ -168,7 +200,7 @@ export default function LifeForm({
 
       <div>
         <label htmlFor="height" className="mb-1 block text-sm font-medium text-navy">
-          Urefu (sm)
+          {t.heightLabel}
         </label>
         <select
           id="height"
@@ -178,11 +210,11 @@ export default function LifeForm({
           className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none"
         >
           <option value="" disabled>
-            Chagua urefu wako
+            {t.heightPlaceholder}
           </option>
           {HEIGHT_OPTIONS_CM.map((cm) => (
             <option key={cm} value={cm}>
-              {cm} sm
+              {cm} {t.heightUnit}
             </option>
           ))}
         </select>
@@ -190,7 +222,7 @@ export default function LifeForm({
 
       <div>
         <label htmlFor="bodyType" className="mb-1 block text-sm font-medium text-navy">
-          Aina ya Mwili
+          {t.bodyTypeLabel}
         </label>
         <select
           id="bodyType"
@@ -200,19 +232,63 @@ export default function LifeForm({
           className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none"
         >
           <option value="" disabled>
-            Chagua
+            {t.choosePlaceholder}
           </option>
           {BODY_TYPES.map((type) => (
             <option key={type} value={type}>
-              {BODY_TYPE_LABELS[type]}
+              {labels.bodyType[type]}
             </option>
           ))}
         </select>
       </div>
 
       <div>
+        <label htmlFor="hasDisability" className="mb-1 block text-sm font-medium text-navy">
+          {t.hasDisabilityLabel}
+        </label>
+        <select
+          id="hasDisability"
+          value={hasDisability}
+          onChange={(e) => {
+            const next = e.target.value as "NDIYO" | "HAPANA" | "";
+            setHasDisability(next);
+            if (next !== "NDIYO") setDisabilityType("");
+          }}
+          className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none"
+        >
+          <option value="">{t.choosePlaceholder}</option>
+          <option value="NDIYO">{labels.yesNo.NDIYO}</option>
+          <option value="HAPANA">{labels.yesNo.HAPANA}</option>
+        </select>
+      </div>
+
+      {hasDisability === "NDIYO" && (
+        <div>
+          <label htmlFor="disabilityType" className="mb-1 block text-sm font-medium text-navy">
+            {t.disabilityTypeLabel}
+          </label>
+          <select
+            id="disabilityType"
+            required
+            value={disabilityType}
+            onChange={(e) => setDisabilityType(e.target.value as DisabilityType)}
+            className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none"
+          >
+            <option value="" disabled>
+              {t.disabilityTypePlaceholder}
+            </option>
+            {DISABILITY_TYPES.map((type) => (
+              <option key={type} value={type}>
+                {labels.disabilityType[type]}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      <div>
         <label htmlFor="skinTone" className="mb-1 block text-sm font-medium text-navy">
-          Rangi ya Ngozi
+          {t.skinToneLabel}
         </label>
         <select
           id="skinTone"
@@ -222,11 +298,11 @@ export default function LifeForm({
           className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none"
         >
           <option value="" disabled>
-            Chagua
+            {t.choosePlaceholder}
           </option>
           {SKIN_TONES.map((tone) => (
             <option key={tone} value={tone}>
-              {SKIN_TONE_LABELS[tone]}
+              {labels.skinTone[tone]}
             </option>
           ))}
         </select>
@@ -234,7 +310,7 @@ export default function LifeForm({
 
       <div>
         <label htmlFor="incomeRange" className="mb-1 block text-sm font-medium text-navy">
-          Kipato (Kama Unataka)
+          {t.incomeRangeLabel}
         </label>
         <select
           id="incomeRange"
@@ -242,18 +318,18 @@ export default function LifeForm({
           onChange={(e) => setIncomeRange(e.target.value as IncomeRange)}
           className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none"
         >
-          <option value="">Chagua kiwango</option>
+          <option value="">{t.chooseRangePlaceholder}</option>
           {INCOME_RANGES.map((range) => (
             <option key={range} value={range}>
-              {INCOME_RANGE_LABELS[range]}
+              {labels.incomeRange[range]}
             </option>
           ))}
         </select>
       </div>
 
       <div>
-        <span className="mb-1 block text-sm font-medium text-navy">Unatafuta</span>
-        <p className="mb-2 text-xs text-neutral-500">Unaweza kuchagua zaidi ya chaguo moja.</p>
+        <span className="mb-1 block text-sm font-medium text-navy">{t.intentionsLabel}</span>
+        <p className="mb-2 text-xs text-neutral-500">{t.intentionsHint}</p>
         <div className="flex flex-wrap gap-2.5">
           {INTENTIONS.map((intention) => {
             const active = intentions.includes(intention);
@@ -267,7 +343,7 @@ export default function LifeForm({
                   active ? "border-primary bg-blush-50 text-primary" : "border-black/10 text-neutral-600"
                 }`}
               >
-                {INTENTION_LABELS[intention]}
+                {labels.intention[intention]}
               </button>
             );
           })}
@@ -275,7 +351,7 @@ export default function LifeForm({
       </div>
 
       <div>
-        <span className="mb-1 block text-sm font-medium text-navy">Umri wa Mwenza Unayetaka</span>
+        <span className="mb-1 block text-sm font-medium text-navy">{t.partnerAgeLabel}</span>
         <div className="flex items-center gap-3">
           <select
             required
@@ -284,7 +360,7 @@ export default function LifeForm({
             className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none"
           >
             <option value="" disabled>
-              Kutoka
+              {t.fromPlaceholder}
             </option>
             {Array.from({ length: MAX_AGE - MIN_AGE + 1 }, (_, i) => MIN_AGE + i).map((a) => (
               <option key={a} value={a}>
@@ -292,7 +368,7 @@ export default function LifeForm({
               </option>
             ))}
           </select>
-          <span className="text-sm text-neutral-500">hadi</span>
+          <span className="text-sm text-neutral-500">{t.toSeparator}</span>
           <select
             required
             value={partnerAgeMax}
@@ -300,7 +376,7 @@ export default function LifeForm({
             className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none"
           >
             <option value="" disabled>
-              Hadi
+              {t.toPlaceholder}
             </option>
             {Array.from({ length: MAX_AGE - MIN_AGE + 1 }, (_, i) => MIN_AGE + i).map((a) => (
               <option key={a} value={a}>
@@ -310,13 +386,13 @@ export default function LifeForm({
           </select>
         </div>
         {partnerAgeMin && partnerAgeMax && !ageRangeValid && (
-          <p className="mt-1.5 text-sm text-red-600">Umri wa chini hauwezi kuzidi umri wa juu</p>
+          <p className="mt-1.5 text-sm text-red-600">{t.ageRangeInvalid}</p>
         )}
       </div>
 
       <div>
         <label htmlFor="bio" className="mb-1 block text-sm font-medium text-navy">
-          Maelezo Mafupi Kuhusu Wewe
+          {t.bioLabel}
         </label>
         <textarea
           id="bio"
@@ -325,7 +401,7 @@ export default function LifeForm({
           maxLength={BIO_MAX}
           value={bio}
           onChange={(e) => setBio(e.target.value)}
-          placeholder="Eleza kwa ufupi kuhusu wewe, malengo yako na unachotafuta kwa mwenza wako..."
+          placeholder={t.bioPlaceholder}
           className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
         />
         <p className="mt-1 text-end text-xs text-neutral-400">
@@ -334,21 +410,24 @@ export default function LifeForm({
       </div>
 
       {error && <p className="text-sm text-red-600">{error}</p>}
+      {justSaved && <p className="text-sm font-semibold text-green-700">{c.saved}</p>}
 
       <div className="flex gap-3">
-        <button
-          type="button"
-          onClick={() => router.push("/onboarding/religion")}
-          className="flex items-center gap-1.5 rounded-full border border-black/10 px-5 py-3 text-sm font-semibold text-neutral-600 transition hover:bg-blush-50"
-        >
-          <ChevronLeftIcon className="h-4 w-4" /> Rudi Nyuma
-        </button>
+        {!standalone && (
+          <button
+            type="button"
+            onClick={() => router.push(withLocale(pathname ?? "/", "/onboarding/religion"))}
+            className="flex items-center gap-1.5 rounded-full border border-black/10 px-5 py-3 text-sm font-semibold text-neutral-600 transition hover:bg-blush-50"
+          >
+            <ChevronLeftIcon className="h-4 w-4" /> {c.back}
+          </button>
+        )}
         <button
           type="submit"
           disabled={loading || !canContinue}
           className="flex-1 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-dark disabled:opacity-60"
         >
-          {loading ? "Inaendelea..." : "Endelea"}
+          {loading ? c.submitting : standalone ? c.save : c.continue}
         </button>
       </div>
     </form>

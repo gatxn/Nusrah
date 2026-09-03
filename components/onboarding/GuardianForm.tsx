@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { useRouter } from "next/navigation";
-import { GUARDIAN_RELATIONSHIPS, GUARDIAN_RELATIONSHIP_LABELS, type GuardianRelationship } from "@/lib/onboarding";
+import { useRouter, usePathname } from "next/navigation";
+import { withLocale } from "@/lib/i18n/href";
+import { GUARDIAN_RELATIONSHIPS, type GuardianRelationship } from "@/lib/onboarding";
+import type { Dictionary } from "@/app/[locale]/dictionaries";
 import { ChevronLeftIcon } from "@/components/icons";
 
 export default function GuardianForm({
@@ -10,13 +12,23 @@ export default function GuardianForm({
   initialGuardianName,
   initialGuardianRelationship,
   initialGuardianPhone,
+  standalone,
+  dict,
+  labels,
 }: {
   initialHasGuardian: boolean;
   initialGuardianName: string | null;
   initialGuardianRelationship: string | null;
   initialGuardianPhone: string | null;
+  standalone?: boolean;
+  dict: Dictionary["onboarding"];
+  labels: Dictionary["common"]["labels"];
 }) {
   const router = useRouter();
+  const pathname = usePathname();
+  const t = dict.guardian;
+  const c = dict.common;
+  const [justSaved, setJustSaved] = useState(false);
   const [hasGuardian, setHasGuardian] = useState(initialHasGuardian);
   const [guardianName, setGuardianName] = useState(initialGuardianName ?? "");
   const [guardianRelationship, setGuardianRelationship] = useState<GuardianRelationship | "">(
@@ -31,6 +43,7 @@ export default function GuardianForm({
   async function save(payload: Record<string, unknown>) {
     setLoading(true);
     setError(null);
+    setJustSaved(false);
     try {
       const res = await fetch("/api/onboarding/guardian", {
         method: "POST",
@@ -39,13 +52,18 @@ export default function GuardianForm({
       });
       const json = await res.json();
       if (!res.ok) {
-        setError(json.error ?? "Hitilafu imetokea");
+        setError(json.error ?? c.genericError);
         setLoading(false);
         return;
       }
-      router.push(json.nextStep);
+      if (standalone) {
+        setJustSaved(true);
+        setLoading(false);
+      } else {
+        router.push(withLocale(pathname ?? "/", json.nextStep));
+      }
     } catch {
-      setError("Imeshindwa kuunganisha na seva. Jaribu tena.");
+      setError(c.networkError);
       setLoading(false);
     }
   }
@@ -66,12 +84,12 @@ export default function GuardianForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <h1 className="text-xl font-bold text-navy">Mlezi (Wali)</h1>
-        <p className="mt-1 text-sm text-neutral-600">Hiari — unaweza kuongeza taarifa za mlezi ili azewe kushirikiana nasi.</p>
+        <h1 className="text-xl font-bold text-navy">{t.pageHeading}</h1>
+        <p className="mt-1 text-sm text-neutral-600">{t.pageSubtitle}</p>
       </div>
 
       <label className="flex items-center justify-between rounded-lg border border-black/10 px-3.5 py-3">
-        <span className="text-sm font-medium text-navy">Nina Mlezi</span>
+        <span className="text-sm font-medium text-navy">{t.hasGuardianLabel}</span>
         <span className="relative inline-flex h-6 w-11 shrink-0 items-center">
           <input
             type="checkbox"
@@ -88,21 +106,21 @@ export default function GuardianForm({
         <>
           <div>
             <label htmlFor="guardianName" className="mb-1 block text-sm font-medium text-navy">
-              Jina la Mlezi
+              {t.guardianNameLabel}
             </label>
             <input
               id="guardianName"
               required
               value={guardianName}
               onChange={(e) => setGuardianName(e.target.value)}
-              placeholder="Jina la kamili la mlezi"
+              placeholder={t.guardianNamePlaceholder}
               className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
             />
           </div>
 
           <div>
             <label htmlFor="guardianRelationship" className="mb-1 block text-sm font-medium text-navy">
-              Uhusiano
+              {t.relationshipLabel}
             </label>
             <select
               id="guardianRelationship"
@@ -112,11 +130,11 @@ export default function GuardianForm({
               className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none"
             >
               <option value="" disabled>
-                Chagua uhusiano
+                {t.relationshipPlaceholder}
               </option>
               {GUARDIAN_RELATIONSHIPS.map((rel) => (
                 <option key={rel} value={rel}>
-                  {GUARDIAN_RELATIONSHIP_LABELS[rel]}
+                  {labels.guardianRelationship[rel]}
                 </option>
               ))}
             </select>
@@ -124,14 +142,14 @@ export default function GuardianForm({
 
           <div>
             <label htmlFor="guardianPhone" className="mb-1 block text-sm font-medium text-navy">
-              Namba ya Simu ya Mlezi
+              {t.guardianPhoneLabel}
             </label>
             <input
               id="guardianPhone"
               required
               value={guardianPhone}
               onChange={(e) => setGuardianPhone(e.target.value)}
-              placeholder="07XX XXX XXX"
+              placeholder={t.guardianPhonePlaceholder}
               className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
             />
           </div>
@@ -139,22 +157,25 @@ export default function GuardianForm({
       )}
 
       {error && <p className="text-sm text-red-600">{error}</p>}
+      {justSaved && <p className="text-sm font-semibold text-green-700">{c.saved}</p>}
 
       <div className="flex gap-3">
-        <button
-          type="button"
-          onClick={() => router.push("/onboarding/life")}
-          className="flex items-center gap-1.5 rounded-full border border-black/10 px-5 py-3 text-sm font-semibold text-neutral-600 transition hover:bg-blush-50"
-        >
-          <ChevronLeftIcon className="h-4 w-4" /> Rudi Nyuma
-        </button>
+        {!standalone && (
+          <button
+            type="button"
+            onClick={() => router.push(withLocale(pathname ?? "/", "/onboarding/life"))}
+            className="flex items-center gap-1.5 rounded-full border border-black/10 px-5 py-3 text-sm font-semibold text-neutral-600 transition hover:bg-blush-50"
+          >
+            <ChevronLeftIcon className="h-4 w-4" /> {c.back}
+          </button>
+        )}
         {hasGuardian ? (
           <button
             type="submit"
             disabled={loading || !canContinue}
             className="flex-1 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-dark disabled:opacity-60"
           >
-            {loading ? "Inaendelea..." : "Endelea"}
+            {loading ? c.submitting : standalone ? c.save : c.continue}
           </button>
         ) : (
           <button
@@ -163,7 +184,7 @@ export default function GuardianForm({
             disabled={loading}
             className="flex-1 rounded-full bg-primary/10 px-6 py-3 text-sm font-semibold text-primary transition hover:bg-primary/20 disabled:opacity-60"
           >
-            {loading ? "Inaendelea..." : "Ruka"}
+            {loading ? c.submitting : standalone ? c.save : c.skip}
           </button>
         )}
       </div>

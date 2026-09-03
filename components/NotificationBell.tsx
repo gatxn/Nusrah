@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { BellIcon } from "@/components/icons";
+import type { Dictionary } from "@/app/[locale]/dictionaries";
 
 type NotificationView = {
   id: string;
@@ -14,7 +15,13 @@ type NotificationView = {
   sourceUserId: string | null;
 };
 
-export default function NotificationBell({ initialUnreadCount }: { initialUnreadCount: number }) {
+export default function NotificationBell({
+  initialUnreadCount,
+  dict,
+}: {
+  initialUnreadCount: number;
+  dict: Dictionary["common"]["topBar"]["notifications"];
+}) {
   const [open, setOpen] = useState(false);
   const [unreadCount, setUnreadCount] = useState(initialUnreadCount);
   const [notifications, setNotifications] = useState<NotificationView[] | null>(null);
@@ -56,7 +63,7 @@ export default function NotificationBell({ initialUnreadCount }: { initialUnread
       <button
         type="button"
         onClick={handleOpen}
-        aria-label="Arifa"
+        aria-label={dict.bellAria}
         className="relative flex h-9 w-9 items-center justify-center rounded-full text-neutral-600 transition hover:bg-blush-50"
       >
         <BellIcon className="h-5 w-5" />
@@ -69,11 +76,11 @@ export default function NotificationBell({ initialUnreadCount }: { initialUnread
 
       {open && (
         <div className="absolute right-0 top-full z-20 mt-2 w-80 max-w-[90vw] rounded-2xl border border-black/5 bg-white p-3 shadow-lg">
-          <p className="mb-2 px-2 text-sm font-bold text-navy">Arifa</p>
+          <p className="mb-2 px-2 text-sm font-bold text-navy">{dict.heading}</p>
           {loading && !notifications ? (
-            <p className="px-2 py-4 text-center text-sm text-neutral-500">Inapakia...</p>
+            <p className="px-2 py-4 text-center text-sm text-neutral-500">{dict.loading}</p>
           ) : !notifications || notifications.length === 0 ? (
-            <p className="px-2 py-4 text-center text-sm text-neutral-500">Huna arifa kwa sasa.</p>
+            <p className="px-2 py-4 text-center text-sm text-neutral-500">{dict.empty}</p>
           ) : (
             <ul className="max-h-80 space-y-1 overflow-y-auto">
               {notifications.map((n) => (

@@ -36,6 +36,12 @@ export async function authErrors(request: NextRequest) {
   return dict.apiErrors.auth;
 }
 
+export async function apiErrors(request: NextRequest) {
+  const locale = localeFromRequest(request);
+  const dict = await dictionaries[locale]();
+  return dict.apiErrors.general;
+}
+
 export async function validationMessages(request: NextRequest) {
   const locale = localeFromRequest(request);
   const dict = await dictionaries[locale]();

@@ -10,7 +10,7 @@ export async function GET(
   { params }: { params: Promise<{ userId: string }> }
 ) {
   const viewerId = await getSessionUserId();
-  if (!viewerId) return UNAUTHENTICATED();
+  if (!viewerId) return UNAUTHENTICATED(request);
   const { userId: targetId } = await params;
 
   const [viewer, target] = await Promise.all([
@@ -22,9 +22,9 @@ export async function GET(
   ]);
 
   if (!target?.photoEnc || !isEligibleTarget(viewer?.gender, target.gender)) {
-    return NOT_FOUND();
+    return NOT_FOUND(request);
   }
-  if (await isBlocked(viewerId, targetId)) return NOT_FOUND();
+  if (await isBlocked(viewerId, targetId)) return NOT_FOUND(request);
 
   return new NextResponse(new Uint8Array(target.photoEnc), {
     headers: {

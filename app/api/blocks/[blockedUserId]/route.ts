@@ -9,7 +9,7 @@ export async function DELETE(
   { params }: { params: Promise<{ blockedUserId: string }> }
 ) {
   const userId = await getSessionUserId();
-  if (!userId) return UNAUTHENTICATED();
+  if (!userId) return UNAUTHENTICATED(request);
   const { blockedUserId } = await params;
 
   try {

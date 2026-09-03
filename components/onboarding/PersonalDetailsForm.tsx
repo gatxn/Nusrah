@@ -1,12 +1,13 @@
 "use client";
 
 import { useMemo, useState, type FormEvent } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { getAge } from "@/lib/dates";
-import { MIN_AGE, MARITAL_STATUSES, MARITAL_STATUS_LABELS, type MaritalStatus } from "@/lib/onboarding";
-import { COUNTRIES, TANZANIA_REGIONS, codeToFlagEmoji, findCountryByCode, findCountryByName } from "@/lib/geo";
-
-const GENDER_LABELS: Record<string, string> = { FEMALE: "Mwanamke", MALE: "Mwanaume" };
+import { MIN_AGE, MARITAL_STATUSES, type MaritalStatus } from "@/lib/onboarding";
+import { TANZANIA_REGIONS, TANZANIA_DISTRICTS_BY_REGION, findCountryByCode, type Country } from "@/lib/geo";
+import { withLocale } from "@/lib/i18n/href";
+import CountrySearchSelect from "@/components/onboarding/CountrySearchSelect";
+import type { Dictionary } from "@/app/[locale]/dictionaries";
 
 function toDateInputValue(date: Date | null): string {
   if (!date) return "";
@@ -22,6 +23,9 @@ export default function PersonalDetailsForm({
   initialRegion,
   initialCity,
   initialMaritalStatus,
+  standalone,
+  dict,
+  labels,
 }: {
   name: string;
   gender: string | null;
@@ -31,12 +35,23 @@ export default function PersonalDetailsForm({
   initialRegion: string | null;
   initialCity: string | null;
   initialMaritalStatus: string | null;
+  // True in My Profile (Wasifu Wangu) — shows inline "Imehifadhiwa" feedback
+  // instead of the wizard's next-step navigation. A plain boolean (not a
+  // callback) since this component is rendered from a Server Component page
+  // and a function prop can't cross that boundary.
+  standalone?: boolean;
+  dict: Dictionary["onboarding"];
+  labels: Dictionary["common"]["labels"];
 }) {
   const router = useRouter();
+  const pathname = usePathname();
+  const t = dict.personal;
+  const c = dict.common;
+  const [justSaved, setJustSaved] = useState(false);
   const [displayName, setDisplayName] = useState(initialDisplayName ?? "");
   const [dob, setDob] = useState(toDateInputValue(initialDob));
-  const defaultCountry = initialCountry ? findCountryByCode(initialCountry) : undefined;
-  const [countryName, setCountryName] = useState(defaultCountry?.name ?? "Tanzania");
+  const defaultCountry = initialCountry ? findCountryByCode(initialCountry) : findCountryByCode("TZ");
+  const [country, setCountry] = useState<Country | undefined>(defaultCountry);
   const [region, setRegion] = useState(initialRegion ?? "");
   const [city, setCity] = useState(initialCity ?? "");
   const [maritalStatus, setMaritalStatus] = useState<MaritalStatus | "">(
@@ -45,8 +60,8 @@ export default function PersonalDetailsForm({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const matchedCountry = useMemo(() => findCountryByName(countryName), [countryName]);
-  const isTanzania = matchedCountry?.code === "TZ";
+  const isTanzania = country?.code === "TZ";
+  const districtOptions = isTanzania ? (TANZANIA_DISTRICTS_BY_REGION[region] ?? []) : [];
 
   const age = useMemo(() => {
     if (!dob) return null;
@@ -61,16 +76,17 @@ export default function PersonalDetailsForm({
     dob.length > 0 &&
     age !== null &&
     !underMinAge &&
-    !!matchedCountry &&
+    !!country &&
     region.trim().length >= 2 &&
     city.trim().length >= 2 &&
     !!maritalStatus;
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!canContinue || !matchedCountry) return;
+    if (!canContinue || !country) return;
     setLoading(true);
     setError(null);
+    setJustSaved(false);
 
     try {
       const res = await fetch("/api/onboarding/personal", {
@@ -79,7 +95,7 @@ export default function PersonalDetailsForm({
         body: JSON.stringify({
           displayName,
           dob,
-          country: matchedCountry.code,
+          country: country.code,
           region,
           city,
           maritalStatus,
@@ -87,13 +103,18 @@ export default function PersonalDetailsForm({
       });
       const json = await res.json();
       if (!res.ok) {
-        setError(json.error ?? "Hitilafu imetokea");
+        setError(json.error ?? c.genericError);
         setLoading(false);
         return;
       }
-      router.push(json.nextStep);
+      if (standalone) {
+        setJustSaved(true);
+        setLoading(false);
+      } else {
+        router.push(withLocale(pathname ?? "/", json.nextStep));
+      }
     } catch {
-      setError("Imeshindwa kuunganisha na seva. Jaribu tena.");
+      setError(c.networkError);
       setLoading(false);
     }
   }
@@ -101,7 +122,7 @@ export default function PersonalDetailsForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <span className="mb-1 block text-sm font-medium text-navy">Jina Kamili</span>
+        <span className="mb-1 block text-sm font-medium text-navy">{t.fullName}</span>
         <p className="w-full rounded-lg border border-black/5 bg-blush-50 px-3 py-2 text-sm text-neutral-600">
           {name}
         </p>
@@ -109,7 +130,7 @@ export default function PersonalDetailsForm({
 
       <div>
         <label htmlFor="displayName" className="mb-1 block text-sm font-medium text-navy">
-          Jina Unalotaka Kuonekana
+          {t.displayNameLabel}
         </label>
         <input
           id="displayName"
@@ -117,21 +138,21 @@ export default function PersonalDetailsForm({
           minLength={2}
           value={displayName}
           onChange={(e) => setDisplayName(e.target.value)}
-          placeholder="Jina lako la kuonekana kwenye profaili"
+          placeholder={t.displayNamePlaceholder}
           className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
         />
       </div>
 
       <div>
-        <span className="mb-1 block text-sm font-medium text-navy">Jinsia</span>
+        <span className="mb-1 block text-sm font-medium text-navy">{t.genderLabel}</span>
         <p className="w-full rounded-lg border border-black/5 bg-blush-50 px-3 py-2 text-sm text-neutral-600">
-          {gender ? (GENDER_LABELS[gender] ?? gender) : "—"}
+          {gender ? (gender === "FEMALE" ? t.genderFemale : gender === "MALE" ? t.genderMale : gender) : "—"}
         </p>
       </div>
 
       <div>
         <label htmlFor="dob" className="mb-1 block text-sm font-medium text-navy">
-          Tarehe ya Kuzaliwa
+          {t.dobLabel}
         </label>
         <input
           id="dob"
@@ -144,52 +165,44 @@ export default function PersonalDetailsForm({
           className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
         />
         {age !== null && (
-          <p className={`mt-1.5 text-sm ${underMinAge ? "text-red-600" : "text-neutral-600"}`}>Umri: {age}</p>
+          <p className={`mt-1.5 text-sm ${underMinAge ? "text-red-600" : "text-neutral-600"}`}>
+            {t.ageLabel}: {age}
+          </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="country" className="mb-1 block text-sm font-medium text-navy">
-          Nchi
-        </label>
-        <div className="flex items-center gap-2">
-          <span className="text-xl" aria-hidden="true">
-            {matchedCountry ? codeToFlagEmoji(matchedCountry.code) : "🏳️"}
-          </span>
-          <input
-            id="country"
-            list="country-options"
-            required
-            value={countryName}
-            onChange={(e) => {
-              setCountryName(e.target.value);
-              setRegion("");
-            }}
-            placeholder="Chagua au andika nchi"
-            className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
-          />
-          <datalist id="country-options">
-            {COUNTRIES.map((c) => (
-              <option key={c.code} value={c.name} />
-            ))}
-          </datalist>
-        </div>
+        <span className="mb-1 block text-sm font-medium text-navy">{t.countryLabel}</span>
+        <CountrySearchSelect
+          value={country}
+          onChange={(c) => {
+            setCountry(c);
+            setRegion("");
+            setCity("");
+          }}
+          placeholder={t.countryPlaceholder}
+          searchPlaceholder={t.countrySearchPlaceholder}
+          noResultsText={t.countryNoResults}
+        />
       </div>
 
       <div>
         <label htmlFor="region" className="mb-1 block text-sm font-medium text-navy">
-          Eneo Unaloishi (Mkoa)
+          {t.regionLabel}
         </label>
         {isTanzania ? (
           <select
             id="region"
             required
             value={region}
-            onChange={(e) => setRegion(e.target.value)}
+            onChange={(e) => {
+              setRegion(e.target.value);
+              setCity("");
+            }}
             className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none"
           >
             <option value="" disabled>
-              Chagua mkoa/jiji lako
+              {t.regionSelectPlaceholder}
             </option>
             {TANZANIA_REGIONS.map((r) => (
               <option key={r} value={r}>
@@ -203,7 +216,7 @@ export default function PersonalDetailsForm({
             required
             value={region}
             onChange={(e) => setRegion(e.target.value)}
-            placeholder="Mkoa / Jimbo"
+            placeholder={t.regionInputPlaceholder}
             className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
           />
         )}
@@ -211,21 +224,41 @@ export default function PersonalDetailsForm({
 
       <div>
         <label htmlFor="city" className="mb-1 block text-sm font-medium text-navy">
-          Wilaya / Eneo la Makazi
+          {t.cityLabel}
         </label>
-        <input
-          id="city"
-          required
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          placeholder="Chagua wilaya/eneo lako"
-          className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
-        />
+        {isTanzania ? (
+          <select
+            id="city"
+            required
+            disabled={!region}
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none disabled:bg-blush-50 disabled:text-neutral-400"
+          >
+            <option value="" disabled>
+              {t.citySelectPlaceholder}
+            </option>
+            {districtOptions.map((d) => (
+              <option key={d} value={d}>
+                {d}
+              </option>
+            ))}
+          </select>
+        ) : (
+          <input
+            id="city"
+            required
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            placeholder={t.cityInputPlaceholder}
+            className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
+          />
+        )}
       </div>
 
       <div>
         <label htmlFor="maritalStatus" className="mb-1 block text-sm font-medium text-navy">
-          Hali ya Ndoa
+          {t.maritalStatusLabel}
         </label>
         <select
           id="maritalStatus"
@@ -235,27 +268,26 @@ export default function PersonalDetailsForm({
           className="w-full rounded-lg border border-black/10 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none"
         >
           <option value="" disabled>
-            Chagua hali yako ya ndoa
+            {t.maritalStatusPlaceholder}
           </option>
           {MARITAL_STATUSES.map((status) => (
             <option key={status} value={status}>
-              {MARITAL_STATUS_LABELS[status]}
+              {labels.maritalStatus[status]}
             </option>
           ))}
         </select>
       </div>
 
-      {underMinAge && (
-        <p className="text-sm text-red-600">Lazima uwe na umri wa miaka {MIN_AGE} au zaidi kutumia Nusrah.</p>
-      )}
+      {underMinAge && <p className="text-sm text-red-600">{t.underMinAge.replace("{minAge}", String(MIN_AGE))}</p>}
       {error && <p className="text-sm text-red-600">{error}</p>}
+      {justSaved && <p className="text-sm font-semibold text-green-700">{c.saved}</p>}
 
       <button
         type="submit"
         disabled={loading || !canContinue}
         className="w-full rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-dark disabled:opacity-60"
       >
-        {loading ? "Inaendelea..." : "Endelea"}
+        {loading ? c.submitting : standalone ? c.save : c.continue}
       </button>
     </form>
   );

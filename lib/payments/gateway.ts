@@ -62,16 +62,22 @@ export type NormalizedWebhookPayload = {
 /**
  * Verifies the webhook's HMAC-SHA256 signature. Uses the real
  * PAYMENT_GATEWAY_WEBHOOK_SECRET once it's configured; falls back to
- * DEV_WEBHOOK_TEST_SECRET so the golden-rule verification chain (§4.2) can
- * be exercised end-to-end with a hand-signed test payload before a real
- * gateway is wired in. See scripts/test-webhook.ts.
+ * DEV_WEBHOOK_TEST_SECRET outside production only, so the golden-rule
+ * verification chain (§4.2) can be exercised end-to-end with a hand-signed
+ * test payload before a real gateway is wired in. See scripts/test-webhook.ts.
+ *
+ * The production guard here is load-bearing: DEV_WEBHOOK_TEST_SECRET must
+ * never be a valid way to forge a paid-subscription webhook once this is
+ * live, regardless of whether that var accidentally ends up in the
+ * production .env.
  */
 export function verifyWebhookSignature(
   rawBody: string,
   signatureHeader: string | null
 ): boolean {
   const secret =
-    process.env.PAYMENT_GATEWAY_WEBHOOK_SECRET || process.env.DEV_WEBHOOK_TEST_SECRET;
+    process.env.PAYMENT_GATEWAY_WEBHOOK_SECRET ||
+    (process.env.NODE_ENV !== "production" ? process.env.DEV_WEBHOOK_TEST_SECRET : undefined);
 
   if (!secret || !signatureHeader) return false;
 

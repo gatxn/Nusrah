@@ -41,9 +41,9 @@ export default function LoginForm({ dict }: { dict: Dictionary["ingia"] }) {
       // (see app/api/auth/login) and must render fresh — a client-side push
       // can land on a stale pre-auth render of the (main) layout from
       // earlier in this visit, silently skipping the onboarding gate. Its
-      // target is always an out-of-scope (Swahili-only) page, so it's
-      // intentionally not locale-prefixed here.
-      window.location.href = json.redirectTo ?? "/wanachama";
+      // target can be an onboarding step, not just "/wanachama", so it still
+      // needs the current locale prefix applied here.
+      window.location.href = withLocale(pathname, json.redirectTo ?? "/wanachama");
     } catch {
       setError(dict.networkError);
       setLoading(false);

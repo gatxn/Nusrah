@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { usePathname } from "next/navigation";
+import { withLocale } from "@/lib/i18n/href";
 import type { Dictionary } from "@/app/[locale]/dictionaries";
 
 export default function OtpForm({
@@ -14,6 +16,7 @@ export default function OtpForm({
   targetPackage?: string;
   dict: Dictionary["thibitisha"];
 }) {
+  const pathname = usePathname();
   const [code, setCode] = useState(initialDevCode ?? "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -49,14 +52,18 @@ export default function OtpForm({
           // fresh so the onboarding gate in app/(main)/layout.tsx sees the
           // just-set session cookie, not a cached pre-auth render of that
           // shared layout from earlier in this visit.
-          window.location.href = orderJson.activated ? "/akaunti?activated=1" : `/malipo/${orderJson.orderId}`;
+          window.location.href = withLocale(
+            pathname,
+            orderJson.activated ? "/akaunti?activated=1" : `/malipo/${orderJson.orderId}`
+          );
           return;
         }
       }
 
-      // json.redirectTo is server-computed (see app/api/auth/verify-otp) —
-      // same hard-navigation reasoning as above.
-      window.location.href = json.redirectTo ?? "/wanachama";
+      // json.redirectTo is server-computed (see app/api/auth/verify-otp) and
+      // can be an onboarding step — same hard-navigation reasoning as above,
+      // plus the current locale prefix so it doesn't fall back to Swahili.
+      window.location.href = withLocale(pathname, json.redirectTo ?? "/wanachama");
     } catch {
       setError(dict.networkError);
       setLoading(false);

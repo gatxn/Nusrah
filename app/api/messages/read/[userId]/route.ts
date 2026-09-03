@@ -8,7 +8,7 @@ export async function PATCH(
   { params }: { params: Promise<{ userId: string }> }
 ) {
   const callerId = await getSessionUserId();
-  if (!callerId) return UNAUTHENTICATED();
+  if (!callerId) return UNAUTHENTICATED(request);
   const { userId: otherUserId } = await params;
 
   // receiverId: callerId comes from the session, not the URL param —

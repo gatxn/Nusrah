@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
+import type { Dictionary } from "@/app/[locale]/dictionaries";
 
 type ThreadMessage = {
   id: string;
@@ -20,12 +21,14 @@ export default function ThreadView({
   canSend,
   blockedReason,
   initialMessages,
+  dict,
 }: {
   viewerId: string;
   otherUserId: string;
   canSend: boolean;
   blockedReason: string | null;
   initialMessages: ThreadMessage[];
+  dict: Dictionary["ujumbe"]["thread"];
 }) {
   const [messages, setMessages] = useState<ThreadMessage[]>(initialMessages);
   const [input, setInput] = useState("");
@@ -95,14 +98,14 @@ export default function ThreadView({
       if (!res.ok) {
         setMessages((prev) => prev.filter((m) => m.id !== tempId));
         setInput(body);
-        setError(json.error ?? "Hitilafu imetokea");
+        setError(json.error ?? dict.genericError);
         return;
       }
       setMessages((prev) => prev.map((m) => (m.id === tempId ? json.message : m)));
     } catch {
       setMessages((prev) => prev.filter((m) => m.id !== tempId));
       setInput(body);
-      setError("Imeshindwa kuunganisha na seva.");
+      setError(dict.networkError);
     } finally {
       setSending(false);
     }
@@ -112,9 +115,7 @@ export default function ThreadView({
     <div className="flex h-[70vh] flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm">
       <div className="flex-1 space-y-2 overflow-y-auto p-4">
         {messages.length === 0 ? (
-          <p className="mt-10 text-center text-sm text-neutral-500">
-            Bado hakuna ujumbe. Anza mazungumzo hapa chini.
-          </p>
+          <p className="mt-10 text-center text-sm text-neutral-500">{dict.emptyThread}</p>
         ) : (
           messages.map((m) => {
             const mine = m.senderId === viewerId;
@@ -139,7 +140,7 @@ export default function ThreadView({
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Andika ujumbe wako wa heshima..."
+            placeholder={dict.messagePlaceholder}
             className="flex-1 rounded-full border border-black/10 px-4 py-2.5 text-sm focus:border-primary focus:outline-none"
           />
           <button
@@ -147,15 +148,15 @@ export default function ThreadView({
             disabled={sending || !input.trim()}
             className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white disabled:opacity-60"
           >
-            Tuma
+            {dict.send}
           </button>
         </form>
       ) : (
         <div className="border-t border-black/5 p-4 text-center">
           <p className="text-sm text-neutral-600">{blockedReason}</p>
-          <Link href="/kuwa-mwanachama" className="mt-2 inline-block text-sm font-semibold text-primary hover:underline">
-            Badili Kifurushi
-          </Link>
+          <LocaleLink href="/boresha-kifurushi" className="mt-2 inline-block text-sm font-semibold text-primary hover:underline">
+            {dict.upgradePackage}
+          </LocaleLink>
         </div>
       )}
 

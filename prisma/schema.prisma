@@ -71,6 +71,8 @@ model Profile {
   bodyType       String?
   skinTone       String?
   incomeRange    String? // optional field — the one exception to "required"
+  hasDisability  Boolean? // optional, sensitive — never required to complete onboarding
+  disabilityType String? // meaningful only when hasDisability is true
   partnerAgeMin  Int?
   partnerAgeMax  Int?
 
@@ -96,9 +98,17 @@ model Profile {
   photoMimeType  String?
   photoUpdatedAt DateTime?
 
-  // Step 5's second, independent upload — same storage shape as the photo
-  // above (also optional/skippable; no admin review tool exists yet to act
-  // on it, so nothing currently gates on idDocumentUpdatedAt being set).
+  // Up to 6 additional gallery photos beyond the cover photo above (7 total).
+  // Not circle-cropped like the cover photo — full images, uploaded via
+  // PhotoGallery.tsx from either onboarding Step 5 or Wasifu Wangu.
+  photos ProfilePhoto[]
+
+  // ID document verification was removed from the app (no more upload UI,
+  // no more /api/onboarding/id-document route, no more hasIdDocument()) —
+  // these 3 columns are kept only because the currently-deployed production
+  // app still queries Profile without an explicit select and would break if
+  // they were dropped before that deployment is replaced. Drop them in the
+  // same migration that finally deploys this removal, not before.
   idDocumentEnc       Bytes?
   idDocumentMimeType  String?
   idDocumentUpdatedAt DateTime?
@@ -113,6 +123,29 @@ model Profile {
   isSeed    Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  // Set to true only by the site owner manually reviewing a member (no ID
+  // document upload exists in-app) and flipping this via Prisma Studio — no
+  // in-app review workflow exists.
+  isVerified Boolean @default(false)
+  // Written opportunistically (throttled) from (app)/layout.tsx on every
+  // authenticated page load — see lib/profiles.ts's touchLastActive. Never
+  // exposed directly; only the derived boolean isOnline (SerializedProfile)
+  // ever leaves lib/profiles.ts, per the "no last-active timeline" decision.
+  lastActiveAt DateTime?
+}
+
+model ProfilePhoto {
+  id        String   @id @default(cuid())
+  profileId String
+  profile   Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  imageEnc  Bytes
+  mimeType  String
+  position  Int // 1-6; position 0 is implicitly Profile.photoEnc (the cover photo)
+  createdAt DateTime @default(now())
+
+  @@unique([profileId, position])
+  @@index([profileId])
 }
 
 // tier: "FREE" | "BASIC" | "SILVER" | "GOLD" | "PREMIUM"

@@ -129,15 +129,40 @@ body::after {
       rgba(244, 238, 252, 0.26) 70%,
       rgba(244, 238, 252, 0.26) 100%
     ),
-    url("/images/love-background.png");
+    /* Portrait photo (1170x2532) for phone-width viewports — matches the
+       .lg breakpoint below, which switches to a landscape crop instead. */
+      url("/images/wallpaper.png");
   background-size: cover;
-  background-position: center;
+  /* wallpaper.png's subject (the couple, the sunset) sits in the upper
+     portion — centering it would crop that out on wide viewports and leave
+     mostly the dark water below, so this favors the top instead. */
+  background-position: center 15%;
   background-repeat: no-repeat;
   /* Pins the image to the viewport so it stays put while the foreground
      content scrolls over it. Note: iOS Safari doesn't honor
      background-attachment: fixed and silently falls back to normal
      scrolling there — a platform limitation, not fixable from CSS alone. */
   background-attachment: fixed;
+}
+
+/* Same breakpoint as the sidebar's own mobile/desktop split (see
+   Sidebar.tsx's lg:block / lg:hidden) — swaps in the landscape-composed
+   desktop photo (2560x1440, subject already centered) once there's enough
+   width for it to read as intended, instead of stretching the portrait
+   phone photo across a wide screen. */
+@media (min-width: 1024px) {
+  .bg-hero-photo::before {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255, 250, 252, 0.78) 0%,
+        rgba(253, 242, 247, 0.7) 22%,
+        rgba(248, 240, 250, 0.4) 42%,
+        rgba(244, 238, 252, 0.26) 70%,
+        rgba(244, 238, 252, 0.26) 100%
+      ),
+      url("/images/wallpaper-desktop.png");
+    background-position: center;
+  }
 }
 
 .arabesque-divider {

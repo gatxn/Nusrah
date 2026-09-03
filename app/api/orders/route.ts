@@ -3,17 +3,22 @@ import { prisma } from "@/lib/db";
 import { getSessionUserId } from "@/lib/auth";
 import { createOrderSchema } from "@/lib/validation";
 import { jsonError, zodError, UNAUTHENTICATED } from "@/lib/api";
+import { validationMessages, apiErrors } from "@/lib/i18n/api";
 
 export async function POST(request: NextRequest) {
   const userId = await getSessionUserId();
-  if (!userId) return UNAUTHENTICATED();
+  if (!userId) return UNAUTHENTICATED(request);
 
   const body = await request.json().catch(() => null);
-  const parsed = createOrderSchema.safeParse(body);
+  const v = await validationMessages(request);
+  const parsed = createOrderSchema(v).safeParse(body);
   if (!parsed.success) return zodError(parsed.error);
 
   const pkg = await prisma.package.findUnique({ where: { tier: parsed.data.packageTier } });
-  if (!pkg) return jsonError("Kifurushi hakipatikani", 404);
+  if (!pkg) {
+    const t = await apiErrors(request);
+    return jsonError(t.packageNotFound, 404);
+  }
 
   const order = await prisma.order.create({
     data: { userId, packageId: pkg.id, amountTzs: pkg.priceTzs, status: "PENDING" },

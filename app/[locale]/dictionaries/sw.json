@@ -1,6 +1,9 @@
 {
   "common": {
-    "tagline": { "line1": "Tafuta • Unganika • Oana", "line2": "Tovuti ya Kutafuta Ndoa Pekee" },
+    "tagline": {
+      "line1": "Tafuta • Unganika • Oana",
+      "line2": "Tovuti ya Kutafuta Ndoa Pekee"
+    },
     "nav": {
       "home": "Nyumbani",
       "howItWorks": "Jinsi Inavyofanyakazi",
@@ -16,7 +19,9 @@
     },
     "closeReturnHomeAria": "Funga na urudi Nyumbani",
     "closeRestartSignupAria": "Funga na uanze usajili upya",
-    "languageSwitcher": { "label": "Lugha" },
+    "languageSwitcher": {
+      "label": "Lugha"
+    },
     "footer": {
       "description": "Kuanza Maswaliano, Kufuatilia Maisha ya Pamoja — jukwaa la ndoa la Kiislamu lililojengwa juu ya usalama, heshima na faragha.",
       "pagesHeading": "Kurasa",
@@ -26,7 +31,168 @@
       "contactUs": "Wasiliana Nasi",
       "contactHeading": "Mawasiliano",
       "hours": "Jumatatu–Jumapili, 08:00–22:00",
-      "copyright": "Haki zote zimehifadhiwa."
+      "copyright": "Haki zote zimehifadhiwa.",
+      "terms": "Masharti ya Matumizi"
+    },
+    "sidebar": {
+      "dashibodi": "Dashibodi",
+      "wasifu": "Wasifu",
+      "ujumbe": "Ujumbe",
+      "wamenipenda": "Wamenipenda",
+      "wasifuWangu": "Wasifu Wangu",
+      "mipangilio": "Mipangilio",
+      "kituoChaUsalama": "Kituo cha Usalama",
+      "ripotiMtumiaji": "Ripoti Mtumiaji",
+      "wasilianaNaMsaada": "Wasiliana na Msaada",
+      "maswali": "Maswali (FAQ)",
+      "logout": "Toka",
+      "openMenuAria": "Fungua menyu"
+    },
+    "topBar": {
+      "searchPlaceholder": "Tafuta jina, kazi, mji...",
+      "accountMenu": {
+        "akauntiYangu": "Akaunti Yangu",
+        "wasifuWangu": "Wasifu Wangu",
+        "mipangilio": "Mipangilio",
+        "logout": "Toka"
+      },
+      "notifications": {
+        "heading": "Arifa",
+        "bellAria": "Arifa",
+        "loading": "Inapakia...",
+        "empty": "Huna arifa kwa sasa."
+      }
+    },
+    "upgradeCard": {
+      "heading": "Boresha Kifurushi",
+      "body": "Basic, Silver, Gold au Premium — pata mawasiliano zaidi na huduma za ziada."
+    },
+    "labels": {
+      "intention": {
+        "MPENZI_WA_NDOA": "Mpenzi wa Ndoa ya Kudumu",
+        "MWENZI_MUDA_MREFU": "Mwenzi wa Muda Mrefu",
+        "MARAFIKI_WAPYA": "Marafiki Wapya",
+        "BADO_SIJAAMUA": "Bado Sijaamua"
+      },
+      "maritalStatus": {
+        "SIJAOA_SIJAOLEWA": "Sijaoa/Sijaolewa",
+        "TALAKA": "Nimeachika",
+        "MJANE": "Mjane",
+        "AMETENGANA": "Tumetengana"
+      },
+      "madhhab": {
+        "HANAFI": "Hanafi",
+        "SHAFII": "Shafii",
+        "MALIKI": "Maliki",
+        "HANBALI": "Hanbali",
+        "SINA_MADHHAB_MAALUM": "Sina Madhhab Maalum"
+      },
+      "prayerHabit": {
+        "MARA_TANO": "Ninaswali Mara 5 kwa Siku",
+        "MARA_KWA_MARA": "Ninaswali Mara kwa Mara",
+        "NINAJITAHIDI": "Ninajitahidi Kuswali",
+        "SIFANYI_SASA": "Sifanyi Swala kwa Sasa"
+      },
+      "hijabOption": {
+        "NDIYO": "Ndiyo",
+        "HAPANA": "Hapana",
+        "WAKATI_MWINGINE": "Wakati Mwingine"
+      },
+      "quranLevel": {
+        "NINASOMA_KWA_UFASAHA": "Ninasoma kwa Ufasaha",
+        "NINASOMA_KAWAIDA": "Ninasoma kwa Kawaida",
+        "BADO_NINAJIFUNZA": "Bado Ninajifunza",
+        "SIJUI_KUSOMA": "Sijui Kusoma"
+      },
+      "substanceUse": {
+        "SITUMII_KABISA": "Situmii Kabisa",
+        "MARA_CHACHE": "Mara Chache",
+        "MARA_KWA_MARA": "Mara kwa Mara"
+      },
+      "educationLevel": {
+        "MSINGI": "Shule ya Msingi",
+        "SEKONDARI": "Sekondari",
+        "KIDATO_CHA_SITA": "Kidato cha Sita",
+        "STASHAHADA": "Astashahada/Stashahada",
+        "SHAHADA": "Shahada",
+        "UZAMILI_UZAMIVU": "Shahada ya Uzamili/Uzamivu"
+      },
+      "bodyType": {
+        "MWEMBAMBA": "Mwembamba",
+        "WASTANI": "Wastani",
+        "MNENE": "Mnene"
+      },
+      "skinTone": {
+        "NYEUSI": "Nyeusi",
+        "KAHAWIA_ILIYOKOZA": "Kahawia Iliyokoza",
+        "KAHAWIA": "Kahawia",
+        "NYEUPE": "Nyeupe"
+      },
+      "incomeRange": {
+        "CHINI_YA_300K": "Chini ya TZS 300,000",
+        "300K_HADI_700K": "TZS 300,000 - 700,000",
+        "700K_HADI_1_5M": "TZS 700,000 - 1,500,000",
+        "ZAIDI_YA_1_5M": "Zaidi ya TZS 1,500,000",
+        "SIPENDI_KUTAJA": "Sipendi Kutaja"
+      },
+      "guardianRelationship": {
+        "BABA": "Baba",
+        "KAKA": "Kaka",
+        "MJOMBA": "Mjomba",
+        "BABU": "Babu",
+        "MWINGINE": "Mwingine"
+      },
+      "religion": {
+        "UISLAMU": "Uislamu",
+        "UKRISTO": "Ukristo",
+        "UHINDU": "Uhindu",
+        "DINI_ASILIA": "Dini za Asili",
+        "SINA_DINI": "Sina Dini",
+        "NYINGINE": "Nyingine"
+      },
+      "disabilityType": {
+        "MIGUU": "Ulemavu wa Miguu",
+        "MIKONO": "Ulemavu wa Mikono",
+        "UPOFU": "Upofu",
+        "UZIWI": "Uziwi",
+        "NYINGINE": "Nyingine",
+        "SIHITAJI_KUSEMA": "Sihitaji Kusema"
+      },
+      "yesNo": {
+        "NDIYO": "Ndiyo",
+        "HAPANA": "Hapana"
+      }
+    },
+    "supportCategories": {
+      "ACCOUNT_LOGIN": "🔐 Account & Login",
+      "PROFILE_VERIFICATION": "👤 Profile & Verification",
+      "PAYMENTS_SUBSCRIPTION": "💳 Payments & Subscription",
+      "SAFETY_REPORT": "🚩 Safety & Report",
+      "MESSAGES_COMMUNICATION": "💬 Messages & Communication",
+      "PRIVACY_DATA": "🔒 Privacy & Data",
+      "TECHNICAL_PROBLEM": "⚙️ Technical Problem",
+      "TERMS_POLICY": "📋 Terms & Policy",
+      "OTHER": "❓ Other"
+    },
+    "reportReasons": {
+      "FAKE_PROFILE": "Akaunti ya Uongo",
+      "SCAM": "Utapeli",
+      "MONEY_REQUEST": "Anaomba Pesa",
+      "HARASSMENT": "Unyanyasaji",
+      "THREATS": "Vitisho au Uonevu",
+      "SPAM": "Ujumbe Usiohitajika",
+      "IMPERSONATION": "Anajifanya Mtu Mwingine",
+      "INAPPROPRIATE_CONTENT": "Maudhui Yasiyofaa",
+      "FALSE_INFO": "Picha au Taarifa za Uongo",
+      "TERMS_VIOLATION": "Anakiuka Masharti ya Nusrah",
+      "OTHER": "Sababu Nyingine"
+    },
+    "tiers": {
+      "FREE": "Bure",
+      "BASIC": "Basic",
+      "SILVER": "Silver",
+      "GOLD": "Gold",
+      "PREMIUM": "Premium"
     }
   },
   "home": {
@@ -51,14 +217,38 @@
     "trustBadgeTitle": "Wanachama Wetu",
     "trustBadgeSubtitle": "Wanautafuta kama wewe",
     "heroPhotoAlt": "Wanandoa wakiwa pamoja, wakitafakari safari yao ya kupata mwenzi wa maisha",
-    "statsBar": ["Wanachama Hai", "Mafanikio ya Ndoa", "Salama & La Faragha", "Taarifa Zilizo Hakikiwa", "Msaada wa Haraka"],
+    "statsBar": [
+      "Wanachama Hai",
+      "Mafanikio ya Ndoa",
+      "Salama & La Faragha",
+      "Taarifa Zilizo Hakikiwa",
+      "Msaada wa Haraka"
+    ],
     "features": [
-      { "title": "Salama & La Faragha", "body": "Taarifa zako zipo salama. Faragha yako ni kipaumbele chetu cha kwanza." },
-      { "title": "Profaili Halisi", "body": "Wanachama wote hupitia uthibitisho wa taarifa ili kuhakikisha uhalisia." },
-      { "title": "Uchaguzi wa Kijanja", "body": "Tafuta mwenzi kwa kutumia vichujio vya hali ya juu kwa matokeo sahihi zaidi." },
-      { "title": "Mawasiliano Bora", "body": "Wasiliana kwa heshima na kujenga uelewa kabla ya kuamua hatua zaidi." },
-      { "title": "Nia ya Ndoa", "body": "Jukwaa la watu wenye nia ya dhati ya kuoa na kuishi kwa maadili ya Kiislamu." },
-      { "title": "Mafanikio Halisi", "body": "Tuna historia ya mafanikio ya wanandoa waliopata furaha kupitia Nusrah." }
+      {
+        "title": "Salama & La Faragha",
+        "body": "Taarifa zako zipo salama. Faragha yako ni kipaumbele chetu cha kwanza."
+      },
+      {
+        "title": "Profaili Halisi",
+        "body": "Wanachama wote hupitia uthibitisho wa taarifa ili kuhakikisha uhalisia."
+      },
+      {
+        "title": "Uchaguzi wa Kijanja",
+        "body": "Tafuta mwenzi kwa kutumia vichujio vya hali ya juu kwa matokeo sahihi zaidi."
+      },
+      {
+        "title": "Mawasiliano Bora",
+        "body": "Wasiliana kwa heshima na kujenga uelewa kabla ya kuamua hatua zaidi."
+      },
+      {
+        "title": "Nia ya Ndoa",
+        "body": "Jukwaa la watu wenye nia ya dhati ya kuoa na kuishi kwa maadili ya Kiislamu."
+      },
+      {
+        "title": "Mafanikio Halisi",
+        "body": "Tuna historia ya mafanikio ya wanandoa waliopata furaha kupitia Nusrah."
+      }
     ],
     "quote": {
       "arabic": "وَإِنْ خِفْتُمْ أَلَّا تُقْسِطُوا فِي الْيَتَامَىٰ فَانْكِحُوا مَا طَابَ لَكُمْ مِنَ النِّسَاءِ مَثْنَىٰ وَثُلَاثَ وَرُبَاعَ",
@@ -109,7 +299,8 @@
     "noAccount": "Huna akaunti?",
     "joinNow": "Jiunge Sasa",
     "genericError": "Hitilafu imetokea",
-    "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena."
+    "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena.",
+    "sessionExpiredNotice": "Umetoka kiotomatiki kwa sababu hukuwa na shughuli kwa dakika 5. Tafadhali ingia tena."
   },
   "thibitisha": {
     "title": "Thibitisha Akaunti Yako",
@@ -148,6 +339,37 @@
       "tooManyOtpAttempts": "Umejaribu mara nyingi mno. Omba kodi mpya.",
       "invalidCode": "Kodi si sahihi.",
       "verifiedSuccess": "Akaunti imethibitishwa"
+    },
+    "general": {
+      "unauthenticated": "Tafadhali ingia kwanza",
+      "forbidden": "Huna ruhusa ya kufanya hili",
+      "notFound": "Haipatikani",
+      "profileNotFound": "Wasifu haujapatikana",
+      "cannotBlockSelf": "Huwezi kujizuia mwenyewe",
+      "cannotMessageSelf": "Huwezi kujitumia ujumbe",
+      "cannotFavoriteSelf": "Huwezi kujipenda mwenyewe",
+      "cannotReportSelf": "Huwezi kujiripoti mwenyewe",
+      "invalidPhotoType": "Aina ya picha si sahihi",
+      "photoTooLarge": "Picha ni kubwa mno",
+      "invalidFileType": "Aina ya faili si sahihi",
+      "fileTooLarge": "Faili ni kubwa mno",
+      "packageNotFound": "Kifurushi hakipatikani",
+      "orderNotFound": "Agizo halipatikani",
+      "orderAlreadyProcessed": "Agizo hili tayari limeshughulikiwa",
+      "paymentGatewayNotConfigured": "Malipo ya mtandao wa simu yanasubiri usanidi wa mwisho. Tutakujulisha mara tu yatakapopatikana.",
+      "withParamRequired": "Query param 'with' inahitajika",
+      "invalidFormData": "Data si sahihi",
+      "contactRateLimited": "Umetuma ujumbe mara nyingi mno. Jaribu tena baadaye.",
+      "cannotInitiateMessage": "Kifurushi chako hakiruhusu kuanzisha mazungumzo mapya. Boresha kifurushi chako.",
+      "cannotReplyToMessage": "Kifurushi chako hakiruhusu kujibu ujumbe. Boresha kifurushi chako.",
+      "videoCallRestricted": "Simu za video zinapatikana kwa wanachama wa PREMIUM pekee.",
+      "voiceCallRestricted": "Simu za sauti zinapatikana kwa wanachama wa GOLD na PREMIUM pekee.",
+      "noPhotoSelected": "Chagua picha",
+      "galleryLimitReached": "Umefikia kikomo cha picha 7 (picha ya wasifu + picha 6 za ziada)",
+      "photoUploadConflict": "Jaribu tena",
+      "devToolOwnAccountOnly": "Dev tool inaweza tu kuwasha akaunti yako mwenyewe",
+      "invalidCurrentPassword": "Password ya sasa si sahihi",
+      "invalidPassword": "Password si sahihi"
     }
   },
   "validation": {
@@ -159,22 +381,68 @@
     "passwordRequired": "Nenosiri linahitajika",
     "otpCodeFormat": "Kodi ni tarakimu 6",
     "mustAgreeToTerms": "Lazima ukubaliane na Masharti ya Matumizi ili kujisajili",
-    "passwordsDoNotMatch": "Manenosiri hayafanani"
+    "passwordsDoNotMatch": "Manenosiri hayafanani",
+    "minAgeRequired": "Lazima uwe na umri wa miaka {minAge} au zaidi kutumia Nusrah.",
+    "chooseCountry": "Chagua nchi",
+    "regionRequired": "Jaza mkoa/jimbo",
+    "cityRequired": "Jaza wilaya/eneo",
+    "religionRequired": "Jaza dini yako",
+    "chooseAnswer": "Chagua jibu",
+    "occupationRequired": "Eleza kazi yako",
+    "chooseAtLeastOne": "Chagua angalau chaguo moja",
+    "bioTooShort": "Eleza kidogo zaidi kuhusu wewe",
+    "minAgeExceedsMaxAge": "Umri wa chini hauwezi kuzidi umri wa juu",
+    "guardianNameRequired": "Jaza jina la mlezi",
+    "chooseRelationship": "Chagua uhusiano",
+    "guardianPhoneRequired": "Jaza namba ya simu ya mlezi",
+    "messageBodyRequired": "Andika ujumbe",
+    "currentPasswordRequired": "Jaza password ya sasa",
+    "newPasswordTooShort": "Password mpya lazima iwe na herufi 8 au zaidi",
+    "deletePasswordRequired": "Jaza password yako",
+    "deleteConfirmationMismatch": "Andika \"{word}\" kuthibitisha",
+    "reportDescriptionTooShort": "Eleza kilichotokea kwa ufupi zaidi",
+    "invalidRegion": "Mkoa haujakubalika",
+    "invalidChoice": "Chaguo halijakubalika",
+    "invalidRequest": "Ombi si sahihi",
+    "messageTooShort": "Ujumbe ni mfupi mno"
   },
   "jinsiInavyofanyakazi": {
     "title": "Jinsi Nusrah Inavyofanyakazi",
     "subtitle": "Hatua rahisi kukusaidia kupata mwenzi wako wa maisha",
     "steps": [
-      { "title": "Jisajili", "desc": "Unda akaunti yako bure kwa taarifa za msingi." },
-      { "title": "Jaza Profaili", "desc": "Eleza kuhusu wewe na unachotafuta kwa mwenzi." },
-      { "title": "Tafuta", "desc": "Vinjari wasifu unaolingana na mahitaji yako." },
-      { "title": "Mawasiliano", "desc": "Anzisha mazungumzo salama na ya heshima." },
-      { "title": "Thibitisha", "desc": "Thibitisha nia na taarifa kabla ya kuendelea." },
-      { "title": "Pata Maisha ya Pamoja", "desc": "Endelea na taratibu za ndoa kwa baraka." }
+      {
+        "title": "Jisajili",
+        "desc": "Unda akaunti yako bure kwa taarifa za msingi."
+      },
+      {
+        "title": "Jaza Profaili",
+        "desc": "Eleza kuhusu wewe na unachotafuta kwa mwenzi."
+      },
+      {
+        "title": "Tafuta",
+        "desc": "Vinjari wasifu unaolingana na mahitaji yako."
+      },
+      {
+        "title": "Mawasiliano",
+        "desc": "Anzisha mazungumzo salama na ya heshima."
+      },
+      {
+        "title": "Thibitisha",
+        "desc": "Thibitisha nia na taarifa kabla ya kuendelea."
+      },
+      {
+        "title": "Pata Maisha ya Pamoja",
+        "desc": "Endelea na taratibu za ndoa kwa baraka."
+      }
     ],
     "tiersHeading": "Taarifa kwa Ngazi (Free hadi Premium)",
     "tiersSubtitle": "Kadiri unavyopanda kifurushi, ndivyo unavyopata taarifa na huduma zaidi",
-    "trustBadges": ["Usalama wa Juu", "Heshima & Maadili", "Kwa Ajili ya Ndoa Pekee", "Msaada wa Haraka"]
+    "trustBadges": [
+      "Usalama wa Juu",
+      "Heshima & Maadili",
+      "Kwa Ajili ya Ndoa Pekee",
+      "Msaada wa Haraka"
+    ]
   },
   "kuwaMwanachama": {
     "title": "Chagua Kifurushi Chako",
@@ -200,10 +468,22 @@
     "title": "Mafanikio ya Wanachama Wetu",
     "subtitle": "Hadithi za kweli za wanachama waliopata mwenzi wao wa maisha kupitia Nusrah",
     "stats": [
-      { "value": "35,000+", "label": "Wanachama Hai" },
-      { "value": "2,000+", "label": "Mafanikio ya Ndoa" },
-      { "value": "98%", "label": "Wameridhika na Nusrah" },
-      { "value": "100%", "label": "Salama & Faragha" }
+      {
+        "value": "35,000+",
+        "label": "Wanachama Hai"
+      },
+      {
+        "value": "2,000+",
+        "label": "Mafanikio ya Ndoa"
+      },
+      {
+        "value": "98%",
+        "label": "Wameridhika na Nusrah"
+      },
+      {
+        "value": "100%",
+        "label": "Salama & Faragha"
+      }
     ],
     "ctaHeading": "Uwe Hadithi Yetu Ijayo ya Mafanikio",
     "ctaLoggedIn": "Endelea kuvinjari wanachama wenzako kwenye Nusrah kwa njia salama na ya heshima.",
@@ -215,36 +495,126 @@
     "subtitle": "Tuko hapa kukusaidia. Angalia maswali yanayoulizwa mara kwa mara au wasiliana nasi moja kwa moja.",
     "faqHeading": "Maswali Yanayoulizwa Mara kwa Mara",
     "faqs": [
-      { "question": "Nusrah.co.tz ni nini?", "answer": "Nusrah.co.tz ni jukwaa linalowaunganisha watu wenye nia ya dhati ya kutafuta mwenza wa maisha kwa ajili ya ndoa, kwa kuzingatia heshima, uaminifu, faragha na maadili ya Kiislamu." },
-      { "question": "Je, Nusrah ni dating site ya kawaida?", "answer": "Hapana. Nusrah inalenga zaidi kutafuta mwenza kwa ajili ya ndoa, si mahusiano ya muda mfupi au burudani." },
-      { "question": "Nani anaweza kujisajili Nusrah?", "answer": "Mtu anayekidhi masharti ya matumizi ya Nusrah na mwenye nia ya kweli ya kutafuta mwenza wa maisha anaweza kujisajili." },
-      { "question": "Je, lazima niwe Muislamu?", "answer": "Nusrah imejengwa kwa mtazamo wa Kiislamu na inalenga hasa watu wanaotafuta ndoa kwa misingi ya Kiislamu. Masharti ya aina ya wanachama yanaelezwa wakati wa usajili." },
-      { "question": "Ni taarifa gani ninahitaji wakati wa usajili?", "answer": "Utahitajika kutoa taarifa kama: jina na jina la kuonekana kwenye wasifu, tarehe ya kuzaliwa, jinsia, namba ya simu, barua pepe, eneo unaloishi, hali ya ndoa, taarifa za dini, elimu na kazi, vigezo unavyotafuta kwa mwenza, picha ya wasifu, na taarifa nyingine muhimu kwa ajili ya kutengeneza profile yako." },
-      { "question": "Je, ninaweza kutumia jina la utani?", "answer": "Nusrah inaweza kuruhusu jina la kuonekana (display name) ili kulinda faragha, lakini taarifa za usajili zinapaswa kuwa za kweli na sahihi." },
-      { "question": "Je, namba yangu ya simu itaonekana kwa kila mtu?", "answer": "Hapana. Taarifa binafsi kama namba ya simu na email zinapaswa kulindwa na hazipaswi kuonyeshwa hadharani bila ruhusa yako." },
-      { "question": "Je, ninaweza kuweka picha yangu?", "answer": "Ndiyo. Unaweza kuweka picha inayofaa kwa profile yako. Nusrah inaweza kupitia picha ili kuhakikisha inazingatia sheria na viwango vya jukwaa." },
-      { "question": "Uthibitisho wa profile ni nini?", "answer": "Uthibitisho unasaidia kuongeza uaminifu na usalama wa wanachama kwa kuhakikisha kuwa taarifa muhimu za mtumiaji zinaweza kuthibitishwa." },
-      { "question": "Je, Nusrah inahakikisha nitapata mwenza?", "answer": "Hapana. Nusrah haiwezi kuhakikisha ndoa au kupata mwenza fulani. Jukwaa linatoa mazingira ya kukutana, kuwasiliana na kuchagua kwa uangalifu." },
-      { "question": "Ninawezaje kumtafuta mwenza?", "answer": "Unaweza kutumia vigezo kama: jinsia, umri, eneo, hali ya ndoa, elimu, kazi, mazingira ya kidini, vigezo vya maisha, na vigezo vingine vya mwenza unavyovipendelea." },
-      { "question": "Je, ninaweza kuwasiliana na mtu ninayemvutia?", "answer": "Ndiyo, ikiwa profile zote mbili zinaruhusu mawasiliano kulingana na mfumo wa Nusrah. Unaweza kutumia ujumbe wa ndani wa jukwaa bila kulazimika kutoa namba yako ya simu." },
-      { "question": "Je, ninaweza kumzuia mtu?", "answer": "Ndiyo. Unaweza Block mtumiaji ambaye hutaki awasiliane nawe." },
-      { "question": "Je, ninaweza kuripoti profile?", "answer": "Ndiyo. Unaweza kuripoti profile, ujumbe au tabia inayokiuka sheria za Nusrah. Timu ya usimamizi inaweza kuchunguza taarifa hiyo na kuchukua hatua stahiki." },
-      { "question": "Nusrah inalindaje usalama wangu?", "answer": "Nusrah inalenga kutumia hatua mbalimbali za usalama, ikiwemo uthibitisho wa watumiaji, mfumo wa kuripoti, kuzuia akaunti zinazokiuka masharti na kulinda taarifa binafsi." },
-      { "question": "Wali/Mlezi ana nafasi gani?", "answer": "Kwa mtumiaji anayechagua, Nusrah inaweza kutoa sehemu ya kuweka taarifa za Wali/Mlezi ili kusaidia mchakato wa kutafuta mwenza kwa heshima na kwa kuzingatia mazingira ya familia." },
-      { "question": "Je, taarifa za Wali ni lazima?", "answer": "Hapana, sehemu hiyo inaweza kuwa hiari, kulingana na sera na mfumo wa Nusrah." },
-      { "question": "Nimesahau password yangu, nifanye nini?", "answer": "Bonyeza \"Umesahau Neno la Siri?\" kwenye Login Page na fuata hatua za kurejesha akaunti yako." },
-      { "question": "Je, naweza kubadilisha taarifa za profile yangu?", "answer": "Ndiyo. Unaweza kuhariri taarifa zako kupitia Profile Settings, isipokuwa taarifa fulani ambazo zinaweza kuhitaji uthibitisho wa ziada." },
-      { "question": "Je, ninaweza kufuta akaunti yangu?", "answer": "Ndiyo. Unaweza kuomba kufuta akaunti yako kupitia Account Settings au kuwasiliana na Nusrah Support." },
-      { "question": "Je, Nusrah ni bure?", "answer": "Nusrah inaweza kuwa na huduma za bure pamoja na huduma za kulipia kulingana na mpango wa uanachama unaopatikana." },
-      { "question": "Malipo yanafanywaje?", "answer": "Ikiwa huduma unayotumia inahitaji malipo, Nusrah inaweza kutoa njia mbalimbali za malipo kama vile Mobile Money, kadi au njia nyingine zinazokubaliwa na mfumo." },
-      { "question": "Je, malipo yanaweza kurejeshwa?", "answer": "Refund hutegemea aina ya huduma, mpango uliolipia na Refund Policy ya Nusrah." },
-      { "question": "Je, Nusrah inaruhusu utapeli au akaunti za uongo?", "answer": "Hapana. Akaunti za uongo, utapeli, udanganyifu, vitisho, unyanyasaji na matumizi mabaya ya jukwaa ni ukiukaji wa masharti ya Nusrah." },
-      { "question": "Nifanye nini nikihisi mtu ni tapeli?", "answer": "Usimtumie pesa wala taarifa zako nyeti. Mblock na mripoti mara moja kupitia mfumo wa Report, kisha Nusrah inaweza kufanya uchunguzi." },
-      { "question": "Je, ninaweza kuomba pesa kutoka kwa mtumiaji mwingine?", "answer": "Hapana. Kuomba au kushinikiza mtumiaji mwingine kutuma pesa, hasa kwa udanganyifu, kunaweza kusababisha akaunti kusimamishwa au kufungwa." },
-      { "question": "Je, mawasiliano yangu yanaweza kufuatiliwa?", "answer": "Nusrah inaweza kuchakata taarifa zinazohitajika kwa ajili ya usalama, uendeshaji wa huduma na kuzuia matumizi mabaya, kwa mujibu wa Privacy Policy yake." },
-      { "question": "Je, Nusrah inashiriki taarifa zangu na watu wengine?", "answer": "Nusrah inalenga kulinda taarifa zako binafsi na kuzishughulikia kwa mujibu wa Privacy Policy na sheria zinazotumika." },
-      { "question": "Je, ninaweza kukutana na mtu niliyempata Nusrah?", "answer": "Ndiyo, lakini unashauriwa kuchukua tahadhari: hakikisha umefanya mawasiliano ya kutosha, epuka kutuma pesa, na kwa mkutano wa kwanza chagua eneo salama na linalojulikana." },
-      { "question": "Ninawezaje kuwasiliana na Nusrah Support?", "answer": "Tumia sehemu ya Help & Support / Contact Us ndani ya Nusrah.co.tz kwa msaada kuhusu akaunti, profile, malipo, usalama au kuripoti tatizo." }
+      {
+        "question": "Nusrah.co.tz ni nini?",
+        "answer": "Nusrah.co.tz ni jukwaa linalowaunganisha watu wenye nia ya dhati ya kutafuta mwenza wa maisha kwa ajili ya ndoa, kwa kuzingatia heshima, uaminifu, faragha na maadili ya Kiislamu."
+      },
+      {
+        "question": "Je, Nusrah ni dating site ya kawaida?",
+        "answer": "Hapana. Nusrah inalenga zaidi kutafuta mwenza kwa ajili ya ndoa, si mahusiano ya muda mfupi au burudani."
+      },
+      {
+        "question": "Nani anaweza kujisajili Nusrah?",
+        "answer": "Mtu anayekidhi masharti ya matumizi ya Nusrah na mwenye nia ya kweli ya kutafuta mwenza wa maisha anaweza kujisajili."
+      },
+      {
+        "question": "Je, lazima niwe Muislamu?",
+        "answer": "Nusrah imejengwa kwa mtazamo wa Kiislamu, lakini lengo letu kuu ni kuunganisha watu na kuwasaidia kujenga misingi mizuri ya ndoa. Kwa hiyo, Nusrah ni kwa ajili ya watu wote, wa dini zote, bila kubagua dini yoyote."
+      },
+      {
+        "question": "Ni taarifa gani ninahitaji wakati wa usajili?",
+        "answer": "Utahitajika kutoa taarifa kama: jina na jina la kuonekana kwenye wasifu, tarehe ya kuzaliwa, jinsia, namba ya simu, barua pepe, eneo unaloishi, hali ya ndoa, taarifa za dini, elimu na kazi, vigezo unavyotafuta kwa mwenza, picha ya wasifu, na taarifa nyingine muhimu kwa ajili ya kutengeneza profile yako."
+      },
+      {
+        "question": "Je, ninaweza kutumia jina la utani?",
+        "answer": "Nusrah inaweza kuruhusu jina la kuonekana (display name) ili kulinda faragha, lakini taarifa za usajili zinapaswa kuwa za kweli na sahihi."
+      },
+      {
+        "question": "Je, namba yangu ya simu itaonekana kwa kila mtu?",
+        "answer": "Hapana. Taarifa binafsi kama namba ya simu na email zinapaswa kulindwa na hazipaswi kuonyeshwa hadharani bila ruhusa yako."
+      },
+      {
+        "question": "Je, ninaweza kuweka picha yangu?",
+        "answer": "Ndiyo. Unaweza kuweka picha inayofaa kwa profile yako. Nusrah inaweza kupitia picha ili kuhakikisha inazingatia sheria na viwango vya jukwaa."
+      },
+      {
+        "question": "Uthibitisho wa profile ni nini?",
+        "answer": "Uthibitisho unasaidia kuongeza uaminifu na usalama wa wanachama kwa kuhakikisha kuwa taarifa muhimu za mtumiaji zinaweza kuthibitishwa."
+      },
+      {
+        "question": "Je, Nusrah inahakikisha nitapata mwenza?",
+        "answer": "Hapana. Nusrah haiwezi kuhakikisha ndoa au kupata mwenza fulani. Jukwaa linatoa mazingira ya kukutana, kuwasiliana na kuchagua kwa uangalifu."
+      },
+      {
+        "question": "Ninawezaje kumtafuta mwenza?",
+        "answer": "Unaweza kutumia vigezo kama: jinsia, umri, eneo, hali ya ndoa, elimu, kazi, mazingira ya kidini, vigezo vya maisha, na vigezo vingine vya mwenza unavyovipendelea."
+      },
+      {
+        "question": "Je, ninaweza kuwasiliana na mtu ninayemvutia?",
+        "answer": "Ndiyo, ikiwa profile zote mbili zinaruhusu mawasiliano kulingana na mfumo wa Nusrah. Unaweza kutumia ujumbe wa ndani wa jukwaa bila kulazimika kutoa namba yako ya simu."
+      },
+      {
+        "question": "Je, ninaweza kumzuia mtu?",
+        "answer": "Ndiyo. Unaweza Block mtumiaji ambaye hutaki awasiliane nawe."
+      },
+      {
+        "question": "Je, ninaweza kuripoti profile?",
+        "answer": "Ndiyo. Unaweza kuripoti profile, ujumbe au tabia inayokiuka sheria za Nusrah. Timu ya usimamizi inaweza kuchunguza taarifa hiyo na kuchukua hatua stahiki."
+      },
+      {
+        "question": "Nusrah inalindaje usalama wangu?",
+        "answer": "Nusrah inalenga kutumia hatua mbalimbali za usalama, ikiwemo uthibitisho wa watumiaji, mfumo wa kuripoti, kuzuia akaunti zinazokiuka masharti na kulinda taarifa binafsi."
+      },
+      {
+        "question": "Wali/Mlezi ana nafasi gani?",
+        "answer": "Kwa mtumiaji anayechagua, Nusrah inaweza kutoa sehemu ya kuweka taarifa za Wali/Mlezi ili kusaidia mchakato wa kutafuta mwenza kwa heshima na kwa kuzingatia mazingira ya familia."
+      },
+      {
+        "question": "Je, taarifa za Wali ni lazima?",
+        "answer": "Hapana, sehemu hiyo inaweza kuwa hiari, kulingana na sera na mfumo wa Nusrah."
+      },
+      {
+        "question": "Nimesahau password yangu, nifanye nini?",
+        "answer": "Bonyeza \"Umesahau Neno la Siri?\" kwenye Login Page na fuata hatua za kurejesha akaunti yako."
+      },
+      {
+        "question": "Je, naweza kubadilisha taarifa za profile yangu?",
+        "answer": "Ndiyo. Unaweza kuhariri taarifa zako kupitia Profile Settings, isipokuwa taarifa fulani ambazo zinaweza kuhitaji uthibitisho wa ziada."
+      },
+      {
+        "question": "Je, ninaweza kufuta akaunti yangu?",
+        "answer": "Ndiyo. Unaweza kuomba kufuta akaunti yako kupitia Account Settings au kuwasiliana na Nusrah Support."
+      },
+      {
+        "question": "Je, Nusrah ni bure?",
+        "answer": "Nusrah inaweza kuwa na huduma za bure pamoja na huduma za kulipia kulingana na mpango wa uanachama unaopatikana."
+      },
+      {
+        "question": "Malipo yanafanywaje?",
+        "answer": "Ikiwa huduma unayotumia inahitaji malipo, Nusrah inaweza kutoa njia mbalimbali za malipo kama vile Mobile Money, kadi au njia nyingine zinazokubaliwa na mfumo."
+      },
+      {
+        "question": "Je, malipo yanaweza kurejeshwa?",
+        "answer": "Refund hutegemea aina ya huduma, mpango uliolipia na Refund Policy ya Nusrah."
+      },
+      {
+        "question": "Je, Nusrah inaruhusu utapeli au akaunti za uongo?",
+        "answer": "Hapana. Akaunti za uongo, utapeli, udanganyifu, vitisho, unyanyasaji na matumizi mabaya ya jukwaa ni ukiukaji wa masharti ya Nusrah."
+      },
+      {
+        "question": "Nifanye nini nikihisi mtu ni tapeli?",
+        "answer": "Usimtumie pesa wala taarifa zako nyeti. Mblock na mripoti mara moja kupitia mfumo wa Report, kisha Nusrah inaweza kufanya uchunguzi."
+      },
+      {
+        "question": "Je, ninaweza kuomba pesa kutoka kwa mtumiaji mwingine?",
+        "answer": "Hapana. Kuomba au kushinikiza mtumiaji mwingine kutuma pesa, hasa kwa udanganyifu, kunaweza kusababisha akaunti kusimamishwa au kufungwa."
+      },
+      {
+        "question": "Je, mawasiliano yangu yanaweza kufuatiliwa?",
+        "answer": "Nusrah inaweza kuchakata taarifa zinazohitajika kwa ajili ya usalama, uendeshaji wa huduma na kuzuia matumizi mabaya, kwa mujibu wa Privacy Policy yake."
+      },
+      {
+        "question": "Je, Nusrah inashiriki taarifa zangu na watu wengine?",
+        "answer": "Nusrah inalenga kulinda taarifa zako binafsi na kuzishughulikia kwa mujibu wa Privacy Policy na sheria zinazotumika."
+      },
+      {
+        "question": "Je, ninaweza kukutana na mtu niliyempata Nusrah?",
+        "answer": "Ndiyo, lakini unashauriwa kuchukua tahadhari: hakikisha umefanya mawasiliano ya kutosha, epuka kutuma pesa, na kwa mkutano wa kwanza chagua eneo salama na linalojulikana."
+      },
+      {
+        "question": "Ninawezaje kuwasiliana na Nusrah Support?",
+        "answer": "Tumia sehemu ya Help & Support / Contact Us ndani ya Nusrah.co.tz kwa msaada kuhusu akaunti, profile, malipo, usalama au kuripoti tatizo."
+      }
     ],
     "safetyNote": {
       "heading": "🛡️ Usalama Wako ni Muhimu",
@@ -331,7 +701,9 @@
       {
         "icon": "🚩",
         "heading": "Jihadhari na Dalili za Utapeli",
-        "intro": ["Kuwa makini ikiwa mtu:"],
+        "intro": [
+          "Kuwa makini ikiwa mtu:"
+        ],
         "items": [
           "Anaanza kukutamkia mapenzi haraka sana.",
           "Anaomba pesa au msaada wa kifedha.",
@@ -367,12 +739,16 @@
           "Suspicious links",
           "Maudhui yanayokiuka sheria za Nusrah."
         ],
-        "outro": ["Report na Block ni vipengele muhimu vya usalama kwenye dating platforms. (Safety Centre)"]
+        "outro": [
+          "Report na Block ni vipengele muhimu vya usalama kwenye dating platforms. (Safety Centre)"
+        ]
       },
       {
         "icon": "🔒",
         "heading": "Linda Taarifa Zako Binafsi",
-        "intro": ["Usishiriki mapema:"],
+        "intro": [
+          "Usishiriki mapema:"
+        ],
         "items": [
           "Password",
           "OTP",
@@ -385,7 +761,9 @@
           "Nyaraka binafsi",
           "Picha/video binafsi usizotaka zisambae."
         ],
-        "outro": ["Taarifa za profile zinapaswa kuwa na kiwango cha chini kinachohitajika ili kulinda faragha yako. (eSafety Commissioner)"]
+        "outro": [
+          "Taarifa za profile zinapaswa kuwa na kiwango cha chini kinachohitajika ili kulinda faragha yako. (eSafety Commissioner)"
+        ]
       },
       {
         "icon": "💬",
@@ -407,7 +785,9 @@
       {
         "icon": "🤝",
         "heading": "Kabla ya Kukutana",
-        "intro": ["Ikiwa umeamua kukutana na mtu, fanya hivi:"],
+        "intro": [
+          "Ikiwa umeamua kukutana na mtu, fanya hivi:"
+        ],
         "items": [
           "Mjulie mtu unayemwamini.",
           "Mpe jina/profile ya mtu unayekutana naye.",
@@ -434,7 +814,9 @@
       {
         "icon": "🚨",
         "heading": "Ikiwa Uko Katika Hatari",
-        "intro": ["Ikiwa mtu anakutishia, anakufuatilia, anakulazimisha au anakudhuru:"],
+        "intro": [
+          "Ikiwa mtu anakutishia, anakufuatilia, anakulazimisha au anakudhuru:"
+        ],
         "items": [
           "Sitisha mawasiliano.",
           "Hifadhi ushahidi muhimu.",
@@ -443,7 +825,9 @@
           "Ikiwa kuna hatari ya haraka ya kimwili, wasiliana na mamlaka za dharura za eneo lako."
         ],
         "ordered": true,
-        "outro": ["Nusrah si huduma ya dharura; kwa hatari ya haraka, tafuta msaada wa mamlaka husika. (Safety Centre)"]
+        "outro": [
+          "Nusrah si huduma ya dharura; kwa hatari ya haraka, tafuta msaada wa mamlaka husika. (Safety Centre)"
+        ]
       },
       {
         "icon": "📸",
@@ -460,7 +844,17 @@
           "Nusrah haipaswi kuwa sehemu ya kuombana pesa kwa kisingizio cha mapenzi.",
           "Usitume pesa kwa mtu ambaye umekutana naye mtandaoni kwa sababu ya:"
         ],
-        "items": ["Safari", "Matibabu", "Tiketi", "Biashara", "Investment", "Dharura", "Visa", "Msaada wa familia", "Ahadi ya ndoa."]
+        "items": [
+          "Safari",
+          "Matibabu",
+          "Tiketi",
+          "Biashara",
+          "Investment",
+          "Dharura",
+          "Visa",
+          "Msaada wa familia",
+          "Ahadi ya ndoa."
+        ]
       },
       {
         "icon": "⚖️",
@@ -486,16 +880,1404 @@
       "heading": "Quick Safety Actions",
       "intro": "Ukiwa na tatizo, bonyeza:",
       "items": [
-        { "icon": "🚩", "label": "REPORT", "body": "Ripoti mtumiaji." },
-        { "icon": "🚫", "label": "BLOCK", "body": "Zuia mawasiliano." },
-        { "icon": "🔒", "label": "PRIVACY", "body": "Badilisha mipangilio ya faragha." },
-        { "icon": "🔑", "label": "SECURE ACCOUNT", "body": "Badilisha password na kuwezesha 2FA." },
-        { "icon": "💬", "label": "CONTACT SUPPORT", "body": "Wasiliana na Nusrah Support." }
+        {
+          "icon": "🚩",
+          "label": "REPORT",
+          "body": "Ripoti mtumiaji."
+        },
+        {
+          "icon": "🚫",
+          "label": "BLOCK",
+          "body": "Zuia mawasiliano."
+        },
+        {
+          "icon": "🔒",
+          "label": "PRIVACY",
+          "body": "Badilisha mipangilio ya faragha."
+        },
+        {
+          "icon": "🔑",
+          "label": "SECURE ACCOUNT",
+          "body": "Badilisha password na kuwezesha 2FA."
+        },
+        {
+          "icon": "💬",
+          "label": "CONTACT SUPPORT",
+          "body": "Wasiliana na Nusrah Support."
+        }
       ]
     },
     "closing": {
       "quote": "Usalama wako ni muhimu kuliko kuendelea na mazungumzo.",
       "body": "Kama jambo linaonekana si sahihi, amini hisia zako, simamisha mawasiliano na report."
     }
+  },
+  "onboarding": {
+    "common": {
+      "genericError": "Hitilafu imetokea",
+      "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena.",
+      "saved": "Imehifadhiwa ✓",
+      "submitting": "Inaendelea...",
+      "save": "Hifadhi",
+      "continue": "Endelea",
+      "back": "Rudi Nyuma",
+      "skip": "Ruka"
+    },
+    "stepProgress": {
+      "step": "Hatua",
+      "of": "kati ya"
+    },
+    "personal": {
+      "pageHeading": "Taarifa Binafsi",
+      "pageSubtitle": "Hatua rahisi za kuanza safari yako ya kutafuta mwenza wa maisha",
+      "fullName": "Jina Kamili",
+      "displayNameLabel": "Jina Unalotaka Kuonekana",
+      "displayNamePlaceholder": "Jina lako la kuonekana kwenye profaili",
+      "genderLabel": "Jinsia",
+      "genderFemale": "Mwanamke",
+      "genderMale": "Mwanaume",
+      "dobLabel": "Tarehe ya Kuzaliwa",
+      "ageLabel": "Umri",
+      "countryLabel": "Nchi",
+      "countryPlaceholder": "Chagua nchi yako",
+      "countrySearchPlaceholder": "Tafuta nchi...",
+      "countryNoResults": "Hakuna nchi iliyopatikana",
+      "regionLabel": "Eneo Unaloishi (Mkoa)",
+      "regionSelectPlaceholder": "Chagua mkoa/jiji lako",
+      "regionInputPlaceholder": "Mkoa / Jimbo",
+      "cityLabel": "Wilaya / Eneo la Makazi",
+      "citySelectPlaceholder": "Chagua wilaya yako",
+      "cityInputPlaceholder": "Wilaya / Mji",
+      "maritalStatusLabel": "Hali ya Ndoa",
+      "maritalStatusPlaceholder": "Chagua hali yako ya ndoa",
+      "underMinAge": "Lazima uwe na umri wa miaka {minAge} au zaidi kutumia Nusrah."
+    },
+    "religion": {
+      "pageHeading": "Maelezo ya Dini",
+      "religionLabel": "Dini",
+      "religionPlaceholder": "Chagua dini yako",
+      "madhhabLabel": "Madhhabu",
+      "madhhabPlaceholder": "Chagua madhhabu yako",
+      "prayerHabitLabel": "Unaswali?",
+      "choosePlaceholder": "Chagua",
+      "wearsHijabLabel": "Unavaa Hijab?",
+      "quranLevelLabel": "Kusoma Qur'an",
+      "quranLevelPlaceholder": "Chagua kiwango chako",
+      "substanceUseLabel": "Unatumia pombe/uvutaji?"
+    },
+    "life": {
+      "pageHeading": "Maelezo ya Maisha",
+      "occupationLabel": "Kazi / Shughuli Yako",
+      "occupationPlaceholder": "Eleza kazi yako",
+      "educationLevelLabel": "Elimu ya Juu",
+      "chooseLevelPlaceholder": "Chagua kiwango chako",
+      "heightLabel": "Urefu (sm)",
+      "heightPlaceholder": "Chagua urefu wako",
+      "heightUnit": "sm",
+      "bodyTypeLabel": "Aina ya Mwili",
+      "choosePlaceholder": "Chagua",
+      "hasDisabilityLabel": "Una Ulemavu Wowote?",
+      "disabilityTypeLabel": "Aina ya Ulemavu",
+      "disabilityTypePlaceholder": "Chagua aina ya ulemavu",
+      "skinToneLabel": "Rangi ya Ngozi",
+      "incomeRangeLabel": "Kipato (Kama Unataka)",
+      "chooseRangePlaceholder": "Chagua kiwango",
+      "intentionsLabel": "Unatafuta",
+      "intentionsHint": "Unaweza kuchagua zaidi ya chaguo moja.",
+      "partnerAgeLabel": "Umri wa Mwenza Unayetaka",
+      "fromPlaceholder": "Kutoka",
+      "toPlaceholder": "Hadi",
+      "toSeparator": "hadi",
+      "ageRangeInvalid": "Umri wa chini hauwezi kuzidi umri wa juu",
+      "bioLabel": "Maelezo Mafupi Kuhusu Wewe",
+      "bioPlaceholder": "Eleza kwa ufupi kuhusu wewe, malengo yako na unachotafuta kwa mwenza wako..."
+    },
+    "guardian": {
+      "pageHeading": "Mlezi (Wali)",
+      "pageSubtitle": "Hiari — unaweza kuongeza taarifa za mlezi ili azewe kushirikiana nasi.",
+      "hasGuardianLabel": "Nina Mlezi",
+      "guardianNameLabel": "Jina la Mlezi",
+      "guardianNamePlaceholder": "Jina la kamili la mlezi",
+      "relationshipLabel": "Uhusiano",
+      "relationshipPlaceholder": "Chagua uhusiano",
+      "guardianPhoneLabel": "Namba ya Simu ya Mlezi",
+      "guardianPhonePlaceholder": "07XX XXX XXX"
+    },
+    "photo": {
+      "pageHeading": "Picha za Wasifu",
+      "pageSubtitle": "Picha hizi zitaonekana hadharani na wanachama wengine wa Nusrah. Usiweke picha isiyo na heshima au ya mtu mwingine.",
+      "takePhoto": "Piga Picha",
+      "uploadFromDevice": "Pakia kutoka Kifaa",
+      "invalidType": "Chagua picha ya JPEG, PNG au WEBP",
+      "tooLarge": "Picha ni kubwa mno (kiwango cha juu ni 8MB)",
+      "loadFailed": "Imeshindwa kupakia picha. Jaribu tena.",
+      "dragHint": "Buruta ili kuweka vizuri, tumia kitelezi kukuza",
+      "reset": "Weka Upya",
+      "useThisPhoto": "Tumia Picha Hii",
+      "uploading": "Inapakia...",
+      "prepareFailed": "Imeshindwa kutayarisha picha. Jaribu tena.",
+      "mainBadge": "Kuu",
+      "change": "Badilisha",
+      "deletePhotoAria": "Futa picha",
+      "addTile": "Ongeza",
+      "galleryHint": "Picha ya kwanza ndiyo inayoonekana kama picha yako kuu. Unaweza kuongeza hadi picha {maxGallery} zaidi.",
+      "deleteFailed": "Imeshindwa kufuta picha. Onyesha upya ukurasa na jaribu tena.",
+      "skipForNow": "Ruka kwa Sasa"
+    }
+  },
+  "wasifuWangu": {
+    "heading": "Wasifu Wangu",
+    "subtitle": "Hariri taarifa za wasifu wako wakati wowote."
+  },
+  "dashibodi": {
+    "welcome": "Karibu",
+    "subtitle": "Hapa kuna muhtasari wa shughuli zako Nusrah.",
+    "addPhotoChecklist": "Ongeza picha ya wasifu wako",
+    "packageLabel": "Kifurushi",
+    "daysRemaining": "Siku {days} zilizobaki",
+    "messagesLabel": "Ujumbe",
+    "noMessagesYet": "Bado hakuna ujumbe",
+    "likedYouLabel": "Wamenipenda",
+    "upgradeToSeeWho": "Boresha kifurushi kuona ni nani",
+    "viewAll": "Tazama wote",
+    "favoritedLabel": "Niliowapenda",
+    "savedProfiles": "Wasifu ulizohifadhi",
+    "suggestedHeading": "Wasifu Yanayokufaa",
+    "viewAllLink": "Tazama Zote"
+  },
+  "wanachama": {
+    "pageHeading": "Wasifu",
+    "pageSubtitle": "Gundua wanachama wanaokufaa",
+    "tabs": {
+      "browse": "Wasifu",
+      "likedYou": "Wamenipenda",
+      "favorites": "Ninaowapenda"
+    },
+    "browser": {
+      "searchPlaceholder": "Tafuta Wanachama",
+      "sortRecent": "Wapya Zaidi",
+      "sortBestMatch": "Wanaofaa Zaidi",
+      "gridViewAria": "Mtazamo wa Gridi",
+      "listViewAria": "Mtazamo wa Orodha",
+      "filtersButton": "Vigezo",
+      "removeRegionAria": "Ondoa",
+      "viewLimitNote": "Unaonyeshwa hadi wasifu {limit} kwa siku kwenye kifurushi chako",
+      "emptyFavorites": "Bado hujampenda mwanachama yeyote.",
+      "emptyBrowse": "Hakuna wanachama waliopatikana kwa vigezo hivi. Jaribu kubadilisha uchujaji.",
+      "clearFilters": "Futa Vigezo",
+      "loadMore": "Pakia Zaidi",
+      "loading": "Inapakia..."
+    },
+    "card": {
+      "newBadge": "Mpya",
+      "onlineAria": "Mtandaoni",
+      "verifiedTitle": "Amethibitishwa",
+      "contactLocked": "Mawasiliano yamefungwa",
+      "seekingPrefix": "Anatafuta:",
+      "sendMessageAria": "Tuma ujumbe",
+      "addFavoriteAria": "Ongeza kwenye wanaopendwa",
+      "removeFavoriteAria": "Ondoa kwenye wanaopendwa"
+    },
+    "filterPanel": {
+      "heading": "Vigezo vya Utafutaji",
+      "closeAria": "Funga",
+      "ageLabel": "Umri",
+      "regionLabel": "Mkoa",
+      "selectAll": "Chagua Zote",
+      "deselectAll": "Ondoa Zote",
+      "intentionsTitle": "Unatafuta",
+      "maritalStatusTitle": "Hali ya Ndoa",
+      "madhhabTitle": "Madhhabu",
+      "hijabTitle": "Hijab",
+      "verifiedOnlyLabel": "Wasifu Waliothibitishwa Pekee",
+      "verifiedOnlyHint": "Uthibitisho unafanywa na timu ya Nusrah baada ya ukaguzi wa wasifu.",
+      "clear": "Futa Vigezo",
+      "apply": "Tumia Vigezo"
+    },
+    "detail": {
+      "religionSection": "Dini na Ibada",
+      "madhhabLabel": "Madhhabu",
+      "prayerLabel": "Swala",
+      "quranLabel": "Kusoma Qur'an",
+      "substanceLabel": "Matumizi ya Vilevi",
+      "hijabLabel": "Hijab",
+      "lifeSection": "Maisha",
+      "maritalStatusLabel": "Hali ya Ndoa",
+      "occupationLabel": "Kazi",
+      "educationLabel": "Elimu",
+      "heightLabel": "Urefu",
+      "heightUnit": "sm",
+      "bodyTypeLabel": "Umbo",
+      "skinToneLabel": "Rangi ya Ngozi",
+      "incomeLabel": "Kipato",
+      "lookingForSection": "Anachotafuta",
+      "partnerAgeLabel": "Umri wa Mwenzi",
+      "contactLocked": "Mawasiliano yamefungwa — boresha kifurushi chako",
+      "sendMessage": "Tuma Ujumbe",
+      "messagePlaceholder": "Andika ujumbe wako wa heshima...",
+      "send": "Tuma",
+      "sending": "Inatuma...",
+      "cancel": "Ghairi",
+      "messageSent": "Ujumbe umetumwa",
+      "goToMessages": "Nenda kwenye Ujumbe",
+      "genericError": "Hitilafu imetokea",
+      "networkError": "Imeshindwa kuunganisha na seva."
+    }
+  },
+  "vipendwa": {
+    "heading": "Ninaowapenda",
+    "subtitle": "Wanachama uliowapenda"
+  },
+  "wamenipenda": {
+    "heading": "Wamenipenda",
+    "subtitle": "Wanachama waliokupenda wewe",
+    "someoneLiked": "Watu {count} wamependa wasifu wako",
+    "noOneYet": "Bado hakuna aliyependa wasifu wako",
+    "upgradeHint": "Boresha kifurushi chako (Silver au zaidi) kuona ni nani.",
+    "upgradeButton": "Boresha Kifurushi",
+    "emptyState": "Bado hakuna aliyekupenda. Kamilisha wasifu wako ili uonekane zaidi."
+  },
+  "akaunti": {
+    "pageHeading": "Akaunti Yangu",
+    "welcomePrefix": "Karibu",
+    "subscriptionActivated": "Kifurushi chako kimewashwa.",
+    "addPhotoPrompt": "Ongeza picha ya wasifu wako ili kuonekana zaidi",
+    "addPhotoButton": "Ongeza Picha",
+    "statusActive": "Kinatumika",
+    "noExpiryNote": "(bila muda wa mwisho)",
+    "changePackageButton": "Badilisha Kifurushi",
+    "subscriptionDurationLabel": "Muda wa Kifurushi",
+    "days30": "Siku 30",
+    "expiryDateLabel": "Tarehe ya Mwisho",
+    "daysRemainingLabel": "Siku Zilizobaki",
+    "lastPaymentLabel": "Malipo ya Mwisho",
+    "paymentConfirmed": "Malipo Yamethibitishwa",
+    "paymentPending": "Inasubiri Malipo",
+    "paymentFailed": "Malipo Hayajafanikiwa",
+    "browseMembersHeading": "Vinjari Wanachama",
+    "browseMembersSubtitle": "Tazama wanachama wanaolingana na wewe",
+    "goToMembersButton": "Nenda Wanachama",
+    "phoneTestHeading": "Simu (GOLD/PREMIUM)",
+    "phoneTestSubtitle": "Jaribu upatikanaji wa simu kulingana na kifurushi chako"
+  },
+  "ujumbe": {
+    "list": {
+      "pageHeading": "Ujumbe",
+      "subtitle": "Mazungumzo yako na wanachama wengine",
+      "emptyState": "Bado huna mazungumzo. Tuma ujumbe kutoka kwenye wasifu wa mwanachama ili kuanza.",
+      "youPrefix": "Wewe: ",
+      "unreadCap": "9+"
+    },
+    "thread": {
+      "emptyThread": "Bado hakuna ujumbe. Anza mazungumzo hapa chini.",
+      "messagePlaceholder": "Andika ujumbe wako wa heshima...",
+      "send": "Tuma",
+      "genericError": "Hitilafu imetokea",
+      "networkError": "Imeshindwa kuunganisha na seva.",
+      "upgradePackage": "Badili Kifurushi",
+      "cannotReply": "Kifurushi chako hakiruhusu kujibu ujumbe. Boresha kifurushi chako.",
+      "cannotInitiate": "Kifurushi chako hakiruhusu kuanzisha mazungumzo mapya. Boresha kifurushi chako."
+    }
+  },
+  "mipangilio": {
+    "pageHeading": "Mipangilio",
+    "subtitle": "Simamia akaunti yako na faragha yako.",
+    "changePasswordTitle": "Badilisha Password",
+    "blockedUsersTitle": "Watumiaji Uliowazuia",
+    "deleteAccountTitle": "Futa Akaunti",
+    "deleteAccountWarning": "Kufuta akaunti yako ni hatua ya kudumu na haiwezi kutenduliwa.",
+    "changePasswordForm": {
+      "hidePasswordAria": "Ficha password",
+      "showPasswordAria": "Onyesha password",
+      "passwordsDoNotMatch": "Password mpya hazifanani",
+      "genericError": "Hitilafu imetokea",
+      "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena.",
+      "currentPasswordLabel": "Password ya Sasa",
+      "newPasswordLabel": "Password Mpya",
+      "confirmNewPasswordLabel": "Thibitisha Password Mpya",
+      "successMessage": "Password imebadilishwa ✓",
+      "submitting": "Inabadilisha...",
+      "submit": "Badilisha Password"
+    },
+    "blockedUsersList": {
+      "emptyState": "Hujamzuia mtumiaji yeyote.",
+      "unblocking": "Inafungua...",
+      "unblock": "Fungua"
+    },
+    "deleteAccountModal": {
+      "genericError": "Hitilafu imetokea",
+      "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena.",
+      "triggerButton": "Futa Akaunti",
+      "modalHeading": "Futa Akaunti Yako",
+      "warning": "Hatua hii haiwezi kutenduliwa. Wasifu wako, ujumbe, vipendwa, na taarifa zote zinazohusiana zitafutwa kabisa.",
+      "passwordLabel": "Password Yako",
+      "confirmationLabelPrefix": "Andika",
+      "confirmationLabelSuffix": "kuthibitisha",
+      "cancel": "Ghairi",
+      "deleting": "Inafuta...",
+      "confirmDelete": "Futa Akaunti Kabisa"
+    },
+    "languageDescription": "Chagua lugha unayopendelea kwa ajili ya mfumo mzima."
+  },
+  "ripotiMtumiaji": {
+    "pageHeading": "Ripoti Mtumiaji",
+    "subtitle": "Tafuta mtumiaji unayetaka kumripoti kwa jina, mji, au maelezo yaliyomo kwenye wasifu wake.",
+    "search": {
+      "genericError": "Hitilafu imetokea",
+      "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena.",
+      "placeholder": "Tafuta kwa jina, mji, au maelezo...",
+      "searching": "Inatafuta...",
+      "searchButton": "Tafuta",
+      "noResults": "Hakuna mtumiaji aliyepatikana kwa jina hilo."
+    },
+    "modal": {
+      "triggerButton": "Ripoti Mtumiaji",
+      "heading": "Ripoti Mtumiaji kwa Usalama wa Nusrah",
+      "reportingPrefix": "Unaripoti:",
+      "viewProfile": "Tazama Wasifu",
+      "reasonQuestion": "Kwa nini unamripoti mtumiaji huyu?",
+      "reasonHint": "Chagua sababu inayofaa:",
+      "descriptionLabel": "📝 Eleza kilichotokea",
+      "descriptionPlaceholder": "Andika maelezo ya tatizo hapa...",
+      "descriptionHint": "Tafadhali usijumuishe password, PIN, OTP au taarifa nyingine nyeti.",
+      "evidenceLabel": "📎 Ongeza Ushahidi — Hiari",
+      "uploadScreenshot": "+ Pakia Screenshot",
+      "evidenceHint": "Unaweza kuongeza screenshots za mazungumzo, profile au taarifa inayohusiana na report.",
+      "blockLabel": "🚫 Zuia Mtumiaji",
+      "blockCheckboxLabel": "Zuia mtumiaji huyu baada ya kutuma report",
+      "blockHint": "Mtumiaji hatapokea taarifa kuhusu nani aliyemreport, isipokuwa pale inapohitajika kwa sababu za kisheria au kiusalama.",
+      "privacyTitle": "🔐 Faragha na Usalama",
+      "privacyBody": "Nusrah itapitia taarifa yako kwa mujibu wa Sera ya Usalama, Masharti ya Matumizi na Sera ya Faragha. Kufanya report hakumaanishi moja kwa moja kwamba akaunti itafungwa; hatua itategemea matokeo ya uchunguzi.",
+      "emergencyTitle": "🚨 Ikiwa Uko Katika Hatari ya Haraka",
+      "emergencyBody": "Usisubiri majibu ya Nusrah. Tafuta msaada kutoka kwa mtu unayemwamini na mamlaka za dharura zinazohusika.",
+      "cancel": "Ghairi",
+      "submitting": "Inatuma...",
+      "submitButton": "🚩 Tuma Report",
+      "genericError": "Hitilafu imetokea",
+      "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena.",
+      "successCheckmark": "✓",
+      "successHeading": "Report Imepokelewa",
+      "successBody": "Asante kwa kutusaidia kulinda jamii ya Nusrah. Timu yetu itapitia taarifa yako na kuchukua hatua stahiki.",
+      "backToSafety": "Rudi Kwenye Kituo cha Usalama",
+      "close": "Funga"
+    }
+  },
+  "mashartiYaMatumizi": {
+    "pageEyebrow": "Nusrah.co.tz",
+    "pageTitle": "Masharti ya Matumizi",
+    "pageSubtitle": "Jukwaa la Uchumba Linalolenga Ndoa",
+    "effectiveDate": "Tarehe ya Kuanza Kutumika: 30 Agosti 2026 · Ilisasishwa Mara ya Mwisho: 30 Agosti 2026",
+    "intro1": "Karibu Nusrah.co.tz (“Nusrah”, “sisi”, au “yetu”). Nusrah ni jukwaa la mtandaoni la uchumba na maanzio lililoanzishwa kuwasaidia watu wenye nia halisi ya kutafuta uhusiano wa dhati unaoelekea kwenye ndoa kuungana na wenzi wa ndoa wanaowafaa katika mazingira ya heshima, usalama na uwajibikaji.",
+    "intro2": "Kwa kuunda akaunti, kufikia, kuvinjari au kutumia Nusrah.co.tz, unakubali kufungwa kisheria na Masharti haya ya Matumizi (“Masharti”). Kama hukubaliani na Masharti haya, usitumie Nusrah.",
+    "footerTagline": "Mpate Mtu. Jenga Uaminifu. Oa/Olewa.",
+    "footerBody": "Nusrah imeundwa kwa ajili ya watu wenye dhati wanaotafuta mahusiano yenye maana yakiwa na ndoa akilini.",
+    "sections": [
+      {
+        "heading": "1. Madhumuni ya Nusrah",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah kimsingi ni jukwaa la uchumba linalolenga ndoa."
+          },
+          {
+            "type": "p",
+            "text": "Madhumuni ya Nusrah ni:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Kuunganisha watu wenye nia halisi ya kuoa au kuolewa.",
+              "Kuwezesha maanzio ya heshima kati ya watakaokuwa wenzi wa ndoa.",
+              "Kuwawezesha watumiaji kuunda wasifu wenye lengo la ndoa.",
+              "Kutoa zana za kutafuta na kugundua wenzi wanaolingana.",
+              "Kuwezesha mawasiliano kati ya watumiaji wanaokubaliana.",
+              "Kukuza mahusiano yenye uwajibikaji, heshima na uwazi.",
+              "Kutoa mazingira salama zaidi ya kidijitali kwa wanaotafuta ndoa."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah haikusudiwi kimsingi kwa mahusiano ya kawaida ya uchumba, mahusiano ya kimwili, burudani, umalaya, huduma za “escort” au mahusiano ya muda mfupi."
+          },
+          {
+            "type": "p",
+            "text": "Watumiaji wanatarajiwa kujiunga wakiwa na nia halisi zinazolingana na madhumuni ya jukwaa hili."
+          }
+        ]
+      },
+      {
+        "heading": "2. Sifa za Kustahili",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Ili kutumia Nusrah, lazima:"
+          },
+          {
+            "type": "ol",
+            "items": [
+              "Uwe na ruhusa kisheria ya kutumia huduma za mtandaoni katika eneo lako.",
+              "Utimize kigezo cha umri wa chini kilichowekwa na Nusrah na sheria zinazotumika.",
+              "Utoe taarifa sahihi wakati wa usajili.",
+              "Uwe na nia halisi ya kutafuta uhusiano wa dhati unaoelekea kwenye ndoa.",
+              "Usiwe umezuiwa kutumia huduma hii kwa mujibu wa sheria zinazotumika.",
+              "Usiunde akaunti kwa niaba ya mtu mwingine bila idhini."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah ni huduma kwa watu wazima pekee."
+          },
+          {
+            "type": "p",
+            "text": "Mtu yeyote aliye chini ya umri wa chini uliowekwa amekatazwa kuunda au kuendeleza akaunti."
+          }
+        ]
+      },
+      {
+        "heading": "3. Nia ya Ndoa",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Kwa kuwa Nusrah ni jukwaa linalolenga ndoa, watumiaji wanatarajiwa kueleza nia zao kwa uaminifu."
+          },
+          {
+            "type": "p",
+            "text": "Usifanye yafuatayo:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Kujifanya unatafuta ndoa wakati nia yako halisi ni tofauti.",
+              "Kutumia Nusrah kwa lengo kuu la mahusiano ya kimwili ya kawaida.",
+              "Kudanganya watumiaji kuingia mahusiano ya kihisia au ya kifedha.",
+              "Kudumisha wasifu kwa madhumuni ya burudani au majaribio kinyume na Masharti haya.",
+              "Kumpotosha mtu mwingine kuhusu nia zako za ndoa."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah haiwezi kuhakikisha kuwa kila mtumiaji ana nia halisi ya ndoa. Watumiaji wana wajibu wa kutumia busara na kuthibitisha taarifa kabla ya kufanya maamuzi binafsi."
+          }
+        ]
+      },
+      {
+        "heading": "4. Akaunti ya Mtumiaji",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Unaweza kuhitajika kuunda akaunti ili kufikia baadhi ya huduma."
+          },
+          {
+            "type": "p",
+            "text": "Unakubali:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Kutoa taarifa za kweli.",
+              "Kuweka siri taarifa zako za kuingia akaunti.",
+              "Kudumisha akaunti zinazoruhusiwa na Nusrah pekee.",
+              "Kusasisha taarifa zako zinapobadilika.",
+              "Kuijulisha Nusrah endapo unashuku ufikiaji usioidhinishwa.",
+              "Kuwajibika kwa shughuli zinazofanyika kupitia akaunti yako."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Usiuze, kukodisha, kuhamisha au kumpa mtu mwingine akaunti yako."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kusimamisha au kufuta akaunti zenye taarifa za uongo, zenye kupotosha, za udanganyifu au za matusi."
+          }
+        ]
+      },
+      {
+        "heading": "5. Taarifa za Wasifu",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Watumiaji wanaweza kutoa taarifa zikiwemo:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Jina au jina unalopendelea kutumia.",
+              "Umri.",
+              "Jinsia.",
+              "Mahali unapoishi.",
+              "Elimu.",
+              "Kazi.",
+              "Taarifa za familia.",
+              "Hali ya ndoa.",
+              "Mapendeleo ya kidini au kiutamaduni pale yanapotolewa kwa hiari.",
+              "Matarajio ya ndoa.",
+              "Mapendeleo ya mtindo wa maisha.",
+              "Picha.",
+              "Maelezo binafsi (bio).",
+              "Mapendeleo kuhusu mwenzi."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Una wajibu wa kuhakikisha taarifa unazochapisha ni sahihi na zinafaa."
+          },
+          {
+            "type": "p",
+            "text": "Usijifanye kuwa mtu mwingine."
+          },
+          {
+            "type": "p",
+            "text": "Usipakie picha au taarifa binafsi za mtu mwingine bila idhini inayofaa."
+          }
+        ]
+      },
+      {
+        "heading": "6. Hali ya Ndoa",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Watumiaji lazima waeleze kwa usahihi hali yao ya ndoa pale jukwaa linapohitaji taarifa hiyo."
+          },
+          {
+            "type": "p",
+            "text": "Usidai kwa uongo kuwa:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Hujaoa/hujaolewa;",
+              "Umeachika;",
+              "Ni mjane;",
+              "Mmetengana; au",
+              "Vinginevyo unapatikana kwa ndoa."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Iwapo Nusrah itatoa huduma ya kuthibitisha hali ya ndoa, watumiaji wanakubali kutoa taarifa za kweli na, pale inapofaa kisheria, nyaraka za uthibitisho."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah inahifadhi haki ya kuzuia au kuondoa akaunti pale taarifa muhimu kuhusu hali ya ndoa zinapoonekana ni za udanganyifu au za kupotosha."
+          }
+        ]
+      },
+      {
+        "heading": "7. Uthibitisho wa Utambulisho",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kutoa mifumo ya uthibitisho wa utambulisho ya hiari au ya lazima."
+          },
+          {
+            "type": "p",
+            "text": "Uthibitisho unaweza kuhusisha:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Uthibitisho wa namba ya simu;",
+              "Uthibitisho wa barua pepe;",
+              "Nyaraka za utambulisho wa kitaifa;",
+              "Pasipoti au kitambulisho kingine halali;",
+              "Uthibitisho wa picha ya “selfie”;",
+              "Njia nyingine zinazofaa za uthibitisho."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Uthibitisho hauhakikishi kuwa mtu ni salama, mwaminifu, mwenye uwajibikaji wa kifedha, hajaoa/hajaolewa, anayefaa au anayestahili kwa ndoa."
+          },
+          {
+            "type": "p",
+            "text": "Watumiaji lazima wachukue tahadhari kwa busara zao wenyewe."
+          }
+        ]
+      },
+      {
+        "heading": "8. Mawasiliano Kati ya Watumiaji",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kutoa:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Ujumbe binafsi;",
+              "Maombi ya kulingana (match requests);",
+              "Arifa za kupendwa;",
+              "Mawasiliano ya sauti au video;",
+              "Maanzio;",
+              "Zana za kulinganisha;",
+              "Zana za kuzuia na kuripoti."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Mawasiliano lazima yabaki ya heshima."
+          },
+          {
+            "type": "p",
+            "text": "Usitumie Nusrah kutuma:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Vitisho;",
+              "Unyanyasaji;",
+              "Matamshi ya chuki;",
+              "Unyanyasaji wa kingono;",
+              "Maudhui ya kingono yasiyotakiwa;",
+              "Vitisho vya kunyang'anya;",
+              "Maombi ya udanganyifu;",
+              "Ujumbe usiohitajika (spam);",
+              "Programu hasidi (malware);",
+              "Mawasiliano yasiyotakiwa yanayorudiwa-rudiwa."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Watumiaji wanaweza kumzuia au kumripoti mtumiaji mwingine wakati wowote."
+          }
+        ]
+      },
+      {
+        "heading": "9. Shughuli Zilizokatazwa",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Usitumie Nusrah kwa:"
+          },
+          {
+            "type": "subheading",
+            "text": "9.1 Udanganyifu"
+          },
+          {
+            "type": "p",
+            "text": "Huruhusiwi kuwadanganya watumiaji kwa lengo la manufaa ya kifedha, binafsi au manufaa mengine yasiyo halali."
+          },
+          {
+            "type": "subheading",
+            "text": "9.2 Utapeli wa Kifedha"
+          },
+          {
+            "type": "p",
+            "text": "Usitumie uhusiano wa kimapenzi au wa ndoa kuomba pesa, mikopo, zawadi, uwekezaji, sarafu za kidijitali, miamala ya pesa za simu au msaada mwingine wa kifedha kwa njia ya udanganyifu."
+          },
+          {
+            "type": "subheading",
+            "text": "9.3 Kujifanya Mtu Mwingine"
+          },
+          {
+            "type": "p",
+            "text": "Usijifanye kuwa mtu mwingine, taasisi, mtu maarufu au shirika."
+          },
+          {
+            "type": "subheading",
+            "text": "9.4 Unyonyaji wa Kingono"
+          },
+          {
+            "type": "p",
+            "text": "Usitumie Nusrah kwa umalaya, unyonyaji wa kingono, biashara haramu ya binadamu au shughuli nyingine za kingono zisizo halali."
+          },
+          {
+            "type": "subheading",
+            "text": "9.5 Unyanyasaji"
+          },
+          {
+            "type": "p",
+            "text": "Usimfuatilie, kumtishia, kumtisha, kumkamua, kumdhalilisha au kuwasiliana mara kwa mara na mtu aliyekuomba uache."
+          },
+          {
+            "type": "subheading",
+            "text": "9.6 Maudhui ya Wazi ya Kingono"
+          },
+          {
+            "type": "p",
+            "text": "Usipakie au kusambaza maudhui yasiyo halali, ya unyonyaji au ya wazi ya kingono."
+          },
+          {
+            "type": "subheading",
+            "text": "9.7 Ujumbe Usiohitajika"
+          },
+          {
+            "type": "p",
+            "text": "Usitumie Nusrah kusambaza matangazo yasiyoombwa, mifumo ya kiudanganyifu ya piramidi, ofa za udanganyifu au ujumbe wa kijumla."
+          },
+          {
+            "type": "subheading",
+            "text": "9.8 Shughuli Haramu"
+          },
+          {
+            "type": "p",
+            "text": "Usitumie Nusrah kuwezesha au kushiriki katika shughuli zisizo halali."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kuripoti tabia inayoshukiwa kuwa ya kihalifu kwa mamlaka husika pale inapohitajika au kuruhusiwa kisheria."
+          }
+        ]
+      },
+      {
+        "heading": "10. Usalama wa Kifedha",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah inashauri kwa dhati watumiaji wasitume pesa kwa mtu waliyekutana naye mtandaoni kwa sababu tu ya uhusiano wa kimapenzi au wa ndoa."
+          },
+          {
+            "type": "p",
+            "text": "Mtumiaji anapaswa kuwa mwangalifu zaidi pale mtu mwingine:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Anadai kuwa na dharura;",
+              "Anaomba pesa za safari;",
+              "Anaomba pesa za matibabu;",
+              "Anaomba malipo ya visa;",
+              "Anaomba fedha za uwekezaji;",
+              "Anaomba miamala ya pesa za simu;",
+              "Anaomba uhamisho wa fedha benki;",
+              "Anaahidi ndoa badala ya msaada wa kifedha;",
+              "Anatishia kuvunja uhusiano isipokuwa apewe pesa."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah haihakikishi uaminifu wa kifedha wa mtumiaji yeyote."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah haiwajibiki kwa hasara za kifedha zitokanazo na miamala kati ya watumiaji."
+          }
+        ]
+      },
+      {
+        "heading": "11. Kukutana Ana kwa Ana",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah inahamasisha watumiaji kuchukua tahadhari zinazofaa kabla ya kukutana na mtu waliyekutana naye mtandaoni."
+          },
+          {
+            "type": "p",
+            "text": "Watumiaji wanapaswa kuzingatia:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Kuwasiliana vya kutosha kabla ya kukutana.",
+              "Kuthibitisha utambulisho wa mtu husika.",
+              "Kumjulisha mwanafamilia au rafiki wa kuaminika.",
+              "Kukutana mahali pa wazi (public).",
+              "Kutumia usafiri wako binafsi.",
+              "Kuepuka kutoa taarifa za kifedha zisizo za lazima.",
+              "Kuepuka kutuma pesa.",
+              "Kuondoka mara moja endapo wanahisi hawako salama."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Watumiaji wanakutana kwa hatari yao wenyewe."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah haihakikishi tabia, utambulisho, nia au usalama wa mtumiaji yeyote."
+          }
+        ]
+      },
+      {
+        "heading": "12. Ushirikishwaji wa Familia, Mlezi na Ndoa",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah inatambua kuwa maamuzi ya ndoa yanaweza kuhusisha familia, walezi, viongozi wa dini au watu wengine wa kuaminika kutegemea imani, utamaduni na mazingira ya mtumiaji."
+          },
+          {
+            "type": "p",
+            "text": "Pale inapofaa, watumiaji wanaweza kuchagua kushirikisha:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Wazazi;",
+              "Walezi;",
+              "Wanafamilia;",
+              "Viongozi wa dini;",
+              "Washauri wa ndoa;",
+              "Watu wengine wa kuaminika."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kutoa vipengele vya hiari vilivyoundwa kuwezesha ushirikishwaji wa uwajibikaji wa familia au mlezi."
+          },
+          {
+            "type": "p",
+            "text": "Hata hivyo, Nusrah haiamui kama ndoa fulani ni halali kisheria au kidini."
+          }
+        ]
+      },
+      {
+        "heading": "13. Heshima na Utu",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Watumiaji wote lazima wawatendee watumiaji wengine kwa utu na heshima."
+          },
+          {
+            "type": "p",
+            "text": "Ubaguzi, udhalilishaji, vitisho, lugha ya matusi, uonevu, unyanyasaji na kutisha ni marufuku."
+          },
+          {
+            "type": "p",
+            "text": "Watumiaji lazima waheshimu ya mtu mwingine:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Mipaka yake;",
+              "Faragha yake;",
+              "Maamuzi yake;",
+              "Imani yake;",
+              "Mazingira yake binafsi;",
+              "Haki yake ya kukataa mawasiliano;",
+              "Haki yake ya kusitisha mawasiliano."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Mtumiaji hana wajibu kwa mtumiaji mwingine wa kuwa na uhusiano, kukutana, kuoana au kujibu."
+          }
+        ]
+      },
+      {
+        "heading": "14. Picha na Maudhui",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Unabaki na umiliki wa maudhui unayopakia kihalali kwenye Nusrah."
+          },
+          {
+            "type": "p",
+            "text": "Kwa kupakia maudhui, unaipa Nusrah idhini ndogo inayohitajika kuhifadhi, kuonyesha, kutunza, kuchakata na kusambaza maudhui hayo kama sehemu ya utoaji wa huduma."
+          },
+          {
+            "type": "p",
+            "text": "Lazima uwe na haki ya kupakia maudhui hayo."
+          },
+          {
+            "type": "p",
+            "text": "Usipakie:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Picha binafsi za mtu mwingine bila idhini yake;",
+              "Nyaraka za utambulisho za uongo;",
+              "Maudhui ya kashfa;",
+              "Maudhui yasiyo halali;",
+              "Maudhui yenye unyonyaji wa watoto;",
+              "Maudhui yenye lengo la kumnyanyasa au kumtishia mtu mwingine."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kuondoa maudhui yanayokiuka Masharti haya au sheria zinazotumika."
+          }
+        ]
+      },
+      {
+        "heading": "15. Faragha na Taarifa Binafsi",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kukusanya na kuchakata taarifa binafsi zinazohitajika kutoa huduma zake."
+          },
+          {
+            "type": "p",
+            "text": "Kwa kuwa jukwaa la ndoa linaweza kuhusisha taarifa binafsi nyeti, Nusrah itaweka hatua zinazofaa za kulinda taarifa za watumiaji."
+          },
+          {
+            "type": "p",
+            "text": "Uchakataji wa taarifa binafsi utaongozwa na Sera ya Faragha ya Nusrah na mahitaji ya ulinzi wa taarifa binafsi ya Tanzania, ikiwemo Sheria ya Ulinzi wa Taarifa Binafsi ya 2022."
+          },
+          {
+            "type": "p",
+            "text": "Watumiaji wanapaswa kuzingatia kwa makini taarifa wanazoweka hadharani."
+          },
+          {
+            "type": "p",
+            "text": "Usichapishe taarifa nyeti kama:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Password;",
+              "PIN;",
+              "Taarifa za kibenki;",
+              "PIN za pesa za simu;",
+              "Namba za utambulisho binafsi;",
+              "Misimbo ya usalama;",
+              "Nyaraka za siri."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "16. Taarifa za Mahali Ulipo",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kutumia taarifa za mahali ulipo kutoa vipengele vinavyohusiana na ulinganishaji pale mtumiaji anaporuhusu uchakataji huo."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah haipaswi kuonyesha hadharani mahali halisi alipo mtumiaji isipokuwa:"
+          },
+          {
+            "type": "ol",
+            "items": [
+              "Mtumiaji amechagua kwa dhati kuweka wazi taarifa hiyo; au",
+              "Uwekaji wazi unahitajika au kuruhusiwa kisheria."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Watumiaji wanapaswa kuepuka kuchapisha hadharani anwani yao halisi ya makazi."
+          }
+        ]
+      },
+      {
+        "heading": "17. Mfumo wa Ulinganishaji",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kutumia taarifa zinazotolewa na watumiaji kupendekeza wenzi wanaowezekana."
+          },
+          {
+            "type": "p",
+            "text": "Ulinganishaji unaweza kuzingatia vigezo kama:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Umri;",
+              "Mahali;",
+              "Malengo ya ndoa;",
+              "Elimu;",
+              "Kazi;",
+              "Maslahi;",
+              "Mtindo wa maisha;",
+              "Mapendeleo ya kidini au kiutamaduni pale yanapotolewa kwa hiari;",
+              "Mapendeleo ya familia;",
+              "Taarifa nyingine za ulinganifu."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Pendekezo la ulinganishaji halihakikishi ulinganifu, ufaafu, tabia njema au ufanisi wa ndoa."
+          }
+        ]
+      },
+      {
+        "heading": "18. Hakuna Uhakika wa Ndoa",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah inatoa huduma za ulinganishaji na mawasiliano."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah haihakikishi kuwa:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Utampata mwenzi;",
+              "Mtu uliyelinganishwa naye atajibu;",
+              "Uhusiano utafanikiwa;",
+              "Uhusiano utapelekea ndoa;",
+              "Taarifa za mtumiaji ni sahihi kabisa;",
+              "Mtumiaji ana uwajibikaji wa kifedha;",
+              "Mtumiaji anakufaa wewe."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Maamuzi ya ndoa yanabaki kabisa kati ya watu husika."
+          }
+        ]
+      },
+      {
+        "heading": "19. Kuripoti Masuala ya Usalama",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Watumiaji wanahamasishwa kuripoti tabia za kushukiwa au za kudhuru."
+          },
+          {
+            "type": "p",
+            "text": "Ripoti zinaweza kuhusu:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Wasifu bandia;",
+              "Kujifanya mtu mwingine;",
+              "Udanganyifu;",
+              "Utapeli wa kifedha;",
+              "Unyanyasaji;",
+              "Vitisho;",
+              "Unyonyaji wa kingono;",
+              "Watumiaji walio chini ya umri;",
+              "Picha zilizoibiwa;",
+              "Hali ya ndoa ya uongo;",
+              "Ukiukwaji mwingine wa Masharti haya."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kuchunguza ripoti na kuchukua hatua zinazofaa, zikiwemo:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Kumwonya mtumiaji;",
+              "Kuzuia akaunti;",
+              "Kuondoa maudhui;",
+              "Kusimamisha akaunti;",
+              "Kufuta akaunti kabisa;",
+              "Kuhifadhi taarifa husika pale inapofaa kisheria;",
+              "Kuripoti masuala kwa mamlaka husika pale inapohitajika au kuruhusiwa kisheria."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "20. Kuzuia (Blocking)",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Watumiaji wanaweza kupewa uwezo wa kuzuia watumiaji wengine."
+          },
+          {
+            "type": "p",
+            "text": "Unapomzuia mtu, Nusrah inaweza kupunguza mawasiliano au mwingiliano kati ya akaunti husika."
+          },
+          {
+            "type": "p",
+            "text": "Kuzuia hakuizuii Nusrah kuchakata taarifa zinazohitajika kwa usalama, uzingatiaji wa kisheria au uchunguzi."
+          }
+        ]
+      },
+      {
+        "heading": "21. Kusimamishwa na Kufutwa kwa Akaunti",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kusimamisha au kufuta akaunti pale inapoamini kwa busara kuwa mtumiaji:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Amekiuka Masharti haya;",
+              "Ametoa taarifa za uongo;",
+              "Amejihusisha na udanganyifu;",
+              "Amemnyanyasa mtumiaji mwingine;",
+              "Ameleta hatari ya usalama;",
+              "Ametumia vibaya jukwaa;",
+              "Amejihusisha na shughuli haramu;",
+              "Amejaribu kukwepa usalama wa jukwaa;",
+              "Ameunda akaunti nyingi zisizoidhinishwa;",
+              "Ametumia jukwaa kwa madhumuni yasiyoendana na dhamira ya Nusrah."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Watumiaji pia wanaweza kufunga akaunti zao wakati wowote, kwa kuzingatia wajibu wowote wa kisheria au wa mkataba unaotumika."
+          }
+        ]
+      },
+      {
+        "heading": "22. Huduma za Kifurushi na Malipo",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kutoa huduma za bure na za malipo."
+          },
+          {
+            "type": "p",
+            "text": "Huduma za malipo zinaweza kujumuisha:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Uanachama wa kifurushi cha juu;",
+              "Uonekanaji ulioboreshwa wa wasifu;",
+              "Utafutaji wa hali ya juu;",
+              "Vipengele vya ziada vya mawasiliano;",
+              "Huduma za uthibitisho;",
+              "Huduma za ulinganishaji;",
+              "Vipengele vingine vya juu."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Kabla ya kununua huduma ya malipo, watumiaji watajulishwa bei husika na masharti ya malipo."
+          },
+          {
+            "type": "p",
+            "text": "Isipokuwa imeelezwa vinginevyo, malipo yanafanywa kwa ajili ya ufikiaji wa huduma husika ya kidijitali na si uhakika wa kulinganishwa au ndoa."
+          },
+          {
+            "type": "p",
+            "text": "Marejesho ya fedha yataongozwa na sera husika ya marejesho ya Nusrah na mahitaji ya lazima ya ulinzi wa mtumiaji."
+          }
+        ]
+      },
+      {
+        "heading": "23. Huduma za Wahusika Wengine",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kuunganisha huduma za wahusika wengine kama:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Watoa huduma za malipo;",
+              "Watoa huduma za SMS;",
+              "Huduma za barua pepe;",
+              "Huduma za uthibitisho wa utambulisho;",
+              "Watoa huduma za uwekaji (hosting);",
+              "Huduma za uchambuzi wa takwimu;",
+              "Huduma za mawasiliano."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Huduma za wahusika wengine zinaweza kuwa na masharti na sera zao za faragha."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah haiwajibiki kwa huduma zinazoendeshwa kwa uhuru na wahusika wengine."
+          }
+        ]
+      },
+      {
+        "heading": "24. Haki Miliki",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Jina la Nusrah, nembo, muundo wa tovuti, programu, michoro, maandishi, alama za biashara na maudhui mengine ya jukwaa yanaweza kumilikiwa na Nusrah au kuwa na leseni kwake."
+          },
+          {
+            "type": "p",
+            "text": "Huruhusiwi:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Kunakili jukwaa;",
+              "Kunakili chapa ya Nusrah bila idhini;",
+              "Kufanya “reverse engineering” ya jukwaa pale imekatazwa;",
+              "Kuuza au kusambaza tena maudhui ya Nusrah;",
+              "Kutumia alama za biashara za Nusrah bila idhini."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "25. Upatikanaji wa Jukwaa",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah itafanya juhudi za kutosha kudumisha upatikanaji na usalama wa jukwaa."
+          },
+          {
+            "type": "p",
+            "text": "Hata hivyo, Nusrah haihakikishi kuwa jukwaa daima:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Litapatikana;",
+              "Litafanya kazi bila kukatika;",
+              "Litakuwa huru kabisa na makosa;",
+              "Litakuwa salama kabisa;",
+              "Litakuwa huru na mashambulizi hasidi."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Matengenezo, hitilafu za kiufundi, matukio ya usalama na mazingira yaliyo nje ya uwezo wa Nusrah yanaweza kuathiri huduma kwa muda."
+          }
+        ]
+      },
+      {
+        "heading": "26. Wajibu wa Mtumiaji",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Una wajibu wa maamuzi na mwingiliano wako binafsi."
+          },
+          {
+            "type": "p",
+            "text": "Unapaswa kuthibitisha kwa uhuru taarifa muhimu kabla ya:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Kuanza uhusiano wa dhati;",
+              "Kutoa taarifa nyeti;",
+              "Kutuma pesa;",
+              "Kusafiri kukutana na mtu;",
+              "Kumtambulisha mtu kwa familia yako;",
+              "Kuingia uchumba;",
+              "Kuingia ndoa."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah ni jukwaa la ulinganishaji na halifanyi kazi kama mdhamini, mlezi, mshauri wa fedha, msajili wa ndoa au mwakilishi wa mtumiaji yeyote."
+          }
+        ]
+      },
+      {
+        "heading": "27. Kikomo cha Uwajibikaji",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Kwa kadri sheria zinazotumika zinavyoruhusu, Nusrah haitawajibika kwa hasara zitokanazo na:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Mahusiano baina ya watumiaji;",
+              "Taarifa za uongo zilizotolewa na watumiaji;",
+              "Utapeli wa kifedha uliofanywa na watumiaji;",
+              "Maamuzi binafsi yaliyofanywa na watumiaji;",
+              "Mikutano kati ya watumiaji;",
+              "Matokeo ya ndoa au uhusiano;",
+              "Maudhui yaliyotolewa na watumiaji;",
+              "Huduma za wahusika wengine;",
+              "Tabia isiyoidhinishwa ya mtumiaji mwingine."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Hakuna chochote katika Masharti haya kinachoondoa uwajibikaji ambao hauwezi kuondolewa kihalali chini ya sheria zinazotumika."
+          }
+        ]
+      },
+      {
+        "heading": "28. Fidia",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Kwa kadri sheria inavyoruhusu, unakubali kuwajibika kwa madai, hasara au uwajibikaji utakaotokana na matumizi yako yasiyo halali ya Nusrah, ukiukwaji wa Masharti haya, uvunjaji wa haki za mtu mwingine, au matumizi mabaya ya jukwaa."
+          }
+        ]
+      },
+      {
+        "heading": "29. Uzingatiaji wa Kisheria",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Watumiaji lazima wazingatie sheria na kanuni zinazotumika wakati wa kutumia Nusrah."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah itaendesha huduma zake kwa kuzingatia sheria za Tanzania zinazotumika na mahitaji mengine ya kisheria yanayotumika."
+          },
+          {
+            "type": "p",
+            "text": "Hii inajumuisha mahitaji yanayohusu ulinzi wa taarifa binafsi na makosa yanayohusiana na mtandao. Sheria ya Ulinzi wa Taarifa Binafsi ya Tanzania ya 2022 inaweka mahitaji kuhusu ukusanyaji na uchakataji wa taarifa binafsi, wakati Sheria ya Makosa ya Mtandaoni inashughulikia makosa yanayohusisha mifumo ya kompyuta na teknolojia ya habari na mawasiliano."
+          }
+        ]
+      },
+      {
+        "heading": "30. Mabadiliko ya Masharti Haya",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah inaweza kusasisha Masharti haya mara kwa mara."
+          },
+          {
+            "type": "p",
+            "text": "Yanapofanyika mabadiliko muhimu, Nusrah inaweza kutoa taarifa inayofaa kupitia tovuti, programu, barua pepe au njia nyingine inayofaa ya mawasiliano."
+          },
+          {
+            "type": "p",
+            "text": "Kuendelea kwako kutumia Nusrah baada ya tarehe ya kuanza kutumika ya Masharti yaliyosasishwa kunaashiria ukubalifu wa Masharti yaliyorekebishwa, kwa kuzingatia sheria zinazotumika."
+          }
+        ]
+      },
+      {
+        "heading": "31. Sheria Inayotumika",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Masharti haya yatatafsiriwa kwa kuzingatia sheria zinazotumika za Jamhuri ya Muungano wa Tanzania, kwa kuzingatia mahitaji ya mamlaka husika."
+          },
+          {
+            "type": "p",
+            "text": "Mgogoro wowote unapaswa kwanza, pale inapowezekana kwa busara, kushughulikiwa kupitia mawasiliano ya nia njema na mchakato uliopo wa Nusrah wa kushughulikia malalamiko."
+          },
+          {
+            "type": "p",
+            "text": "Hakuna chochote katika Masharti haya kinachomzuia mtumiaji kutumia haki zake zinazopatikana chini ya sheria zinazotumika."
+          }
+        ]
+      },
+      {
+        "heading": "32. Wasiliana Nasi",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Kwa maswali, malalamiko, ripoti za usalama au maombi kuhusu Masharti haya, watumiaji wanaweza kuwasiliana na Nusrah kupitia:"
+          },
+          {
+            "type": "contact",
+            "website": "https://nusrah.co.tz",
+            "email": "msaada@nusrah.co.tz",
+            "phone": "+255 700 000 000 (WhatsApp)"
+          }
+        ]
+      },
+      {
+        "heading": "33. Ukubalifu wa Mtumiaji",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Kwa kuchagua “Ninakubali”, kuunda akaunti, kufikia au kutumia Nusrah.co.tz, unathibitisha kuwa:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Nimesoma na kuelewa Masharti haya ya Matumizi.",
+              "Ninatimiza kigezo cha umri wa chini kinachotumika.",
+              "Ninatumia Nusrah kwa madhumuni halisi yanayolenga ndoa.",
+              "Taarifa ninazotoa ni za kweli na sahihi kwa kadri ninavyofahamu.",
+              "Naelewa kuwa Nusrah haihakikishi ndoa au tabia ya mtumiaji mwingine.",
+              "Naelewa kuwa sipaswi kutumia Nusrah kwa udanganyifu, unyanyasaji, unyonyaji au madhumuni mengine yasiyo halali.",
+              "Nakubali kuheshimu faragha, utu na maamuzi ya watumiaji wengine.",
+              "Naelewa kuwa nina wajibu wa kuchukua tahadhari inayofaa ninapowasiliana au kukutana na mtumiaji mwingine."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Kwa kuendelea, unakubali Masharti haya ya Matumizi."
+          }
+        ]
+      }
+    ],
+    "contactWebsiteLabel": "Tovuti",
+    "contactEmailLabel": "Barua Pepe",
+    "contactPhoneLabel": "Simu"
   }
 }

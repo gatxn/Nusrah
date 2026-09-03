@@ -1,5 +1,6 @@
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import type { ZodError } from "zod";
+import { apiErrors } from "@/lib/i18n/api";
 
 export function jsonError(message: string, status: number, extra?: Record<string, unknown>) {
   return NextResponse.json({ error: message, ...extra }, { status });
@@ -12,6 +13,17 @@ export function zodError(error: ZodError) {
   });
 }
 
-export const UNAUTHENTICATED = () => jsonError("Tafadhali ingia kwanza", 401);
-export const FORBIDDEN = (message = "Huna ruhusa ya kufanya hili") => jsonError(message, 403);
-export const NOT_FOUND = (message = "Haipatikani") => jsonError(message, 404);
+export async function UNAUTHENTICATED(request: NextRequest) {
+  const t = await apiErrors(request);
+  return jsonError(t.unauthenticated, 401);
+}
+
+export async function FORBIDDEN(request: NextRequest, message?: string) {
+  const t = await apiErrors(request);
+  return jsonError(message ?? t.forbidden, 403);
+}
+
+export async function NOT_FOUND(request: NextRequest) {
+  const t = await apiErrors(request);
+  return jsonError(t.notFound, 404);
+}

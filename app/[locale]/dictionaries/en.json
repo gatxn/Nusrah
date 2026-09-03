@@ -1,6 +1,9 @@
 {
   "common": {
-    "tagline": { "line1": "Search • Connect • Marry", "line2": "The Marriage-Only Matching Site" },
+    "tagline": {
+      "line1": "Search • Connect • Marry",
+      "line2": "The Marriage-Only Matching Site"
+    },
     "nav": {
       "home": "Home",
       "howItWorks": "How It Works",
@@ -16,7 +19,9 @@
     },
     "closeReturnHomeAria": "Close and return home",
     "closeRestartSignupAria": "Close and restart sign-up",
-    "languageSwitcher": { "label": "Language" },
+    "languageSwitcher": {
+      "label": "Language"
+    },
     "footer": {
       "description": "Start Connecting, Build a Life Together — an Islamic matrimonial platform built on safety, respect, and privacy.",
       "pagesHeading": "Pages",
@@ -26,7 +31,168 @@
       "contactUs": "Contact Us",
       "contactHeading": "Contact",
       "hours": "Monday–Sunday, 08:00–22:00",
-      "copyright": "All rights reserved."
+      "copyright": "All rights reserved.",
+      "terms": "Terms of Use"
+    },
+    "sidebar": {
+      "dashibodi": "Dashboard",
+      "wasifu": "Profiles",
+      "ujumbe": "Messages",
+      "wamenipenda": "Liked You",
+      "wasifuWangu": "My Profile",
+      "mipangilio": "Settings",
+      "kituoChaUsalama": "Safety Center",
+      "ripotiMtumiaji": "Report a Member",
+      "wasilianaNaMsaada": "Contact Support",
+      "maswali": "FAQ",
+      "logout": "Log Out",
+      "openMenuAria": "Open menu"
+    },
+    "topBar": {
+      "searchPlaceholder": "Search name, job, city...",
+      "accountMenu": {
+        "akauntiYangu": "My Account",
+        "wasifuWangu": "My Profile",
+        "mipangilio": "Settings",
+        "logout": "Log Out"
+      },
+      "notifications": {
+        "heading": "Notifications",
+        "bellAria": "Notifications",
+        "loading": "Loading...",
+        "empty": "You have no notifications right now."
+      }
+    },
+    "upgradeCard": {
+      "heading": "Upgrade Plan",
+      "body": "Basic, Silver, Gold, or Premium — get more contact options and extra features."
+    },
+    "labels": {
+      "intention": {
+        "MPENZI_WA_NDOA": "A Lifelong Marriage Partner",
+        "MWENZI_MUDA_MREFU": "A Long-Term Partner",
+        "MARAFIKI_WAPYA": "New Friends",
+        "BADO_SIJAAMUA": "Still Deciding"
+      },
+      "maritalStatus": {
+        "SIJAOA_SIJAOLEWA": "Never Married",
+        "TALAKA": "Divorced",
+        "MJANE": "Widowed",
+        "AMETENGANA": "Separated"
+      },
+      "madhhab": {
+        "HANAFI": "Hanafi",
+        "SHAFII": "Shafi'i",
+        "MALIKI": "Maliki",
+        "HANBALI": "Hanbali",
+        "SINA_MADHHAB_MAALUM": "No Specific Madhhab"
+      },
+      "prayerHabit": {
+        "MARA_TANO": "I Pray 5 Times a Day",
+        "MARA_KWA_MARA": "I Pray Often",
+        "NINAJITAHIDI": "I'm Working On It",
+        "SIFANYI_SASA": "I Don't Pray Right Now"
+      },
+      "hijabOption": {
+        "NDIYO": "Yes",
+        "HAPANA": "No",
+        "WAKATI_MWINGINE": "Sometimes"
+      },
+      "quranLevel": {
+        "NINASOMA_KWA_UFASAHA": "I Read Fluently",
+        "NINASOMA_KAWAIDA": "I Read Reasonably Well",
+        "BADO_NINAJIFUNZA": "I'm Still Learning",
+        "SIJUI_KUSOMA": "I Don't Know How to Read"
+      },
+      "substanceUse": {
+        "SITUMII_KABISA": "Never",
+        "MARA_CHACHE": "Rarely",
+        "MARA_KWA_MARA": "Occasionally"
+      },
+      "educationLevel": {
+        "MSINGI": "Primary School",
+        "SEKONDARI": "Secondary School",
+        "KIDATO_CHA_SITA": "High School (Form 6)",
+        "STASHAHADA": "Diploma",
+        "SHAHADA": "Bachelor's Degree",
+        "UZAMILI_UZAMIVU": "Master's/Doctorate"
+      },
+      "bodyType": {
+        "MWEMBAMBA": "Slim",
+        "WASTANI": "Average",
+        "MNENE": "Heavy-Set"
+      },
+      "skinTone": {
+        "NYEUSI": "Dark",
+        "KAHAWIA_ILIYOKOZA": "Deep Brown",
+        "KAHAWIA": "Brown",
+        "NYEUPE": "Fair"
+      },
+      "incomeRange": {
+        "CHINI_YA_300K": "Under TZS 300,000",
+        "300K_HADI_700K": "TZS 300,000 - 700,000",
+        "700K_HADI_1_5M": "TZS 700,000 - 1,500,000",
+        "ZAIDI_YA_1_5M": "Over TZS 1,500,000",
+        "SIPENDI_KUTAJA": "Prefer Not to Say"
+      },
+      "guardianRelationship": {
+        "BABA": "Father",
+        "KAKA": "Brother",
+        "MJOMBA": "Uncle",
+        "BABU": "Grandfather",
+        "MWINGINE": "Other"
+      },
+      "religion": {
+        "UISLAMU": "Islam",
+        "UKRISTO": "Christianity",
+        "UHINDU": "Hinduism",
+        "DINI_ASILIA": "Traditional African Religion",
+        "SINA_DINI": "No Religion",
+        "NYINGINE": "Other"
+      },
+      "disabilityType": {
+        "MIGUU": "Leg/Mobility Disability",
+        "MIKONO": "Arm/Hand Disability",
+        "UPOFU": "Blindness",
+        "UZIWI": "Deafness",
+        "NYINGINE": "Other",
+        "SIHITAJI_KUSEMA": "Prefer Not to Say"
+      },
+      "yesNo": {
+        "NDIYO": "Yes",
+        "HAPANA": "No"
+      }
+    },
+    "supportCategories": {
+      "ACCOUNT_LOGIN": "🔐 Account & Login",
+      "PROFILE_VERIFICATION": "👤 Profile & Verification",
+      "PAYMENTS_SUBSCRIPTION": "💳 Payments & Subscription",
+      "SAFETY_REPORT": "🚩 Safety & Report",
+      "MESSAGES_COMMUNICATION": "💬 Messages & Communication",
+      "PRIVACY_DATA": "🔒 Privacy & Data",
+      "TECHNICAL_PROBLEM": "⚙️ Technical Problem",
+      "TERMS_POLICY": "📋 Terms & Policy",
+      "OTHER": "❓ Other"
+    },
+    "reportReasons": {
+      "FAKE_PROFILE": "Fake Profile",
+      "SCAM": "Scam",
+      "MONEY_REQUEST": "Asking for Money",
+      "HARASSMENT": "Harassment",
+      "THREATS": "Threats or Intimidation",
+      "SPAM": "Spam / Unwanted Messages",
+      "IMPERSONATION": "Impersonation",
+      "INAPPROPRIATE_CONTENT": "Inappropriate Content",
+      "FALSE_INFO": "False Photos or Information",
+      "TERMS_VIOLATION": "Violates Nusrah's Terms",
+      "OTHER": "Other Reason"
+    },
+    "tiers": {
+      "FREE": "Free",
+      "BASIC": "Basic",
+      "SILVER": "Silver",
+      "GOLD": "Gold",
+      "PREMIUM": "Premium"
     }
   },
   "home": {
@@ -51,14 +217,38 @@
     "trustBadgeTitle": "Our Members",
     "trustBadgeSubtitle": "Looking for someone like you",
     "heroPhotoAlt": "A couple together, reflecting on their journey to finding a life partner",
-    "statsBar": ["Active Members", "Successful Marriages", "Safe & Private", "Verified Profiles", "24/7 Support"],
+    "statsBar": [
+      "Active Members",
+      "Successful Marriages",
+      "Safe & Private",
+      "Verified Profiles",
+      "24/7 Support"
+    ],
     "features": [
-      { "title": "Safe & Private", "body": "Your information stays protected. Your privacy is our first priority." },
-      { "title": "Real Profiles", "body": "Every member goes through verification to keep the community genuine." },
-      { "title": "Smart Matching", "body": "Search for a partner with advanced filters for more accurate results." },
-      { "title": "Respectful Communication", "body": "Get to know each other with respect before deciding on next steps." },
-      { "title": "Marriage Intentions", "body": "A platform for people with sincere intentions to marry within Islamic values." },
-      { "title": "Real Success", "body": "We have a track record of couples who found happiness through Nusrah." }
+      {
+        "title": "Safe & Private",
+        "body": "Your information stays protected. Your privacy is our first priority."
+      },
+      {
+        "title": "Real Profiles",
+        "body": "Every member goes through verification to keep the community genuine."
+      },
+      {
+        "title": "Smart Matching",
+        "body": "Search for a partner with advanced filters for more accurate results."
+      },
+      {
+        "title": "Respectful Communication",
+        "body": "Get to know each other with respect before deciding on next steps."
+      },
+      {
+        "title": "Marriage Intentions",
+        "body": "A platform for people with sincere intentions to marry within Islamic values."
+      },
+      {
+        "title": "Real Success",
+        "body": "We have a track record of couples who found happiness through Nusrah."
+      }
     ],
     "quote": {
       "arabic": "وَإِنْ خِفْتُمْ أَلَّا تُقْسِطُوا فِي الْيَتَامَىٰ فَانْكِحُوا مَا طَابَ لَكُمْ مِنَ النِّسَاءِ مَثْنَىٰ وَثُلَاثَ وَرُبَاعَ",
@@ -109,7 +299,8 @@
     "noAccount": "Don't have an account?",
     "joinNow": "Join Now",
     "genericError": "Something went wrong",
-    "networkError": "Failed to connect to the server. Please try again."
+    "networkError": "Failed to connect to the server. Please try again.",
+    "sessionExpiredNotice": "You were automatically logged out after 5 minutes of inactivity. Please sign in again."
   },
   "thibitisha": {
     "title": "Verify Your Account",
@@ -148,6 +339,37 @@
       "tooManyOtpAttempts": "Too many attempts. Request a new code.",
       "invalidCode": "Incorrect code.",
       "verifiedSuccess": "Account verified"
+    },
+    "general": {
+      "unauthenticated": "Please log in first",
+      "forbidden": "You don't have permission to do this",
+      "notFound": "Not found",
+      "profileNotFound": "Profile not found",
+      "cannotBlockSelf": "You can't block yourself",
+      "cannotMessageSelf": "You can't message yourself",
+      "cannotFavoriteSelf": "You can't favorite yourself",
+      "cannotReportSelf": "You can't report yourself",
+      "invalidPhotoType": "Invalid photo type",
+      "photoTooLarge": "Photo is too large",
+      "invalidFileType": "Invalid file type",
+      "fileTooLarge": "File is too large",
+      "packageNotFound": "Package not found",
+      "orderNotFound": "Order not found",
+      "orderAlreadyProcessed": "This order has already been processed",
+      "paymentGatewayNotConfigured": "Mobile money payments are pending final setup. We'll let you know as soon as they're available.",
+      "withParamRequired": "Query param 'with' is required",
+      "invalidFormData": "Invalid data",
+      "contactRateLimited": "You've sent too many messages. Try again later.",
+      "cannotInitiateMessage": "Your plan doesn't allow starting new conversations. Upgrade your plan.",
+      "cannotReplyToMessage": "Your plan doesn't allow replying to messages. Upgrade your plan.",
+      "videoCallRestricted": "Video calls are available to PREMIUM members only.",
+      "voiceCallRestricted": "Voice calls are available to GOLD and PREMIUM members only.",
+      "noPhotoSelected": "Choose a photo",
+      "galleryLimitReached": "You've reached the 7-photo limit (1 profile photo + 6 gallery photos)",
+      "photoUploadConflict": "Try again",
+      "devToolOwnAccountOnly": "The dev tool can only activate your own account",
+      "invalidCurrentPassword": "Current password is incorrect",
+      "invalidPassword": "Password is incorrect"
     }
   },
   "validation": {
@@ -159,22 +381,68 @@
     "passwordRequired": "Password is required",
     "otpCodeFormat": "Code must be 6 digits",
     "mustAgreeToTerms": "You must agree to the Terms of Use to sign up",
-    "passwordsDoNotMatch": "Passwords do not match"
+    "passwordsDoNotMatch": "Passwords do not match",
+    "minAgeRequired": "You must be {minAge} years or older to use Nusrah.",
+    "chooseCountry": "Choose a country",
+    "regionRequired": "Enter your region/state",
+    "cityRequired": "Enter your district/area",
+    "religionRequired": "Enter your religion",
+    "chooseAnswer": "Choose an answer",
+    "occupationRequired": "Describe your occupation",
+    "chooseAtLeastOne": "Choose at least one option",
+    "bioTooShort": "Tell us a bit more about yourself",
+    "minAgeExceedsMaxAge": "The minimum age can't exceed the maximum age",
+    "guardianNameRequired": "Enter your guardian's name",
+    "chooseRelationship": "Choose a relationship",
+    "guardianPhoneRequired": "Enter your guardian's phone number",
+    "messageBodyRequired": "Write a message",
+    "currentPasswordRequired": "Enter your current password",
+    "newPasswordTooShort": "New password must be at least 8 characters",
+    "deletePasswordRequired": "Enter your password",
+    "deleteConfirmationMismatch": "Type \"{word}\" to confirm",
+    "reportDescriptionTooShort": "Describe what happened in more detail",
+    "invalidRegion": "Region not accepted",
+    "invalidChoice": "Choice not accepted",
+    "invalidRequest": "Invalid request",
+    "messageTooShort": "Message is too short"
   },
   "jinsiInavyofanyakazi": {
     "title": "How Nusrah Works",
     "subtitle": "Simple steps to help you find your life partner",
     "steps": [
-      { "title": "Sign Up", "desc": "Create your free account with basic information." },
-      { "title": "Complete Your Profile", "desc": "Tell us about yourself and what you're looking for in a partner." },
-      { "title": "Search", "desc": "Browse profiles that match what you're looking for." },
-      { "title": "Communicate", "desc": "Start safe, respectful conversations." },
-      { "title": "Verify", "desc": "Confirm intentions and information before proceeding." },
-      { "title": "Build a Life Together", "desc": "Move forward with the marriage process, God willing." }
+      {
+        "title": "Sign Up",
+        "desc": "Create your free account with basic information."
+      },
+      {
+        "title": "Complete Your Profile",
+        "desc": "Tell us about yourself and what you're looking for in a partner."
+      },
+      {
+        "title": "Search",
+        "desc": "Browse profiles that match what you're looking for."
+      },
+      {
+        "title": "Communicate",
+        "desc": "Start safe, respectful conversations."
+      },
+      {
+        "title": "Verify",
+        "desc": "Confirm intentions and information before proceeding."
+      },
+      {
+        "title": "Build a Life Together",
+        "desc": "Move forward with the marriage process, God willing."
+      }
     ],
     "tiersHeading": "Features by Tier (Free to Premium)",
     "tiersSubtitle": "The higher your plan, the more features and visibility you get",
-    "trustBadges": ["High Security", "Respect & Ethics", "For Marriage Only", "Fast Support"]
+    "trustBadges": [
+      "High Security",
+      "Respect & Ethics",
+      "For Marriage Only",
+      "Fast Support"
+    ]
   },
   "kuwaMwanachama": {
     "title": "Choose Your Plan",
@@ -200,10 +468,22 @@
     "title": "Our Members' Success Stories",
     "subtitle": "Real stories from members who found their life partner through Nusrah",
     "stats": [
-      { "value": "35,000+", "label": "Active Members" },
-      { "value": "2,000+", "label": "Successful Marriages" },
-      { "value": "98%", "label": "Satisfied with Nusrah" },
-      { "value": "100%", "label": "Safe & Private" }
+      {
+        "value": "35,000+",
+        "label": "Active Members"
+      },
+      {
+        "value": "2,000+",
+        "label": "Successful Marriages"
+      },
+      {
+        "value": "98%",
+        "label": "Satisfied with Nusrah"
+      },
+      {
+        "value": "100%",
+        "label": "Safe & Private"
+      }
     ],
     "ctaHeading": "Be Our Next Success Story",
     "ctaLoggedIn": "Keep browsing fellow members on Nusrah in a safe and respectful way.",
@@ -215,36 +495,126 @@
     "subtitle": "We're here to help. Check our frequently asked questions or contact us directly.",
     "faqHeading": "Frequently Asked Questions",
     "faqs": [
-      { "question": "What is Nusrah.co.tz?", "answer": "Nusrah.co.tz is a platform connecting people with sincere intentions of finding a life partner for marriage, built on respect, honesty, privacy, and Islamic values." },
-      { "question": "Is Nusrah a regular dating site?", "answer": "No. Nusrah is focused on finding a partner for marriage, not short-term relationships or entertainment." },
-      { "question": "Who can sign up for Nusrah?", "answer": "Anyone who meets Nusrah's Terms of Use and has genuine intentions of finding a life partner can sign up." },
-      { "question": "Do I have to be Muslim?", "answer": "Nusrah is built from an Islamic perspective and is primarily aimed at people seeking marriage on Islamic principles. Membership eligibility is explained during sign-up." },
-      { "question": "What information do I need for sign-up?", "answer": "You'll be asked to provide: your name and a display name for your profile, date of birth, gender, phone number, email, where you live, marital status, religious information, education and occupation, the qualities you're looking for in a partner, a profile photo, and other information needed to build your profile." },
-      { "question": "Can I use a nickname?", "answer": "Nusrah may allow a display name to protect your privacy, but the information you register with must be true and accurate." },
-      { "question": "Will my phone number be visible to everyone?", "answer": "No. Personal information like your phone number and email is protected and should not be shown publicly without your permission." },
-      { "question": "Can I upload my photo?", "answer": "Yes. You can add a photo suitable for your profile. Nusrah may review photos to ensure they meet the platform's rules and standards." },
-      { "question": "What is profile verification?", "answer": "Verification helps increase trust and safety among members by confirming that a user's key information can be verified." },
-      { "question": "Does Nusrah guarantee I'll find a partner?", "answer": "No. Nusrah cannot guarantee marriage or finding a particular partner. The platform provides an environment to meet, communicate, and choose carefully." },
-      { "question": "How do I search for a partner?", "answer": "You can use criteria such as: gender, age, location, marital status, education, occupation, religious practice, lifestyle, and other preferences for your partner." },
-      { "question": "Can I contact someone I'm interested in?", "answer": "Yes, if both profiles allow communication according to Nusrah's system. You can use the platform's internal messaging without needing to give out your phone number." },
-      { "question": "Can I block someone?", "answer": "Yes. You can block a member you don't want contacting you." },
-      { "question": "Can I report a profile?", "answer": "Yes. You can report a profile, message, or behavior that violates Nusrah's rules. Our team may investigate the report and take appropriate action." },
-      { "question": "How does Nusrah protect my safety?", "answer": "Nusrah aims to use a range of safety measures, including user verification, a reporting system, suspending accounts that violate the rules, and protecting personal information." },
-      { "question": "What role does a Wali/Guardian play?", "answer": "For users who choose to, Nusrah may offer a section to add Wali/Guardian information to support the process of finding a partner respectfully and with family involvement." },
-      { "question": "Is guardian information required?", "answer": "No, that section may be optional, depending on Nusrah's policy and system." },
-      { "question": "I forgot my password, what do I do?", "answer": "Click \"Forgot Password?\" on the Login page and follow the steps to recover your account." },
-      { "question": "Can I change my profile information?", "answer": "Yes. You can edit your information via Profile Settings, except for certain information that may require additional verification." },
-      { "question": "Can I delete my account?", "answer": "Yes. You can request to delete your account via Account Settings or by contacting Nusrah Support." },
-      { "question": "Is Nusrah free?", "answer": "Nusrah may offer free services alongside paid services, depending on the available membership plan." },
-      { "question": "How are payments made?", "answer": "If the service you're using requires payment, Nusrah may offer various payment methods such as mobile money, card, or other methods accepted by the system." },
-      { "question": "Can payments be refunded?", "answer": "Refunds depend on the type of service, the plan you paid for, and Nusrah's Refund Policy." },
-      { "question": "Does Nusrah allow scams or fake accounts?", "answer": "No. Fake accounts, scams, fraud, threats, harassment, and misuse of the platform are violations of Nusrah's Terms." },
-      { "question": "What should I do if I suspect someone is a scammer?", "answer": "Don't send them money or your sensitive information. Block and report them immediately through the Report system, and Nusrah may investigate." },
-      { "question": "Can I ask another user for money?", "answer": "No. Asking or pressuring another user to send money, especially through deception, can lead to your account being suspended or closed." },
-      { "question": "Can my communications be monitored?", "answer": "Nusrah may process information as needed for safety, service operation, and preventing misuse, in accordance with its Privacy Policy." },
-      { "question": "Does Nusrah share my information with others?", "answer": "Nusrah aims to protect your personal information and handle it in accordance with its Privacy Policy and applicable law." },
-      { "question": "Can I meet someone I found on Nusrah in person?", "answer": "Yes, but you're advised to take precautions: make sure you've communicated enough beforehand, avoid sending money, and choose a safe, well-known place for a first meeting." },
-      { "question": "How do I contact Nusrah Support?", "answer": "Use the Help & Support / Contact Us section within Nusrah.co.tz for help with your account, profile, payments, safety, or to report a problem." }
+      {
+        "question": "What is Nusrah.co.tz?",
+        "answer": "Nusrah.co.tz is a platform connecting people with sincere intentions of finding a life partner for marriage, built on respect, honesty, privacy, and Islamic values."
+      },
+      {
+        "question": "Is Nusrah a regular dating site?",
+        "answer": "No. Nusrah is focused on finding a partner for marriage, not short-term relationships or entertainment."
+      },
+      {
+        "question": "Who can sign up for Nusrah?",
+        "answer": "Anyone who meets Nusrah's Terms of Use and has genuine intentions of finding a life partner can sign up."
+      },
+      {
+        "question": "Do I have to be Muslim?",
+        "answer": "Nusrah is built from an Islamic perspective, but our main goal is to bring people together and help them build strong foundations for marriage. Because of this, Nusrah welcomes people of all faiths, with no discrimination based on religion."
+      },
+      {
+        "question": "What information do I need for sign-up?",
+        "answer": "You'll be asked to provide: your name and a display name for your profile, date of birth, gender, phone number, email, where you live, marital status, religious information, education and occupation, the qualities you're looking for in a partner, a profile photo, and other information needed to build your profile."
+      },
+      {
+        "question": "Can I use a nickname?",
+        "answer": "Nusrah may allow a display name to protect your privacy, but the information you register with must be true and accurate."
+      },
+      {
+        "question": "Will my phone number be visible to everyone?",
+        "answer": "No. Personal information like your phone number and email is protected and should not be shown publicly without your permission."
+      },
+      {
+        "question": "Can I upload my photo?",
+        "answer": "Yes. You can add a photo suitable for your profile. Nusrah may review photos to ensure they meet the platform's rules and standards."
+      },
+      {
+        "question": "What is profile verification?",
+        "answer": "Verification helps increase trust and safety among members by confirming that a user's key information can be verified."
+      },
+      {
+        "question": "Does Nusrah guarantee I'll find a partner?",
+        "answer": "No. Nusrah cannot guarantee marriage or finding a particular partner. The platform provides an environment to meet, communicate, and choose carefully."
+      },
+      {
+        "question": "How do I search for a partner?",
+        "answer": "You can use criteria such as: gender, age, location, marital status, education, occupation, religious practice, lifestyle, and other preferences for your partner."
+      },
+      {
+        "question": "Can I contact someone I'm interested in?",
+        "answer": "Yes, if both profiles allow communication according to Nusrah's system. You can use the platform's internal messaging without needing to give out your phone number."
+      },
+      {
+        "question": "Can I block someone?",
+        "answer": "Yes. You can block a member you don't want contacting you."
+      },
+      {
+        "question": "Can I report a profile?",
+        "answer": "Yes. You can report a profile, message, or behavior that violates Nusrah's rules. Our team may investigate the report and take appropriate action."
+      },
+      {
+        "question": "How does Nusrah protect my safety?",
+        "answer": "Nusrah aims to use a range of safety measures, including user verification, a reporting system, suspending accounts that violate the rules, and protecting personal information."
+      },
+      {
+        "question": "What role does a Wali/Guardian play?",
+        "answer": "For users who choose to, Nusrah may offer a section to add Wali/Guardian information to support the process of finding a partner respectfully and with family involvement."
+      },
+      {
+        "question": "Is guardian information required?",
+        "answer": "No, that section may be optional, depending on Nusrah's policy and system."
+      },
+      {
+        "question": "I forgot my password, what do I do?",
+        "answer": "Click \"Forgot Password?\" on the Login page and follow the steps to recover your account."
+      },
+      {
+        "question": "Can I change my profile information?",
+        "answer": "Yes. You can edit your information via Profile Settings, except for certain information that may require additional verification."
+      },
+      {
+        "question": "Can I delete my account?",
+        "answer": "Yes. You can request to delete your account via Account Settings or by contacting Nusrah Support."
+      },
+      {
+        "question": "Is Nusrah free?",
+        "answer": "Nusrah may offer free services alongside paid services, depending on the available membership plan."
+      },
+      {
+        "question": "How are payments made?",
+        "answer": "If the service you're using requires payment, Nusrah may offer various payment methods such as mobile money, card, or other methods accepted by the system."
+      },
+      {
+        "question": "Can payments be refunded?",
+        "answer": "Refunds depend on the type of service, the plan you paid for, and Nusrah's Refund Policy."
+      },
+      {
+        "question": "Does Nusrah allow scams or fake accounts?",
+        "answer": "No. Fake accounts, scams, fraud, threats, harassment, and misuse of the platform are violations of Nusrah's Terms."
+      },
+      {
+        "question": "What should I do if I suspect someone is a scammer?",
+        "answer": "Don't send them money or your sensitive information. Block and report them immediately through the Report system, and Nusrah may investigate."
+      },
+      {
+        "question": "Can I ask another user for money?",
+        "answer": "No. Asking or pressuring another user to send money, especially through deception, can lead to your account being suspended or closed."
+      },
+      {
+        "question": "Can my communications be monitored?",
+        "answer": "Nusrah may process information as needed for safety, service operation, and preventing misuse, in accordance with its Privacy Policy."
+      },
+      {
+        "question": "Does Nusrah share my information with others?",
+        "answer": "Nusrah aims to protect your personal information and handle it in accordance with its Privacy Policy and applicable law."
+      },
+      {
+        "question": "Can I meet someone I found on Nusrah in person?",
+        "answer": "Yes, but you're advised to take precautions: make sure you've communicated enough beforehand, avoid sending money, and choose a safe, well-known place for a first meeting."
+      },
+      {
+        "question": "How do I contact Nusrah Support?",
+        "answer": "Use the Help & Support / Contact Us section within Nusrah.co.tz for help with your account, profile, payments, safety, or to report a problem."
+      }
     ],
     "safetyNote": {
       "heading": "🛡️ Your Safety Matters",
@@ -331,7 +701,9 @@
       {
         "icon": "🚩",
         "heading": "Watch for Signs of a Scam",
-        "intro": ["Be careful if someone:"],
+        "intro": [
+          "Be careful if someone:"
+        ],
         "items": [
           "Declares love for you very quickly.",
           "Asks for money or financial help.",
@@ -367,12 +739,16 @@
           "Suspicious links",
           "Content that violates Nusrah's rules."
         ],
-        "outro": ["Report and Block are essential safety features on any dating platform. (Safety Centre)"]
+        "outro": [
+          "Report and Block are essential safety features on any dating platform. (Safety Centre)"
+        ]
       },
       {
         "icon": "🔒",
         "heading": "Protect Your Personal Information",
-        "intro": ["Don't share early on:"],
+        "intro": [
+          "Don't share early on:"
+        ],
         "items": [
           "Password",
           "OTP",
@@ -385,7 +761,9 @@
           "Personal documents",
           "Private photos/videos you don't want shared."
         ],
-        "outro": ["Your profile information should be kept to the minimum needed to protect your privacy. (eSafety Commissioner)"]
+        "outro": [
+          "Your profile information should be kept to the minimum needed to protect your privacy. (eSafety Commissioner)"
+        ]
       },
       {
         "icon": "💬",
@@ -407,7 +785,9 @@
       {
         "icon": "🤝",
         "heading": "Before You Meet",
-        "intro": ["If you've decided to meet someone, do this:"],
+        "intro": [
+          "If you've decided to meet someone, do this:"
+        ],
         "items": [
           "Tell someone you trust.",
           "Share who you're meeting and their profile.",
@@ -434,7 +814,9 @@
       {
         "icon": "🚨",
         "heading": "If You're in Danger",
-        "intro": ["If someone is threatening, stalking, pressuring, or harming you:"],
+        "intro": [
+          "If someone is threatening, stalking, pressuring, or harming you:"
+        ],
         "items": [
           "Stop communicating with them.",
           "Save any important evidence.",
@@ -443,7 +825,9 @@
           "If there's immediate physical danger, contact your local emergency authorities."
         ],
         "ordered": true,
-        "outro": ["Nusrah is not an emergency service; for immediate danger, seek help from the relevant authorities. (Safety Centre)"]
+        "outro": [
+          "Nusrah is not an emergency service; for immediate danger, seek help from the relevant authorities. (Safety Centre)"
+        ]
       },
       {
         "icon": "📸",
@@ -460,7 +844,17 @@
           "Nusrah should never become a place for asking each other for money under the guise of romance.",
           "Don't send money to someone you met online for:"
         ],
-        "items": ["Travel", "Medical treatment", "Tickets", "Business", "Investment", "An emergency", "A visa", "Family support", "A promise of marriage."]
+        "items": [
+          "Travel",
+          "Medical treatment",
+          "Tickets",
+          "Business",
+          "Investment",
+          "An emergency",
+          "A visa",
+          "Family support",
+          "A promise of marriage."
+        ]
       },
       {
         "icon": "⚖️",
@@ -486,16 +880,1404 @@
       "heading": "Quick Safety Actions",
       "intro": "If you have a problem, tap:",
       "items": [
-        { "icon": "🚩", "label": "REPORT", "body": "Report a user." },
-        { "icon": "🚫", "label": "BLOCK", "body": "Stop contact from a user." },
-        { "icon": "🔒", "label": "PRIVACY", "body": "Change your privacy settings." },
-        { "icon": "🔑", "label": "SECURE ACCOUNT", "body": "Change your password and enable 2FA." },
-        { "icon": "💬", "label": "CONTACT SUPPORT", "body": "Reach out to Nusrah Support." }
+        {
+          "icon": "🚩",
+          "label": "REPORT",
+          "body": "Report a user."
+        },
+        {
+          "icon": "🚫",
+          "label": "BLOCK",
+          "body": "Stop contact from a user."
+        },
+        {
+          "icon": "🔒",
+          "label": "PRIVACY",
+          "body": "Change your privacy settings."
+        },
+        {
+          "icon": "🔑",
+          "label": "SECURE ACCOUNT",
+          "body": "Change your password and enable 2FA."
+        },
+        {
+          "icon": "💬",
+          "label": "CONTACT SUPPORT",
+          "body": "Reach out to Nusrah Support."
+        }
       ]
     },
     "closing": {
       "quote": "Your safety matters more than continuing a conversation.",
       "body": "If something feels wrong, trust your instincts, stop the conversation, and report it."
     }
+  },
+  "onboarding": {
+    "common": {
+      "genericError": "Something went wrong",
+      "networkError": "Couldn't connect to the server. Please try again.",
+      "saved": "Saved ✓",
+      "submitting": "Saving...",
+      "save": "Save",
+      "continue": "Continue",
+      "back": "Back",
+      "skip": "Skip"
+    },
+    "stepProgress": {
+      "step": "Step",
+      "of": "of"
+    },
+    "personal": {
+      "pageHeading": "Personal Details",
+      "pageSubtitle": "A few simple steps to start your journey to finding a life partner",
+      "fullName": "Full Name",
+      "displayNameLabel": "Display Name",
+      "displayNamePlaceholder": "The name shown on your profile",
+      "genderLabel": "Gender",
+      "genderFemale": "Female",
+      "genderMale": "Male",
+      "dobLabel": "Date of Birth",
+      "ageLabel": "Age",
+      "countryLabel": "Country",
+      "countryPlaceholder": "Choose your country",
+      "countrySearchPlaceholder": "Search country...",
+      "countryNoResults": "No country found",
+      "regionLabel": "Where You Live (Region)",
+      "regionSelectPlaceholder": "Choose your region/city",
+      "regionInputPlaceholder": "Region / State",
+      "cityLabel": "District / Area",
+      "citySelectPlaceholder": "Choose your district",
+      "cityInputPlaceholder": "District / Town",
+      "maritalStatusLabel": "Marital Status",
+      "maritalStatusPlaceholder": "Choose your marital status",
+      "underMinAge": "You must be {minAge} years or older to use Nusrah."
+    },
+    "religion": {
+      "pageHeading": "Religious Details",
+      "religionLabel": "Religion",
+      "religionPlaceholder": "Choose your religion",
+      "madhhabLabel": "Madhhab",
+      "madhhabPlaceholder": "Choose your madhhab",
+      "prayerHabitLabel": "Do you pray?",
+      "choosePlaceholder": "Choose",
+      "wearsHijabLabel": "Do you wear hijab?",
+      "quranLevelLabel": "Reading the Qur'an",
+      "quranLevelPlaceholder": "Choose your level",
+      "substanceUseLabel": "Do you drink or smoke?"
+    },
+    "life": {
+      "pageHeading": "Life Details",
+      "occupationLabel": "Your Occupation",
+      "occupationPlaceholder": "Describe your occupation",
+      "educationLevelLabel": "Highest Education",
+      "chooseLevelPlaceholder": "Choose your level",
+      "heightLabel": "Height (cm)",
+      "heightPlaceholder": "Choose your height",
+      "heightUnit": "cm",
+      "bodyTypeLabel": "Body Type",
+      "choosePlaceholder": "Choose",
+      "hasDisabilityLabel": "Do You Have Any Disability?",
+      "disabilityTypeLabel": "Type of Disability",
+      "disabilityTypePlaceholder": "Choose the type of disability",
+      "skinToneLabel": "Skin Tone",
+      "incomeRangeLabel": "Income (Optional)",
+      "chooseRangePlaceholder": "Choose a range",
+      "intentionsLabel": "Looking For",
+      "intentionsHint": "You can choose more than one option.",
+      "partnerAgeLabel": "Desired Partner Age",
+      "fromPlaceholder": "From",
+      "toPlaceholder": "To",
+      "toSeparator": "to",
+      "ageRangeInvalid": "The minimum age can't exceed the maximum age",
+      "bioLabel": "A Short Bio About You",
+      "bioPlaceholder": "Briefly describe yourself, your goals, and what you're looking for in a partner..."
+    },
+    "guardian": {
+      "pageHeading": "Guardian (Wali)",
+      "pageSubtitle": "Optional — you can add your guardian's details so they can be involved.",
+      "hasGuardianLabel": "I Have a Guardian",
+      "guardianNameLabel": "Guardian's Name",
+      "guardianNamePlaceholder": "Guardian's full name",
+      "relationshipLabel": "Relationship",
+      "relationshipPlaceholder": "Choose relationship",
+      "guardianPhoneLabel": "Guardian's Phone Number",
+      "guardianPhonePlaceholder": "07XX XXX XXX"
+    },
+    "photo": {
+      "pageHeading": "Profile Photos",
+      "pageSubtitle": "These photos will be visible to other Nusrah members. Don't upload a disrespectful photo or one of someone else.",
+      "takePhoto": "Take Photo",
+      "uploadFromDevice": "Upload from Device",
+      "invalidType": "Choose a JPEG, PNG, or WEBP photo",
+      "tooLarge": "Photo is too large (maximum 8MB)",
+      "loadFailed": "Couldn't load the photo. Please try again.",
+      "dragHint": "Drag to position, use the slider to zoom",
+      "reset": "Reset",
+      "useThisPhoto": "Use This Photo",
+      "uploading": "Uploading...",
+      "prepareFailed": "Couldn't prepare the photo. Please try again.",
+      "mainBadge": "Main",
+      "change": "Change",
+      "deletePhotoAria": "Delete photo",
+      "addTile": "Add",
+      "galleryHint": "Your first photo is shown as your main photo. You can add up to {maxGallery} more.",
+      "deleteFailed": "Couldn't delete the photo. Refresh the page and try again.",
+      "skipForNow": "Skip for Now"
+    }
+  },
+  "wasifuWangu": {
+    "heading": "My Profile",
+    "subtitle": "Edit your profile details anytime."
+  },
+  "dashibodi": {
+    "welcome": "Welcome",
+    "subtitle": "Here's a summary of your activity on Nusrah.",
+    "addPhotoChecklist": "Add a profile photo",
+    "packageLabel": "Package",
+    "daysRemaining": "{days} days remaining",
+    "messagesLabel": "Messages",
+    "noMessagesYet": "No messages yet",
+    "likedYouLabel": "Liked You",
+    "upgradeToSeeWho": "Upgrade your plan to see who",
+    "viewAll": "View all",
+    "favoritedLabel": "Favorited",
+    "savedProfiles": "Profiles you've saved",
+    "suggestedHeading": "Profiles For You",
+    "viewAllLink": "View All"
+  },
+  "wanachama": {
+    "pageHeading": "Profiles",
+    "pageSubtitle": "Discover members who match you",
+    "tabs": {
+      "browse": "Profiles",
+      "likedYou": "Liked You",
+      "favorites": "My Favorites"
+    },
+    "browser": {
+      "searchPlaceholder": "Search Members",
+      "sortRecent": "Newest",
+      "sortBestMatch": "Best Match",
+      "gridViewAria": "Grid View",
+      "listViewAria": "List View",
+      "filtersButton": "Filters",
+      "removeRegionAria": "Remove",
+      "viewLimitNote": "You're shown up to {limit} profiles a day on your plan",
+      "emptyFavorites": "You haven't favorited anyone yet.",
+      "emptyBrowse": "No members found for these filters. Try adjusting them.",
+      "clearFilters": "Clear Filters",
+      "loadMore": "Load More",
+      "loading": "Loading..."
+    },
+    "card": {
+      "newBadge": "New",
+      "onlineAria": "Online",
+      "verifiedTitle": "Verified",
+      "contactLocked": "Contact locked",
+      "seekingPrefix": "Looking for:",
+      "sendMessageAria": "Send a message",
+      "addFavoriteAria": "Add to favorites",
+      "removeFavoriteAria": "Remove from favorites"
+    },
+    "filterPanel": {
+      "heading": "Search Filters",
+      "closeAria": "Close",
+      "ageLabel": "Age",
+      "regionLabel": "Region",
+      "selectAll": "Select All",
+      "deselectAll": "Deselect All",
+      "intentionsTitle": "Looking For",
+      "maritalStatusTitle": "Marital Status",
+      "madhhabTitle": "Madhhab",
+      "hijabTitle": "Hijab",
+      "verifiedOnlyLabel": "Verified Profiles Only",
+      "verifiedOnlyHint": "Verification is done by the Nusrah team after reviewing the profile.",
+      "clear": "Clear Filters",
+      "apply": "Apply Filters"
+    },
+    "detail": {
+      "religionSection": "Religion & Practice",
+      "madhhabLabel": "Madhhab",
+      "prayerLabel": "Prayer",
+      "quranLabel": "Reading the Qur'an",
+      "substanceLabel": "Substance Use",
+      "hijabLabel": "Hijab",
+      "lifeSection": "Life",
+      "maritalStatusLabel": "Marital Status",
+      "occupationLabel": "Occupation",
+      "educationLabel": "Education",
+      "heightLabel": "Height",
+      "heightUnit": "cm",
+      "bodyTypeLabel": "Body Type",
+      "skinToneLabel": "Skin Tone",
+      "incomeLabel": "Income",
+      "lookingForSection": "Looking For",
+      "partnerAgeLabel": "Partner Age",
+      "contactLocked": "Contact locked — upgrade your plan",
+      "sendMessage": "Send Message",
+      "messagePlaceholder": "Write a respectful message...",
+      "send": "Send",
+      "sending": "Sending...",
+      "cancel": "Cancel",
+      "messageSent": "Message sent",
+      "goToMessages": "Go to Messages",
+      "genericError": "Something went wrong",
+      "networkError": "Couldn't connect to the server."
+    }
+  },
+  "vipendwa": {
+    "heading": "My Favorites",
+    "subtitle": "Members you've favorited"
+  },
+  "wamenipenda": {
+    "heading": "Liked You",
+    "subtitle": "Members who liked you",
+    "someoneLiked": "{count} people liked your profile",
+    "noOneYet": "No one has liked your profile yet",
+    "upgradeHint": "Upgrade your plan (Silver or higher) to see who.",
+    "upgradeButton": "Upgrade Plan",
+    "emptyState": "No one has liked you yet. Complete your profile to stand out more."
+  },
+  "akaunti": {
+    "pageHeading": "My Account",
+    "welcomePrefix": "Welcome",
+    "subscriptionActivated": "Your plan has been activated.",
+    "addPhotoPrompt": "Add a profile photo to be seen more",
+    "addPhotoButton": "Add Photo",
+    "statusActive": "Active",
+    "noExpiryNote": "(no expiry date)",
+    "changePackageButton": "Change Plan",
+    "subscriptionDurationLabel": "Plan Duration",
+    "days30": "30 Days",
+    "expiryDateLabel": "Expiry Date",
+    "daysRemainingLabel": "Days Remaining",
+    "lastPaymentLabel": "Last Payment",
+    "paymentConfirmed": "Payment Confirmed",
+    "paymentPending": "Payment Pending",
+    "paymentFailed": "Payment Failed",
+    "browseMembersHeading": "Browse Members",
+    "browseMembersSubtitle": "See members who match you",
+    "goToMembersButton": "Go to Members",
+    "phoneTestHeading": "Phone (GOLD/PREMIUM)",
+    "phoneTestSubtitle": "Test phone access based on your plan"
+  },
+  "ujumbe": {
+    "list": {
+      "pageHeading": "Messages",
+      "subtitle": "Your conversations with other members",
+      "emptyState": "You have no conversations yet. Send a message from a member's profile to start.",
+      "youPrefix": "You: ",
+      "unreadCap": "9+"
+    },
+    "thread": {
+      "emptyThread": "No messages yet. Start the conversation below.",
+      "messagePlaceholder": "Write a respectful message...",
+      "send": "Send",
+      "genericError": "An error occurred",
+      "networkError": "Failed to connect to the server.",
+      "upgradePackage": "Change Plan",
+      "cannotReply": "Your plan doesn't allow replying to messages. Upgrade your plan.",
+      "cannotInitiate": "Your plan doesn't allow starting new conversations. Upgrade your plan."
+    }
+  },
+  "mipangilio": {
+    "pageHeading": "Settings",
+    "subtitle": "Manage your account and privacy.",
+    "changePasswordTitle": "Change Password",
+    "blockedUsersTitle": "Blocked Users",
+    "deleteAccountTitle": "Delete Account",
+    "deleteAccountWarning": "Deleting your account is permanent and cannot be undone.",
+    "changePasswordForm": {
+      "hidePasswordAria": "Hide password",
+      "showPasswordAria": "Show password",
+      "passwordsDoNotMatch": "New passwords don't match",
+      "genericError": "An error occurred",
+      "networkError": "Failed to connect to the server. Try again.",
+      "currentPasswordLabel": "Current Password",
+      "newPasswordLabel": "New Password",
+      "confirmNewPasswordLabel": "Confirm New Password",
+      "successMessage": "Password changed ✓",
+      "submitting": "Changing...",
+      "submit": "Change Password"
+    },
+    "blockedUsersList": {
+      "emptyState": "You haven't blocked anyone.",
+      "unblocking": "Unblocking...",
+      "unblock": "Unblock"
+    },
+    "deleteAccountModal": {
+      "genericError": "An error occurred",
+      "networkError": "Failed to connect to the server. Try again.",
+      "triggerButton": "Delete Account",
+      "modalHeading": "Delete Your Account",
+      "warning": "This action cannot be undone. Your profile, messages, favorites, and all related data will be permanently deleted.",
+      "passwordLabel": "Your Password",
+      "confirmationLabelPrefix": "Type",
+      "confirmationLabelSuffix": "to confirm",
+      "cancel": "Cancel",
+      "deleting": "Deleting...",
+      "confirmDelete": "Delete Account Permanently"
+    },
+    "languageDescription": "Choose your preferred language for the whole app."
+  },
+  "ripotiMtumiaji": {
+    "pageHeading": "Report User",
+    "subtitle": "Search for the user you want to report by name, city, or details in their profile.",
+    "search": {
+      "genericError": "An error occurred",
+      "networkError": "Failed to connect to the server. Try again.",
+      "placeholder": "Search by name, city, or description...",
+      "searching": "Searching...",
+      "searchButton": "Search",
+      "noResults": "No user found with that name."
+    },
+    "modal": {
+      "triggerButton": "Report User",
+      "heading": "Report User to Nusrah Safety",
+      "reportingPrefix": "Reporting:",
+      "viewProfile": "View Profile",
+      "reasonQuestion": "Why are you reporting this user?",
+      "reasonHint": "Choose the reason that applies:",
+      "descriptionLabel": "📝 Describe what happened",
+      "descriptionPlaceholder": "Write a description of the issue here...",
+      "descriptionHint": "Please don't include passwords, PINs, OTPs, or other sensitive information.",
+      "evidenceLabel": "📎 Add Evidence — Optional",
+      "uploadScreenshot": "+ Upload Screenshot",
+      "evidenceHint": "You can add screenshots of conversations, the profile, or information related to the report.",
+      "blockLabel": "🚫 Block User",
+      "blockCheckboxLabel": "Block this user after submitting the report",
+      "blockHint": "The user won't be told who reported them, except where required for legal or safety reasons.",
+      "privacyTitle": "🔐 Privacy & Safety",
+      "privacyBody": "Nusrah will review your report according to our Safety Policy, Terms of Use, and Privacy Policy. Filing a report doesn't automatically mean the account will be closed; action depends on the outcome of the review.",
+      "emergencyTitle": "🚨 If You're in Immediate Danger",
+      "emergencyBody": "Don't wait for a response from Nusrah. Seek help from someone you trust and the relevant emergency authorities.",
+      "cancel": "Cancel",
+      "submitting": "Submitting...",
+      "submitButton": "🚩 Submit Report",
+      "genericError": "An error occurred",
+      "networkError": "Failed to connect to the server. Try again.",
+      "successCheckmark": "✓",
+      "successHeading": "Report Received",
+      "successBody": "Thank you for helping keep the Nusrah community safe. Our team will review your report and take appropriate action.",
+      "backToSafety": "Back to Safety Center",
+      "close": "Close"
+    }
+  },
+  "mashartiYaMatumizi": {
+    "pageEyebrow": "Nusrah.co.tz",
+    "pageTitle": "Terms of Use",
+    "pageSubtitle": "Marriage-Focused Matchmaking Platform",
+    "effectiveDate": "Effective Date: 30 August 2026 · Last Updated: 30 August 2026",
+    "intro1": "Welcome to Nusrah.co.tz (“Nusrah”, “we”, “us”, or “our”). Nusrah is an online matchmaking and introduction platform established to help individuals who are genuinely seeking a serious relationship leading to marriage connect with compatible potential spouses in a respectful, safe and responsible environment.",
+    "intro2": "By creating an account, accessing, browsing or using Nusrah.co.tz, you agree to be legally bound by these Terms of Use (“Terms”). If you do not agree with these Terms, you must not use Nusrah.",
+    "footerTagline": "Find Someone. Build Trust. Get Married.",
+    "footerBody": "Nusrah is built for serious people seeking meaningful relationships with marriage in mind.",
+    "sections": [
+      {
+        "heading": "1. Purpose of Nusrah",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah is primarily a marriage-focused matchmaking platform."
+          },
+          {
+            "type": "p",
+            "text": "The purpose of Nusrah is to:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Connect people who are genuinely interested in marriage.",
+              "Facilitate respectful introductions between potential spouses.",
+              "Allow users to create marriage-oriented profiles.",
+              "Provide tools for searching and discovering compatible potential partners.",
+              "Facilitate communication between consenting users.",
+              "Promote responsible, respectful and transparent relationships.",
+              "Provide a safer digital environment for people seeking marriage."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah is not intended primarily for casual dating, sexual relationships, entertainment, prostitution, escort services or short-term relationships."
+          },
+          {
+            "type": "p",
+            "text": "Users are expected to join with genuine intentions compatible with the purpose of the platform."
+          }
+        ]
+      },
+      {
+        "heading": "2. Eligibility",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "To use Nusrah, you must:"
+          },
+          {
+            "type": "ol",
+            "items": [
+              "Be legally permitted to use an online service in your jurisdiction.",
+              "Meet the minimum age requirement established by Nusrah and applicable law.",
+              "Provide accurate registration information.",
+              "Have genuine intentions to seek a serious relationship leading to marriage.",
+              "Not be prohibited from using the service under applicable law.",
+              "Not create an account on behalf of another person without authorization."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah is strictly an adult service."
+          },
+          {
+            "type": "p",
+            "text": "Anyone under the minimum permitted age is prohibited from creating or maintaining an account."
+          }
+        ]
+      },
+      {
+        "heading": "3. Marriage Intention",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Because Nusrah is a marriage-focused platform, users are expected to represent their intentions honestly."
+          },
+          {
+            "type": "p",
+            "text": "You must not:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Pretend to be looking for marriage when your actual intention is otherwise.",
+              "Use Nusrah primarily for casual sexual relationships.",
+              "Manipulate users into emotional or financial relationships.",
+              "Maintain a profile for entertainment or experimentation where it violates these Terms.",
+              "Mislead another person regarding your marital intentions."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah cannot guarantee that every user has genuine marriage intentions. Users are responsible for exercising reasonable judgment and verifying information before making personal decisions."
+          }
+        ]
+      },
+      {
+        "heading": "4. User Account",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "You may be required to create an account to access certain features."
+          },
+          {
+            "type": "p",
+            "text": "You agree to:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Provide truthful information.",
+              "Keep your login credentials confidential.",
+              "Maintain only the accounts permitted by Nusrah.",
+              "Update your information when it changes.",
+              "Notify Nusrah if you suspect unauthorized access.",
+              "Take responsibility for activity occurring through your account."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "You must not sell, rent, transfer or give your account to another person."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah may suspend or terminate accounts that contain false, misleading, fraudulent or abusive information."
+          }
+        ]
+      },
+      {
+        "heading": "5. Profile Information",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Users may be able to provide information including:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Name or preferred name.",
+              "Age.",
+              "Gender.",
+              "Location.",
+              "Education.",
+              "Occupation.",
+              "Family information.",
+              "Marital status.",
+              "Religious or cultural preferences where voluntarily provided.",
+              "Marriage expectations.",
+              "Lifestyle preferences.",
+              "Photographs.",
+              "Biography.",
+              "Partner preferences."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "You are responsible for ensuring that the information you publish is accurate and appropriate."
+          },
+          {
+            "type": "p",
+            "text": "You must not impersonate another person."
+          },
+          {
+            "type": "p",
+            "text": "You must not upload another person’s photograph or personal information without appropriate authorization."
+          }
+        ]
+      },
+      {
+        "heading": "6. Marital Status",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Users must accurately disclose their marital status where the platform requests such information."
+          },
+          {
+            "type": "p",
+            "text": "You must not falsely claim to be:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Single;",
+              "Divorced;",
+              "Widowed;",
+              "Separated; or",
+              "Otherwise available for marriage."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "If Nusrah provides a marital-status verification feature, users agree to provide truthful information and, where legally appropriate, supporting documentation."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah reserves the right to restrict or remove accounts where material information concerning marital status appears fraudulent or misleading."
+          }
+        ]
+      },
+      {
+        "heading": "7. Identity Verification",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah may provide optional or mandatory identity-verification systems."
+          },
+          {
+            "type": "p",
+            "text": "Verification may involve:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Phone verification;",
+              "Email verification;",
+              "National identification documents;",
+              "Passport or other lawful identification;",
+              "Selfie or photograph verification;",
+              "Other appropriate verification methods."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Verification does not constitute a guarantee that a person is safe, honest, financially responsible, unmarried, compatible or suitable for marriage."
+          },
+          {
+            "type": "p",
+            "text": "Users must independently exercise reasonable care."
+          }
+        ]
+      },
+      {
+        "heading": "8. Communication Between Users",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah may provide:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Private messaging;",
+              "Match requests;",
+              "Interest notifications;",
+              "Voice or video communication;",
+              "Introductions;",
+              "Compatibility tools;",
+              "Blocking and reporting tools."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Communication must remain respectful."
+          },
+          {
+            "type": "p",
+            "text": "You must not use Nusrah to send:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Threats;",
+              "Harassment;",
+              "Hate speech;",
+              "Sexual abuse;",
+              "Unwanted sexual content;",
+              "Extortion;",
+              "Fraudulent requests;",
+              "Spam;",
+              "Malware;",
+              "Repeated unwanted communications."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Users may block or report another user at any time."
+          }
+        ]
+      },
+      {
+        "heading": "9. Prohibited Activities",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "You must not use Nusrah for:"
+          },
+          {
+            "type": "subheading",
+            "text": "9.1 Fraud"
+          },
+          {
+            "type": "p",
+            "text": "You may not deceive users for financial, personal or other unlawful benefit."
+          },
+          {
+            "type": "subheading",
+            "text": "9.2 Financial Scams"
+          },
+          {
+            "type": "p",
+            "text": "You must not use a romantic or marriage relationship to solicit money, loans, gifts, investments, cryptocurrency, mobile-money transfers or other financial assistance through deception."
+          },
+          {
+            "type": "subheading",
+            "text": "9.3 Impersonation"
+          },
+          {
+            "type": "p",
+            "text": "You must not pretend to be another individual, organization, public figure or institution."
+          },
+          {
+            "type": "subheading",
+            "text": "9.4 Sexual Exploitation"
+          },
+          {
+            "type": "p",
+            "text": "You must not use Nusrah for prostitution, sexual exploitation, trafficking or other unlawful sexual activity."
+          },
+          {
+            "type": "subheading",
+            "text": "9.5 Harassment"
+          },
+          {
+            "type": "p",
+            "text": "You must not stalk, threaten, intimidate, blackmail, shame or repeatedly contact someone who has asked you to stop."
+          },
+          {
+            "type": "subheading",
+            "text": "9.6 Explicit Content"
+          },
+          {
+            "type": "p",
+            "text": "You must not upload or distribute unlawful, exploitative or sexually explicit content."
+          },
+          {
+            "type": "subheading",
+            "text": "9.7 Spam"
+          },
+          {
+            "type": "p",
+            "text": "You must not use Nusrah to distribute unsolicited advertisements, pyramid schemes, fraudulent offers or mass messages."
+          },
+          {
+            "type": "subheading",
+            "text": "9.8 Illegal Activities"
+          },
+          {
+            "type": "p",
+            "text": "You must not use Nusrah to facilitate or participate in unlawful activities."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah may report suspected criminal conduct to relevant authorities where required or legally permitted."
+          }
+        ]
+      },
+      {
+        "heading": "10. Financial Safety",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah strongly advises users not to send money to someone they have met online solely because of a romantic or marriage relationship."
+          },
+          {
+            "type": "p",
+            "text": "A user should be particularly cautious where another person:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Claims to have an emergency;",
+              "Requests money for travel;",
+              "Requests money for medical treatment;",
+              "Requests payment for visas;",
+              "Requests investment funds;",
+              "Requests mobile-money transfers;",
+              "Requests bank transfers;",
+              "Promises marriage in exchange for financial assistance;",
+              "Threatens to end the relationship unless money is sent."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah does not guarantee the financial honesty of any user."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah is not responsible for financial losses arising from transactions between users."
+          }
+        ]
+      },
+      {
+        "heading": "11. Meeting in Person",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah encourages users to take appropriate precautions before meeting someone they met online."
+          },
+          {
+            "type": "p",
+            "text": "Users should consider:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Communicating sufficiently before meeting.",
+              "Verifying the person’s identity.",
+              "Informing a trusted family member or friend.",
+              "Meeting in a public place.",
+              "Maintaining independent transportation.",
+              "Avoiding sharing unnecessary financial information.",
+              "Avoiding sending money.",
+              "Leaving immediately if they feel unsafe."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Users meet each other at their own risk."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah does not guarantee the conduct, identity, intentions or safety of any user."
+          }
+        ]
+      },
+      {
+        "heading": "12. Family, Guardian and Marriage Involvement",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah recognizes that marriage decisions may involve families, guardians, religious leaders or other trusted persons depending on the user’s beliefs, culture and circumstances."
+          },
+          {
+            "type": "p",
+            "text": "Where appropriate, users may choose to involve:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Parents;",
+              "Guardians;",
+              "Family members;",
+              "Religious leaders;",
+              "Marriage counsellors;",
+              "Other trusted persons."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah may provide optional features designed to facilitate responsible family or guardian involvement."
+          },
+          {
+            "type": "p",
+            "text": "However, Nusrah does not determine whether a particular marriage is legally or religiously valid."
+          }
+        ]
+      },
+      {
+        "heading": "13. Respect and Dignity",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "All users must treat other users with dignity and respect."
+          },
+          {
+            "type": "p",
+            "text": "Discrimination, humiliation, threats, abusive language, bullying, harassment and intimidation are prohibited."
+          },
+          {
+            "type": "p",
+            "text": "Users must respect another person’s:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Boundaries;",
+              "Privacy;",
+              "Decisions;",
+              "Beliefs;",
+              "Personal circumstances;",
+              "Right to decline communication;",
+              "Right to end communication."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "A user does not owe another user a relationship, meeting, marriage or response."
+          }
+        ]
+      },
+      {
+        "heading": "14. Photos and Content",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "You retain ownership of content that you lawfully upload to Nusrah."
+          },
+          {
+            "type": "p",
+            "text": "By uploading content, you grant Nusrah the limited permission necessary to host, display, store, process and deliver that content as part of providing the service."
+          },
+          {
+            "type": "p",
+            "text": "You must have the right to upload the content."
+          },
+          {
+            "type": "p",
+            "text": "You must not upload:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Someone else’s private photographs without permission;",
+              "False identity documents;",
+              "Defamatory material;",
+              "Illegal content;",
+              "Content containing exploitation of children;",
+              "Content intended to harass or threaten another person."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah may remove content that violates these Terms or applicable law."
+          }
+        ]
+      },
+      {
+        "heading": "15. Privacy and Personal Data",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah may collect and process personal information necessary to provide its services."
+          },
+          {
+            "type": "p",
+            "text": "Because a marriage platform may involve sensitive personal information, Nusrah will establish appropriate measures for protecting users’ information."
+          },
+          {
+            "type": "p",
+            "text": "The processing of personal data shall be governed by Nusrah’s Privacy Policy and applicable Tanzanian data-protection requirements, including the Personal Data Protection Act, 2022."
+          },
+          {
+            "type": "p",
+            "text": "Users should carefully consider the information they disclose publicly."
+          },
+          {
+            "type": "p",
+            "text": "Do not publish sensitive information such as:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Passwords;",
+              "PINs;",
+              "Bank credentials;",
+              "Mobile-money PINs;",
+              "Private identification numbers;",
+              "Security codes;",
+              "Confidential documents."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "16. Location Information",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah may use location information to provide relevant matchmaking features where the user permits such processing."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah should not publicly expose a user’s precise location unless:"
+          },
+          {
+            "type": "ol",
+            "items": [
+              "The user has expressly chosen to disclose it; or",
+              "Disclosure is required or permitted by law."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Users should avoid publishing their exact residential address publicly."
+          }
+        ]
+      },
+      {
+        "heading": "17. Matching System",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah may use information provided by users to recommend potential matches."
+          },
+          {
+            "type": "p",
+            "text": "Matching may consider factors such as:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Age;",
+              "Location;",
+              "Marriage goals;",
+              "Education;",
+              "Occupation;",
+              "Interests;",
+              "Lifestyle;",
+              "Religious or cultural preferences where voluntarily provided;",
+              "Family preferences;",
+              "Other compatibility information."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "A match recommendation does not constitute a guarantee of compatibility, suitability, character or successful marriage."
+          }
+        ]
+      },
+      {
+        "heading": "18. No Guarantee of Marriage",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah provides matchmaking and communication services."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah does not guarantee that:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "You will find a spouse;",
+              "A particular match will respond;",
+              "A relationship will succeed;",
+              "A relationship will result in marriage;",
+              "A user’s information is completely accurate;",
+              "A user is financially responsible;",
+              "A user is suitable for you."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Marriage decisions remain entirely between the individuals involved."
+          }
+        ]
+      },
+      {
+        "heading": "19. Safety Reporting",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Users are encouraged to report suspicious or harmful behavior."
+          },
+          {
+            "type": "p",
+            "text": "Reports may concern:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Fake profiles;",
+              "Impersonation;",
+              "Fraud;",
+              "Financial scams;",
+              "Harassment;",
+              "Threats;",
+              "Sexual exploitation;",
+              "Underage users;",
+              "Stolen photographs;",
+              "False marital status;",
+              "Other violations of these Terms."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah may investigate reports and may take appropriate action, including:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Warning a user;",
+              "Restricting an account;",
+              "Removing content;",
+              "Suspending an account;",
+              "Permanently terminating an account;",
+              "Preserving relevant information where lawful;",
+              "Reporting matters to appropriate authorities where required or legally permitted."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "20. Blocking",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Users may be provided with the ability to block other users."
+          },
+          {
+            "type": "p",
+            "text": "When you block someone, Nusrah may restrict communication or interaction between the accounts."
+          },
+          {
+            "type": "p",
+            "text": "Blocking does not necessarily prevent Nusrah from processing information necessary for security, legal compliance or investigation."
+          }
+        ]
+      },
+      {
+        "heading": "21. Account Suspension and Termination",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah may suspend or terminate an account where it reasonably believes that the user:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Violated these Terms;",
+              "Provided false information;",
+              "Engaged in fraud;",
+              "Harassed another user;",
+              "Created a safety risk;",
+              "Misused the platform;",
+              "Engaged in illegal activity;",
+              "Attempted to circumvent platform security;",
+              "Created multiple unauthorized accounts;",
+              "Used the platform for purposes inconsistent with Nusrah’s mission."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Users may also close their accounts at any time, subject to any applicable legal or contractual obligations."
+          }
+        ]
+      },
+      {
+        "heading": "22. Premium Services and Payments",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah may offer free and paid services."
+          },
+          {
+            "type": "p",
+            "text": "Paid services may include:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Premium membership;",
+              "Enhanced profile visibility;",
+              "Advanced search;",
+              "Additional communication features;",
+              "Verification services;",
+              "Matchmaking services;",
+              "Other premium features."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Before purchasing a paid service, users will be informed of applicable prices and payment terms."
+          },
+          {
+            "type": "p",
+            "text": "Unless otherwise stated, payments are made for access to the relevant digital service and are not a guarantee of a match or marriage."
+          },
+          {
+            "type": "p",
+            "text": "Refunds shall be governed by Nusrah’s applicable refund policy and mandatory consumer-protection requirements."
+          }
+        ]
+      },
+      {
+        "heading": "23. Third-Party Services",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah may integrate third-party services such as:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Payment providers;",
+              "SMS providers;",
+              "Email services;",
+              "Identity-verification services;",
+              "Hosting providers;",
+              "Analytics services;",
+              "Communication services."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Third-party services may have their own terms and privacy policies."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah is not responsible for services independently operated by third parties."
+          }
+        ]
+      },
+      {
+        "heading": "24. Intellectual Property",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "The Nusrah name, logo, website design, software, graphics, text, trademarks and other platform materials may be owned by or licensed to Nusrah."
+          },
+          {
+            "type": "p",
+            "text": "You may not:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Copy the platform;",
+              "Reproduce the Nusrah brand without authorization;",
+              "Reverse engineer the platform where prohibited;",
+              "Sell or redistribute Nusrah content;",
+              "Use Nusrah’s trademarks without permission."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "25. Platform Availability",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah will make reasonable efforts to maintain the availability and security of the platform."
+          },
+          {
+            "type": "p",
+            "text": "However, Nusrah does not guarantee that the platform will always:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Be available;",
+              "Operate without interruption;",
+              "Be completely error-free;",
+              "Be completely secure;",
+              "Be free from malicious attacks."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Maintenance, technical failures, security incidents and circumstances beyond Nusrah’s reasonable control may temporarily affect the service."
+          }
+        ]
+      },
+      {
+        "heading": "26. User Responsibility",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "You are responsible for your own decisions and interactions."
+          },
+          {
+            "type": "p",
+            "text": "You should independently verify important information before:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "Beginning a serious relationship;",
+              "Sharing sensitive information;",
+              "Sending money;",
+              "Travelling to meet someone;",
+              "Introducing someone to your family;",
+              "Entering into an engagement;",
+              "Entering into a marriage."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah is a matchmaking platform and does not act as a guarantor, guardian, financial adviser, marriage registrar or representative of any user."
+          }
+        ]
+      },
+      {
+        "heading": "27. Limitation of Liability",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "To the extent permitted by applicable law, Nusrah shall not be responsible for losses arising from:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "User-to-user relationships;",
+              "False information supplied by users;",
+              "Financial scams committed by users;",
+              "Personal decisions made by users;",
+              "Meetings between users;",
+              "Marriage or relationship outcomes;",
+              "User-generated content;",
+              "Third-party services;",
+              "Unauthorized conduct of another user."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nothing in these Terms excludes liability that cannot lawfully be excluded under applicable law."
+          }
+        ]
+      },
+      {
+        "heading": "28. Indemnity",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "To the extent permitted by law, you agree to be responsible for claims, losses or liabilities arising from your unlawful use of Nusrah, violation of these Terms, infringement of another person’s rights, or misuse of the platform."
+          }
+        ]
+      },
+      {
+        "heading": "29. Legal Compliance",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Users must comply with applicable laws and regulations when using Nusrah."
+          },
+          {
+            "type": "p",
+            "text": "Nusrah will operate its services in accordance with applicable Tanzanian laws and other applicable legal requirements."
+          },
+          {
+            "type": "p",
+            "text": "This includes applicable requirements concerning personal-data protection and cyber-related offences. Tanzania’s Personal Data Protection Act, 2022 establishes requirements concerning collection and processing of personal data, while the Cybercrimes Act addresses offences involving computer systems and information and communication technologies."
+          }
+        ]
+      },
+      {
+        "heading": "30. Changes to These Terms",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah may update these Terms from time to time."
+          },
+          {
+            "type": "p",
+            "text": "When material changes are made, Nusrah may provide reasonable notice through the website, application, email or other appropriate communication."
+          },
+          {
+            "type": "p",
+            "text": "Your continued use of Nusrah after the effective date of updated Terms constitutes acceptance of the revised Terms, subject to applicable law."
+          }
+        ]
+      },
+      {
+        "heading": "31. Governing Law",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "These Terms shall be interpreted in accordance with the applicable laws of the United Republic of Tanzania, subject to applicable jurisdictional requirements."
+          },
+          {
+            "type": "p",
+            "text": "Any dispute should first, where reasonably possible, be addressed through good-faith communication and Nusrah’s available complaint-resolution process."
+          },
+          {
+            "type": "p",
+            "text": "Nothing in these Terms prevents a user from exercising rights available under applicable law."
+          }
+        ]
+      },
+      {
+        "heading": "32. Contact Us",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "For questions, complaints, safety reports or requests concerning these Terms, users may contact Nusrah through:"
+          },
+          {
+            "type": "contact",
+            "website": "https://nusrah.co.tz",
+            "email": "msaada@nusrah.co.tz",
+            "phone": "+255 700 000 000 (WhatsApp)"
+          }
+        ]
+      },
+      {
+        "heading": "33. User Acceptance",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "By selecting “I Agree”, creating an account, accessing or using Nusrah.co.tz, you confirm that:"
+          },
+          {
+            "type": "ul",
+            "items": [
+              "I have read and understood these Terms of Use.",
+              "I meet the applicable minimum age requirement.",
+              "I am using Nusrah for a genuine marriage-oriented purpose.",
+              "The information I provide is truthful and accurate to the best of my knowledge.",
+              "I understand that Nusrah does not guarantee marriage or the conduct of another user.",
+              "I understand that I must not use Nusrah for fraud, harassment, exploitation or other unlawful purposes.",
+              "I agree to respect the privacy, dignity and decisions of other users.",
+              "I understand that I am responsible for exercising reasonable caution when communicating with or meeting another user."
+            ]
+          },
+          {
+            "type": "p",
+            "text": "By continuing, you agree to these Terms of Use."
+          }
+        ]
+      }
+    ],
+    "contactWebsiteLabel": "Website",
+    "contactEmailLabel": "Email",
+    "contactPhoneLabel": "Phone"
   }
 }

@@ -1,12 +1,12 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { getSessionUserId, getEffectiveTier } from "@/lib/auth";
 import { toNotificationView } from "@/lib/notifications";
 import { UNAUTHENTICATED } from "@/lib/api";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   const userId = await getSessionUserId();
-  if (!userId) return UNAUTHENTICATED();
+  if (!userId) return UNAUTHENTICATED(request);
 
   const [tier, rows] = await Promise.all([
     getEffectiveTier(userId),

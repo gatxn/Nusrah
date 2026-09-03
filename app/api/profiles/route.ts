@@ -3,18 +3,33 @@ import { prisma } from "@/lib/db";
 import { getSessionUserId, getEffectiveTier } from "@/lib/auth";
 import { TIER_CAPABILITIES } from "@/lib/tiers";
 import { queryMembers } from "@/lib/profiles";
-import { memberQuerySchema } from "@/lib/validation";
+import { createMemberQuerySchema } from "@/lib/validation";
 import { zodError, UNAUTHENTICATED } from "@/lib/api";
+import { validationMessages } from "@/lib/i18n/api";
 
 export async function GET(request: NextRequest) {
   const userId = await getSessionUserId();
-  if (!userId) return UNAUTHENTICATED();
+  if (!userId) return UNAUTHENTICATED(request);
 
-  const parsed = memberQuerySchema.safeParse(
+  const v = await validationMessages(request);
+  const parsed = createMemberQuerySchema(v).safeParse(
     Object.fromEntries(request.nextUrl.searchParams)
   );
   if (!parsed.success) return zodError(parsed.error);
-  const { minAge, maxAge, regions, search, page, favoritesOnly } = parsed.data;
+  const {
+    minAge,
+    maxAge,
+    regions,
+    maritalStatuses,
+    madhhabs,
+    hijab,
+    intentions,
+    search,
+    page,
+    favoritesOnly,
+    verifiedOnly,
+    sort,
+  } = parsed.data;
 
   const [tier, viewer, favoriteRows] = await Promise.all([
     getEffectiveTier(userId),
@@ -32,9 +47,15 @@ export async function GET(request: NextRequest) {
     minAge,
     maxAge,
     regions,
+    maritalStatuses,
+    madhhabs,
+    hijab,
+    intentions,
     search,
     favoritedOnly: favoritesOnly,
+    verifiedOnly,
     viewerFavoriteIds,
+    sort,
   });
 
   return NextResponse.json({
