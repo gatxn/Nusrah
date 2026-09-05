@@ -1,117 +1,158 @@
-import { createHmac, timingSafeEqual } from "crypto";
+// ---------------------------------------------------------------------------
+// Payment gateway adapter — PalmPesa (a Selcom sub-merchant reseller).
+// Docs: https://documentation.palmpesa.co.tz/ (no sandbox; PalmPesa's own
+// guidance is to test with a small real amount, e.g. 200-500 TZS).
+//
+// SECURITY NOTE: PalmPesa's webhook callbacks are NOT signed — no HMAC or
+// signature scheme is documented, unlike the HMAC-based design this file
+// used to scaffold for a generic aggregator. Trusting a webhook body
+// directly would let anyone who discovers the webhook URL POST a fake
+// "COMPLETED" payload and unlock a subscription for free. To close that
+// gap, the webhook route (app/api/payments/webhook/route.ts) never trusts
+// the callback body's claimed status — it only reads which order to check,
+// then calls checkOrderStatus() below to independently re-query PalmPesa's
+// own /api/order-status endpoint with our own API credentials, and only
+// that authenticated response is trusted.
+// ---------------------------------------------------------------------------
 
-// ---------------------------------------------------------------------------
-// Payment gateway adapter — INTENTIONALLY PAUSED pending real credentials
-// (M-Pesa / Tigo Pesa / Airtel Money via a Tanzanian aggregator such as
-// Selcom, ClickPesa, Azampay, or DPO Pesapal). Do not implement a real
-// initiateCharge() call until PAYMENT_GATEWAY* env vars are supplied — this
-// file only holds the scaffolding so the rest of the system (orders,
-// webhook verification, subscription activation) can be built and tested
-// against it now.
-// ---------------------------------------------------------------------------
+const PALMPESA_BASE_URL = "https://palmpesa.drmlelwa.co.tz";
 
 export function isGatewayConfigured(): boolean {
   return Boolean(
-    process.env.PAYMENT_GATEWAY &&
+    process.env.PAYMENT_GATEWAY === "palmpesa" &&
       process.env.PAYMENT_GATEWAY_API_KEY &&
-      process.env.PAYMENT_GATEWAY_MERCHANT_ID
+      process.env.PALMPESA_USER_ID &&
+      Number.isFinite(Number(process.env.PALMPESA_USER_ID)) &&
+      process.env.PALMPESA_TILL_NUMBER
   );
+}
+
+function authHeaders(): HeadersInit {
+  return {
+    Authorization: `Bearer ${process.env.PAYMENT_GATEWAY_API_KEY}`,
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  };
 }
 
 export type InitiateChargeInput = {
   orderId: string;
   amountTzs: number;
-  phoneNumber: string;
+  buyerName: string;
+  buyerEmail: string;
+  buyerPhone: string;
+  webhookUrl: string;
+  redirectUrl: string;
+  cancelUrl: string;
 };
 
 export type InitiateChargeResult =
-  | { success: true; gatewayRef: string }
-  | { success: false; reason: "GATEWAY_NOT_CONFIGURED" };
+  | { success: true; checkoutUrl: string }
+  | { success: false; reason: "GATEWAY_NOT_CONFIGURED" | "GATEWAY_ERROR"; detail?: string };
 
 /**
- * Kicks off a mobile-money charge with the aggregator. Currently always
- * short-circuits to GATEWAY_NOT_CONFIGURED because no provider credentials
- * are set. Once PAYMENT_GATEWAY / PAYMENT_GATEWAY_API_KEY /
- * PAYMENT_GATEWAY_MERCHANT_ID are provided, implement the real STK-push /
- * charge request to the chosen aggregator here.
+ * "Pay by Link" (PalmPesa's hosted-checkout option): creates an order on
+ * PalmPesa's side and returns a URL to their own checkout page (backed by
+ * Selcom — the customer picks Selcom Pesa / TanQR / mobile number there).
+ * We never collect mobile-money method or PIN ourselves.
  */
-export async function initiateCharge(
-  input: InitiateChargeInput
-): Promise<InitiateChargeResult> {
+export async function initiateCharge(input: InitiateChargeInput): Promise<InitiateChargeResult> {
   if (!isGatewayConfigured()) {
     return { success: false, reason: "GATEWAY_NOT_CONFIGURED" };
   }
 
-  // TODO: call the real gateway once credentials are configured.
-  throw new Error(
-    `Payment gateway credentials are set but no provider integration has been ` +
-      `implemented yet (order ${input.orderId}). Add the real API call in lib/payments/gateway.ts.`
-  );
-}
-
-export type NormalizedWebhookPayload = {
-  gatewayTxnId: string;
-  orderId: string;
-  status: "success" | "failed";
-  phoneNumber?: string;
-  amountTzs?: number;
-  gateway: string;
-  raw: string;
-};
-
-/**
- * Verifies the webhook's HMAC-SHA256 signature. Uses the real
- * PAYMENT_GATEWAY_WEBHOOK_SECRET once it's configured; falls back to
- * DEV_WEBHOOK_TEST_SECRET outside production only, so the golden-rule
- * verification chain (§4.2) can be exercised end-to-end with a hand-signed
- * test payload before a real gateway is wired in. See scripts/test-webhook.ts.
- *
- * The production guard here is load-bearing: DEV_WEBHOOK_TEST_SECRET must
- * never be a valid way to forge a paid-subscription webhook once this is
- * live, regardless of whether that var accidentally ends up in the
- * production .env.
- */
-export function verifyWebhookSignature(
-  rawBody: string,
-  signatureHeader: string | null
-): boolean {
-  const secret =
-    process.env.PAYMENT_GATEWAY_WEBHOOK_SECRET ||
-    (process.env.NODE_ENV !== "production" ? process.env.DEV_WEBHOOK_TEST_SECRET : undefined);
-
-  if (!secret || !signatureHeader) return false;
-
-  const expected = createHmac("sha256", secret).update(rawBody).digest("hex");
-  const expectedBuf = Buffer.from(expected, "hex");
-  const givenBuf = Buffer.from(signatureHeader, "hex");
-  if (expectedBuf.length !== givenBuf.length) return false;
-  return timingSafeEqual(expectedBuf, givenBuf);
-}
-
-/**
- * Normalizes a raw webhook body into a provider-agnostic shape. This generic
- * shape (gatewayTxnId/orderId/status/amount/phone) is what the webhook route
- * consumes — when a real aggregator is wired in, translate its payload into
- * this shape here rather than changing the webhook route itself.
- */
-export function parseWebhookPayload(rawBody: string): NormalizedWebhookPayload {
-  const body = JSON.parse(rawBody);
-  const { gatewayTxnId, orderId, status, phoneNumber, amountTzs, gateway } = body;
-
-  if (typeof gatewayTxnId !== "string" || typeof orderId !== "string") {
-    throw new Error("Malformed webhook payload: missing gatewayTxnId/orderId");
+  let res: Response;
+  try {
+    res = await fetch(`${PALMPESA_BASE_URL}/api/process-payment`, {
+      method: "POST",
+      headers: authHeaders(),
+      body: JSON.stringify({
+        user_id: Number(process.env.PALMPESA_USER_ID),
+        vendor: process.env.PALMPESA_TILL_NUMBER,
+        order_id: input.orderId,
+        buyer_email: input.buyerEmail,
+        buyer_name: input.buyerName,
+        buyer_phone: input.buyerPhone,
+        amount: input.amountTzs,
+        currency: "TZS",
+        redirect_url: input.redirectUrl,
+        cancel_url: input.cancelUrl,
+        webhook: input.webhookUrl,
+        buyer_remarks: "Nusrah membership payment",
+        merchant_remarks: `Order ${input.orderId}`,
+        no_of_items: 1,
+      }),
+    });
+  } catch (err) {
+    return { success: false, reason: "GATEWAY_ERROR", detail: String(err) };
   }
-  if (status !== "success" && status !== "failed") {
-    throw new Error("Malformed webhook payload: status must be success|failed");
+
+  const body = await res.json().catch(() => null);
+  const checkoutUrl = body?.raw?.payment_gateway_url;
+  if (!res.ok || typeof checkoutUrl !== "string") {
+    return { success: false, reason: "GATEWAY_ERROR", detail: JSON.stringify(body) };
+  }
+
+  return { success: true, checkoutUrl };
+}
+
+export type OrderStatusResult =
+  | {
+      ok: true;
+      status: "COMPLETED" | "PENDING" | "FAILED";
+      transactionId?: string;
+      channel?: string;
+      msisdn?: string;
+    }
+  | { ok: false };
+
+/**
+ * Independently asks PalmPesa "what is the real status of this order",
+ * authenticated with our own API token — the only status this codebase
+ * ever trusts to activate a subscription (see SECURITY NOTE above).
+ */
+export async function checkOrderStatus(orderId: string): Promise<OrderStatusResult> {
+  if (!isGatewayConfigured()) return { ok: false };
+
+  let res: Response;
+  try {
+    res = await fetch(`${PALMPESA_BASE_URL}/api/order-status`, {
+      method: "POST",
+      headers: authHeaders(),
+      body: JSON.stringify({ order_id: orderId }),
+    });
+  } catch {
+    return { ok: false };
+  }
+  if (!res.ok) return { ok: false };
+
+  const body = await res.json().catch(() => null);
+  const entry = body?.data?.[0];
+  const status = entry?.payment_status;
+  if (status !== "COMPLETED" && status !== "PENDING" && status !== "FAILED") {
+    return { ok: false };
   }
 
   return {
-    gatewayTxnId,
-    orderId,
+    ok: true,
     status,
-    phoneNumber: typeof phoneNumber === "string" ? phoneNumber : undefined,
-    amountTzs: typeof amountTzs === "number" ? amountTzs : undefined,
-    gateway: typeof gateway === "string" ? gateway : "unconfigured",
-    raw: rawBody,
+    transactionId: typeof entry.transid === "string" ? entry.transid : undefined,
+    channel: typeof entry.channel === "string" ? entry.channel : undefined,
+    msisdn: typeof entry.msisdn === "string" ? entry.msisdn : undefined,
   };
+}
+
+/**
+ * Pulls the order id out of an incoming webhook body purely to know WHICH
+ * order to re-verify — the payload's own claimed payment_status is never
+ * trusted (see SECURITY NOTE above). Returns null for a malformed payload.
+ */
+export function extractOrderIdFromWebhook(rawBody: string): string | null {
+  try {
+    const body = JSON.parse(rawBody);
+    const orderId = body?.data?.[0]?.order_id;
+    return typeof orderId === "string" ? orderId : null;
+  } catch {
+    return null;
+  }
 }

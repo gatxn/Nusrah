@@ -369,7 +369,9 @@
       "photoUploadConflict": "Jaribu tena",
       "devToolOwnAccountOnly": "Dev tool inaweza tu kuwasha akaunti yako mwenyewe",
       "invalidCurrentPassword": "Password ya sasa si sahihi",
-      "invalidPassword": "Password si sahihi"
+      "invalidPassword": "Password si sahihi",
+      "paymentGatewayError": "Hitilafu imetokea kwenye mfumo wa malipo. Jaribu tena baadaye.",
+      "emailRequiredForPayment": "Tafadhali ongeza barua pepe kwenye akaunti yako kabla ya kulipa."
     }
   },
   "validation": {
@@ -2279,5 +2281,23 @@
     "contactWebsiteLabel": "Tovuti",
     "contactEmailLabel": "Barua Pepe",
     "contactPhoneLabel": "Simu"
+  },
+  "malipo": {
+    "membershipHeading": "Uanachama — Mwezi 1",
+    "secureNotice": "Utaelekezwa kwenye ukurasa salama wa kulipa unaoendeshwa na Selcom.",
+    "payButton": "Endelea Kulipa",
+    "submitting": "Inaandaa malipo...",
+    "genericError": "Hitilafu imetokea. Jaribu tena.",
+    "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena.",
+    "pendingSetupNotice": "Malipo ya mtandao wa simu yanasubiri usanidi wa mwisho. Tutakujulisha mara tu yatakapopatikana.",
+    "statusPaidHeading": "Malipo Yamekamilika!",
+    "statusPaidBody": "Kifurushi chako kimewashwa. Karibu ufurahie huduma zako mpya.",
+    "statusPaidCta": "Nenda kwenye Akaunti",
+    "statusPendingHeading": "Tunathibitisha Malipo Yako",
+    "statusPendingBody": "Hii inaweza kuchukua dakika chache. Onyesha upya ukurasa huu baada ya muda mfupi.",
+    "statusPendingCta": "Onyesha Upya",
+    "statusCancelledHeading": "Malipo Yamesitishwa",
+    "statusCancelledBody": "Hukukamilisha malipo. Unaweza kujaribu tena wakati wowote.",
+    "statusCancelledCta": "Jaribu Tena"
   }
 }

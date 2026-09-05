@@ -101,13 +101,6 @@ export function createOrderSchema(t: ValidationMessages) {
   });
 }
 
-export function createInitiatePaymentSchema(t: ValidationMessages) {
-  return z.object({
-    orderId: z.string().min(1),
-    phoneNumber: z.string().regex(phoneRegex, t.invalidPhone),
-  });
-}
-
 export function createSendMessageSchema(t: ValidationMessages) {
   return z.object({
     receiverId: z.string().min(1),

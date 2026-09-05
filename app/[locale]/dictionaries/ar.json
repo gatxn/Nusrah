@@ -369,7 +369,9 @@
       "photoUploadConflict": "حاول مرة أخرى",
       "devToolOwnAccountOnly": "أداة التطوير يمكنها فقط تفعيل حسابك الخاص",
       "invalidCurrentPassword": "كلمة المرور الحالية غير صحيحة",
-      "invalidPassword": "كلمة المرور غير صحيحة"
+      "invalidPassword": "كلمة المرور غير صحيحة",
+      "paymentGatewayError": "حدث خطأ في بوابة الدفع. حاول مرة أخرى لاحقاً.",
+      "emailRequiredForPayment": "يرجى إضافة بريد إلكتروني إلى حسابك قبل الدفع."
     }
   },
   "validation": {
@@ -2279,5 +2281,23 @@
     "contactWebsiteLabel": "الموقع الإلكتروني",
     "contactEmailLabel": "البريد الإلكتروني",
     "contactPhoneLabel": "الهاتف"
+  },
+  "malipo": {
+    "membershipHeading": "العضوية — الشهر 1",
+    "secureNotice": "سيتم توجيهك إلى صفحة دفع آمنة تديرها Selcom.",
+    "payButton": "متابعة الدفع",
+    "submitting": "جارٍ تجهيز الدفع...",
+    "genericError": "حدث خطأ. حاول مرة أخرى.",
+    "networkError": "فشل الاتصال بالخادم. حاول مرة أخرى.",
+    "pendingSetupNotice": "مدفوعات المحفظة الإلكترونية في انتظار الإعداد النهائي. سنعلمك حالما تصبح متاحة.",
+    "statusPaidHeading": "اكتمل الدفع!",
+    "statusPaidBody": "تم تفعيل باقتك. استمتع بمميزاتك الجديدة.",
+    "statusPaidCta": "الذهاب إلى الحساب",
+    "statusPendingHeading": "جارٍ تأكيد دفعتك",
+    "statusPendingBody": "قد يستغرق هذا بضع لحظات. أعد تحميل هذه الصفحة بعد قليل.",
+    "statusPendingCta": "إعادة التحميل",
+    "statusCancelledHeading": "تم إلغاء الدفع",
+    "statusCancelledBody": "لم تكمل عملية الدفع. يمكنك المحاولة مرة أخرى في أي وقت.",
+    "statusCancelledCta": "حاول مرة أخرى"
   }
 }
