@@ -25,7 +25,13 @@ export default function TopBarSearch({
 
   return (
     <form action={searchActionHref} method="GET" className="relative min-w-0 flex-1 max-w-md">
-      <SearchIcon className="pointer-events-none absolute inset-y-0 start-3 my-auto h-4 w-4 text-neutral-400" />
+      <button
+        type="submit"
+        aria-label={placeholder}
+        className="absolute inset-y-0 start-0 flex w-9 items-center justify-center text-neutral-400 hover:text-primary"
+      >
+        <SearchIcon className="h-4 w-4" />
+      </button>
       <input
         type="text"
         name="search"

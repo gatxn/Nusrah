@@ -201,7 +201,9 @@ export default function MembersBrowser({
     <div>
       <div className="flex flex-wrap items-center gap-3">
         <form onSubmit={handleSearchSubmit} className="flex flex-1 items-center gap-2 rounded-full border border-black/10 px-4 py-2.5 min-w-[220px]">
-          <SearchIcon className="h-4 w-4 text-neutral-400" />
+          <button type="submit" aria-label={t.searchPlaceholder} className="text-neutral-400 hover:text-primary">
+            <SearchIcon className="h-4 w-4" />
+          </button>
           <input
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
