@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { hashPassword } from "@/lib/auth";
-import { createAndSendOtp, OtpDeliveryNotConfiguredError } from "@/lib/otp";
+import { createAndSendOtp } from "@/lib/otp";
 import { createRegisterSchema, normalizePhone, normalizeEmail } from "@/lib/validation";
 import { jsonError, zodError } from "@/lib/api";
 import { rateLimit, clientKey } from "@/lib/rate-limit";
@@ -47,11 +47,16 @@ export async function POST(request: NextRequest) {
   try {
     ({ devCode } = await createAndSendOtp(user.id, email, "REGISTER"));
   } catch (err) {
-    if (err instanceof OtpDeliveryNotConfiguredError) {
-      await prisma.user.delete({ where: { id: user.id } });
-      return jsonError(t.otpServiceDown, 503);
-    }
-    throw err;
+    // Any OTP delivery failure — not just "no provider configured" — must
+    // roll back the just-created User row and return a normal JSON error.
+    // Re-throwing here left an unhandled exception, which Next.js serializes
+    // as a non-JSON 500 body; the client's `res.json()` then throws too,
+    // masking a clear "email service down" message as a generic "network
+    // error" while leaving an orphaned, permanently unregisterable account
+    // behind (its phone/email would forever match the "duplicate" check).
+    console.error("OTP delivery failed during registration:", err);
+    await prisma.user.delete({ where: { id: user.id } });
+    return jsonError(t.otpServiceDown, 503);
   }
 
   return NextResponse.json(

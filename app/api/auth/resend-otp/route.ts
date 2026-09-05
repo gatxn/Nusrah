@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/db";
-import { createAndSendOtp, OtpDeliveryNotConfiguredError } from "@/lib/otp";
+import { createAndSendOtp } from "@/lib/otp";
 import { jsonError, zodError } from "@/lib/api";
 import { rateLimit, clientKey } from "@/lib/rate-limit";
 import { authErrors } from "@/lib/i18n/api";
@@ -31,10 +31,8 @@ export async function POST(request: NextRequest) {
   try {
     ({ devCode } = await createAndSendOtp(user.id, user.email, "REGISTER"));
   } catch (err) {
-    if (err instanceof OtpDeliveryNotConfiguredError) {
-      return jsonError(t.resendServiceDown, 503);
-    }
-    throw err;
+    console.error("OTP delivery failed during resend:", err);
+    return jsonError(t.resendServiceDown, 503);
   }
 
   return NextResponse.json({

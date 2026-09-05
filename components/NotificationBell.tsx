@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
+import LocaleLink from "@/components/LocaleLink";
 import { BellIcon } from "@/components/icons";
 import type { Dictionary } from "@/app/[locale]/dictionaries";
 
@@ -85,7 +85,7 @@ export default function NotificationBell({
             <ul className="max-h-80 space-y-1 overflow-y-auto">
               {notifications.map((n) => (
                 <li key={n.id}>
-                  <Link
+                  <LocaleLink
                     href={n.linkHref ?? "#"}
                     onClick={() => setOpen(false)}
                     className={`block rounded-xl px-3 py-2.5 text-sm transition hover:bg-blush-50 ${
@@ -93,7 +93,7 @@ export default function NotificationBell({
                     }`}
                   >
                     {n.text}
-                  </Link>
+                  </LocaleLink>
                 </li>
               ))}
             </ul>

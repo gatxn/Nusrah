@@ -1,4 +1,3 @@
-import Link from "next/link";
 import LocaleLink from "@/components/LocaleLink";
 import Logo from "@/components/Logo";
 import NavLinks from "@/components/NavLinks";
@@ -75,13 +74,13 @@ export default async function Nav() {
           {user ? (
             <>
               <NotificationBell initialUnreadCount={unreadCount} dict={dict.common.topBar.notifications} />
-              <Link
+              <LocaleLink
                 href="/akaunti"
                 className="flex items-center gap-2 rounded-full border-[1.5px] border-blush-200 py-1.5 ps-1.5 pe-4 text-sm font-semibold text-primary transition hover:bg-blush-50"
               >
                 <AccountAvatar name={user.name} photo={photo} />
                 {firstName(user.name)}
-              </Link>
+              </LocaleLink>
               <form action={logoutAction}>
                 <button
                   type="submit"
@@ -129,10 +128,10 @@ export default async function Nav() {
         <div className="mt-2 flex gap-2 px-3">
           {user ? (
             <>
-              <Link href="/akaunti" className="flex flex-1 items-center justify-center gap-2 rounded-full border-[1.5px] border-blush-200 py-2 ps-2 pe-4 text-sm font-semibold text-primary">
+              <LocaleLink href="/akaunti" className="flex flex-1 items-center justify-center gap-2 rounded-full border-[1.5px] border-blush-200 py-2 ps-2 pe-4 text-sm font-semibold text-primary">
                 <AccountAvatar name={user.name} photo={photo} />
                 {firstName(user.name)}
-              </Link>
+              </LocaleLink>
               <form action={logoutAction} className="flex-1">
                 <button
                   type="submit"
