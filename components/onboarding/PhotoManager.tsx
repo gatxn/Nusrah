@@ -360,9 +360,9 @@ export default function PhotoManager({
       {coverMode === "done" && (
         <div>
           <div className="grid grid-cols-3 gap-2">
-            <div className="group relative aspect-square overflow-hidden rounded-xl border border-black/10">
+            <div className="group relative aspect-square overflow-hidden rounded-xl border border-black/10 bg-blush-50">
               {/* eslint-disable-next-line @next/next/no-img-element -- private cookie-gated route */}
-              <img src="/api/onboarding/photo" alt="" className="h-full w-full object-cover" />
+              <img src="/api/onboarding/photo" alt="" className="h-full w-full object-contain" />
               <span className="absolute left-1.5 top-1.5 rounded-full bg-black/60 px-2 py-0.5 text-[10px] font-semibold text-white">
                 {t.mainBadge}
               </span>
@@ -378,10 +378,10 @@ export default function PhotoManager({
             {galleryPhotos.map((photo) => (
               <div
                 key={photo.id}
-                className="group relative aspect-square overflow-hidden rounded-xl border border-black/10"
+                className="group relative aspect-square overflow-hidden rounded-xl border border-black/10 bg-blush-50"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element -- private cookie-gated route */}
-                <img src={`/api/profile-photos/${photo.id}`} alt="" className="h-full w-full object-cover" />
+                <img src={`/api/profile-photos/${photo.id}`} alt="" className="h-full w-full object-contain" />
                 <button
                   type="button"
                   onClick={() => handleDeleteGalleryPhoto(photo.id)}

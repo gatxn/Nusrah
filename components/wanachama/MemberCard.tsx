@@ -38,7 +38,7 @@ export default function MemberCard({
           <img
             src={`/api/profiles/${profile.userId}/photo`}
             alt=""
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center">

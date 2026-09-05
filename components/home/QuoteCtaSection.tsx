@@ -3,10 +3,8 @@ import { PersonPlusIcon } from "@/components/icons";
 import type { Dictionary } from "@/app/[locale]/dictionaries";
 
 export default function QuoteCtaSection({
-  loggedIn,
   dict,
 }: {
-  loggedIn: boolean;
   dict: Dictionary["home"];
 }) {
   return (
@@ -34,14 +32,14 @@ export default function QuoteCtaSection({
 
       <div className="flex flex-col items-center gap-2.5">
         <LocaleLink
-          href={loggedIn ? "/wanachama" : "/jisajili"}
+          href="/jisajili"
           className="flex w-full items-center justify-center gap-2 rounded-full px-6 py-4 text-center text-[15px] font-semibold text-white shadow-[0_14px_28px_rgba(198,42,88,0.28)] transition hover:brightness-[1.06]"
           style={{ background: "linear-gradient(135deg,#e4416f,#c31f56)" }}
         >
-          {!loggedIn && <PersonPlusIcon className="h-4.5 w-4.5" />}
-          {loggedIn ? dict.ctaMembers : dict.ctaJoin}
+          <PersonPlusIcon className="h-4.5 w-4.5" />
+          {dict.ctaJoin}
         </LocaleLink>
-        <p className="text-[12.5px] text-muted">{loggedIn ? dict.welcomeBackNote : dict.easySignupNote}</p>
+        <p className="text-[12.5px] text-muted">{dict.easySignupNote}</p>
       </div>
     </section>
   );

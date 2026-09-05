@@ -1,12 +1,14 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const LOCALES = ["en", "ar"] as const;
-const DEFAULT_LOCALE = "sw";
+const LOCALES = ["sw", "ar"] as const;
+const DEFAULT_LOCALE = "en";
 
-// Swahili is the site's identity and stays unprefixed for existing
-// links/bookmarks (rewritten internally to /sw/... with no visible URL
-// change). English/Arabic require an explicit /en or /ar prefix.
+// English is the default a first-time visitor sees (unprefixed, rewritten
+// internally to /en/...). Swahili/Arabic require an explicit /sw or /ar
+// prefix. Once a visitor has picked a locale (any locale-prefixed page they
+// land on), the NEXT_LOCALE cookie set below is what every subsequent
+// server-side redirect (localeHref/withLocale) reads to keep them there.
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 

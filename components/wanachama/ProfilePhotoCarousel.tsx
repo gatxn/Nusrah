@@ -52,7 +52,7 @@ export default function ProfilePhotoCarousel({
     return (
       <div className="relative h-72 w-full bg-blush-50">
         {/* eslint-disable-next-line @next/next/no-img-element -- private cookie-gated route */}
-        <img src={slides[0]} alt="" className="h-full w-full object-cover" />
+        <img src={slides[0]} alt="" className="h-full w-full object-contain" />
         {isOnline && <OnlineBadge />}
       </div>
     );
@@ -67,7 +67,7 @@ export default function ProfilePhotoCarousel({
       >
         {slides.map((src) => (
           // eslint-disable-next-line @next/next/no-img-element -- private cookie-gated route
-          <img key={src} src={src} alt="" className="h-full w-full shrink-0 snap-start object-cover" />
+          <img key={src} src={src} alt="" className="h-full w-full shrink-0 snap-start object-contain" />
         ))}
       </div>
 

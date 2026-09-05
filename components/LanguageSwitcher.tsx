@@ -6,7 +6,7 @@ import { swapLocale } from "@/lib/i18n/href";
 import type { Locale } from "@/app/[locale]/dictionaries";
 
 const NAMES: Record<Locale, string> = { sw: "Kiswahili", en: "English", ar: "العربية" };
-const ORDER: Locale[] = ["sw", "en", "ar"];
+const ORDER: Locale[] = ["en", "sw", "ar"];
 
 function Select({ currentLocale, label }: { currentLocale: Locale; label: string }) {
   return (

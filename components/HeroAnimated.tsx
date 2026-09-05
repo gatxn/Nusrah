@@ -11,10 +11,8 @@ import type { Dictionary } from "@/app/[locale]/dictionaries";
  * cluster (now inside HeroVisual, alongside the interactive photo).
  */
 export default function HeroAnimated({
-  loggedIn,
   dict,
 }: {
-  loggedIn: boolean;
   dict: Dictionary["home"];
 }) {
   return (
@@ -41,12 +39,12 @@ export default function HeroAnimated({
 
         <div className="mt-9 flex flex-wrap items-center gap-4">
           <LocaleLink
-            href={loggedIn ? "/wanachama" : "/jisajili"}
+            href="/jisajili"
             className="flex items-center gap-2 rounded-full px-7 py-4 text-[15.5px] font-semibold text-white shadow-[0_14px_30px_rgba(198,42,88,0.3)] transition hover:brightness-[1.06]"
             style={{ background: "linear-gradient(135deg,#e4416f,#c31f56)" }}
           >
-            {!loggedIn && <PersonPlusIcon className="h-4.5 w-4.5" />}
-            {loggedIn ? dict.ctaMembers : dict.ctaJoin}
+            <PersonPlusIcon className="h-4.5 w-4.5" />
+            {dict.ctaJoin}
           </LocaleLink>
           <LocaleLink
             href="/jinsi-inavyofanyakazi"

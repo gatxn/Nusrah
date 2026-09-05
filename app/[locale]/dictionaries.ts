@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 export const LOCALES = ["sw", "en", "ar"] as const;
 export type Locale = (typeof LOCALES)[number];
-export const DEFAULT_LOCALE: Locale = "sw";
+export const DEFAULT_LOCALE: Locale = "en";
 export const RTL_LOCALES: readonly Locale[] = ["ar"];
 
 export function hasLocale(value: string): value is Locale {

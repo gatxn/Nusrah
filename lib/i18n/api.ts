@@ -10,7 +10,7 @@ function isApiLocale(value: string | undefined): value is ApiLocale {
 // Route Handlers aren't nested under app/[locale] and next/root-params
 // doesn't reach them, so locale is read from the NEXT_LOCALE cookie proxy.ts
 // sets on every page request, falling back to a manual Accept-Language
-// parse, falling back to Swahili.
+// parse, falling back to English (the site's default locale).
 export function localeFromRequest(request: NextRequest): ApiLocale {
   const cookieLocale = request.cookies.get("NEXT_LOCALE")?.value;
   if (isApiLocale(cookieLocale)) return cookieLocale;
@@ -21,7 +21,7 @@ export function localeFromRequest(request: NextRequest): ApiLocale {
     if (isApiLocale(preferred)) return preferred;
   }
 
-  return "sw";
+  return "en";
 }
 
 const dictionaries = {
