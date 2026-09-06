@@ -87,9 +87,13 @@ export async function initiateCharge(input: InitiateChargeInput): Promise<Initia
     return { success: false, reason: "GATEWAY_ERROR", detail: String(err) };
   }
 
+  // Confirmed against a real request: PalmPesa returns HTTP 500 even on a
+  // successful "sharable payment link" response — the actual result lives
+  // entirely in the body, so success is judged solely by whether a usable
+  // checkout URL comes back, never by res.ok/res.status.
   const body = await res.json().catch(() => null);
   const checkoutUrl = body?.raw?.payment_gateway_url;
-  if (!res.ok || typeof checkoutUrl !== "string") {
+  if (typeof checkoutUrl !== "string" || !checkoutUrl) {
     return { success: false, reason: "GATEWAY_ERROR", detail: JSON.stringify(body) };
   }
 
@@ -124,8 +128,11 @@ export async function checkOrderStatus(orderId: string): Promise<OrderStatusResu
   } catch {
     return { ok: false };
   }
-  if (!res.ok) return { ok: false };
 
+  // Same non-standard status-code behavior confirmed on /api/process-payment
+  // applies defensively here too — judge success by the response body's
+  // shape, not by res.ok, in case this endpoint also returns a non-2xx
+  // status on a genuinely successful lookup.
   const body = await res.json().catch(() => null);
   const entry = body?.data?.[0];
   const status = entry?.payment_status;
