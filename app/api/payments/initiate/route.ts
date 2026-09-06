@@ -42,7 +42,12 @@ export async function POST(request: NextRequest) {
     if (result.reason === "GATEWAY_NOT_CONFIGURED") {
       return jsonError(t.paymentGatewayNotConfigured, 503, { reason: result.reason });
     }
-    return jsonError(t.paymentGatewayError, 502, { reason: result.reason });
+    console.error("PalmPesa initiateCharge failed:", result.detail);
+    // TEMPORARY: surfacing `detail` in the response itself (visible via the
+    // browser's Network tab) while diagnosing a live-server-only failure —
+    // this host's Passenger/Node logs aren't easily reachable. Remove this
+    // once the real cause is confirmed; it's diagnostic-only, not user copy.
+    return jsonError(t.paymentGatewayError, 502, { reason: result.reason, detail: result.detail });
   }
 
   return NextResponse.json({ checkoutUrl: result.checkoutUrl });
