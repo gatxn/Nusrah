@@ -6,6 +6,16 @@ import { jsonError, UNAUTHENTICATED } from "@/lib/api";
 import { apiErrors, localeFromRequest } from "@/lib/i18n/api";
 import { localeHref } from "@/lib/i18n/href";
 
+// Selcom (which PalmPesa's checkout ultimately runs on) rejects a
+// single-word buyer name with "Name must contain at least 2 words" — a
+// gateway requirement, not a real constraint on this app's own accounts.
+// Padding it here only affects what's sent to the gateway, never the
+// user's actual stored name.
+function ensureTwoWordName(name: string): string {
+  const trimmed = name.trim();
+  return /\s/.test(trimmed) ? trimmed : `${trimmed} Mteja`;
+}
+
 export async function POST(request: NextRequest) {
   const userId = await getSessionUserId();
   if (!userId) return UNAUTHENTICATED(request);
@@ -30,7 +40,7 @@ export async function POST(request: NextRequest) {
   const result = await initiateCharge({
     orderId: order.id,
     amountTzs: order.amountTzs,
-    buyerName: user.name,
+    buyerName: ensureTwoWordName(user.name),
     buyerEmail: user.email,
     buyerPhone: user.phone,
     webhookUrl: `${appUrl}/api/payments/webhook`,
@@ -43,11 +53,7 @@ export async function POST(request: NextRequest) {
       return jsonError(t.paymentGatewayNotConfigured, 503, { reason: result.reason });
     }
     console.error("PalmPesa initiateCharge failed:", result.detail);
-    // TEMPORARY: surfacing `detail` in the response itself (visible via the
-    // browser's Network tab) while diagnosing a live-server-only failure —
-    // this host's Passenger/Node logs aren't easily reachable. Remove this
-    // once the real cause is confirmed; it's diagnostic-only, not user copy.
-    return jsonError(t.paymentGatewayError, 502, { reason: result.reason, detail: result.detail });
+    return jsonError(t.paymentGatewayError, 502, { reason: result.reason });
   }
 
   return NextResponse.json({ checkoutUrl: result.checkoutUrl });
