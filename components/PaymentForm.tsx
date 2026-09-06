@@ -42,8 +42,10 @@ export default function PaymentForm({
       // Hard navigation to the gateway's own hosted checkout page — not a
       // page this app renders, so there's nothing to route to internally.
       window.location.href = json.checkoutUrl;
+      return;
     } catch {
       setNotice({ type: "error", text: dict.networkError });
+    } finally {
       setLoading(false);
     }
   }
