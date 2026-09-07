@@ -18,9 +18,9 @@ export async function UNAUTHENTICATED(request: NextRequest) {
   return jsonError(t.unauthenticated, 401);
 }
 
-export async function FORBIDDEN(request: NextRequest, message?: string) {
+export async function FORBIDDEN(request: NextRequest, message?: string, extra?: Record<string, unknown>) {
   const t = await apiErrors(request);
-  return jsonError(message ?? t.forbidden, 403);
+  return jsonError(message ?? t.forbidden, 403, extra);
 }
 
 export async function NOT_FOUND(request: NextRequest) {

@@ -404,8 +404,8 @@
       "withParamRequired": "Query param 'with' inahitajika",
       "invalidFormData": "Data si sahihi",
       "contactRateLimited": "Umetuma ujumbe mara nyingi mno. Jaribu tena baadaye.",
-      "cannotInitiateMessage": "Kifurushi chako hakiruhusu kuanzisha mazungumzo mapya. Boresha kifurushi chako.",
-      "cannotReplyToMessage": "Kifurushi chako hakiruhusu kujibu ujumbe. Boresha kifurushi chako.",
+      "cannotInitiateMessage": "Kifurushi chako hakiruhusu kuanzisha mazungumzo mapya.",
+      "cannotReplyToMessage": "Kifurushi chako hakiruhusu kujibu ujumbe.",
       "videoCallRestricted": "Simu za video zinapatikana kwa wanachama wa PREMIUM pekee.",
       "voiceCallRestricted": "Simu za sauti zinapatikana kwa wanachama wa GOLD na PREMIUM pekee.",
       "noPhotoSelected": "Chagua picha",
@@ -1171,7 +1171,8 @@
       "loadingMore": "Inapakia wasifu zaidi...",
       "endOfFeed": "Umefikia mwisho wa orodha kwa sasa.",
       "showMoreDetails": "Onyesha Maelezo Zaidi",
-      "hideDetails": "Ficha Maelezo"
+      "hideDetails": "Ficha Maelezo",
+      "upgradePlanLink": "Boresha kifurushi chako."
     }
   },
   "vipendwa": {

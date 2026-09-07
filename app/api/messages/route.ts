@@ -51,7 +51,11 @@ export async function POST(request: NextRequest) {
   const { canSend, isReply } = await getSendPermission(userId, parsed.data.receiverId, tier);
   if (!canSend) {
     const t = await apiErrors(request);
-    return FORBIDDEN(request, isReply ? t.cannotReplyToMessage : t.cannotInitiateMessage);
+    return FORBIDDEN(
+      request,
+      isReply ? t.cannotReplyToMessage : t.cannotInitiateMessage,
+      { reason: isReply ? "CANNOT_REPLY" : "CANNOT_INITIATE" }
+    );
   }
 
   const message = await prisma.message.create({

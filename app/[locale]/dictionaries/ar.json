@@ -404,8 +404,8 @@
       "withParamRequired": "معامل الاستعلام 'with' مطلوب",
       "invalidFormData": "بيانات غير صالحة",
       "contactRateLimited": "لقد أرسلت رسائل كثيرة جداً. حاول مرة أخرى لاحقاً.",
-      "cannotInitiateMessage": "باقتك لا تسمح ببدء محادثات جديدة. قم بترقية باقتك.",
-      "cannotReplyToMessage": "باقتك لا تسمح بالرد على الرسائل. قم بترقية باقتك.",
+      "cannotInitiateMessage": "باقتك لا تسمح ببدء محادثات جديدة.",
+      "cannotReplyToMessage": "باقتك لا تسمح بالرد على الرسائل.",
       "videoCallRestricted": "مكالمات الفيديو متاحة لأعضاء PREMIUM فقط.",
       "voiceCallRestricted": "المكالمات الصوتية متاحة لأعضاء GOLD وPREMIUM فقط.",
       "noPhotoSelected": "اختر صورة",
@@ -1171,7 +1171,8 @@
       "loadingMore": "جارٍ تحميل المزيد من الملفات...",
       "endOfFeed": "لقد وصلت إلى النهاية في الوقت الحالي.",
       "showMoreDetails": "عرض المزيد من التفاصيل",
-      "hideDetails": "إخفاء التفاصيل"
+      "hideDetails": "إخفاء التفاصيل",
+      "upgradePlanLink": "قم بترقية باقتك."
     }
   },
   "vipendwa": {

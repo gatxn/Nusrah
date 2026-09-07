@@ -27,7 +27,9 @@ export default function MemberDetailActions({
   const [composing, setComposing] = useState(false);
   const [body, setBody] = useState("");
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<{ type: "ok" | "error"; text: string } | null>(null);
+  const [status, setStatus] = useState<{ type: "ok" | "error"; text: string; showUpgradeLink?: boolean } | null>(
+    null
+  );
 
   async function sendMessage() {
     if (!body.trim()) return;
@@ -41,7 +43,11 @@ export default function MemberDetailActions({
       });
       const json = await res.json();
       if (!res.ok) {
-        setStatus({ type: "error", text: json.error ?? dict.genericError });
+        setStatus({
+          type: "error",
+          text: json.error ?? dict.genericError,
+          showUpgradeLink: json.reason === "CANNOT_INITIATE" || json.reason === "CANNOT_REPLY",
+        });
         return;
       }
       setStatus({ type: "ok", text: dict.messageSent });
@@ -98,14 +104,19 @@ export default function MemberDetailActions({
       )}
       {status && (
         <p className={`mt-2 text-xs ${status.type === "ok" ? "text-green-700" : "text-red-600"}`}>
-          {status.text}
+          {status.text}{" "}
           {status.type === "ok" && (
             <>
-              {" — "}
+              {"— "}
               <LocaleLink href={`/ujumbe/${userId}`} className="font-semibold text-primary hover:underline">
                 {dict.goToMessages}
               </LocaleLink>
             </>
+          )}
+          {status.showUpgradeLink && (
+            <LocaleLink href="/boresha-kifurushi" className="font-semibold text-primary hover:underline">
+              {dict.upgradePlanLink}
+            </LocaleLink>
           )}
         </p>
       )}

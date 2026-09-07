@@ -404,8 +404,8 @@
       "withParamRequired": "Query param 'with' is required",
       "invalidFormData": "Invalid data",
       "contactRateLimited": "You've sent too many messages. Try again later.",
-      "cannotInitiateMessage": "Your plan doesn't allow starting new conversations. Upgrade your plan.",
-      "cannotReplyToMessage": "Your plan doesn't allow replying to messages. Upgrade your plan.",
+      "cannotInitiateMessage": "Your plan doesn't allow starting new conversations.",
+      "cannotReplyToMessage": "Your plan doesn't allow replying to messages.",
       "videoCallRestricted": "Video calls are available to PREMIUM members only.",
       "voiceCallRestricted": "Voice calls are available to GOLD and PREMIUM members only.",
       "noPhotoSelected": "Choose a photo",
@@ -1171,7 +1171,8 @@
       "loadingMore": "Loading more profiles...",
       "endOfFeed": "You have reached the end for now.",
       "showMoreDetails": "Show More Details",
-      "hideDetails": "Hide Details"
+      "hideDetails": "Hide Details",
+      "upgradePlanLink": "Upgrade your plan."
     }
   },
   "vipendwa": {
