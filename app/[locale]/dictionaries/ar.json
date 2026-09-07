@@ -301,7 +301,48 @@
     "joinNow": "انضم الآن",
     "genericError": "حدث خطأ ما",
     "networkError": "تعذر الاتصال بالخادم. حاول مرة أخرى.",
-    "sessionExpiredNotice": "تم تسجيل خروجك تلقائيًا بعد 5 دقائق من عدم النشاط. يرجى تسجيل الدخول مرة أخرى."
+    "sessionExpiredNotice": "تم تسجيل خروجك تلقائيًا بعد 5 دقائق من عدم النشاط. يرجى تسجيل الدخول مرة أخرى.",
+    "passwordResetSuccess": "تمت إعادة تعيين كلمة المرور بنجاح. يمكنك الآن تسجيل الدخول."
+  },
+  "sahauNenosiri": {
+    "title": "هل نسيت كلمة المرور؟",
+    "subtitle": "أدخل رقم هاتفك أو بريدك الإلكتروني وسنرسل لك رمز تحقق",
+    "form": {
+      "identifier": "رقم الهاتف أو البريد الإلكتروني",
+      "identifierPlaceholder": "0712345678 أو you@example.com",
+      "submit": "إرسال الرمز",
+      "submitting": "جارٍ الإرسال..."
+    },
+    "backToLogin": "العودة لتسجيل الدخول",
+    "genericError": "حدث خطأ ما",
+    "networkError": "تعذر الاتصال بالخادم. حاول مرة أخرى."
+  },
+  "thibitishaNenosiri": {
+    "title": "تحقق من الرمز",
+    "subtitle": "أرسلنا رمزًا مكونًا من 6 أرقام إلى بريدك الإلكتروني",
+    "devModeNote": "وضع التجربة (لم يُرسل بريد حقيقي): الرمز الخاص بك هو",
+    "form": {
+      "codeLabel": "رمز التحقق (OTP)",
+      "submit": "تحقق",
+      "submitting": "جارٍ التحقق..."
+    },
+    "genericError": "حدث خطأ ما",
+    "networkError": "تعذر الاتصال بالخادم. حاول مرة أخرى."
+  },
+  "nenosiriJipya": {
+    "title": "تعيين كلمة مرور جديدة",
+    "subtitle": "اختر كلمة مرور جديدة لحسابك",
+    "form": {
+      "newPassword": "كلمة المرور الجديدة",
+      "newPasswordPlaceholder": "8 أحرف على الأقل",
+      "confirmNewPassword": "تأكيد كلمة المرور الجديدة",
+      "confirmNewPasswordPlaceholder": "أعد إدخال كلمة المرور الجديدة",
+      "togglePasswordAria": "إظهار أو إخفاء كلمة المرور",
+      "submit": "إعادة تعيين كلمة المرور",
+      "submitting": "جارٍ إعادة التعيين..."
+    },
+    "genericError": "حدث خطأ ما",
+    "networkError": "تعذر الاتصال بالخادم. حاول مرة أخرى."
   },
   "thibitisha": {
     "title": "تحقق من حسابك",
@@ -339,7 +380,9 @@
       "codeExpired": "انتهت صلاحية هذا الرمز. اطلب رمزًا جديدًا.",
       "tooManyOtpAttempts": "محاولات كثيرة جدًا. اطلب رمزًا جديدًا.",
       "invalidCode": "الرمز غير صحيح.",
-      "verifiedSuccess": "تم التحقق من الحساب"
+      "verifiedSuccess": "تم التحقق من الحساب",
+      "invalidOrExpiredResetToken": "رابط إعادة التعيين غير صالح أو منتهي الصلاحية. يرجى طلب رابط جديد.",
+      "passwordResetSuccess": "تمت إعادة تعيين كلمة المرور بنجاح"
     },
     "general": {
       "unauthenticated": "يرجى تسجيل الدخول أولاً",

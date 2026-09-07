@@ -301,7 +301,48 @@
     "joinNow": "Join Now",
     "genericError": "Something went wrong",
     "networkError": "Failed to connect to the server. Please try again.",
-    "sessionExpiredNotice": "You were automatically logged out after 5 minutes of inactivity. Please sign in again."
+    "sessionExpiredNotice": "You were automatically logged out after 5 minutes of inactivity. Please sign in again.",
+    "passwordResetSuccess": "Your password has been reset. You can now log in."
+  },
+  "sahauNenosiri": {
+    "title": "Forgot Password?",
+    "subtitle": "Enter your phone number or email and we'll send you a verification code",
+    "form": {
+      "identifier": "Phone Number or Email",
+      "identifierPlaceholder": "0712345678 or you@example.com",
+      "submit": "Send Code",
+      "submitting": "Sending..."
+    },
+    "backToLogin": "Back to login",
+    "genericError": "Something went wrong",
+    "networkError": "Failed to connect to the server. Please try again."
+  },
+  "thibitishaNenosiri": {
+    "title": "Verify Code",
+    "subtitle": "We've sent a 6-digit code to your email",
+    "devModeNote": "Test mode (no real email sent): your code is",
+    "form": {
+      "codeLabel": "Verification Code (OTP)",
+      "submit": "Verify",
+      "submitting": "Verifying..."
+    },
+    "genericError": "Something went wrong",
+    "networkError": "Failed to connect to the server. Please try again."
+  },
+  "nenosiriJipya": {
+    "title": "Set a New Password",
+    "subtitle": "Choose a new password for your account",
+    "form": {
+      "newPassword": "New Password",
+      "newPasswordPlaceholder": "At least 8 characters",
+      "confirmNewPassword": "Confirm New Password",
+      "confirmNewPasswordPlaceholder": "Re-enter your new password",
+      "togglePasswordAria": "Show or hide password",
+      "submit": "Reset Password",
+      "submitting": "Resetting..."
+    },
+    "genericError": "Something went wrong",
+    "networkError": "Failed to connect to the server. Please try again."
   },
   "thibitisha": {
     "title": "Verify Your Account",
@@ -339,7 +380,9 @@
       "codeExpired": "That code has expired. Request a new one.",
       "tooManyOtpAttempts": "Too many attempts. Request a new code.",
       "invalidCode": "Incorrect code.",
-      "verifiedSuccess": "Account verified"
+      "verifiedSuccess": "Account verified",
+      "invalidOrExpiredResetToken": "That reset link is invalid or has expired. Please request a new one.",
+      "passwordResetSuccess": "Your password has been reset successfully"
     },
     "general": {
       "unauthenticated": "Please log in first",

@@ -301,7 +301,48 @@
     "joinNow": "Jiunge Sasa",
     "genericError": "Hitilafu imetokea",
     "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena.",
-    "sessionExpiredNotice": "Umetoka kiotomatiki kwa sababu hukuwa na shughuli kwa dakika 5. Tafadhali ingia tena."
+    "sessionExpiredNotice": "Umetoka kiotomatiki kwa sababu hukuwa na shughuli kwa dakika 5. Tafadhali ingia tena.",
+    "passwordResetSuccess": "Nenosiri lako limebadilishwa. Sasa unaweza kuingia."
+  },
+  "sahauNenosiri": {
+    "title": "Umesahau Nenosiri?",
+    "subtitle": "Weka namba yako ya simu au barua pepe, tutakutumia kodi ya kuthibitisha",
+    "form": {
+      "identifier": "Namba ya Simu au Barua Pepe",
+      "identifierPlaceholder": "0712345678 au wewe@mfano.com",
+      "submit": "Tuma Kodi",
+      "submitting": "Inatuma..."
+    },
+    "backToLogin": "Rudi kwenye kuingia",
+    "genericError": "Hitilafu imetokea",
+    "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena."
+  },
+  "thibitishaNenosiri": {
+    "title": "Thibitisha Kodi",
+    "subtitle": "Tumetuma kodi ya tarakimu 6 kwenye barua pepe yako",
+    "devModeNote": "Modi ya majaribio (hakuna barua pepe halisi): kodi yako ni",
+    "form": {
+      "codeLabel": "Kodi ya Uthibitisho (OTP)",
+      "submit": "Thibitisha",
+      "submitting": "Inathibitisha..."
+    },
+    "genericError": "Hitilafu imetokea",
+    "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena."
+  },
+  "nenosiriJipya": {
+    "title": "Weka Nenosiri Jipya",
+    "subtitle": "Chagua nenosiri jipya la akaunti yako",
+    "form": {
+      "newPassword": "Nenosiri Jipya",
+      "newPasswordPlaceholder": "Angalau herufi 8",
+      "confirmNewPassword": "Thibitisha Nenosiri Jipya",
+      "confirmNewPasswordPlaceholder": "Andika tena nenosiri jipya",
+      "togglePasswordAria": "Onyesha au ficha nenosiri",
+      "submit": "Badilisha Nenosiri",
+      "submitting": "Inabadilisha..."
+    },
+    "genericError": "Hitilafu imetokea",
+    "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena."
   },
   "thibitisha": {
     "title": "Thibitisha Akaunti Yako",
@@ -339,7 +380,9 @@
       "codeExpired": "Kodi imeisha muda wake. Omba kodi mpya.",
       "tooManyOtpAttempts": "Umejaribu mara nyingi mno. Omba kodi mpya.",
       "invalidCode": "Kodi si sahihi.",
-      "verifiedSuccess": "Akaunti imethibitishwa"
+      "verifiedSuccess": "Akaunti imethibitishwa",
+      "invalidOrExpiredResetToken": "Kiungo cha kubadilisha nenosiri si sahihi au kimeisha muda wake. Tafadhali omba kingine.",
+      "passwordResetSuccess": "Nenosiri limebadilishwa kwa mafanikio"
     },
     "general": {
       "unauthenticated": "Tafadhali ingia kwanza",

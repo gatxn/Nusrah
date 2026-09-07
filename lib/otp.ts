@@ -4,7 +4,7 @@ import { prisma } from "@/lib/db";
 export const OTP_TTL_MINUTES = 5;
 export const OTP_MAX_ATTEMPTS = 5;
 
-export type OtpPurpose = "REGISTER" | "LOGIN";
+export type OtpPurpose = "REGISTER" | "LOGIN" | "RESET_PASSWORD";
 
 function generateOtpCode(): string {
   const n = Math.floor(100000 + Math.random() * 900000); // 6 digits

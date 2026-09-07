@@ -95,6 +95,26 @@ export function createLoginSchema(t: ValidationMessages) {
   });
 }
 
+export function createForgotPasswordSchema(t: ValidationMessages) {
+  return z.object({
+    identifier: z.string().trim().min(1, t.identifierRequired),
+  });
+}
+
+export function createResetPasswordSchema(t: ValidationMessages) {
+  return z
+    .object({
+      userId: z.string().min(1),
+      resetToken: z.string().min(1),
+      newPassword: z.string().min(8, t.newPasswordTooShort),
+      confirmNewPassword: z.string(),
+    })
+    .refine((data) => data.newPassword === data.confirmNewPassword, {
+      message: t.passwordsDoNotMatch,
+      path: ["confirmNewPassword"],
+    });
+}
+
 export function createOrderSchema(t: ValidationMessages) {
   return z.object({
     packageTier: z.enum(["FREE", "BASIC", "SILVER", "GOLD", "PREMIUM"], { message: t.invalidRequest }),

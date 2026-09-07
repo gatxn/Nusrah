@@ -44,6 +44,37 @@ export async function verifySessionToken(
   }
 }
 
+const RESET_TOKEN_TTL_SECONDS = 10 * 60; // 10 minutes
+const RESET_TOKEN_PURPOSE = "password_reset";
+
+/**
+ * Proves "this browser just completed OTP verification for this user's
+ * forgot-password flow" — issued only after a real OTP check succeeds (see
+ * app/api/auth/verify-reset-otp), so the following "set new password" step
+ * doesn't need the raw OTP code resubmitted. Carries an explicit `purpose`
+ * claim (unlike the session token) so it can never be mistaken for one,
+ * even though both are signed with the same JWT_SECRET.
+ */
+export async function signPasswordResetToken(userId: string): Promise<string> {
+  return new SignJWT({ sub: userId, purpose: RESET_TOKEN_PURPOSE })
+    .setProtectedHeader({ alg: "HS256" })
+    .setIssuedAt()
+    .setExpirationTime(`${RESET_TOKEN_TTL_SECONDS}s`)
+    .sign(getJwtSecret());
+}
+
+export async function verifyPasswordResetToken(
+  token: string
+): Promise<{ userId: string } | null> {
+  try {
+    const { payload } = await jwtVerify(token, getJwtSecret());
+    if (typeof payload.sub !== "string" || payload.purpose !== RESET_TOKEN_PURPOSE) return null;
+    return { userId: payload.sub };
+  } catch {
+    return null;
+  }
+}
+
 /** Call only from a Route Handler or Server Action. */
 export async function setSessionCookie(userId: string): Promise<void> {
   const token = await signSessionToken(userId);

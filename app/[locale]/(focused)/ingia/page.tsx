@@ -5,9 +5,9 @@ import { getDictionary } from "../../dictionaries";
 export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ nimetoka?: string }>;
+  searchParams: Promise<{ nimetoka?: string; reset?: string }>;
 }) {
-  const [{ nimetoka }, dict] = await Promise.all([searchParams, getDictionary()]);
+  const [{ nimetoka, reset }, dict] = await Promise.all([searchParams, getDictionary()]);
 
   return (
     <div className="w-full max-w-md rounded-2xl border border-black/5 bg-auth-card p-8 shadow-sm">
@@ -22,11 +22,17 @@ export default async function LoginPage({
         </div>
       )}
 
+      {reset === "1" && (
+        <div className="mb-5 rounded-lg border border-blush-200 bg-blush-50 px-4 py-3 text-sm text-navy">
+          {dict.ingia.passwordResetSuccess}
+        </div>
+      )}
+
       <LoginForm dict={dict.ingia} />
 
       <div className="mt-6 space-y-2 text-center text-sm text-neutral-600">
         <p>
-          <LocaleLink href="/msaada" className="font-medium text-neutral-500 hover:text-primary">
+          <LocaleLink href="/sahau-nenosiri" className="font-medium text-neutral-500 hover:text-primary">
             {dict.ingia.forgotPassword}
           </LocaleLink>
         </p>
