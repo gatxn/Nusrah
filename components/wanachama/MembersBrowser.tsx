@@ -187,6 +187,17 @@ export default function MembersBrowser({
     fetchPage(1, filters, searchInput, true);
   }
 
+  // Clearing the box (typing it down to empty, or the browser's own "x")
+  // restores all profiles immediately — the user shouldn't have to press
+  // search again just to undo a search.
+  function handleSearchInputChange(value: string) {
+    setSearchInput(value);
+    if (value === "" && search !== "") {
+      setSearch("");
+      fetchPage(1, filters, "", true);
+    }
+  }
+
   const filtersActive =
     filters.minAge !== MIN_AGE ||
     filters.maxAge !== MAX_AGE ||
@@ -206,7 +217,7 @@ export default function MembersBrowser({
           </button>
           <input
             value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
+            onChange={(e) => handleSearchInputChange(e.target.value)}
             placeholder={t.searchPlaceholder}
             className="w-full text-sm outline-none"
           />
