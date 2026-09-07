@@ -1169,7 +1169,9 @@
       "genericError": "Hitilafu imetokea",
       "networkError": "Imeshindwa kuunganisha na seva.",
       "loadingMore": "Inapakia wasifu zaidi...",
-      "endOfFeed": "Umefikia mwisho wa orodha kwa sasa."
+      "endOfFeed": "Umefikia mwisho wa orodha kwa sasa.",
+      "showMoreDetails": "Onyesha Maelezo Zaidi",
+      "hideDetails": "Ficha Maelezo"
     }
   },
   "vipendwa": {

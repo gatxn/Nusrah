@@ -6,10 +6,11 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 
 const AUTO_ADVANCE_MS = 5000;
 
-// Tall enough to feel like a phone-filling hero photo (the ask: "fit the
-// whole place") without forcing a hard viewport-height on desktop, where
-// this sits inside a max-w-2xl card rather than the full screen.
-const HEIGHT_CLASS = "h-[70vh] max-h-[600px] sm:h-[480px]";
+// Nearly fills the screen on phones (the ask: "almost the whole screen
+// space"); on lg+ this instead fills its parent column's height exactly,
+// since MemberDetailCard switches to a side-by-side photo/details layout
+// there and gives that column a fixed height itself.
+const HEIGHT_CLASS = "h-[80vh] max-h-[720px] sm:h-[520px] lg:h-full lg:max-h-none";
 
 export default function ProfilePhotoCarousel({
   userId,

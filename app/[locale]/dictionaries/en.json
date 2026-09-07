@@ -1169,7 +1169,9 @@
       "genericError": "Something went wrong",
       "networkError": "Couldn't connect to the server.",
       "loadingMore": "Loading more profiles...",
-      "endOfFeed": "You have reached the end for now."
+      "endOfFeed": "You have reached the end for now.",
+      "showMoreDetails": "Show More Details",
+      "hideDetails": "Hide Details"
     }
   },
   "vipendwa": {
