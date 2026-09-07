@@ -1,8 +1,15 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AvatarIllustration from "@/components/illustrations/AvatarIllustration";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
+
+const AUTO_ADVANCE_MS = 5000;
+
+// Tall enough to feel like a phone-filling hero photo (the ask: "fit the
+// whole place") without forcing a hard viewport-height on desktop, where
+// this sits inside a max-w-2xl card rather than the full screen.
+const HEIGHT_CLASS = "h-[70vh] max-h-[600px] sm:h-[480px]";
 
 export default function ProfilePhotoCarousel({
   userId,
@@ -27,8 +34,9 @@ export default function ProfilePhotoCarousel({
   function scrollToIndex(index: number) {
     const scroller = scrollerRef.current;
     if (!scroller) return;
-    scroller.scrollTo({ left: index * scroller.clientWidth, behavior: "smooth" });
-    setActiveIndex(index);
+    const wrapped = (index + slides.length) % slides.length;
+    scroller.scrollTo({ left: wrapped * scroller.clientWidth, behavior: "smooth" });
+    setActiveIndex(wrapped);
   }
 
   function handleScroll() {
@@ -37,9 +45,20 @@ export default function ProfilePhotoCarousel({
     setActiveIndex(Math.round(scroller.scrollLeft / scroller.clientWidth));
   }
 
+  // Auto-advance every 5s while there's more than one photo. Restarts
+  // whenever activeIndex changes, whether from this timer, a manual swipe,
+  // or the chevron buttons — so a manual interaction doesn't get instantly
+  // overridden by a timer that was already mid-countdown.
+  useEffect(() => {
+    if (slides.length <= 1) return;
+    const timer = setTimeout(() => scrollToIndex(activeIndex + 1), AUTO_ADVANCE_MS);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- scrollToIndex closes over slides.length, stable for a given profile
+  }, [activeIndex, slides.length]);
+
   if (slides.length === 0) {
     return (
-      <div className="relative h-72 w-full bg-blush-50">
+      <div className={`relative w-full ${HEIGHT_CLASS} bg-blush-50`}>
         <div className="flex h-full w-full items-center justify-center">
           <AvatarIllustration name={name} className="h-28 w-28" />
         </div>
@@ -50,7 +69,7 @@ export default function ProfilePhotoCarousel({
 
   if (slides.length === 1) {
     return (
-      <div className="relative h-72 w-full bg-blush-50">
+      <div className={`relative w-full ${HEIGHT_CLASS} bg-blush-50`}>
         {/* eslint-disable-next-line @next/next/no-img-element -- private cookie-gated route */}
         <img src={slides[0]} alt="" className="h-full w-full object-contain" />
         {isOnline && <OnlineBadge />}
@@ -59,7 +78,7 @@ export default function ProfilePhotoCarousel({
   }
 
   return (
-    <div className="relative h-72 w-full bg-blush-50">
+    <div className={`relative w-full ${HEIGHT_CLASS} bg-blush-50`}>
       <div
         ref={scrollerRef}
         onScroll={handleScroll}
@@ -75,19 +94,17 @@ export default function ProfilePhotoCarousel({
 
       <button
         type="button"
-        onClick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
+        onClick={() => scrollToIndex(activeIndex - 1)}
         aria-label="Picha iliyopita"
-        className="absolute inset-y-0 start-2 my-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-navy shadow-sm transition hover:bg-white disabled:opacity-0"
-        disabled={activeIndex === 0}
+        className="absolute inset-y-0 start-2 my-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-navy shadow-sm transition hover:bg-white"
       >
         <ChevronLeftIcon className="h-4 w-4" />
       </button>
       <button
         type="button"
-        onClick={() => scrollToIndex(Math.min(slides.length - 1, activeIndex + 1))}
+        onClick={() => scrollToIndex(activeIndex + 1)}
         aria-label="Picha inayofuata"
-        className="absolute inset-y-0 end-2 my-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-navy shadow-sm transition hover:bg-white disabled:opacity-0"
-        disabled={activeIndex === slides.length - 1}
+        className="absolute inset-y-0 end-2 my-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-navy shadow-sm transition hover:bg-white"
       >
         <ChevronRightIcon className="h-4 w-4" />
       </button>

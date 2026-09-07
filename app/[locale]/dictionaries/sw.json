@@ -1123,7 +1123,9 @@
       "messageSent": "Ujumbe umetumwa",
       "goToMessages": "Nenda kwenye Ujumbe",
       "genericError": "Hitilafu imetokea",
-      "networkError": "Imeshindwa kuunganisha na seva."
+      "networkError": "Imeshindwa kuunganisha na seva.",
+      "loadingMore": "Inapakia wasifu zaidi...",
+      "endOfFeed": "Umefikia mwisho wa orodha kwa sasa."
     }
   },
   "vipendwa": {

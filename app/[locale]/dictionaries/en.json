@@ -1123,7 +1123,9 @@
       "messageSent": "Message sent",
       "goToMessages": "Go to Messages",
       "genericError": "Something went wrong",
-      "networkError": "Couldn't connect to the server."
+      "networkError": "Couldn't connect to the server.",
+      "loadingMore": "Loading more profiles...",
+      "endOfFeed": "You have reached the end for now."
     }
   },
   "vipendwa": {
