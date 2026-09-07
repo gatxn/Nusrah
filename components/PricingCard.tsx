@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import LocaleLink from "@/components/LocaleLink";
 import TierBadge from "@/components/TierBadge";
 import { CheckIcon } from "@/components/icons";
+import { withLocale } from "@/lib/i18n/href";
 import type { SerializedPackage } from "@/lib/packages";
 import type { Dictionary } from "@/app/[locale]/dictionaries";
 
@@ -24,6 +25,7 @@ export default function PricingCard({
   dict: Dictionary["kuwaMwanachama"]["pricingCard"];
 }) {
   const router = useRouter();
+  const pathname = usePathname();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const buttonLabel =
@@ -44,9 +46,9 @@ export default function PricingCard({
         return;
       }
       if (data.activated) {
-        router.push("/akaunti?activated=1");
+        router.push(withLocale(pathname, "/akaunti?activated=1"));
       } else {
-        router.push(`/malipo/${data.orderId}`);
+        router.push(withLocale(pathname, `/malipo/${data.orderId}`));
       }
     } catch {
       setError(dict.networkError);

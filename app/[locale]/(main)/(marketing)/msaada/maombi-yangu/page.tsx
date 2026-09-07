@@ -4,11 +4,12 @@ import { getSessionUserId } from "@/lib/auth";
 import { formatDateSw } from "@/lib/dates";
 import { formatTicketNumber, isSupportCategory, SUPPORT_CATEGORY_LABELS } from "@/lib/support";
 import LocaleLink from "@/components/LocaleLink";
-import { getDictionary } from "../../../../dictionaries";
+import { getDictionary, getLocale } from "../../../../dictionaries";
+import { localeHref } from "@/lib/i18n/href";
 
 export default async function MyRequestsPage() {
-  const userId = await getSessionUserId();
-  if (!userId) redirect("/ingia");
+  const [userId, locale] = await Promise.all([getSessionUserId(), getLocale()]);
+  if (!userId) redirect(localeHref(locale, "/ingia"));
 
   const [dict, requests] = await Promise.all([
     getDictionary(),
