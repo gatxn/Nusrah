@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { withLocale } from "@/lib/i18n/href";
+import { EyeIcon, EyeOffIcon } from "@/components/icons";
 import type { Dictionary } from "@/app/[locale]/dictionaries";
 
 export default function LoginForm({ dict }: { dict: Dictionary["ingia"] }) {
@@ -10,6 +11,7 @@ export default function LoginForm({ dict }: { dict: Dictionary["ingia"] }) {
   const pathname = usePathname();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -66,13 +68,24 @@ export default function LoginForm({ dict }: { dict: Dictionary["ingia"] }) {
 
       <div>
         <label htmlFor="password" className="mb-1 block text-sm font-medium text-navy">{dict.form.password}</label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          required
-          className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
-        />
+        <div className="relative">
+          <input
+            id="password"
+            name="password"
+            type={showPassword ? "text" : "password"}
+            required
+            className="w-full rounded-lg border border-black/10 px-3 py-2 pe-10 text-sm focus:border-primary focus:outline-none"
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword((v) => !v)}
+            aria-label={dict.form.togglePasswordAria}
+            aria-pressed={showPassword}
+            className="absolute inset-y-0 end-0 flex w-10 items-center justify-center text-neutral-400 hover:text-neutral-600"
+          >
+            {showPassword ? <EyeOffIcon className="h-4.5 w-4.5" /> : <EyeIcon className="h-4.5 w-4.5" />}
+          </button>
+        </div>
       </div>
 
       {error && <p className="text-sm text-red-600">{error}</p>}

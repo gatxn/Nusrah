@@ -293,7 +293,8 @@
       "identifierPlaceholder": "0712345678 or you@example.com",
       "password": "Password",
       "submit": "Log In",
-      "submitting": "Logging in..."
+      "submitting": "Logging in...",
+      "togglePasswordAria": "Show or hide password"
     },
     "forgotPassword": "Forgot your password?",
     "noAccount": "Don't have an account?",

@@ -293,7 +293,8 @@
       "identifierPlaceholder": "0712345678 au wewe@mfano.com",
       "password": "Nenosiri",
       "submit": "Ingia",
-      "submitting": "Inaingia..."
+      "submitting": "Inaingia...",
+      "togglePasswordAria": "Onyesha au ficha nenosiri"
     },
     "forgotPassword": "Umesahau nenosiri?",
     "noAccount": "Huna akaunti?",
