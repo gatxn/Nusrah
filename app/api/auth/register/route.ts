@@ -3,6 +3,7 @@ import { prisma } from "@/lib/db";
 import { hashPassword } from "@/lib/auth";
 import { createAndSendOtp } from "@/lib/otp";
 import { createRegisterSchema, normalizePhone, normalizeEmail } from "@/lib/validation";
+import { findCountryByCode } from "@/lib/geo";
 import { jsonError, zodError } from "@/lib/api";
 import { rateLimit, clientKey } from "@/lib/rate-limit";
 import { authErrors, validationMessages } from "@/lib/i18n/api";
@@ -22,6 +23,11 @@ export async function POST(request: NextRequest) {
   const { name, password, gender } = parsed.data;
   const phone = normalizePhone(parsed.data.phone);
   const email = normalizeEmail(parsed.data.email);
+  // Pre-fills the onboarding country picker with what was chosen alongside
+  // the phone number at registration — still fully editable there.
+  const phoneCountry = parsed.data.phoneCountryCode
+    ? findCountryByCode(parsed.data.phoneCountryCode)
+    : undefined;
 
   const existing = await prisma.user.findFirst({
     where: { OR: [{ phone }, { email }] },
@@ -39,7 +45,7 @@ export async function POST(request: NextRequest) {
       email,
       passwordHash,
       termsAcceptedAt: new Date(),
-      profile: { create: { gender } },
+      profile: { create: { gender, ...(phoneCountry ? { country: phoneCountry.code } : {}) } },
     },
   });
 

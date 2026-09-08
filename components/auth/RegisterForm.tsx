@@ -5,6 +5,8 @@ import { useRouter, usePathname } from "next/navigation";
 import { withLocale } from "@/lib/i18n/href";
 import LocaleLink from "@/components/LocaleLink";
 import { EyeIcon, EyeOffIcon } from "@/components/icons";
+import { findCountryByCode, type Country } from "@/lib/geo";
+import PhoneCountryCodeSelect from "@/components/auth/PhoneCountryCodeSelect";
 import type { Dictionary } from "@/app/[locale]/dictionaries";
 
 function PasswordField({
@@ -68,6 +70,7 @@ export default function RegisterForm({
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [phoneCountry, setPhoneCountry] = useState<Country>(() => findCountryByCode("TZ")!);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -83,11 +86,19 @@ export default function RegisterForm({
 
     setLoading(true);
 
+    // The national number is typed without the country code (and often
+    // with a leading trunk "0", e.g. "0712345678") — combine it with the
+    // selected country's dial code into one international number here,
+    // same convention used by phone systems worldwide when adding a
+    // country code to a locally-dialed number.
+    const nationalNumber = String(data.phone ?? "").trim().replace(/^0+/, "");
+    const phone = `${phoneCountry.dialCode}${nationalNumber}`;
+
     try {
       const res = await fetch("/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, gender, agreedToTerms }),
+        body: JSON.stringify({ ...data, phone, phoneCountryCode: phoneCountry.code, gender, agreedToTerms }),
       });
       const json = await res.json();
       if (!res.ok) {
@@ -122,13 +133,22 @@ export default function RegisterForm({
 
       <div>
         <label htmlFor="phone" className="mb-1 block text-sm font-medium text-navy">{dict.form.phone}</label>
-        <input
-          id="phone"
-          name="phone"
-          required
-          placeholder={dict.form.phonePlaceholder}
-          className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
-        />
+        <div className="flex gap-2">
+          <PhoneCountryCodeSelect
+            value={phoneCountry}
+            onChange={setPhoneCountry}
+            triggerAria={dict.form.countryCodeAria}
+            searchPlaceholder={dict.form.countrySearchPlaceholder}
+            noResultsText={dict.form.countryNoResults}
+          />
+          <input
+            id="phone"
+            name="phone"
+            required
+            placeholder={dict.form.phonePlaceholder}
+            className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
+          />
+        </div>
       </div>
 
       <div>

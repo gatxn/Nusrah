@@ -23,7 +23,15 @@ import { REPORT_REASONS } from "@/lib/reports";
 import { SUPPORT_CATEGORIES } from "@/lib/support";
 
 // Tanzanian phone numbers: 07XXXXXXXX / 06XXXXXXXX or +2557XXXXXXXX / +2556XXXXXXXX
+// — kept as its own pattern since existing accounts and the login/forgot-
+// password "is this a phone or an email" check both depend on this exact
+// shape (stored phones are normalized to the local "0XXXXXXXXX" form).
 const phoneRegex = /^(?:\+255|0)([67]\d{8})$/;
+
+// Registration accepts any country now (see PhoneCountryCodeSelect), so
+// phone/dial codes for countries other than Tanzania are validated only as
+// a general E.164-shaped international number: "+" then 7-15 digits.
+const intlPhoneRegex = /^\+[1-9]\d{6,14}$/;
 
 // Field-level messages are locale-dependent (see lib/i18n/api.ts's
 // `dict.validation`), so schemas built from this type are constructed fresh
@@ -68,7 +76,13 @@ export function createRegisterSchema(t: ValidationMessages) {
   return z
     .object({
       name: z.string().trim().min(2, t.nameTooShort).max(80),
-      phone: z.string().regex(phoneRegex, t.invalidPhone),
+      phone: z
+        .string()
+        .refine((v) => phoneRegex.test(v.trim()) || intlPhoneRegex.test(v.trim()), t.invalidPhone),
+      // ISO 3166-1 alpha-2 of the country selected alongside the phone
+      // number (see PhoneCountryCodeSelect) — pre-fills Profile.country so
+      // onboarding starts on the same country, still changeable there.
+      phoneCountryCode: z.string().trim().length(2).optional(),
       email: z.string().trim().email(t.invalidEmail),
       password: z.string().min(8, t.passwordTooShort),
       confirmPassword: z.string(),
@@ -336,14 +350,23 @@ export function createMemberQuerySchema(t: ValidationMessages) {
     });
 }
 
+// Tanzanian numbers are always normalized to the existing local
+// "0XXXXXXXXX" storage form, whether submitted as "0712345678" or
+// "+255712345678" — this keeps every existing account's stored format (and
+// the login/OTP lookups built around it) completely unchanged. Non-
+// Tanzanian numbers have no prior on-disk convention to preserve, so
+// they're stored exactly as submitted (already a full "+CC..." string by
+// the time RegisterForm sends it).
 export function normalizePhone(phone: string): string {
-  const match = phone.match(phoneRegex);
-  if (!match) return phone;
+  const trimmed = phone.trim();
+  const match = trimmed.match(phoneRegex);
+  if (!match) return trimmed;
   return `0${match[1]}`;
 }
 
 export function isPhoneNumber(identifier: string): boolean {
-  return phoneRegex.test(identifier.trim());
+  const trimmed = identifier.trim();
+  return phoneRegex.test(trimmed) || intlPhoneRegex.test(trimmed);
 }
 
 export function normalizeEmail(email: string): string {
