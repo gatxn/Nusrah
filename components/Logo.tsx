@@ -13,9 +13,9 @@ export default function Logo({ tagline }: { tagline: { line1: string; line2: str
         priority
       />
       <span className="flex flex-col gap-px leading-none">
-        <span className="font-heading text-2xl font-bold tracking-tight text-navy">Nusrah</span>
-        <span className="text-[11px] leading-tight tracking-wide text-muted">{tagline.line1}</span>
-        <span className="text-[11px] leading-tight tracking-wide text-muted">{tagline.line2}</span>
+        <span className="font-heading text-2xl font-bold tracking-tight text-brand-green">Nusrah</span>
+        <span className="text-[11px] leading-tight tracking-wide text-primary">{tagline.line1}</span>
+        <span className="text-[11px] leading-tight tracking-wide text-primary">{tagline.line2}</span>
       </span>
     </LocaleLink>
   );

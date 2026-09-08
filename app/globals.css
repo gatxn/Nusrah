@@ -17,6 +17,7 @@
 
   --color-gold: #f0c98a;
   --color-muted: #7d7190;
+  --color-brand-green: #145a32;
 
   --color-tier-free: #6b7280;
   --color-tier-basic: #d9799a;
@@ -42,6 +43,7 @@
 
   --color-gold: var(--color-gold);
   --color-muted: var(--color-muted);
+  --color-brand-green: var(--color-brand-green);
 
   --color-tier-free: var(--color-tier-free);
   --color-tier-basic: var(--color-tier-basic);
