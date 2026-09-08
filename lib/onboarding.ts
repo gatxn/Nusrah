@@ -38,7 +38,7 @@ export function isIntention(value: string): value is Intention {
   return (INTENTIONS as readonly string[]).includes(value);
 }
 
-export const MARITAL_STATUSES = ["SIJAOA_SIJAOLEWA", "TALAKA", "MJANE", "AMETENGANA"] as const;
+export const MARITAL_STATUSES = ["AMEOA_AMEOLEWA", "SIJAOA_SIJAOLEWA", "TALAKA", "MJANE", "AMETENGANA"] as const;
 export type MaritalStatus = (typeof MARITAL_STATUSES)[number];
 export function isMaritalStatus(value: string): value is MaritalStatus {
   return (MARITAL_STATUSES as readonly string[]).includes(value);

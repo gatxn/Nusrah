@@ -54,7 +54,7 @@ model Profile {
 
   // Step 1 (Taarifa Binafsi) additions
   displayName   String?
-  maritalStatus String? // SIJAOA_SIJAOLEWA | TALAKA | MJANE | AMETENGANA
+  maritalStatus String? // AMEOA_AMEOLEWA | SIJAOA_SIJAOLEWA | TALAKA | MJANE | AMETENGANA
 
   // Step 2 (Maelezo ya Dini) — all new
   religion     String?

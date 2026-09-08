@@ -75,7 +75,8 @@
         "BADO_SIJAAMUA": "Still Deciding"
       },
       "maritalStatus": {
-        "SIJAOA_SIJAOLEWA": "Never Married",
+        "AMEOA_AMEOLEWA": "Married",
+        "SIJAOA_SIJAOLEWA": "Single",
         "TALAKA": "Divorced",
         "MJANE": "Widowed",
         "AMETENGANA": "Separated"
