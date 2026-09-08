@@ -1,6 +1,6 @@
 import type { NextRequest } from "next/server";
 
-const LOCALES = ["sw", "en", "ar"] as const;
+const LOCALES = ["sw", "en", "ar", "fr", "zh"] as const;
 type ApiLocale = (typeof LOCALES)[number];
 
 function isApiLocale(value: string | undefined): value is ApiLocale {
@@ -28,6 +28,8 @@ const dictionaries = {
   sw: () => import("@/app/[locale]/dictionaries/sw.json").then((m) => m.default),
   en: () => import("@/app/[locale]/dictionaries/en.json").then((m) => m.default),
   ar: () => import("@/app/[locale]/dictionaries/ar.json").then((m) => m.default),
+  fr: () => import("@/app/[locale]/dictionaries/fr.json").then((m) => m.default),
+  zh: () => import("@/app/[locale]/dictionaries/zh.json").then((m) => m.default),
 };
 
 export async function authErrors(request: NextRequest) {

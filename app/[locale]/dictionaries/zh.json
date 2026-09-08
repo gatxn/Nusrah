@@ -1,0 +1,2356 @@
+{
+  "common": {
+    "tagline": {
+      "line1": "寻找.连接.结婚",
+      "line2": "生活是一段旅程"
+    },
+    "nav": {
+      "home": "首页",
+      "howItWorks": "使用方法",
+      "membership": "会员套餐",
+      "successStories": "成功故事",
+      "help": "帮助",
+      "login": "登录",
+      "joinNow": "立即加入",
+      "logout": "退出登录",
+      "members": "会员",
+      "messages": "消息",
+      "changePackage": "更改套餐"
+    },
+    "closeReturnHomeAria": "关闭并返回首页",
+    "closeRestartSignupAria": "关闭并重新开始注册",
+    "languageSwitcher": {
+      "label": "语言"
+    },
+    "footer": {
+      "description": "开始联系，共建人生——一个建立在安全、尊重与隐私之上的伊斯兰婚姻平台。",
+      "pagesHeading": "页面",
+      "helpHeading": "帮助",
+      "faq": "常见问题",
+      "safety": "安全",
+      "contactUs": "联系我们",
+      "contactHeading": "联系方式",
+      "hours": "周一至周日，08:00–22:00",
+      "copyright": "版权所有。",
+      "terms": "使用条款"
+    },
+    "sidebar": {
+      "dashibodi": "仪表盘",
+      "wasifu": "资料",
+      "ujumbe": "消息",
+      "wamenipenda": "喜欢你的人",
+      "wasifuWangu": "我的资料",
+      "mipangilio": "设置",
+      "kituoChaUsalama": "安全中心",
+      "ripotiMtumiaji": "举报会员",
+      "wasilianaNaMsaada": "联系客服",
+      "maswali": "常见问题",
+      "logout": "退出登录",
+      "openMenuAria": "打开菜单"
+    },
+    "topBar": {
+      "searchPlaceholder": "搜索姓名、职业、城市...",
+      "accountMenu": {
+        "akauntiYangu": "我的账户",
+        "wasifuWangu": "我的资料",
+        "mipangilio": "设置",
+        "logout": "退出登录"
+      },
+      "notifications": {
+        "heading": "通知",
+        "bellAria": "通知",
+        "loading": "加载中...",
+        "empty": "您目前没有任何通知。"
+      }
+    },
+    "upgradeCard": {
+      "heading": "升级套餐",
+      "body": "Basic、Silver、Gold 或 Premium——获取更多联系方式和额外功能。"
+    },
+    "labels": {
+      "intention": {
+        "MPENZI_WA_NDOA": "寻找终身婚姻伴侣",
+        "MWENZI_MUDA_MREFU": "寻找长期伴侣",
+        "MARAFIKI_WAPYA": "结交新朋友",
+        "BADO_SIJAAMUA": "尚未决定"
+      },
+      "maritalStatus": {
+        "AMEOA_AMEOLEWA": "已婚",
+        "SIJAOA_SIJAOLEWA": "单身",
+        "TALAKA": "离异",
+        "MJANE": "丧偶",
+        "AMETENGANA": "分居"
+      },
+      "madhhab": {
+        "HANAFI": "哈乃斐学派",
+        "SHAFII": "沙斐仪学派",
+        "MALIKI": "马立克学派",
+        "HANBALI": "罕百里学派",
+        "SINA_MADHHAB_MAALUM": "不遵循特定学派"
+      },
+      "prayerHabit": {
+        "MARA_TANO": "每日礼拜五次",
+        "MARA_KWA_MARA": "经常礼拜",
+        "NINAJITAHIDI": "正在努力做到",
+        "SIFANYI_SASA": "目前不礼拜"
+      },
+      "hijabOption": {
+        "NDIYO": "是",
+        "HAPANA": "否",
+        "WAKATI_MWINGINE": "有时"
+      },
+      "quranLevel": {
+        "NINASOMA_KWA_UFASAHA": "能流利诵读",
+        "NINASOMA_KAWAIDA": "能较好地诵读",
+        "BADO_NINAJIFUNZA": "仍在学习中",
+        "SIJUI_KUSOMA": "不会诵读"
+      },
+      "substanceUse": {
+        "SITUMII_KABISA": "从不",
+        "MARA_CHACHE": "很少",
+        "MARA_KWA_MARA": "偶尔"
+      },
+      "educationLevel": {
+        "MSINGI": "小学",
+        "SEKONDARI": "中学",
+        "KIDATO_CHA_SITA": "高中（六年级）",
+        "STASHAHADA": "大专文凭",
+        "SHAHADA": "学士学位",
+        "UZAMILI_UZAMIVU": "硕士/博士学位"
+      },
+      "bodyType": {
+        "MWEMBAMBA": "瘦削",
+        "WASTANI": "中等身材",
+        "MNENE": "丰满"
+      },
+      "skinTone": {
+        "NYEUSI": "深色",
+        "KAHAWIA_ILIYOKOZA": "深棕色",
+        "KAHAWIA": "棕色",
+        "NYEUPE": "浅色"
+      },
+      "incomeRange": {
+        "CHINI_YA_300K": "低于30万坦桑先令",
+        "300K_HADI_700K": "30万至70万坦桑先令",
+        "700K_HADI_1_5M": "70万至150万坦桑先令",
+        "ZAIDI_YA_1_5M": "超过150万坦桑先令",
+        "SIPENDI_KUTAJA": "不愿透露"
+      },
+      "guardianRelationship": {
+        "BABA": "父亲",
+        "KAKA": "兄长",
+        "MJOMBA": "舅舅",
+        "BABU": "祖父",
+        "MWINGINE": "其他"
+      },
+      "religion": {
+        "UISLAMU": "伊斯兰教",
+        "UKRISTO": "基督教",
+        "UHINDU": "印度教",
+        "DINI_ASILIA": "非洲传统宗教",
+        "SINA_DINI": "无宗教信仰",
+        "NYINGINE": "其他"
+      },
+      "disabilityType": {
+        "MIGUU": "腿部/行动障碍",
+        "MIKONO": "手臂/手部障碍",
+        "UPOFU": "失明",
+        "UZIWI": "失聪",
+        "NYINGINE": "其他",
+        "SIHITAJI_KUSEMA": "不愿透露"
+      },
+      "yesNo": {
+        "NDIYO": "是",
+        "HAPANA": "否"
+      }
+    },
+    "supportCategories": {
+      "ACCOUNT_LOGIN": "🔐 账户与登录",
+      "PROFILE_VERIFICATION": "👤 资料与认证",
+      "PAYMENTS_SUBSCRIPTION": "💳 付款与订阅",
+      "SAFETY_REPORT": "🚩 安全与举报",
+      "MESSAGES_COMMUNICATION": "💬 消息与沟通",
+      "PRIVACY_DATA": "🔒 隐私与数据",
+      "TECHNICAL_PROBLEM": "⚙️ 技术问题",
+      "TERMS_POLICY": "📋 条款与政策",
+      "OTHER": "❓ 其他"
+    },
+    "reportReasons": {
+      "FAKE_PROFILE": "虚假资料",
+      "SCAM": "诈骗",
+      "MONEY_REQUEST": "索要钱财",
+      "HARASSMENT": "骚扰",
+      "THREATS": "威胁或恐吓",
+      "SPAM": "垃圾信息/骚扰消息",
+      "IMPERSONATION": "冒充身份",
+      "INAPPROPRIATE_CONTENT": "不当内容",
+      "FALSE_INFO": "虚假照片或信息",
+      "TERMS_VIOLATION": "违反 Nusrah 使用条款",
+      "OTHER": "其他原因"
+    },
+    "tiers": {
+      "FREE": "免费",
+      "BASIC": "基础版",
+      "SILVER": "白银版",
+      "GOLD": "黄金版",
+      "PREMIUM": "尊享版"
+    }
+  },
+  "home": {
+    "headline1": "寻找您的",
+    "headline2": "人生伴侣",
+    "subtitle": "Nusrah 是一个安全的伊斯兰平台，连接真心寻找人生伴侣的人们。",
+    "checklist": [
+      "安全且私密",
+      "经过验证的优质匹配",
+      "真实可信的资料",
+      "只以结婚为目的",
+      "尊重的沟通方式",
+      "共创更美好的生活"
+    ],
+    "ctaJoin": "立即加入 - 免费",
+    "ctaMembers": "浏览会员",
+    "ctaLearnMore": "了解使用方法",
+    "statsLinePrefix": "超过",
+    "statsLineMiddle": "对成功的婚姻，历时",
+    "welcomeBackNote": "⛨ 欢迎回来，继续您的旅程！",
+    "easySignupNote": "⛨ 注册简单、快速且免费！",
+    "trustBadgeTitle": "我们的会员",
+    "trustBadgeSubtitle": "正在寻找像您这样的人",
+    "heroPhotoAlt": "一对夫妇在一起，回顾他们寻找人生伴侣的旅程",
+    "statsBar": [
+      "活跃会员",
+      "成功婚姻",
+      "安全私密",
+      "已验证资料",
+      "全天候支持"
+    ],
+    "features": [
+      {
+        "title": "安全且私密",
+        "body": "您的信息将受到保护。您的隐私是我们的首要任务。"
+      },
+      {
+        "title": "真实资料",
+        "body": "每位会员都需经过验证，以保持社区的真实性。"
+      },
+      {
+        "title": "智能匹配",
+        "body": "使用高级筛选条件搜索伴侣，获得更精准的结果。"
+      },
+      {
+        "title": "尊重的沟通",
+        "body": "在决定下一步之前，以尊重的方式相互了解。"
+      },
+      {
+        "title": "婚姻意向",
+        "body": "为真心希望依照伊斯兰价值观结婚的人们提供的平台。"
+      },
+      {
+        "title": "真实的成功案例",
+        "body": "我们见证了许多通过 Nusrah 找到幸福的伴侣。"
+      }
+    ],
+    "quote": {
+      "arabic": "وَإِنْ خِفْتُمْ أَلَّا تُقْسِطُوا فِي الْيَتَامَىٰ فَانْكِحُوا مَا طَابَ لَكُمْ مِنَ النِّسَاءِ مَثْنَىٰ وَثُلَاثَ وَرُبَاعَ",
+      "translation": "「如果你们担心不能公平对待孤儿，那么你们可以娶自己中意的女子，两个、三个或四个……」（古兰经 4:3）",
+      "cta": "开启您的旅程，寻找合适的伴侣，共创更美好的生活。"
+    }
+  },
+  "jisajili": {
+    "title": "创建账户",
+    "subtitle": "开始您寻找人生伴侣的旅程",
+    "form": {
+      "name": "全名",
+      "namePlaceholder": "Amina Juma",
+      "phone": "电话号码",
+      "phonePlaceholder": "0712345678",
+      "countryCodeAria": "选择国家区号",
+      "countrySearchPlaceholder": "搜索国家...",
+      "countryNoResults": "未找到国家",
+      "email": "电子邮箱",
+      "emailPlaceholder": "you@example.com",
+      "password": "密码",
+      "passwordPlaceholder": "至少8个字符",
+      "confirmPassword": "确认密码",
+      "confirmPasswordPlaceholder": "请再次输入密码",
+      "togglePasswordAria": "显示或隐藏密码",
+      "passwordsDoNotMatch": "两次输入的密码不一致",
+      "gender": "性别",
+      "female": "女",
+      "male": "男",
+      "agreeToTermsPrefix": "我同意",
+      "agreeToTermsLink": "使用条款",
+      "submit": "注册",
+      "submitting": "正在注册..."
+    },
+    "alreadyHaveAccount": "已经有账户了？",
+    "login": "登录",
+    "genericError": "出现错误",
+    "networkError": "无法连接到服务器，请重试。"
+  },
+  "ingia": {
+    "title": "欢迎回来",
+    "subtitle": "登录以继续您的旅程",
+    "form": {
+      "identifier": "电话号码或电子邮箱",
+      "identifierPlaceholder": "0712345678 或 you@example.com",
+      "password": "密码",
+      "submit": "登录",
+      "submitting": "正在登录...",
+      "togglePasswordAria": "显示或隐藏密码"
+    },
+    "forgotPassword": "忘记密码？",
+    "noAccount": "还没有账户？",
+    "joinNow": "立即加入",
+    "genericError": "出现错误",
+    "networkError": "无法连接到服务器，请重试。",
+    "sessionExpiredNotice": "由于5分钟内无操作，您已被自动登出。请重新登录。",
+    "passwordResetSuccess": "您的密码已重置，现在可以登录了。"
+  },
+  "sahauNenosiri": {
+    "title": "忘记密码？",
+    "subtitle": "输入您的电话号码或电子邮箱，我们将发送验证码给您",
+    "form": {
+      "identifier": "电话号码或电子邮箱",
+      "identifierPlaceholder": "0712345678 或 you@example.com",
+      "submit": "发送验证码",
+      "submitting": "正在发送..."
+    },
+    "backToLogin": "返回登录",
+    "genericError": "出现错误",
+    "networkError": "无法连接到服务器，请重试。"
+  },
+  "thibitishaNenosiri": {
+    "title": "验证代码",
+    "subtitle": "我们已向您的电子邮箱发送了一个6位数验证码",
+    "devModeNote": "测试模式（未发送真实邮件）：您的验证码是",
+    "form": {
+      "codeLabel": "验证码（OTP）",
+      "submit": "验证",
+      "submitting": "正在验证..."
+    },
+    "genericError": "出现错误",
+    "networkError": "无法连接到服务器，请重试。"
+  },
+  "nenosiriJipya": {
+    "title": "设置新密码",
+    "subtitle": "为您的账户选择一个新密码",
+    "form": {
+      "newPassword": "新密码",
+      "newPasswordPlaceholder": "至少8个字符",
+      "confirmNewPassword": "确认新密码",
+      "confirmNewPasswordPlaceholder": "请再次输入新密码",
+      "togglePasswordAria": "显示或隐藏密码",
+      "submit": "重置密码",
+      "submitting": "正在重置..."
+    },
+    "genericError": "出现错误",
+    "networkError": "无法连接到服务器，请重试。"
+  },
+  "thibitisha": {
+    "title": "验证您的账户",
+    "subtitle": "我们已向您的电子邮箱发送了一个6位数验证码",
+    "devModeNote": "测试模式（未发送真实邮件）：您的验证码是",
+    "form": {
+      "codeLabel": "验证码（OTP）",
+      "submit": "验证",
+      "submitting": "正在验证...",
+      "resend": "重新发送验证码"
+    },
+    "resendSuccess": "新验证码已发送",
+    "resendDevPrefix": "新验证码（测试模式）：",
+    "genericError": "出现错误",
+    "networkError": "无法连接到服务器，请重试。",
+    "networkErrorShort": "无法连接到服务器。"
+  },
+  "apiErrors": {
+    "auth": {
+      "tooManyAttempts": "尝试次数过多，请稍后重试。",
+      "duplicateAccount": "该电话号码或电子邮箱已被注册",
+      "otpServiceDown": "注册功能暂不可用，我们正在完成验证（OTP）系统的设置。请稍后重试。",
+      "registerSuccess": "我们已向您的电子邮箱发送了验证码（OTP）",
+      "devNote": "测试模式：未发送真实邮件。",
+      "invalidCredentials": "电话号码/邮箱或密码不正确",
+      "otpRequired": "请先使用OTP验证您的账户",
+      "userNotFound": "未找到用户",
+      "alreadyVerified": "账户已通过验证",
+      "noEmailOnFile": "该账户未登记电子邮箱，请联系客服。",
+      "resendTooMany": "您请求验证码的次数过多，请稍后重试。",
+      "resendServiceDown": "验证码发送功能暂不可用，请稍后重试。",
+      "resendSuccess": "新验证码已发送",
+      "loginSuccess": "登录成功",
+      "codeNotFound": "该验证码无效或已被使用，请重新申请。",
+      "codeExpired": "该验证码已过期，请重新申请。",
+      "tooManyOtpAttempts": "尝试次数过多，请重新申请验证码。",
+      "invalidCode": "验证码不正确。",
+      "verifiedSuccess": "账户已验证",
+      "invalidOrExpiredResetToken": "该重置链接无效或已过期，请重新申请。",
+      "passwordResetSuccess": "您的密码已成功重置"
+    },
+    "general": {
+      "unauthenticated": "请先登录",
+      "forbidden": "您没有权限执行此操作",
+      "notFound": "未找到",
+      "profileNotFound": "未找到该资料",
+      "cannotBlockSelf": "您不能屏蔽自己",
+      "cannotMessageSelf": "您不能给自己发消息",
+      "cannotFavoriteSelf": "您不能将自己加入收藏",
+      "cannotReportSelf": "您不能举报自己",
+      "invalidPhotoType": "照片类型无效",
+      "photoTooLarge": "照片文件过大",
+      "invalidFileType": "文件类型无效",
+      "fileTooLarge": "文件过大",
+      "packageNotFound": "未找到该套餐",
+      "orderNotFound": "未找到该订单",
+      "orderAlreadyProcessed": "该订单已处理",
+      "paymentGatewayNotConfigured": "移动支付功能正在进行最终配置，一旦可用我们将立即通知您。",
+      "withParamRequired": "缺少必需的查询参数 'with'",
+      "invalidFormData": "数据无效",
+      "contactRateLimited": "您发送的消息过多，请稍后再试。",
+      "cannotInitiateMessage": "您的套餐不允许发起新的对话。",
+      "cannotReplyToMessage": "您的套餐不允许回复消息。",
+      "videoCallRestricted": "视频通话仅限 PREMIUM 会员使用。",
+      "voiceCallRestricted": "语音通话仅限 GOLD 和 PREMIUM 会员使用。",
+      "noPhotoSelected": "请选择一张照片",
+      "galleryLimitReached": "您已达到7张照片的上限（1张资料照片 + 6张相册照片）",
+      "photoUploadConflict": "请重试",
+      "devToolOwnAccountOnly": "开发工具只能激活您自己的账户",
+      "invalidCurrentPassword": "当前密码不正确",
+      "invalidPassword": "密码不正确",
+      "paymentGatewayError": "支付网关发生错误，请稍后重试。",
+      "emailRequiredForPayment": "请在付款前为您的账户添加电子邮箱地址。"
+    }
+  },
+  "validation": {
+    "nameTooShort": "姓名过短",
+    "invalidPhone": "电话号码无效",
+    "invalidEmail": "电子邮箱地址无效",
+    "passwordTooShort": "密码必须至少包含8个字符",
+    "identifierRequired": "请输入电话号码或电子邮箱",
+    "passwordRequired": "密码为必填项",
+    "otpCodeFormat": "验证码必须为6位数字",
+    "mustAgreeToTerms": "您必须同意使用条款才能注册",
+    "passwordsDoNotMatch": "两次输入的密码不一致",
+    "minAgeRequired": "您必须年满 {minAge} 岁才能使用 Nusrah。",
+    "chooseCountry": "请选择一个国家",
+    "regionRequired": "请输入您所在的地区/州",
+    "cityRequired": "请输入您所在的区/县",
+    "religionRequired": "请输入您的宗教信仰",
+    "chooseAnswer": "请选择一个答案",
+    "occupationRequired": "请描述您的职业",
+    "chooseAtLeastOne": "请至少选择一项",
+    "bioTooShort": "请多介绍一些关于您自己的信息",
+    "minAgeExceedsMaxAge": "最小年龄不能超过最大年龄",
+    "guardianNameRequired": "请输入您监护人的姓名",
+    "chooseRelationship": "请选择关系",
+    "guardianPhoneRequired": "请输入您监护人的电话号码",
+    "messageBodyRequired": "请输入消息内容",
+    "currentPasswordRequired": "请输入您当前的密码",
+    "newPasswordTooShort": "新密码必须至少包含8个字符",
+    "deletePasswordRequired": "请输入您的密码",
+    "deleteConfirmationMismatch": "请输入「{word}」以确认",
+    "reportDescriptionTooShort": "请更详细地描述发生的情况",
+    "invalidRegion": "该地区不被接受",
+    "invalidChoice": "该选项不被接受",
+    "invalidRequest": "请求无效",
+    "messageTooShort": "消息内容过短"
+  },
+  "jinsiInavyofanyakazi": {
+    "title": "Nusrah 如何运作",
+    "subtitle": "简单几步，助您找到人生伴侣",
+    "steps": [
+      {
+        "title": "注册",
+        "desc": "使用基本信息创建您的免费账户。"
+      },
+      {
+        "title": "完善资料",
+        "desc": "告诉我们关于您自己以及您希望寻找的伴侣类型。"
+      },
+      {
+        "title": "搜索",
+        "desc": "浏览符合您需求的资料。"
+      },
+      {
+        "title": "沟通交流",
+        "desc": "开始安全、尊重的对话。"
+      },
+      {
+        "title": "核实确认",
+        "desc": "在进一步发展之前，确认双方的意向和信息。"
+      },
+      {
+        "title": "共同建立生活",
+        "desc": "若真主意愿，推进婚姻进程。"
+      }
+    ],
+    "tiersHeading": "各等级功能对比（免费至尊享版）",
+    "tiersSubtitle": "套餐等级越高，可获得的功能与曝光度越多",
+    "trustBadges": [
+      "高度安全",
+      "尊重与道德",
+      "仅限婚姻目的",
+      "快速支持"
+    ]
+  },
+  "kuwaMwanachama": {
+    "title": "选择您的套餐",
+    "subtitle": "套餐等级越高，您在寻找人生伴侣的过程中将获得越多的曝光度、沟通机会与功能。",
+    "footnote": "您可以随时在账户页面更改（升级或降级）您的套餐。",
+    "pricingCard": {
+      "free": "免费",
+      "perMonth": "/月",
+      "buttonLabels": {
+        "FREE": "选择免费版",
+        "BASIC": "选择基础版",
+        "SILVER": "选择白银版",
+        "GOLD": "选择黄金版",
+        "PREMIUM": "选择尊享版",
+        "default": "选择"
+      },
+      "submitting": "正在提交...",
+      "genericError": "出现错误",
+      "networkError": "无法连接到服务器，请重试。"
+    }
+  },
+  "mafanikio": {
+    "title": "会员成功故事",
+    "subtitle": "通过 Nusrah 找到人生伴侣的会员真实故事",
+    "stats": [
+      {
+        "value": "35,000+",
+        "label": "活跃会员"
+      },
+      {
+        "value": "2,000+",
+        "label": "成功婚姻"
+      },
+      {
+        "value": "98%",
+        "label": "对 Nusrah 满意"
+      },
+      {
+        "value": "100%",
+        "label": "安全私密"
+      }
+    ],
+    "ctaHeading": "成为我们下一个成功故事",
+    "ctaLoggedIn": "继续以安全、尊重的方式浏览 Nusrah 上的其他会员。",
+    "ctaLoggedOut": "立即加入 Nusrah，安全、尊重地开启您寻找人生伴侣的旅程。",
+    "ctaButtonLoggedOut": "立即加入"
+  },
+  "msaada": {
+    "title": "帮助与支持",
+    "subtitle": "我们随时为您提供帮助。请查看常见问题，或直接联系我们。",
+    "faqHeading": "常见问题",
+    "faqs": [
+      {
+        "question": "什么是 Nusrah.co.tz？",
+        "answer": "Nusrah.co.tz 是一个连接真心希望结婚的人们的平台，建立在尊重、诚实、隐私和伊斯兰价值观之上。"
+      },
+      {
+        "question": "Nusrah 是普通的交友网站吗？",
+        "answer": "不是。Nusrah 专注于寻找结婚对象，而非短期关系或娱乐消遣。"
+      },
+      {
+        "question": "谁可以注册 Nusrah？",
+        "answer": "任何符合 Nusrah 使用条款、并真心希望寻找人生伴侣的人都可以注册。"
+      },
+      {
+        "question": "我必须是穆斯林吗？",
+        "answer": "Nusrah 是从伊斯兰角度建立的，但我们的主要目标是帮助人们相识，并为婚姻打下坚实的基础。因此，Nusrah 欢迎所有信仰的人加入，不因宗教而有任何歧视。"
+      },
+      {
+        "question": "注册需要提供哪些信息？",
+        "answer": "系统将要求您提供：姓名及用于资料展示的显示名称、出生日期、性别、电话号码、电子邮箱、居住地、婚姻状况、宗教信息、教育与职业情况、您对伴侣的期望、一张资料照片，以及其他完善资料所需的信息。"
+      },
+      {
+        "question": "我可以使用昵称吗？",
+        "answer": "为保护您的隐私，Nusrah 可能允许使用显示名称，但您注册时提供的信息必须真实准确。"
+      },
+      {
+        "question": "我的电话号码会公开显示给所有人吗？",
+        "answer": "不会。像电话号码和电子邮箱这样的个人信息会受到保护，未经您的许可不会公开显示。"
+      },
+      {
+        "question": "我可以上传照片吗？",
+        "answer": "可以。您可以为资料添加合适的照片。Nusrah 可能会审核照片，以确保其符合平台的规则和标准。"
+      },
+      {
+        "question": "什么是资料认证？",
+        "answer": "认证有助于通过确认用户关键信息的真实性，来提升会员之间的信任与安全感。"
+      },
+      {
+        "question": "Nusrah 能保证我一定能找到伴侣吗？",
+        "answer": "不能。Nusrah 无法保证您一定能结婚或找到特定的伴侣。平台提供的是一个可以相识、沟通并谨慎选择的环境。"
+      },
+      {
+        "question": "如何搜索伴侣？",
+        "answer": "您可以使用以下条件进行搜索：性别、年龄、所在地、婚姻状况、教育程度、职业、宗教信仰程度、生活方式，以及其他关于伴侣的偏好。"
+      },
+      {
+        "question": "我可以联系感兴趣的人吗？",
+        "answer": "可以，前提是双方的资料根据 Nusrah 的系统允许互相沟通。您可以使用平台内部消息功能，无需透露您的电话号码。"
+      },
+      {
+        "question": "我可以屏蔽某人吗？",
+        "answer": "可以。您可以屏蔽不希望联系您的会员。"
+      },
+      {
+        "question": "我可以举报某个资料吗？",
+        "answer": "可以。您可以举报违反 Nusrah 规则的资料、消息或行为。我们的团队可能会调查该举报并采取相应措施。"
+      },
+      {
+        "question": "Nusrah 如何保障我的安全？",
+        "answer": "Nusrah 致力于采用多种安全措施，包括用户认证、举报系统、暂停违规账户，以及保护个人信息。"
+      },
+      {
+        "question": "监护人（Wali）扮演什么角色？",
+        "answer": "对于选择这样做的用户，Nusrah 可能提供一个板块，用于添加监护人（Wali）的信息，以支持在尊重和家庭参与下寻找伴侣的过程。"
+      },
+      {
+        "question": "监护人信息是必填的吗？",
+        "answer": "不是，根据 Nusrah 的政策和系统设置，该板块可能是可选的。"
+      },
+      {
+        "question": "我忘记密码了，该怎么办？",
+        "answer": "在登录页面点击「忘记密码？」，并按照步骤找回您的账户。"
+      },
+      {
+        "question": "我可以修改我的资料信息吗？",
+        "answer": "可以。您可以通过资料设置编辑您的信息，但某些信息可能需要额外验证才能更改。"
+      },
+      {
+        "question": "我可以删除我的账户吗？",
+        "answer": "可以。您可以通过账户设置或联系 Nusrah 客服申请删除您的账户。"
+      },
+      {
+        "question": "Nusrah 是免费的吗？",
+        "answer": "根据可用的会员套餐，Nusrah 可能同时提供免费和付费服务。"
+      },
+      {
+        "question": "如何付款？",
+        "answer": "如果您使用的服务需要付款，Nusrah 可能提供多种支付方式，如移动支付、银行卡或系统支持的其他方式。"
+      },
+      {
+        "question": "付款可以退款吗？",
+        "answer": "退款取决于服务类型、您购买的套餐以及 Nusrah 的退款政策。"
+      },
+      {
+        "question": "Nusrah 允许诈骗或虚假账户吗？",
+        "answer": "不允许。虚假账户、诈骗、欺诈、威胁、骚扰以及滥用平台的行为均违反 Nusrah 的条款。"
+      },
+      {
+        "question": "如果我怀疑某人是骗子，该怎么办？",
+        "answer": "不要向对方汇款或提供您的敏感信息。请立即通过举报系统屏蔽并举报该用户，Nusrah 可能会展开调查。"
+      },
+      {
+        "question": "我可以向其他用户索要钱财吗？",
+        "answer": "不可以。要求或诱导其他用户汇款，尤其是以欺骗方式，可能导致您的账户被暂停或关闭。"
+      },
+      {
+        "question": "我的沟通内容会被监控吗？",
+        "answer": "根据其隐私政策，Nusrah 可能会出于安全、服务运营和防止滥用的需要处理相关信息。"
+      },
+      {
+        "question": "Nusrah 会与他人分享我的信息吗？",
+        "answer": "Nusrah 致力于保护您的个人信息，并依照其隐私政策及适用法律进行处理。"
+      },
+      {
+        "question": "我可以与在 Nusrah 上认识的人见面吗？",
+        "answer": "可以，但建议您采取以下预防措施：确保事先充分沟通、避免汇款，并选择一个安全、知名的地点进行初次见面。"
+      },
+      {
+        "question": "如何联系 Nusrah 客服？",
+        "answer": "如需有关账户、资料、付款、安全方面的帮助，或举报问题，请使用 Nusrah.co.tz 内的「帮助与支持/联系我们」板块。"
+      }
+    ],
+    "safetyNote": {
+      "heading": "🛡️ 您的安全至关重要",
+      "body": "Nusrah 不仅希望将您与某人连接起来，更致力于帮助您以尊重、诚实并以婚姻为目标的方式，开始寻找人生伴侣。切勿将您的密码、验证码（OTP）、银行信息或其他敏感信息透露给任何人。",
+      "linkLabel": "访问安全中心 →"
+    },
+    "contactHeading": "联系我们",
+    "hours": "周一至周日，08:00–22:00",
+    "ratingFrom": "来自1250多名会员",
+    "contactFormHeading": "发送消息",
+    "contactFormSubtitle": "向我们发送您的问题或反馈，我们的团队会尽快回复您。",
+    "contactForm": {
+      "userInfoHeading": "您的信息",
+      "name": "姓名",
+      "email": "电子邮箱",
+      "phone": "电话号码",
+      "phonePlaceholder": "+255 XXX XXX XXX",
+      "categoryHeading": "支持类型",
+      "categorySubheading": "请选择您需要的帮助类型：",
+      "subject": "主题（可选）",
+      "body": "消息内容",
+      "bodyPlaceholder": "请简要描述您的问题，并附上关键细节...",
+      "sensitiveWarning": "请勿发送：密码 • PIN码 • OTP验证码 • 银行卡安全码",
+      "attachmentHeading": "附件——可选",
+      "attachmentUploadLabel": "+ 上传截图/文件",
+      "attachmentHelp": "您可以附上截图以帮助说明问题。",
+      "safetyHeading": "关于安全事项",
+      "safetyBody": "如果您要举报诈骗、威胁、骚扰、虚假资料或危险行为，请同时使用：",
+      "reportUserButton": "🚩 举报用户",
+      "emergencyNote": "如果您正处于紧急人身危险中，请立即向相关部门寻求紧急帮助，而不是等待 Nusrah 客服的回复。",
+      "submit": "发送消息",
+      "submitting": "正在发送...",
+      "success": "谢谢！我们已收到您的消息，将尽快回复您。",
+      "ticketReceivedHeading": "✓ 支持请求已收到",
+      "ticketNumberLabel": "工单编号：",
+      "ticketReceivedBody": "感谢您联系 Nusrah 客服。我们已收到您的请求，团队将审核您提交的信息。",
+      "viewMyRequests": "查看我的支持请求",
+      "genericError": "出现错误",
+      "networkError": "无法连接到服务器，请重试。"
+    },
+    "helpCenter": {
+      "heading": "帮助中心",
+      "intro": "在发送消息之前，您可能可以通过以下方式找到答案：",
+      "faq": "常见问题",
+      "safetyCenter": "安全中心",
+      "terms": "使用条款"
+    },
+    "myRequests": {
+      "title": "我的支持请求",
+      "subtitle": "您发送给 Nusrah 客服的请求历史",
+      "empty": "您还没有向 Nusrah 客服发送过任何请求。",
+      "ticketNumber": "工单",
+      "status": "状态",
+      "statusPending": "等待回复中",
+      "backToMsaada": "返回帮助页面"
+    }
+  },
+  "usalama": {
+    "title": "Nusrah 安全中心",
+    "subtitle": "您的安全至上",
+    "intro": "Nusrah.co.tz 致力于以尊重、私密、诚实和安全的方式，帮助您找到人生伴侣。",
+    "sections": [
+      {
+        "icon": "🛡️",
+        "heading": "保护您的账户",
+        "items": [
+          "使用强度高且独特的密码。",
+          "切勿将您的密码或OTP验证码告诉任何人。",
+          "不要在其他账户上重复使用该密码。",
+          "使用他人设备时请务必退出登录。",
+          "在可用的情况下开启双重验证（2FA）。"
+        ],
+        "note": "Nusrah 客服绝不会向您索取密码。"
+      },
+      {
+        "icon": "✅",
+        "heading": "资料认证",
+        "intro": [
+          "Nusrah 可能会使用手机验证、照片验证和身份验证等方式，以提升资料的可信度。",
+          "已通过认证的资料可能会显示已验证徽章 ✓。"
+        ],
+        "note": "请记住：认证能降低风险，但并不代表此人完全没有恶意。"
+      },
+      {
+        "icon": "🚩",
+        "heading": "警惕诈骗迹象",
+        "intro": [
+          "如果对方出现以下情况，请务必小心："
+        ],
+        "items": [
+          "很快就向您表白爱意。",
+          "要求金钱或经济援助。",
+          "索要您的银行/银行卡信息。",
+          "向您发送您不认识的链接。",
+          "催促您立即离开 Nusrah 到其他平台沟通。",
+          "以不明理由拒绝视频通话或见面。",
+          "索要私密照片或视频。",
+          "编造紧急情况以诱使您汇款。"
+        ],
+        "outro": [
+          "不要仅因为在 Nusrah 上开始聊天就向任何人汇款。感情骗局常常利用浪漫信任，诱使受害者交出钱财或个人信息。（美国网络犯罪投诉中心）"
+        ]
+      },
+      {
+        "icon": "🚫",
+        "heading": "屏蔽与举报",
+        "intro": [
+          "如果您觉得某人不安全：",
+          "屏蔽用户 → 阻止该用户联系您。",
+          "举报用户 → 向 Nusrah 安全团队发送举报。",
+          "您可以举报："
+        ],
+        "items": [
+          "虚假资料",
+          "诈骗",
+          "骚扰",
+          "威胁",
+          "骚扰消息",
+          "冒充身份",
+          "性骚扰",
+          "索要钱财",
+          "可疑链接",
+          "违反 Nusrah 规则的内容。"
+        ],
+        "outro": [
+          "举报和屏蔽是任何交友平台上必不可少的安全功能。（Safety Centre）"
+        ]
+      },
+      {
+        "icon": "🔒",
+        "heading": "保护您的个人信息",
+        "intro": [
+          "初期不要分享："
+        ],
+        "items": [
+          "密码",
+          "OTP验证码",
+          "PIN码",
+          "银行信息",
+          "银行卡号",
+          "您的完整家庭住址",
+          "您的工作地点",
+          "敏感的家庭信息",
+          "个人证件",
+          "您不希望被分享的私密照片/视频。"
+        ],
+        "outro": [
+          "您资料中的信息应尽量保持在保护隐私所需的最低限度。（eSafety Commissioner）"
+        ]
+      },
+      {
+        "icon": "💬",
+        "heading": "在 Nusrah 内部沟通",
+        "intro": [
+          "在您仍处于相互了解阶段时，我们建议您继续使用 Nusrah 消息功能进行沟通。",
+          "这样，在您分享电话号码或转移到其他平台之前，您仍可使用举报、屏蔽等安全工具。"
+        ]
+      },
+      {
+        "icon": "📍",
+        "heading": "位置安全",
+        "intro": [
+          "不要透露您的确切地址，例如「我住在……号房子，……街道，靠近……」。",
+          "请使用较为笼统的信息，如多多马、达累斯萨拉姆、阿鲁沙或姆万扎。",
+          "避免公开您的确切位置。"
+        ]
+      },
+      {
+        "icon": "🤝",
+        "heading": "见面前的准备",
+        "intro": [
+          "如果您决定与某人见面，请做到以下几点："
+        ],
+        "items": [
+          "告知您信任的人。",
+          "分享您要见的人及其资料信息。",
+          "在人多的公共场所见面。",
+          "尽量使用自己的交通工具。",
+          "设定离开的时间。",
+          "见面期间与亲近的人保持联系。",
+          "相信自己的直觉。"
+        ],
+        "ordered": true,
+        "outro": [
+          "如果感觉不对劲，请立即离开。",
+          "安全指南建议告知朋友/家人您的行程，并制定万一情况不对时的离开计划。（eSafety Commissioner）"
+        ]
+      },
+      {
+        "icon": "👨‍👩‍👧",
+        "heading": "家庭/监护人（Wali）支持",
+        "intro": [
+          "由于 Nusrah 专注于婚姻，用户可以根据自己的信仰、文化和具体情况，选择在寻找伴侣的适当阶段让监护人（Wali）、家长或信任的人参与其中。",
+          "目标是：在通往婚姻的道路上，实现更多的透明、尊重与安全。"
+        ]
+      },
+      {
+        "icon": "🚨",
+        "heading": "如果您正处于危险之中",
+        "intro": [
+          "如果有人威胁、跟踪、施压或伤害您："
+        ],
+        "items": [
+          "停止与对方沟通。",
+          "保存任何重要证据。",
+          "在 Nusrah 上屏蔽并举报对方。",
+          "告知您信任的人。",
+          "如果存在紧急人身危险，请联系当地紧急救援部门。"
+        ],
+        "ordered": true,
+        "outro": [
+          "Nusrah 并非紧急服务机构；如遇紧急危险，请向相关部门寻求帮助。（Safety Centre）"
+        ]
+      },
+      {
+        "icon": "📸",
+        "heading": "个人照片与视频",
+        "intro": [
+          "不要发送可能被用来威胁或施压您的照片或视频。",
+          "如果有人威胁要分享您的照片或视频：不要付款，不要发送更多照片，停止沟通，保存证据，并举报该账户。"
+        ]
+      },
+      {
+        "icon": "💰",
+        "heading": "没有所谓的「爱情汇款」",
+        "intro": [
+          "Nusrah 绝不应成为以感情为名互相索要钱财的场所。",
+          "不要因以下理由向网上认识的人汇款："
+        ],
+        "items": [
+          "旅行",
+          "医疗",
+          "机票",
+          "生意",
+          "投资",
+          "紧急情况",
+          "签证",
+          "家庭支持",
+          "结婚承诺。"
+        ]
+      },
+      {
+        "icon": "⚖️",
+        "heading": "尊重原则",
+        "intro": [
+          "每位会员都应秉持：尊重、诚实、隐私、同意、良好品格以及婚姻意向。",
+          "以下行为不被允许："
+        ],
+        "items": [
+          "骚扰",
+          "威胁",
+          "欺骗",
+          "欺诈",
+          "冒充身份",
+          "歧视",
+          "垃圾信息",
+          "向他人施压",
+          "将 Nusrah 用于婚姻以外的目的。"
+        ]
+      }
+    ],
+    "quickActions": {
+      "heading": "快速安全操作",
+      "intro": "如果您遇到问题，请点击：",
+      "items": [
+        {
+          "icon": "🚩",
+          "label": "举报",
+          "body": "举报一名用户。"
+        },
+        {
+          "icon": "🚫",
+          "label": "屏蔽",
+          "body": "阻止某用户联系您。"
+        },
+        {
+          "icon": "🔒",
+          "label": "隐私",
+          "body": "更改您的隐私设置。"
+        },
+        {
+          "icon": "🔑",
+          "label": "账户安全",
+          "body": "更改您的密码并启用双重验证。"
+        },
+        {
+          "icon": "💬",
+          "label": "联系客服",
+          "body": "联系 Nusrah 客服。"
+        }
+      ]
+    },
+    "closing": {
+      "quote": "您的安全比继续一段对话更重要。",
+      "body": "如果感觉不对劲，请相信自己的直觉，停止对话并进行举报。"
+    }
+  },
+  "onboarding": {
+    "common": {
+      "genericError": "出现错误",
+      "networkError": "无法连接到服务器，请重试。",
+      "saved": "已保存 ✓",
+      "submitting": "正在保存...",
+      "save": "保存",
+      "continue": "继续",
+      "back": "返回",
+      "skip": "跳过"
+    },
+    "stepProgress": {
+      "step": "步骤",
+      "of": "/"
+    },
+    "personal": {
+      "pageHeading": "个人详情",
+      "pageSubtitle": "几个简单的步骤，开启您寻找人生伴侣的旅程",
+      "fullName": "全名",
+      "displayNameLabel": "显示名称",
+      "displayNamePlaceholder": "显示在您资料上的名称",
+      "genderLabel": "性别",
+      "genderFemale": "女",
+      "genderMale": "男",
+      "dobLabel": "出生日期",
+      "ageLabel": "年龄",
+      "countryLabel": "国家",
+      "countryPlaceholder": "请选择您的国家",
+      "countrySearchPlaceholder": "搜索国家...",
+      "countryNoResults": "未找到国家",
+      "regionLabel": "居住地（地区）",
+      "regionSelectPlaceholder": "请选择您的地区/城市",
+      "regionInputPlaceholder": "地区/州",
+      "cityLabel": "区/县",
+      "citySelectPlaceholder": "请选择您所在的区",
+      "cityInputPlaceholder": "区/城镇",
+      "maritalStatusLabel": "婚姻状况",
+      "maritalStatusPlaceholder": "请选择您的婚姻状况",
+      "underMinAge": "您必须年满 {minAge} 岁才能使用 Nusrah。"
+    },
+    "religion": {
+      "pageHeading": "宗教详情",
+      "religionLabel": "宗教信仰",
+      "religionPlaceholder": "请选择您的宗教信仰",
+      "madhhabLabel": "教法学派",
+      "madhhabPlaceholder": "请选择您的教法学派",
+      "prayerHabitLabel": "您礼拜吗？",
+      "choosePlaceholder": "请选择",
+      "wearsHijabLabel": "您佩戴希贾布吗？",
+      "quranLevelLabel": "古兰经诵读水平",
+      "quranLevelPlaceholder": "请选择您的水平",
+      "substanceUseLabel": "您饮酒或吸烟吗？"
+    },
+    "life": {
+      "pageHeading": "生活详情",
+      "occupationLabel": "您的职业",
+      "occupationPlaceholder": "请描述您的职业",
+      "educationLevelLabel": "最高学历",
+      "chooseLevelPlaceholder": "请选择您的学历",
+      "heightLabel": "身高（厘米）",
+      "heightPlaceholder": "请选择您的身高",
+      "heightUnit": "厘米",
+      "bodyTypeLabel": "体型",
+      "choosePlaceholder": "请选择",
+      "hasDisabilityLabel": "您是否有任何残疾？",
+      "disabilityTypeLabel": "残疾类型",
+      "disabilityTypePlaceholder": "请选择残疾类型",
+      "skinToneLabel": "肤色",
+      "incomeRangeLabel": "收入（可选）",
+      "chooseRangePlaceholder": "请选择一个区间",
+      "intentionsLabel": "寻找目标",
+      "intentionsHint": "您可以选择多个选项。",
+      "partnerAgeLabel": "期望伴侣年龄",
+      "fromPlaceholder": "从",
+      "toPlaceholder": "至",
+      "toSeparator": "至",
+      "ageRangeInvalid": "最小年龄不能超过最大年龄",
+      "bioLabel": "关于您自己的简短介绍",
+      "bioPlaceholder": "请简要介绍一下您自己、您的目标，以及您希望寻找的伴侣类型..."
+    },
+    "guardian": {
+      "pageHeading": "监护人（Wali）",
+      "pageSubtitle": "可选——您可以添加监护人的信息，以便让其参与其中。",
+      "hasGuardianLabel": "我有监护人",
+      "guardianNameLabel": "监护人姓名",
+      "guardianNamePlaceholder": "监护人全名",
+      "relationshipLabel": "关系",
+      "relationshipPlaceholder": "请选择关系",
+      "guardianPhoneLabel": "监护人电话号码",
+      "guardianPhonePlaceholder": "07XX XXX XXX"
+    },
+    "photo": {
+      "pageHeading": "资料照片",
+      "pageSubtitle": "这些照片将对其他 Nusrah 会员可见。请勿上传不雅照片或他人的照片。",
+      "takePhoto": "拍照",
+      "uploadFromDevice": "从设备上传",
+      "invalidType": "请选择 JPEG、PNG 或 WEBP 格式的照片",
+      "tooLarge": "照片文件过大（最大8MB）",
+      "loadFailed": "无法加载照片，请重试。",
+      "dragHint": "拖动以调整位置，使用滑块进行缩放",
+      "reset": "重置",
+      "useThisPhoto": "使用此照片",
+      "uploading": "正在上传...",
+      "prepareFailed": "无法处理该照片，请重试。",
+      "mainBadge": "主照片",
+      "change": "更换",
+      "deletePhotoAria": "删除照片",
+      "addTile": "添加",
+      "galleryHint": "您的第一张照片将作为主照片展示。您最多还可以再添加 {maxGallery} 张。",
+      "deleteFailed": "无法删除照片，请刷新页面后重试。",
+      "skipForNow": "暂时跳过"
+    }
+  },
+  "wasifuWangu": {
+    "heading": "我的资料",
+    "subtitle": "随时编辑您的资料详情。"
+  },
+  "dashibodi": {
+    "welcome": "欢迎",
+    "subtitle": "以下是您在 Nusrah 上的活动摘要。",
+    "addPhotoChecklist": "添加一张资料照片",
+    "packageLabel": "套餐",
+    "daysRemaining": "剩余 {days} 天",
+    "messagesLabel": "消息",
+    "noMessagesYet": "暂无消息",
+    "likedYouLabel": "喜欢您的人",
+    "upgradeToSeeWho": "升级套餐以查看是谁",
+    "viewAll": "查看全部",
+    "favoritedLabel": "收藏",
+    "savedProfiles": "您收藏的资料",
+    "suggestedHeading": "为您推荐的资料",
+    "viewAllLink": "查看全部"
+  },
+  "wanachama": {
+    "pageHeading": "资料",
+    "pageSubtitle": "发现与您匹配的会员",
+    "tabs": {
+      "browse": "资料",
+      "likedYou": "喜欢您的人",
+      "favorites": "我的收藏"
+    },
+    "browser": {
+      "searchPlaceholder": "搜索会员",
+      "sortRecent": "最新",
+      "sortBestMatch": "最佳匹配",
+      "gridViewAria": "网格视图",
+      "listViewAria": "列表视图",
+      "filtersButton": "筛选",
+      "removeRegionAria": "移除",
+      "viewLimitNote": "根据您的套餐，您每天最多可浏览 {limit} 份资料",
+      "emptyFavorites": "您还没有收藏任何人。",
+      "emptyBrowse": "未找到符合这些筛选条件的会员，请尝试调整筛选条件。",
+      "clearFilters": "清除筛选条件",
+      "loadMore": "加载更多",
+      "loading": "加载中..."
+    },
+    "card": {
+      "newBadge": "新",
+      "onlineAria": "在线",
+      "verifiedTitle": "已验证",
+      "contactLocked": "联系方式已锁定",
+      "seekingPrefix": "寻找：",
+      "sendMessageAria": "发送消息",
+      "addFavoriteAria": "加入收藏",
+      "removeFavoriteAria": "从收藏中移除"
+    },
+    "filterPanel": {
+      "heading": "搜索筛选",
+      "closeAria": "关闭",
+      "ageLabel": "年龄",
+      "regionLabel": "地区",
+      "selectAll": "全选",
+      "deselectAll": "取消全选",
+      "intentionsTitle": "寻找目标",
+      "maritalStatusTitle": "婚姻状况",
+      "madhhabTitle": "教法学派",
+      "hijabTitle": "希贾布",
+      "verifiedOnlyLabel": "仅显示已验证资料",
+      "verifiedOnlyHint": "认证由 Nusrah 团队在审核资料后进行。",
+      "clear": "清除筛选",
+      "apply": "应用筛选"
+    },
+    "detail": {
+      "religionSection": "宗教与信仰实践",
+      "madhhabLabel": "教法学派",
+      "prayerLabel": "礼拜",
+      "quranLabel": "古兰经诵读",
+      "substanceLabel": "烟酒使用情况",
+      "hijabLabel": "希贾布",
+      "lifeSection": "生活",
+      "maritalStatusLabel": "婚姻状况",
+      "occupationLabel": "职业",
+      "educationLabel": "教育程度",
+      "heightLabel": "身高",
+      "heightUnit": "厘米",
+      "bodyTypeLabel": "体型",
+      "skinToneLabel": "肤色",
+      "incomeLabel": "收入",
+      "lookingForSection": "寻找目标",
+      "partnerAgeLabel": "伴侣年龄",
+      "contactLocked": "联系方式已锁定——请升级您的套餐",
+      "sendMessage": "发送消息",
+      "messagePlaceholder": "请写一条礼貌得体的消息...",
+      "send": "发送",
+      "sending": "正在发送...",
+      "cancel": "取消",
+      "messageSent": "消息已发送",
+      "goToMessages": "前往消息",
+      "genericError": "出现错误",
+      "networkError": "无法连接到服务器。",
+      "loadingMore": "正在加载更多资料...",
+      "endOfFeed": "您已浏览完当前所有资料。",
+      "showMoreDetails": "显示更多详情",
+      "hideDetails": "隐藏详情",
+      "upgradePlanLink": "升级您的套餐。"
+    }
+  },
+  "vipendwa": {
+    "heading": "我的收藏",
+    "subtitle": "您收藏的会员"
+  },
+  "wamenipenda": {
+    "heading": "喜欢您的人",
+    "subtitle": "喜欢您的会员",
+    "someoneLiked": "{count} 人喜欢了您的资料",
+    "noOneYet": "还没有人喜欢您的资料",
+    "upgradeHint": "升级您的套餐（白银版或以上）以查看是谁。",
+    "upgradeButton": "升级套餐",
+    "emptyState": "目前还没有人喜欢您。完善您的资料，让自己更加出众。"
+  },
+  "akaunti": {
+    "pageHeading": "我的账户",
+    "welcomePrefix": "欢迎",
+    "subscriptionActivated": "您的套餐已激活。",
+    "addPhotoPrompt": "添加一张资料照片，获得更多关注",
+    "addPhotoButton": "添加照片",
+    "statusActive": "生效中",
+    "noExpiryNote": "（无到期日期）",
+    "changePackageButton": "更改套餐",
+    "subscriptionDurationLabel": "套餐时长",
+    "days30": "30天",
+    "expiryDateLabel": "到期日期",
+    "daysRemainingLabel": "剩余天数",
+    "lastPaymentLabel": "最近付款",
+    "paymentConfirmed": "付款已确认",
+    "paymentPending": "付款处理中",
+    "paymentFailed": "付款失败",
+    "browseMembersHeading": "浏览会员",
+    "browseMembersSubtitle": "查看与您匹配的会员",
+    "goToMembersButton": "浏览会员",
+    "phoneTestHeading": "电话号码（GOLD/PREMIUM）",
+    "phoneTestSubtitle": "根据您的套餐测试电话号码访问权限"
+  },
+  "ujumbe": {
+    "list": {
+      "pageHeading": "消息",
+      "subtitle": "您与其他会员的对话",
+      "emptyState": "您还没有任何对话。请从某位会员的资料页面发送消息以开始对话。",
+      "youPrefix": "您：",
+      "unreadCap": "9+"
+    },
+    "thread": {
+      "emptyThread": "暂无消息，请在下方开始对话。",
+      "messagePlaceholder": "请写一条礼貌得体的消息...",
+      "send": "发送",
+      "genericError": "发生错误",
+      "networkError": "无法连接到服务器。",
+      "upgradePackage": "更改套餐",
+      "cannotReply": "您的套餐不允许回复消息。请升级您的套餐。",
+      "cannotInitiate": "您的套餐不允许发起新的对话。请升级您的套餐。"
+    }
+  },
+  "mipangilio": {
+    "pageHeading": "设置",
+    "subtitle": "管理您的账户与隐私。",
+    "changePasswordTitle": "修改密码",
+    "blockedUsersTitle": "已屏蔽的用户",
+    "deleteAccountTitle": "删除账户",
+    "deleteAccountWarning": "删除账户是永久性的，且无法撤销。",
+    "changePasswordForm": {
+      "hidePasswordAria": "隐藏密码",
+      "showPasswordAria": "显示密码",
+      "passwordsDoNotMatch": "两次输入的新密码不一致",
+      "genericError": "发生错误",
+      "networkError": "无法连接到服务器，请重试。",
+      "currentPasswordLabel": "当前密码",
+      "newPasswordLabel": "新密码",
+      "confirmNewPasswordLabel": "确认新密码",
+      "successMessage": "密码已修改 ✓",
+      "submitting": "正在修改...",
+      "submit": "修改密码"
+    },
+    "blockedUsersList": {
+      "emptyState": "您还没有屏蔽任何人。",
+      "unblocking": "正在取消屏蔽...",
+      "unblock": "取消屏蔽"
+    },
+    "deleteAccountModal": {
+      "genericError": "发生错误",
+      "networkError": "无法连接到服务器，请重试。",
+      "triggerButton": "删除账户",
+      "modalHeading": "删除您的账户",
+      "warning": "此操作无法撤销。您的资料、消息、收藏及所有相关数据都将被永久删除。",
+      "passwordLabel": "您的密码",
+      "confirmationLabelPrefix": "请输入",
+      "confirmationLabelSuffix": "以确认",
+      "cancel": "取消",
+      "deleting": "正在删除...",
+      "confirmDelete": "永久删除账户"
+    },
+    "languageDescription": "为整个应用选择您偏好的语言。"
+  },
+  "ripotiMtumiaji": {
+    "pageHeading": "举报用户",
+    "subtitle": "请通过姓名、城市或资料中的详细信息，搜索您想要举报的用户。",
+    "search": {
+      "genericError": "发生错误",
+      "networkError": "无法连接到服务器，请重试。",
+      "placeholder": "按姓名、城市或描述搜索...",
+      "searching": "正在搜索...",
+      "searchButton": "搜索",
+      "noResults": "未找到该姓名对应的用户。"
+    },
+    "modal": {
+      "triggerButton": "举报用户",
+      "heading": "向 Nusrah 安全团队举报用户",
+      "reportingPrefix": "正在举报：",
+      "viewProfile": "查看资料",
+      "reasonQuestion": "您为什么要举报此用户？",
+      "reasonHint": "请选择适用的原因：",
+      "descriptionLabel": "📝 描述所发生的情况",
+      "descriptionPlaceholder": "请在此处描述问题...",
+      "descriptionHint": "请勿在此处包含密码、PIN码、OTP验证码或其他敏感信息。",
+      "evidenceLabel": "📎 添加证据——可选",
+      "uploadScreenshot": "+ 上传截图",
+      "evidenceHint": "您可以添加对话记录、资料页面的截图，或与举报相关的其他信息。",
+      "blockLabel": "🚫 屏蔽用户",
+      "blockCheckboxLabel": "提交举报后屏蔽该用户",
+      "blockHint": "除非法律或安全需要，否则不会告知该用户是谁举报了他们。",
+      "privacyTitle": "🔐 隐私与安全",
+      "privacyBody": "Nusrah 将依据我们的安全政策、使用条款和隐私政策审核您的举报。提交举报并不意味着该账户会自动被关闭；具体处理将取决于审核结果。",
+      "emergencyTitle": "🚨 如果您正处于紧急危险中",
+      "emergencyBody": "请勿等待 Nusrah 的回复。请立即向您信任的人及相关紧急部门寻求帮助。",
+      "cancel": "取消",
+      "submitting": "正在提交...",
+      "submitButton": "🚩 提交举报",
+      "genericError": "发生错误",
+      "networkError": "无法连接到服务器，请重试。",
+      "successCheckmark": "✓",
+      "successHeading": "举报已收到",
+      "successBody": "感谢您协助维护 Nusrah 社区的安全。我们的团队将审核您的举报并采取适当的措施。",
+      "backToSafety": "返回安全中心",
+      "close": "关闭"
+    }
+  },
+  "mashartiYaMatumizi": {
+    "pageEyebrow": "Nusrah.co.tz",
+    "pageTitle": "使用条款",
+    "pageSubtitle": "以婚姻为导向的婚恋交友平台",
+    "effectiveDate": "生效日期：2026年8月30日 · 最后更新：2026年8月30日",
+    "intro1": "欢迎使用 Nusrah.co.tz（以下简称「Nusrah」「我们」）。Nusrah 是一个在线婚恋交友与介绍平台，旨在帮助真心寻求以结婚为目标的严肃关系的人们，在一个尊重、安全且负责任的环境中，与合适的潜在配偶建立联系。",
+    "intro2": "通过创建账户、访问、浏览或使用 Nusrah.co.tz，即表示您同意受本使用条款（「条款」）的法律约束。如果您不同意本条款，请勿使用 Nusrah。",
+    "footerTagline": "遇见对的人。建立信任。步入婚姻。",
+    "footerBody": "Nusrah 专为以结婚为目标、认真寻求有意义关系的人们而打造。",
+    "sections": [
+      {
+        "heading": "1. Nusrah 的宗旨",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 主要是一个以婚姻为导向的婚恋交友平台。"
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 的宗旨在于："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "连接真心希望结婚的人们。",
+              "促成潜在配偶之间尊重的相识。",
+              "让用户能够创建以婚姻为导向的资料。",
+              "提供搜索和发现合适潜在伴侣的工具。",
+              "促进双方自愿用户之间的沟通。",
+              "倡导负责任、尊重且透明的关系。",
+              "为寻求结婚的人们提供更安全的数字环境。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 并非主要面向随意交往、性关系、娱乐消遣、卖淫、伴游服务或短期关系。"
+          },
+          {
+            "type": "p",
+            "text": "用户应以符合本平台宗旨的真实意图加入。"
+          }
+        ]
+      },
+      {
+        "heading": "2. 使用资格",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "要使用 Nusrah，您必须："
+          },
+          {
+            "type": "ol",
+            "items": [
+              "在您所在司法辖区内，被法律允许使用在线服务。",
+              "符合 Nusrah 及适用法律规定的最低年龄要求。",
+              "提供准确的注册信息。",
+              "拥有真心寻求以结婚为目标的严肃关系的意图。",
+              "未被适用法律禁止使用本服务。",
+              "未经授权不得代表他人创建账户。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 严格属于成人服务。"
+          },
+          {
+            "type": "p",
+            "text": "任何未达到最低允许年龄的人员均禁止创建或维持账户。"
+          }
+        ]
+      },
+      {
+        "heading": "3. 结婚意向",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "由于 Nusrah 是一个以婚姻为导向的平台，用户应诚实表达自己的真实意图。"
+          },
+          {
+            "type": "p",
+            "text": "您不得："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "在实际意图并非如此的情况下，假装以结婚为目的。",
+              "将 Nusrah 主要用于随意性关系。",
+              "操纵用户建立情感或经济关系。",
+              "在违反本条款的情况下，出于娱乐或试探目的维持资料。",
+              "在婚姻意向方面误导他人。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 无法保证每位用户都拥有真实的结婚意图。用户有责任在做出个人决定前，运用合理判断并核实相关信息。"
+          }
+        ]
+      },
+      {
+        "heading": "4. 用户账户",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "您可能需要创建账户才能使用某些功能。"
+          },
+          {
+            "type": "p",
+            "text": "您同意："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "提供真实的信息。",
+              "对您的登录凭证保密。",
+              "仅维持 Nusrah 所允许的账户数量。",
+              "在信息发生变化时及时更新。",
+              "如怀疑账户被未经授权访问，及时通知 Nusrah。",
+              "对通过您账户发生的活动承担责任。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "您不得出售、出租、转让您的账户或将其交给他人。"
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 可能会暂停或终止包含虚假、误导性、欺诈性或滥用性信息的账户。"
+          }
+        ]
+      },
+      {
+        "heading": "5. 资料信息",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "用户可能可以提供以下信息："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "姓名或偏好使用的名称。",
+              "年龄。",
+              "性别。",
+              "所在地。",
+              "教育程度。",
+              "职业。",
+              "家庭信息。",
+              "婚姻状况。",
+              "自愿提供的宗教或文化偏好。",
+              "对婚姻的期望。",
+              "生活方式偏好。",
+              "照片。",
+              "个人简介。",
+              "对伴侣的偏好。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "您有责任确保您发布的信息准确且恰当。"
+          },
+          {
+            "type": "p",
+            "text": "您不得冒充他人身份。"
+          },
+          {
+            "type": "p",
+            "text": "未经适当授权，您不得上传他人的照片或个人信息。"
+          }
+        ]
+      },
+      {
+        "heading": "6. 婚姻状况",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "当平台要求提供此类信息时，用户必须准确披露其婚姻状况。"
+          },
+          {
+            "type": "p",
+            "text": "您不得虚假声称自己为："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "单身；",
+              "离异；",
+              "丧偶；",
+              "分居；或",
+              "其他可结婚状态。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "如果 Nusrah 提供婚姻状况验证功能，用户同意提供真实信息，并在法律允许的情况下提供相应的证明文件。"
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 保留在婚姻状况相关重要信息看似欺诈或误导的情况下，限制或删除相关账户的权利。"
+          }
+        ]
+      },
+      {
+        "heading": "7. 身份验证",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 可能提供可选或强制的身份验证系统。"
+          },
+          {
+            "type": "p",
+            "text": "验证可能包括："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "手机验证；",
+              "电子邮箱验证；",
+              "国民身份证件；",
+              "护照或其他合法身份证件；",
+              "自拍或照片验证；",
+              "其他适当的验证方式。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "验证并不构成对某人安全、诚实、经济上负责任、单身、匹配或适合结婚的保证。"
+          },
+          {
+            "type": "p",
+            "text": "用户必须独立行使合理的谨慎。"
+          }
+        ]
+      },
+      {
+        "heading": "8. 用户之间的沟通",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 可能提供："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "私信功能；",
+              "配对请求；",
+              "兴趣提醒；",
+              "语音或视频通信；",
+              "介绍功能；",
+              "匹配度工具；",
+              "屏蔽与举报工具。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "沟通必须保持尊重。"
+          },
+          {
+            "type": "p",
+            "text": "您不得利用 Nusrah 发送："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "威胁；",
+              "骚扰；",
+              "仇恨言论；",
+              "性虐待内容；",
+              "不受欢迎的性内容；",
+              "敲诈勒索；",
+              "欺诈请求；",
+              "垃圾信息；",
+              "恶意软件；",
+              "反复不受欢迎的信息。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "用户可以随时屏蔽或举报其他用户。"
+          }
+        ]
+      },
+      {
+        "heading": "9. 禁止行为",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "您不得将 Nusrah 用于："
+          },
+          {
+            "type": "subheading",
+            "text": "9.1 欺诈"
+          },
+          {
+            "type": "p",
+            "text": "您不得为获取经济、个人或其他非法利益而欺骗用户。"
+          },
+          {
+            "type": "subheading",
+            "text": "9.2 金融诈骗"
+          },
+          {
+            "type": "p",
+            "text": "您不得利用恋爱或婚姻关系，通过欺骗手段索取金钱、贷款、礼物、投资、加密货币、移动支付转账或其他经济援助。"
+          },
+          {
+            "type": "subheading",
+            "text": "9.3 冒充身份"
+          },
+          {
+            "type": "p",
+            "text": "您不得假装成他人、组织、公众人物或机构。"
+          },
+          {
+            "type": "subheading",
+            "text": "9.4 性剥削"
+          },
+          {
+            "type": "p",
+            "text": "您不得将 Nusrah 用于卖淫、性剥削、人口贩卖或其他非法性活动。"
+          },
+          {
+            "type": "subheading",
+            "text": "9.5 骚扰"
+          },
+          {
+            "type": "p",
+            "text": "您不得跟踪、威胁、恐吓、勒索、羞辱他人，或在对方要求停止后仍反复联系。"
+          },
+          {
+            "type": "subheading",
+            "text": "9.6 露骨内容"
+          },
+          {
+            "type": "p",
+            "text": "您不得上传或传播非法、剥削性或露骨的性内容。"
+          },
+          {
+            "type": "subheading",
+            "text": "9.7 垃圾信息"
+          },
+          {
+            "type": "p",
+            "text": "您不得利用 Nusrah 散布未经请求的广告、传销、欺诈性优惠或群发消息。"
+          },
+          {
+            "type": "subheading",
+            "text": "9.8 违法活动"
+          },
+          {
+            "type": "p",
+            "text": "您不得利用 Nusrah 从事或协助任何违法活动。"
+          },
+          {
+            "type": "p",
+            "text": "在法律要求或允许的情况下，Nusrah 可能会将涉嫌犯罪行为报告给相关部门。"
+          }
+        ]
+      },
+      {
+        "heading": "10. 财务安全",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 强烈建议用户不要仅因恋爱或婚姻关系，而向网上认识的人汇款。"
+          },
+          {
+            "type": "p",
+            "text": "当对方出现以下情况时，用户应特别谨慎："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "声称遇到紧急情况；",
+              "要求提供旅行费用；",
+              "要求提供医疗费用；",
+              "要求支付签证费用；",
+              "要求提供投资资金；",
+              "要求进行移动支付转账；",
+              "要求进行银行转账；",
+              "承诺以经济援助换取婚姻；",
+              "威胁若不汇款就结束关系。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 不保证任何用户的财务诚信。"
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 对因用户之间交易而产生的经济损失不承担责任。"
+          }
+        ]
+      },
+      {
+        "heading": "11. 线下见面",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 鼓励用户在与网上认识的人见面之前采取适当的预防措施。"
+          },
+          {
+            "type": "p",
+            "text": "用户应考虑："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "在见面前进行充分沟通。",
+              "核实对方的身份。",
+              "告知信任的家人或朋友。",
+              "在公共场所见面。",
+              "使用独立的交通方式。",
+              "避免分享不必要的财务信息。",
+              "避免汇款。",
+              "如感到不安全，立即离开。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "用户之间的见面风险自负。"
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 不保证任何用户的行为、身份、意图或安全性。"
+          }
+        ]
+      },
+      {
+        "heading": "12. 家庭、监护人及婚姻参与",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 认可，根据用户的信仰、文化和具体情况，婚姻决定可能会涉及家庭、监护人、宗教领袖或其他信任人士。"
+          },
+          {
+            "type": "p",
+            "text": "在适当情况下，用户可以选择让以下人员参与："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "父母；",
+              "监护人；",
+              "家庭成员；",
+              "宗教领袖；",
+              "婚姻顾问；",
+              "其他信任人士。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 可能提供可选功能，旨在促进负责任的家庭或监护人参与。"
+          },
+          {
+            "type": "p",
+            "text": "然而，Nusrah 不对某段特定婚姻在法律或宗教上的有效性作出判定。"
+          }
+        ]
+      },
+      {
+        "heading": "13. 尊重与尊严",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "所有用户必须以尊严和尊重对待其他用户。"
+          },
+          {
+            "type": "p",
+            "text": "禁止歧视、羞辱、威胁、辱骂性语言、欺凌、骚扰和恐吓。"
+          },
+          {
+            "type": "p",
+            "text": "用户必须尊重他人的："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "个人界限；",
+              "隐私；",
+              "决定；",
+              "信仰；",
+              "个人情况；",
+              "拒绝沟通的权利；",
+              "结束沟通的权利。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "用户不对另一位用户负有建立关系、见面、结婚或回复的义务。"
+          }
+        ]
+      },
+      {
+        "heading": "14. 照片与内容",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "您对合法上传至 Nusrah 的内容保留所有权。"
+          },
+          {
+            "type": "p",
+            "text": "通过上传内容，您授予 Nusrah 为提供服务所需的有限许可，用以托管、展示、存储、处理和传递该内容。"
+          },
+          {
+            "type": "p",
+            "text": "您必须拥有上传该内容的权利。"
+          },
+          {
+            "type": "p",
+            "text": "您不得上传："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "未经许可的他人私人照片；",
+              "虚假身份证件；",
+              "诽谤性材料；",
+              "非法内容；",
+              "涉及儿童剥削的内容；",
+              "旨在骚扰或威胁他人的内容。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 可能会删除违反本条款或适用法律的内容。"
+          }
+        ]
+      },
+      {
+        "heading": "15. 隐私与个人数据",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 可能会收集并处理提供其服务所需的个人信息。"
+          },
+          {
+            "type": "p",
+            "text": "由于婚恋平台可能涉及敏感的个人信息，Nusrah 将建立适当的措施以保护用户信息。"
+          },
+          {
+            "type": "p",
+            "text": "个人数据的处理将受 Nusrah 隐私政策以及适用的坦桑尼亚数据保护相关要求约束，包括2022年《个人数据保护法》。"
+          },
+          {
+            "type": "p",
+            "text": "用户应仔细考虑其公开披露的信息。"
+          },
+          {
+            "type": "p",
+            "text": "请勿发布以下敏感信息："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "密码；",
+              "PIN码；",
+              "银行凭证；",
+              "移动支付PIN码；",
+              "个人身份证号码；",
+              "安全代码；",
+              "机密文件。"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "16. 位置信息",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "在用户允许的情况下，Nusrah 可能会使用位置信息来提供相关的匹配功能。"
+          },
+          {
+            "type": "p",
+            "text": "除非以下情况，否则 Nusrah 不应公开披露用户的精确位置："
+          },
+          {
+            "type": "ol",
+            "items": [
+              "用户已明确选择披露该信息；或",
+              "法律要求或允许披露。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "用户应避免公开发布其确切的居住地址。"
+          }
+        ]
+      },
+      {
+        "heading": "17. 匹配系统",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 可能会利用用户提供的信息来推荐潜在的匹配对象。"
+          },
+          {
+            "type": "p",
+            "text": "匹配可能会考虑以下因素："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "年龄；",
+              "所在地；",
+              "婚姻目标；",
+              "教育程度；",
+              "职业；",
+              "兴趣爱好；",
+              "生活方式；",
+              "自愿提供的宗教或文化偏好；",
+              "家庭偏好；",
+              "其他匹配相关信息。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "匹配推荐并不构成对匹配度、适合性、品格或婚姻成功的保证。"
+          }
+        ]
+      },
+      {
+        "heading": "18. 不保证结婚",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 提供婚恋匹配及沟通服务。"
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 不保证："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "您会找到配偶；",
+              "某个特定的匹配对象会回应您；",
+              "某段关系会成功；",
+              "某段关系会以结婚告终；",
+              "用户提供的信息完全准确；",
+              "用户在经济上是负责任的；",
+              "某用户适合您。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "婚姻决定完全取决于相关个人之间。"
+          }
+        ]
+      },
+      {
+        "heading": "19. 安全举报",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "我们鼓励用户举报可疑或有害行为。"
+          },
+          {
+            "type": "p",
+            "text": "举报内容可能涉及："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "虚假资料；",
+              "冒充身份；",
+              "欺诈；",
+              "金融诈骗；",
+              "骚扰；",
+              "威胁；",
+              "性剥削；",
+              "未成年用户；",
+              "被盗用的照片；",
+              "虚假的婚姻状况；",
+              "其他违反本条款的行为。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 可能会对举报进行调查，并可能采取适当措施，包括："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "警告用户；",
+              "限制账户；",
+              "删除内容；",
+              "暂停账户；",
+              "永久终止账户；",
+              "在法律允许的情况下保留相关信息；",
+              "在法律要求或允许的情况下向相关部门报告有关事项。"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "20. 屏蔽功能",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "用户可能被赋予屏蔽其他用户的功能。"
+          },
+          {
+            "type": "p",
+            "text": "当您屏蔽某人时，Nusrah 可能会限制账户之间的沟通或互动。"
+          },
+          {
+            "type": "p",
+            "text": "屏蔽并不必然阻止 Nusrah 为了安全、法律合规或调查目的而处理必要的信息。"
+          }
+        ]
+      },
+      {
+        "heading": "21. 账户暂停与终止",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "如果 Nusrah 有合理理由相信用户存在以下情况，可能会暂停或终止其账户："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "违反本条款；",
+              "提供虚假信息；",
+              "从事欺诈行为；",
+              "骚扰其他用户；",
+              "造成安全风险；",
+              "滥用平台；",
+              "从事违法活动；",
+              "试图规避平台安全机制；",
+              "创建多个未经授权的账户；",
+              "将平台用于与 Nusrah 使命不符的目的。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "在遵守任何适用的法律或合同义务的前提下，用户也可以随时关闭其账户。"
+          }
+        ]
+      },
+      {
+        "heading": "22. 付费服务与支付",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 可能同时提供免费和付费服务。"
+          },
+          {
+            "type": "p",
+            "text": "付费服务可能包括："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "尊享会员资格；",
+              "增强的资料曝光度；",
+              "高级搜索功能；",
+              "额外的沟通功能；",
+              "认证服务；",
+              "匹配服务；",
+              "其他尊享功能。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "在购买付费服务之前，用户将被告知适用的价格及支付条款。"
+          },
+          {
+            "type": "p",
+            "text": "除非另有说明，支付仅为获取相关数字服务的访问权限，并不构成对匹配或婚姻的保证。"
+          },
+          {
+            "type": "p",
+            "text": "退款将受 Nusrah 适用的退款政策及强制性消费者保护要求约束。"
+          }
+        ]
+      },
+      {
+        "heading": "23. 第三方服务",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 可能会集成以下第三方服务："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "支付服务提供商；",
+              "短信服务提供商；",
+              "电子邮件服务；",
+              "身份验证服务；",
+              "托管服务提供商；",
+              "分析服务；",
+              "通信服务。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "第三方服务可能有其自己的条款和隐私政策。"
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 对第三方独立运营的服务不承担责任。"
+          }
+        ]
+      },
+      {
+        "heading": "24. 知识产权",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 的名称、标志、网站设计、软件、图形、文本、商标及其他平台资料，可能归 Nusrah 所有或已获得授权许可。"
+          },
+          {
+            "type": "p",
+            "text": "您不得："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "复制本平台；",
+              "未经授权复制 Nusrah 品牌；",
+              "在禁止的情况下对平台进行逆向工程；",
+              "出售或再分发 Nusrah 的内容；",
+              "未经许可使用 Nusrah 的商标。"
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "25. 平台可用性",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 将尽合理努力维持平台的可用性和安全性。"
+          },
+          {
+            "type": "p",
+            "text": "但是，Nusrah 不保证平台将始终："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "可用；",
+              "无中断运行；",
+              "完全无错误；",
+              "完全安全；",
+              "不受恶意攻击。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "维护、技术故障、安全事件以及超出 Nusrah 合理控制范围的情况，可能会暂时影响本服务。"
+          }
+        ]
+      },
+      {
+        "heading": "26. 用户责任",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "您对自己的决定和互动负责。"
+          },
+          {
+            "type": "p",
+            "text": "在以下行为之前，您应独立核实重要信息："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "开始一段严肃的关系；",
+              "分享敏感信息；",
+              "汇款；",
+              "出行与他人见面；",
+              "将某人介绍给您的家人；",
+              "订婚；",
+              "结婚。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 是一个婚恋匹配平台，不作为任何用户的担保人、监护人、财务顾问、婚姻登记员或代表。"
+          }
+        ]
+      },
+      {
+        "heading": "27. 责任限制",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "在适用法律允许的最大范围内，Nusrah 对因以下原因造成的损失不承担责任："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "用户之间的关系；",
+              "用户提供的虚假信息；",
+              "用户实施的金融诈骗；",
+              "用户做出的个人决定；",
+              "用户之间的见面；",
+              "婚姻或关系结果；",
+              "用户生成的内容；",
+              "第三方服务；",
+              "其他用户未经授权的行为。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "本条款中的任何内容均不排除依据适用法律不可合法排除的责任。"
+          }
+        ]
+      },
+      {
+        "heading": "28. 赔偿",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "在法律允许的范围内，您同意对因您非法使用 Nusrah、违反本条款、侵犯他人权利或滥用平台而产生的索赔、损失或责任承担责任。"
+          }
+        ]
+      },
+      {
+        "heading": "29. 法律合规",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "用户在使用 Nusrah 时必须遵守适用的法律法规。"
+          },
+          {
+            "type": "p",
+            "text": "Nusrah 将依照适用的坦桑尼亚法律及其他适用法律要求运营其服务。"
+          },
+          {
+            "type": "p",
+            "text": "这包括适用于个人数据保护和网络相关犯罪的要求。坦桑尼亚2022年《个人数据保护法》规定了个人数据收集与处理的相关要求，而《网络犯罪法》则涉及与计算机系统及信息通信技术相关的犯罪行为。"
+          }
+        ]
+      },
+      {
+        "heading": "30. 本条款的变更",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "Nusrah 可能会不时更新本条款。"
+          },
+          {
+            "type": "p",
+            "text": "当发生重大变更时，Nusrah 可能会通过网站、应用程序、电子邮件或其他适当的沟通方式提供合理的通知。"
+          },
+          {
+            "type": "p",
+            "text": "在遵守适用法律的前提下，您在更新条款生效日期后继续使用 Nusrah，即表示您接受修订后的条款。"
+          }
+        ]
+      },
+      {
+        "heading": "31. 适用法律",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "本条款将根据坦桑尼亚联合共和国的适用法律进行解释，并受适用的司法管辖要求约束。"
+          },
+          {
+            "type": "p",
+            "text": "任何争议，在合理可行的情况下，应首先通过善意沟通及 Nusrah 可提供的投诉解决流程加以处理。"
+          },
+          {
+            "type": "p",
+            "text": "本条款中的任何内容均不妨碍用户行使适用法律赋予的权利。"
+          }
+        ]
+      },
+      {
+        "heading": "32. 联系我们",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "如对本条款有任何疑问、投诉、安全举报或请求，用户可通过以下方式联系 Nusrah："
+          },
+          {
+            "type": "contact",
+            "website": "https://nusrah.co.tz",
+            "email": "msaada@nusrah.co.tz",
+            "phone": "+255 700 000 000（WhatsApp）"
+          }
+        ]
+      },
+      {
+        "heading": "33. 用户确认",
+        "blocks": [
+          {
+            "type": "p",
+            "text": "通过选择「我同意」、创建账户、访问或使用 Nusrah.co.tz，您确认："
+          },
+          {
+            "type": "ul",
+            "items": [
+              "我已阅读并理解本使用条款。",
+              "我符合适用的最低年龄要求。",
+              "我使用 Nusrah 的目的是真诚地以结婚为导向。",
+              "据我所知，我提供的信息真实准确。",
+              "我理解 Nusrah 不保证婚姻的达成或其他用户的行为表现。",
+              "我理解我不得将 Nusrah 用于欺诈、骚扰、剥削或其他非法目的。",
+              "我同意尊重其他用户的隐私、尊严与决定。",
+              "我理解在与其他用户沟通或见面时，我有责任保持合理的谨慎。"
+            ]
+          },
+          {
+            "type": "p",
+            "text": "继续使用即表示您同意本使用条款。"
+          }
+        ]
+      }
+    ],
+    "contactWebsiteLabel": "网站",
+    "contactEmailLabel": "电子邮箱",
+    "contactPhoneLabel": "电话"
+  },
+  "malipo": {
+    "membershipHeading": "会员套餐——第1个月",
+    "secureNotice": "您将被引导至由 Selcom 运营的安全结账页面。",
+    "payButton": "继续付款",
+    "submitting": "正在准备付款...",
+    "genericError": "发生错误，请重试。",
+    "networkError": "无法连接到服务器，请重试。",
+    "pendingSetupNotice": "移动支付功能正在进行最终配置，一旦可用我们将立即通知您。",
+    "statusPaidHeading": "付款完成！",
+    "statusPaidBody": "您的套餐已激活，尽情享受新功能吧。",
+    "statusPaidCta": "前往账户",
+    "statusPendingHeading": "正在确认您的付款",
+    "statusPendingBody": "这可能需要一点时间，请稍后刷新此页面。",
+    "statusPendingCta": "刷新",
+    "statusCancelledHeading": "付款已取消",
+    "statusCancelledBody": "您尚未完成付款，您可以随时重试。",
+    "statusCancelledCta": "重试"
+  }
+}

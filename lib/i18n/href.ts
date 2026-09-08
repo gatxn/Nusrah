@@ -1,4 +1,4 @@
-const LOCALE_PREFIXES = ["sw", "ar"] as const;
+const LOCALE_PREFIXES = ["sw", "ar", "fr", "zh"] as const;
 
 function prefixFromPathname(pathname: string): string {
   const seg = pathname.split("/")[1];

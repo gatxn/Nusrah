@@ -1,7 +1,7 @@
 import { locale } from "next/root-params";
 import { notFound } from "next/navigation";
 
-export const LOCALES = ["sw", "en", "ar"] as const;
+export const LOCALES = ["sw", "en", "ar", "fr", "zh"] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = "en";
 export const RTL_LOCALES: readonly Locale[] = ["ar"];
@@ -18,6 +18,8 @@ const dictionaries = {
   sw: () => import("./dictionaries/sw.json").then((m) => m.default),
   en: () => import("./dictionaries/en.json").then((m) => m.default),
   ar: () => import("./dictionaries/ar.json").then((m) => m.default),
+  fr: () => import("./dictionaries/fr.json").then((m) => m.default),
+  zh: () => import("./dictionaries/zh.json").then((m) => m.default),
 };
 
 export type Dictionary = Awaited<ReturnType<(typeof dictionaries)["sw"]>>;

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const LOCALES = ["sw", "ar"] as const;
+const LOCALES = ["sw", "ar", "fr", "zh"] as const;
 const DEFAULT_LOCALE = "en";
 
 // English is the default a first-time visitor sees (unprefixed, rewritten

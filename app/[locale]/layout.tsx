@@ -6,12 +6,12 @@ import "../globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-sans",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
 const poppins = Poppins({
   variable: "--font-heading",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["500", "600", "700"],
 });
 

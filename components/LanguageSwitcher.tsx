@@ -5,8 +5,14 @@ import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { swapLocale } from "@/lib/i18n/href";
 import type { Locale } from "@/app/[locale]/dictionaries";
 
-const NAMES: Record<Locale, string> = { sw: "Kiswahili", en: "English", ar: "العربية" };
-const ORDER: Locale[] = ["en", "sw", "ar"];
+const NAMES: Record<Locale, string> = {
+  sw: "Kiswahili",
+  en: "English",
+  ar: "العربية",
+  fr: "Français",
+  zh: "中文",
+};
+const ORDER: Locale[] = ["en", "sw", "ar", "fr", "zh"];
 
 function Select({ currentLocale, label }: { currentLocale: Locale; label: string }) {
   return (
