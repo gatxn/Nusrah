@@ -47,6 +47,7 @@ export default async function MemberDetailPage({
           initialProfile={profile}
           initialGalleryPhotoIds={photos.map((p) => p.id)}
           initialFavorited={!!favorite}
+          viewerTier={tier}
           dict={dict.wanachama.detail}
           cardDict={dict.wanachama.card}
           labels={dict.common.labels}

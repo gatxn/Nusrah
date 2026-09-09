@@ -419,7 +419,9 @@
       "invalidCurrentPassword": "Le mot de passe actuel est incorrect",
       "invalidPassword": "Mot de passe incorrect",
       "paymentGatewayError": "Une erreur de passerelle de paiement s'est produite. Veuillez réessayer plus tard.",
-      "emailRequiredForPayment": "Veuillez ajouter une adresse e-mail à votre compte avant de payer."
+      "emailRequiredForPayment": "Veuillez ajouter une adresse e-mail à votre compte avant de payer.",
+      "callAlreadyInProgress": "Vous êtes déjà en appel",
+      "callServiceNotConfigured": "Les appels ne sont pas disponibles pour le moment"
     }
   },
   "validation": {
@@ -1176,7 +1178,9 @@
       "endOfFeed": "Vous avez atteint la fin de la liste pour le moment.",
       "showMoreDetails": "Afficher plus de détails",
       "hideDetails": "Masquer les détails",
-      "upgradePlanLink": "Améliorez votre forfait."
+      "upgradePlanLink": "Améliorez votre forfait.",
+      "voiceCallAria": "Appel vocal",
+      "videoCallAria": "Appel vidéo"
     }
   },
   "vipendwa": {
@@ -1231,8 +1235,29 @@
       "networkError": "Échec de la connexion au serveur.",
       "upgradePackage": "Changer de forfait",
       "cannotReply": "Votre forfait ne permet pas de répondre aux messages. Améliorez votre forfait.",
-      "cannotInitiate": "Votre forfait ne permet pas de démarrer de nouvelles conversations. Améliorez votre forfait."
+      "cannotInitiate": "Votre forfait ne permet pas de démarrer de nouvelles conversations. Améliorez votre forfait.",
+      "voiceCallAria": "Appel vocal",
+      "videoCallAria": "Appel vidéo"
     }
+  },
+  "calls": {
+    "genericError": "Une erreur est survenue",
+    "networkError": "Échec de la connexion au serveur.",
+    "outgoingHeading": "Appel en cours...",
+    "incomingVoiceHeading": "Appel vocal entrant",
+    "incomingVideoHeading": "Appel vidéo entrant",
+    "connecting": "Connexion en cours...",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "cancel": "Annuler",
+    "endCall": "Terminer l'appel",
+    "mute": "Couper le micro",
+    "unmute": "Activer le micro",
+    "cameraOn": "Activer la caméra",
+    "cameraOff": "Désactiver la caméra",
+    "callEnded": "Appel terminé",
+    "callDeclined": "Appel refusé",
+    "callMissed": "Appel manqué"
   },
   "mipangilio": {
     "pageHeading": "Paramètres",

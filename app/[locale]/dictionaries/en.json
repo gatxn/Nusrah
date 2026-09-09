@@ -419,7 +419,9 @@
       "invalidCurrentPassword": "Current password is incorrect",
       "invalidPassword": "Password is incorrect",
       "paymentGatewayError": "A payment gateway error occurred. Please try again later.",
-      "emailRequiredForPayment": "Please add an email address to your account before paying."
+      "emailRequiredForPayment": "Please add an email address to your account before paying.",
+      "callAlreadyInProgress": "You're already in a call",
+      "callServiceNotConfigured": "Calling isn't available right now"
     }
   },
   "validation": {
@@ -1176,7 +1178,9 @@
       "endOfFeed": "You have reached the end for now.",
       "showMoreDetails": "Show More Details",
       "hideDetails": "Hide Details",
-      "upgradePlanLink": "Upgrade your plan."
+      "upgradePlanLink": "Upgrade your plan.",
+      "voiceCallAria": "Voice Call",
+      "videoCallAria": "Video Call"
     }
   },
   "vipendwa": {
@@ -1231,8 +1235,29 @@
       "networkError": "Failed to connect to the server.",
       "upgradePackage": "Change Plan",
       "cannotReply": "Your plan doesn't allow replying to messages. Upgrade your plan.",
-      "cannotInitiate": "Your plan doesn't allow starting new conversations. Upgrade your plan."
+      "cannotInitiate": "Your plan doesn't allow starting new conversations. Upgrade your plan.",
+      "voiceCallAria": "Voice Call",
+      "videoCallAria": "Video Call"
     }
+  },
+  "calls": {
+    "genericError": "Something went wrong",
+    "networkError": "Failed to connect to the server.",
+    "outgoingHeading": "Calling...",
+    "incomingVoiceHeading": "Incoming voice call",
+    "incomingVideoHeading": "Incoming video call",
+    "connecting": "Connecting...",
+    "accept": "Accept",
+    "decline": "Decline",
+    "cancel": "Cancel",
+    "endCall": "End Call",
+    "mute": "Mute",
+    "unmute": "Unmute",
+    "cameraOn": "Turn On Camera",
+    "cameraOff": "Turn Off Camera",
+    "callEnded": "Call ended",
+    "callDeclined": "Call declined",
+    "callMissed": "Call missed"
   },
   "mipangilio": {
     "pageHeading": "Settings",

@@ -40,6 +40,9 @@ model User {
   blocksReceived   Block[]  @relation("BlocksReceived")
   reportsFiled     Report[] @relation("ReportsFiled")
   reportsReceived  Report[] @relation("ReportsReceived")
+
+  callsInitiated Call[] @relation("CallsInitiated")
+  callsReceived  Call[] @relation("CallsReceived")
 }
 
 // gender: "MALE" | "FEMALE"
@@ -214,6 +217,26 @@ model Message {
 
   @@index([senderId, receiverId])
   @@index([receiverId, isRead])
+}
+
+// type: "VOICE" | "VIDEO" | status: "RINGING" | "ACCEPTED" | "DECLINED" | "ENDED" | "MISSED"
+// channelName is the Agora channel both parties join once ACCEPTED — unique
+// per call so a stale/reused token can never bleed into a different call.
+model Call {
+  id          String    @id @default(cuid())
+  callerId    String
+  caller      User      @relation("CallsInitiated", fields: [callerId], references: [id], onDelete: Cascade)
+  calleeId    String
+  callee      User      @relation("CallsReceived", fields: [calleeId], references: [id], onDelete: Cascade)
+  type        String
+  channelName String    @unique
+  status      String    @default("RINGING")
+  createdAt   DateTime  @default(now())
+  respondedAt DateTime?
+  endedAt     DateTime?
+
+  @@index([calleeId, status])
+  @@index([callerId, status])
 }
 
 // purpose: "REGISTER" | "LOGIN"

@@ -4,12 +4,16 @@ import { useState } from "react";
 import { ChatIcon } from "@/components/icons";
 import FavoriteButton from "@/components/wanachama/FavoriteButton";
 import ReportUserModal from "@/components/wanachama/ReportUserModal";
+import CallButton from "@/components/calls/CallButton";
 import LocaleLink from "@/components/LocaleLink";
+import { hasCapability, type Tier } from "@/lib/tiers";
 import type { Dictionary } from "@/app/[locale]/dictionaries";
 
 export default function MemberDetailActions({
   userId,
   userName,
+  userHasPhoto,
+  viewerTier,
   initialFavorited,
   dict,
   cardLabels,
@@ -18,6 +22,8 @@ export default function MemberDetailActions({
 }: {
   userId: string;
   userName: string;
+  userHasPhoto: boolean;
+  viewerTier: Tier;
   initialFavorited: boolean;
   dict: Dictionary["wanachama"]["detail"];
   cardLabels: Pick<Dictionary["wanachama"]["card"], "addFavoriteAria" | "removeFavoriteAria">;
@@ -64,6 +70,22 @@ export default function MemberDetailActions({
     <div className="mt-5">
       <div className="flex gap-3">
         <FavoriteButton favoritedUserId={userId} initialFavorited={initialFavorited} labels={cardLabels} />
+        <CallButton
+          calleeId={userId}
+          calleeName={userName}
+          calleeHasPhoto={userHasPhoto}
+          type="VOICE"
+          disabled={!hasCapability(viewerTier, "canVoiceCall")}
+          ariaLabel={dict.voiceCallAria}
+        />
+        <CallButton
+          calleeId={userId}
+          calleeName={userName}
+          calleeHasPhoto={userHasPhoto}
+          type="VIDEO"
+          disabled={!hasCapability(viewerTier, "canVideoCall")}
+          ariaLabel={dict.videoCallAria}
+        />
         {!composing && (
           <button
             type="button"

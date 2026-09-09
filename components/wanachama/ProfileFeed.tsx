@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import MemberDetailCard from "@/components/wanachama/MemberDetailCard";
 import type { SerializedProfile } from "@/lib/profiles";
+import type { Tier } from "@/lib/tiers";
 import type { Dictionary } from "@/app/[locale]/dictionaries";
 
 type CardEntry = {
@@ -15,6 +16,7 @@ export default function ProfileFeed({
   initialProfile,
   initialGalleryPhotoIds,
   initialFavorited,
+  viewerTier,
   dict,
   cardDict,
   labels,
@@ -24,6 +26,7 @@ export default function ProfileFeed({
   initialProfile: SerializedProfile;
   initialGalleryPhotoIds: string[];
   initialFavorited: boolean;
+  viewerTier: Tier;
   dict: Dictionary["wanachama"]["detail"];
   cardDict: Dictionary["wanachama"]["card"];
   labels: Dictionary["common"]["labels"];
@@ -93,6 +96,7 @@ export default function ProfileFeed({
           profile={profile}
           initialGalleryPhotoIds={galleryPhotoIds}
           initialFavorited={favorited}
+          viewerTier={viewerTier}
           dict={dict}
           cardDict={cardDict}
           labels={labels}

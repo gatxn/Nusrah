@@ -126,6 +126,33 @@ export function VideoIcon({ className = base }: IconProps) {
   );
 }
 
+export function MicIcon({ className = base }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <rect x="9" y="3.5" width="6" height="10" rx="3" stroke="currentColor" strokeWidth="1.6" />
+      <path
+        d="M6 11.5a6 6 0 0 0 12 0M12 17.5v3M9 20.5h6"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+export function MicOffIcon({ className = base }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M9 5.3A3 3 0 0 1 15 6.5v5a3 3 0 0 1-.2 1.1M6 11.5a6 6 0 0 0 8.7 5.4M18 11.5a6 6 0 0 1-1.4 3.9M12 17.5v3M9 20.5h6M4 4l16 16"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export function SparkleIcon({ className = base }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">

@@ -8,6 +8,8 @@ import { getDictionary } from "@/app/[locale]/dictionaries";
 import AvatarIllustration from "@/components/illustrations/AvatarIllustration";
 import ThreadView from "@/components/ujumbe/ThreadView";
 import ReportUserModal from "@/components/wanachama/ReportUserModal";
+import CallButton from "@/components/calls/CallButton";
+import { hasCapability } from "@/lib/tiers";
 
 export default async function UjumbeThreadPage({
   params,
@@ -61,12 +63,30 @@ export default async function UjumbeThreadPage({
             </div>
             <h1 className="text-lg font-bold text-navy">{target.user.name}</h1>
           </div>
-          <ReportUserModal
-            userId={otherUserId}
-            userName={target.user.name}
-            dict={dict.ripotiMtumiaji.modal}
-            reasons={dict.common.reportReasons}
-          />
+          <div className="flex items-center gap-2">
+            <CallButton
+              calleeId={otherUserId}
+              calleeName={target.user.name}
+              calleeHasPhoto={!!target.photoUpdatedAt}
+              type="VOICE"
+              disabled={!hasCapability(tier, "canVoiceCall")}
+              ariaLabel={t.voiceCallAria}
+            />
+            <CallButton
+              calleeId={otherUserId}
+              calleeName={target.user.name}
+              calleeHasPhoto={!!target.photoUpdatedAt}
+              type="VIDEO"
+              disabled={!hasCapability(tier, "canVideoCall")}
+              ariaLabel={t.videoCallAria}
+            />
+            <ReportUserModal
+              userId={otherUserId}
+              userName={target.user.name}
+              dict={dict.ripotiMtumiaji.modal}
+              reasons={dict.common.reportReasons}
+            />
+          </div>
         </div>
 
         <ThreadView

@@ -419,7 +419,9 @@
       "invalidCurrentPassword": "كلمة المرور الحالية غير صحيحة",
       "invalidPassword": "كلمة المرور غير صحيحة",
       "paymentGatewayError": "حدث خطأ في بوابة الدفع. حاول مرة أخرى لاحقاً.",
-      "emailRequiredForPayment": "يرجى إضافة بريد إلكتروني إلى حسابك قبل الدفع."
+      "emailRequiredForPayment": "يرجى إضافة بريد إلكتروني إلى حسابك قبل الدفع.",
+      "callAlreadyInProgress": "أنت بالفعل في مكالمة",
+      "callServiceNotConfigured": "خدمة الاتصال غير متاحة حاليًا"
     }
   },
   "validation": {
@@ -1176,7 +1178,9 @@
       "endOfFeed": "لقد وصلت إلى النهاية في الوقت الحالي.",
       "showMoreDetails": "عرض المزيد من التفاصيل",
       "hideDetails": "إخفاء التفاصيل",
-      "upgradePlanLink": "قم بترقية باقتك."
+      "upgradePlanLink": "قم بترقية باقتك.",
+      "voiceCallAria": "مكالمة صوتية",
+      "videoCallAria": "مكالمة فيديو"
     }
   },
   "vipendwa": {
@@ -1231,8 +1235,29 @@
       "networkError": "فشل الاتصال بالخادم.",
       "upgradePackage": "تغيير الباقة",
       "cannotReply": "باقتك لا تسمح بالرد على الرسائل. قم بترقية باقتك.",
-      "cannotInitiate": "باقتك لا تسمح ببدء محادثات جديدة. قم بترقية باقتك."
+      "cannotInitiate": "باقتك لا تسمح ببدء محادثات جديدة. قم بترقية باقتك.",
+      "voiceCallAria": "مكالمة صوتية",
+      "videoCallAria": "مكالمة فيديو"
     }
+  },
+  "calls": {
+    "genericError": "حدث خطأ ما",
+    "networkError": "تعذر الاتصال بالخادم.",
+    "outgoingHeading": "جارٍ الاتصال...",
+    "incomingVoiceHeading": "مكالمة صوتية واردة",
+    "incomingVideoHeading": "مكالمة فيديو واردة",
+    "connecting": "جارٍ الاتصال...",
+    "accept": "قبول",
+    "decline": "رفض",
+    "cancel": "إلغاء",
+    "endCall": "إنهاء المكالمة",
+    "mute": "كتم الصوت",
+    "unmute": "إلغاء كتم الصوت",
+    "cameraOn": "تشغيل الكاميرا",
+    "cameraOff": "إيقاف الكاميرا",
+    "callEnded": "انتهت المكالمة",
+    "callDeclined": "تم رفض المكالمة",
+    "callMissed": "مكالمة فائتة"
   },
   "mipangilio": {
     "pageHeading": "الإعدادات",

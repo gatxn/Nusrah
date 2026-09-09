@@ -419,7 +419,9 @@
       "invalidCurrentPassword": "Password ya sasa si sahihi",
       "invalidPassword": "Password si sahihi",
       "paymentGatewayError": "Hitilafu imetokea kwenye mfumo wa malipo. Jaribu tena baadaye.",
-      "emailRequiredForPayment": "Tafadhali ongeza barua pepe kwenye akaunti yako kabla ya kulipa."
+      "emailRequiredForPayment": "Tafadhali ongeza barua pepe kwenye akaunti yako kabla ya kulipa.",
+      "callAlreadyInProgress": "Tayari uko kwenye simu",
+      "callServiceNotConfigured": "Huduma ya simu haijawezeshwa kwa sasa"
     }
   },
   "validation": {
@@ -1176,7 +1178,9 @@
       "endOfFeed": "Umefikia mwisho wa orodha kwa sasa.",
       "showMoreDetails": "Onyesha Maelezo Zaidi",
       "hideDetails": "Ficha Maelezo",
-      "upgradePlanLink": "Boresha kifurushi chako."
+      "upgradePlanLink": "Boresha kifurushi chako.",
+      "voiceCallAria": "Piga Simu ya Sauti",
+      "videoCallAria": "Piga Simu ya Video"
     }
   },
   "vipendwa": {
@@ -1231,8 +1235,29 @@
       "networkError": "Imeshindwa kuunganisha na seva.",
       "upgradePackage": "Badili Kifurushi",
       "cannotReply": "Kifurushi chako hakiruhusu kujibu ujumbe. Boresha kifurushi chako.",
-      "cannotInitiate": "Kifurushi chako hakiruhusu kuanzisha mazungumzo mapya. Boresha kifurushi chako."
+      "cannotInitiate": "Kifurushi chako hakiruhusu kuanzisha mazungumzo mapya. Boresha kifurushi chako.",
+      "voiceCallAria": "Piga Simu ya Sauti",
+      "videoCallAria": "Piga Simu ya Video"
     }
+  },
+  "calls": {
+    "genericError": "Hitilafu imetokea",
+    "networkError": "Imeshindwa kuunganisha na seva.",
+    "outgoingHeading": "Inapiga simu...",
+    "incomingVoiceHeading": "Simu ya sauti inayoingia",
+    "incomingVideoHeading": "Simu ya video inayoingia",
+    "connecting": "Inaunganisha...",
+    "accept": "Pokea",
+    "decline": "Kataa",
+    "cancel": "Ghairi",
+    "endCall": "Maliza Simu",
+    "mute": "Zima Sauti",
+    "unmute": "Washa Sauti",
+    "cameraOn": "Washa Kamera",
+    "cameraOff": "Zima Kamera",
+    "callEnded": "Simu imeisha",
+    "callDeclined": "Simu imekataliwa",
+    "callMissed": "Simu haikupokewa"
   },
   "mipangilio": {
     "pageHeading": "Mipangilio",

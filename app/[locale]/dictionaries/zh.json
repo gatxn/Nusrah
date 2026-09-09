@@ -419,7 +419,9 @@
       "invalidCurrentPassword": "当前密码不正确",
       "invalidPassword": "密码不正确",
       "paymentGatewayError": "支付网关发生错误，请稍后重试。",
-      "emailRequiredForPayment": "请在付款前为您的账户添加电子邮箱地址。"
+      "emailRequiredForPayment": "请在付款前为您的账户添加电子邮箱地址。",
+      "callAlreadyInProgress": "您已经在通话中",
+      "callServiceNotConfigured": "通话功能暂不可用"
     }
   },
   "validation": {
@@ -1176,7 +1178,9 @@
       "endOfFeed": "您已浏览完当前所有资料。",
       "showMoreDetails": "显示更多详情",
       "hideDetails": "隐藏详情",
-      "upgradePlanLink": "升级您的套餐。"
+      "upgradePlanLink": "升级您的套餐。",
+      "voiceCallAria": "语音通话",
+      "videoCallAria": "视频通话"
     }
   },
   "vipendwa": {
@@ -1231,8 +1235,29 @@
       "networkError": "无法连接到服务器。",
       "upgradePackage": "更改套餐",
       "cannotReply": "您的套餐不允许回复消息。请升级您的套餐。",
-      "cannotInitiate": "您的套餐不允许发起新的对话。请升级您的套餐。"
+      "cannotInitiate": "您的套餐不允许发起新的对话。请升级您的套餐。",
+      "voiceCallAria": "语音通话",
+      "videoCallAria": "视频通话"
     }
+  },
+  "calls": {
+    "genericError": "出现错误",
+    "networkError": "无法连接到服务器。",
+    "outgoingHeading": "正在呼叫...",
+    "incomingVoiceHeading": "语音来电",
+    "incomingVideoHeading": "视频来电",
+    "connecting": "正在连接...",
+    "accept": "接听",
+    "decline": "拒绝",
+    "cancel": "取消",
+    "endCall": "结束通话",
+    "mute": "静音",
+    "unmute": "取消静音",
+    "cameraOn": "打开摄像头",
+    "cameraOff": "关闭摄像头",
+    "callEnded": "通话已结束",
+    "callDeclined": "通话已被拒绝",
+    "callMissed": "未接来电"
   },
   "mipangilio": {
     "pageHeading": "设置",

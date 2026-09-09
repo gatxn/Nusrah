@@ -4,11 +4,12 @@ import { getSessionUserId, getEffectiveTier } from "@/lib/auth";
 import { getNextIncompleteStep, STEP_ROUTES, hasPhoto } from "@/lib/onboarding";
 import { getOwnProfile } from "@/lib/onboarding-server";
 import { touchLastActive } from "@/lib/profiles";
-import { getLocale } from "@/app/[locale]/dictionaries";
+import { getLocale, getDictionary } from "@/app/[locale]/dictionaries";
 import { localeHref } from "@/lib/i18n/href";
 import Sidebar from "@/components/sidebar/Sidebar";
 import TopBar from "@/components/sidebar/TopBar";
 import InactivityLogout from "@/components/InactivityLogout";
+import CallProvider from "@/components/calls/CallProvider";
 
 // Single centralized guard for the whole member app surface (Wasifu/Matches,
 // Ujumbe, Akaunti, Dashibodi, Wasifu Wangu, Mipangilio, Ripoti Mtumiaji, and
@@ -25,30 +26,33 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const nextStep = getNextIncompleteStep(profile);
   if (nextStep) redirect(localeHref(locale, STEP_ROUTES[nextStep]));
 
-  const [user, tier, unreadNotifications, unreadMessages] = await Promise.all([
+  const [user, tier, unreadNotifications, unreadMessages, dict] = await Promise.all([
     prisma.user.findUnique({ where: { id: userId }, select: { name: true } }),
     getEffectiveTier(userId),
     prisma.notification.count({ where: { recipientUserId: userId, isRead: false } }),
     prisma.message.count({ where: { receiverId: userId, isRead: false } }),
+    getDictionary(),
     touchLastActive(userId),
   ]);
 
   const searchActionHref = localeHref(locale, "/wanachama");
 
   return (
-    <div className="min-h-screen bg-hero-photo">
-      <InactivityLogout />
-      <Sidebar tier={tier} unreadMessageCount={unreadMessages} />
-      <div className="lg:ps-64">
-        <TopBar
-          name={user?.name ?? ""}
-          hasPhoto={hasPhoto(profile)}
-          tier={tier}
-          unreadNotifications={unreadNotifications}
-          searchActionHref={searchActionHref}
-        />
-        <main>{children}</main>
+    <CallProvider dict={dict.calls}>
+      <div className="min-h-screen bg-hero-photo">
+        <InactivityLogout />
+        <Sidebar tier={tier} unreadMessageCount={unreadMessages} />
+        <div className="lg:ps-64">
+          <TopBar
+            name={user?.name ?? ""}
+            hasPhoto={hasPhoto(profile)}
+            tier={tier}
+            unreadNotifications={unreadNotifications}
+            searchActionHref={searchActionHref}
+          />
+          <main>{children}</main>
+        </div>
       </div>
-    </div>
+    </CallProvider>
   );
 }

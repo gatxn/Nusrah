@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import MemberDetailActions from "@/components/wanachama/MemberDetailActions";
 import ProfilePhotoCarousel from "@/components/wanachama/ProfilePhotoCarousel";
 import { ChevronDownIcon, LockIcon, MapPinIcon, ShieldCheckIcon } from "@/components/icons";
+import type { Tier } from "@/lib/tiers";
 import {
   isIntention,
   isMaritalStatus,
@@ -51,6 +52,7 @@ export default function MemberDetailCard({
   profile,
   initialGalleryPhotoIds,
   initialFavorited,
+  viewerTier,
   dict,
   cardDict,
   labels,
@@ -60,6 +62,7 @@ export default function MemberDetailCard({
   profile: SerializedProfile;
   initialGalleryPhotoIds?: string[];
   initialFavorited: boolean;
+  viewerTier: Tier;
   dict: Dictionary["wanachama"]["detail"];
   cardDict: Dictionary["wanachama"]["card"];
   labels: Dictionary["common"]["labels"];
@@ -231,6 +234,8 @@ export default function MemberDetailCard({
               <MemberDetailActions
                 userId={profile.userId}
                 userName={profile.name}
+                userHasPhoto={profile.hasPhoto}
+                viewerTier={viewerTier}
                 initialFavorited={initialFavorited}
                 dict={dict}
                 cardLabels={cardDict}
