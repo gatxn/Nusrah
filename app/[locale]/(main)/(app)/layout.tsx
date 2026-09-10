@@ -10,6 +10,7 @@ import Sidebar from "@/components/sidebar/Sidebar";
 import TopBar from "@/components/sidebar/TopBar";
 import InactivityLogout from "@/components/InactivityLogout";
 import CallProvider from "@/components/calls/CallProvider";
+import NotificationsProvider from "@/components/NotificationsProvider";
 
 // Single centralized guard for the whole member app surface (Wasifu/Matches,
 // Ujumbe, Akaunti, Dashibodi, Wasifu Wangu, Mipangilio, Ripoti Mtumiaji, and
@@ -38,21 +39,23 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const searchActionHref = localeHref(locale, "/wanachama");
 
   return (
-    <CallProvider dict={dict.calls}>
-      <div className="min-h-screen bg-hero-photo">
-        <InactivityLogout />
-        <Sidebar tier={tier} unreadMessageCount={unreadMessages} />
-        <div className="lg:ps-64">
-          <TopBar
-            name={user?.name ?? ""}
-            hasPhoto={hasPhoto(profile)}
-            tier={tier}
-            unreadNotifications={unreadNotifications}
-            searchActionHref={searchActionHref}
-          />
-          <main>{children}</main>
+    <NotificationsProvider initialUnreadCount={unreadNotifications} initialUnreadMessageCount={unreadMessages}>
+      <CallProvider dict={dict.calls}>
+        <div className="min-h-screen bg-hero-photo">
+          <InactivityLogout />
+          <Sidebar tier={tier} unreadMessageCount={unreadMessages} />
+          <div className="lg:ps-64">
+            <TopBar
+              name={user?.name ?? ""}
+              hasPhoto={hasPhoto(profile)}
+              tier={tier}
+              unreadNotifications={unreadNotifications}
+              searchActionHref={searchActionHref}
+            />
+            <main>{children}</main>
+          </div>
         </div>
-      </div>
-    </CallProvider>
+      </CallProvider>
+    </NotificationsProvider>
   );
 }

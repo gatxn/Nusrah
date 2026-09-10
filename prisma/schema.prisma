@@ -295,7 +295,8 @@ model Favorite {
   @@index([favoritedUserId])
 }
 
-// type: "PROFILE_LIKED" (plain String, matching this schema's existing
+// type: "PROFILE_LIKED" | "MESSAGE_RECEIVED" | "MISSED_VOICE_CALL" |
+// "MISSED_VIDEO_CALL" (plain String, matching this schema's existing
 // status/tier/gender String-enum convention)
 model Notification {
   id              String   @id @default(cuid())

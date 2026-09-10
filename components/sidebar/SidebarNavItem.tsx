@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import LocaleLink from "@/components/LocaleLink";
+import { useNotifications } from "@/components/NotificationsProvider";
 
 export default function SidebarNavItem({
   href,
@@ -17,6 +18,12 @@ export default function SidebarNavItem({
   const pathname = usePathname();
   const active = pathname === href || pathname?.startsWith(href + "/");
 
+  // Only the Ujumbe row's badge tracks unread messages — keyed on href
+  // rather than assuming every badge is a message count, so this stays
+  // correct if another row ever gets its own badge.
+  const ctx = useNotifications();
+  const displayBadge = href === "/ujumbe" && ctx ? ctx.unreadMessageCount : badge;
+
   return (
     <LocaleLink
       href={href}
@@ -26,9 +33,9 @@ export default function SidebarNavItem({
     >
       {icon}
       <span className="flex-1 truncate">{label}</span>
-      {!!badge && badge > 0 && (
+      {!!displayBadge && displayBadge > 0 && (
         <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1.5 text-[11px] font-bold text-white">
-          {badge > 9 ? "9+" : badge}
+          {displayBadge > 9 ? "9+" : displayBadge}
         </span>
       )}
     </LocaleLink>

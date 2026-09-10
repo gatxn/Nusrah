@@ -4,6 +4,7 @@ import { getSessionUserId, getEffectiveTier } from "@/lib/auth";
 import { isEligibleTarget } from "@/lib/profiles";
 import { isBlocked } from "@/lib/blocks";
 import { getThreadMessages, getSendPermission } from "@/lib/messages";
+import { maybeNotifyMessageReceived } from "@/lib/notifications";
 import { createSendMessageSchema } from "@/lib/validation";
 import { jsonError, zodError, UNAUTHENTICATED, FORBIDDEN, NOT_FOUND } from "@/lib/api";
 import { validationMessages, apiErrors } from "@/lib/i18n/api";
@@ -61,6 +62,7 @@ export async function POST(request: NextRequest) {
   const message = await prisma.message.create({
     data: { senderId: userId, receiverId: parsed.data.receiverId, body: parsed.data.body },
   });
+  await maybeNotifyMessageReceived(parsed.data.receiverId, userId);
 
   return NextResponse.json({ message }, { status: 201 });
 }

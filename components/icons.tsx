@@ -117,6 +117,22 @@ export function PhoneCallIcon({ className = base }: IconProps) {
   );
 }
 
+// Same receiver glyph as PhoneCallIcon, rotated 135° — the universal
+// "hang up" convention (Material's call_end), so no new path data is needed.
+export function HangUpIcon({ className = base }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M5 4.5h3.2l1.3 4-2 1.5a11 11 0 0 0 5.5 5.5l1.5-2 4 1.3V18a1.5 1.5 0 0 1-1.6 1.5A15 15 0 0 1 3.5 6.1 1.5 1.5 0 0 1 5 4.5Z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+        transform="rotate(135 12 12)"
+      />
+    </svg>
+  );
+}
+
 export function VideoIcon({ className = base }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">

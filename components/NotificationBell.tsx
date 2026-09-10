@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import LocaleLink from "@/components/LocaleLink";
 import { BellIcon } from "@/components/icons";
+import { useNotifications } from "@/components/NotificationsProvider";
 import type { Dictionary } from "@/app/[locale]/dictionaries";
 
 type NotificationView = {
@@ -22,8 +23,10 @@ export default function NotificationBell({
   initialUnreadCount: number;
   dict: Dictionary["common"]["topBar"]["notifications"];
 }) {
+  const ctx = useNotifications();
   const [open, setOpen] = useState(false);
-  const [unreadCount, setUnreadCount] = useState(initialUnreadCount);
+  const [localUnreadCount, setLocalUnreadCount] = useState(initialUnreadCount);
+  const unreadCount = ctx ? ctx.unreadCount : localUnreadCount;
   const [notifications, setNotifications] = useState<NotificationView[] | null>(null);
   const [loading, setLoading] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -51,7 +54,8 @@ export default function NotificationBell({
       if (res.ok) setNotifications(json.notifications);
       if (unreadCount > 0) {
         await fetch("/api/notifications/read-all", { method: "PATCH" });
-        setUnreadCount(0);
+        if (ctx) ctx.markAllRead();
+        else setLocalUnreadCount(0);
       }
     } finally {
       setLoading(false);

@@ -8,7 +8,7 @@ import type {
   IMicrophoneAudioTrack,
 } from "agora-rtc-sdk-ng";
 import AvatarIllustration from "@/components/illustrations/AvatarIllustration";
-import { PhoneCallIcon, VideoIcon, CloseIcon, MicIcon, MicOffIcon, CameraIcon } from "@/components/icons";
+import { PhoneCallIcon, VideoIcon, HangUpIcon, MicIcon, MicOffIcon, CameraIcon } from "@/components/icons";
 import type { CallState } from "@/components/calls/CallProvider";
 import type { Dictionary } from "@/app/[locale]/dictionaries";
 
@@ -16,6 +16,35 @@ function formatDuration(totalSeconds: number): string {
   const m = Math.floor(totalSeconds / 60);
   const s = totalSeconds % 60;
   return `${m}:${String(s).padStart(2, "0")}`;
+}
+
+// Synthesized via Web Audio (no audio asset) — sidesteps binary-asset size
+// and licensing concerns entirely. Dual-tone ringback pair, a telephony
+// standard rather than any copyrighted melody.
+function playRingback(ctx: AudioContext, startAt: number) {
+  [440, 480].forEach((freq) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.frequency.value = freq;
+    gain.gain.value = 0.12;
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(startAt);
+    osc.stop(startAt + 2);
+  });
+}
+
+// Two short bursts per cycle — a generic "ring-ring" cadence, not a copy of
+// any real ringtone.
+function playRingtone(ctx: AudioContext, startAt: number) {
+  [0, 0.5].forEach((offset) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.frequency.value = 900;
+    gain.gain.value = 0.15;
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(startAt + offset);
+    osc.stop(startAt + offset + 0.35);
+  });
 }
 
 export default function CallOverlay({
@@ -144,6 +173,39 @@ export default function CallOverlay({
     // eslint-disable-next-line react-hooks/exhaustive-deps -- runs once per call when it reaches "connecting"; onConnected/dict are stable
   }, [call.phase, call.callId]);
 
+  // Ringtone: ringback while this side is "outgoing" (caller waiting),
+  // ringtone while "incoming" (callee being rung). Stops immediately on any
+  // other phase transition or unmount via the cleanup below. Known
+  // limitation, not engineered around: the incoming side has no prior user
+  // gesture in this tab (discovered purely by the background poll), so some
+  // browsers' autoplay policy may keep the AudioContext suspended until the
+  // user interacts with the page at least once.
+  useEffect(() => {
+    if (call.phase !== "outgoing" && call.phase !== "incoming") return;
+    const AudioContextCtor =
+      window.AudioContext ?? (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+    if (!AudioContextCtor) return;
+
+    let cancelled = false;
+    const ctx = new AudioContextCtor();
+    ctx.resume().catch(() => {});
+    const cycleMs = call.phase === "outgoing" ? 6000 : 2500;
+    const play = call.phase === "outgoing" ? playRingback : playRingtone;
+
+    function tick() {
+      if (cancelled) return;
+      play(ctx, ctx.currentTime + 0.05);
+    }
+    tick();
+    const interval = window.setInterval(tick, cycleMs);
+
+    return () => {
+      cancelled = true;
+      window.clearInterval(interval);
+      ctx.close().catch(() => {});
+    };
+  }, [call.phase]);
+
   // Duration ticker once active.
   useEffect(() => {
     if (call.phase !== "active") return;
@@ -210,7 +272,7 @@ export default function CallOverlay({
                 aria-label={dict.decline}
                 className="flex h-16 w-16 items-center justify-center rounded-full bg-red-600 transition hover:bg-red-700"
               >
-                <CloseIcon className="h-7 w-7" />
+                <HangUpIcon className="h-7 w-7" />
               </button>
               <button
                 type="button"
@@ -237,7 +299,7 @@ export default function CallOverlay({
               aria-label={dict.cancel}
               className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-red-600 transition hover:bg-red-700"
             >
-              <CloseIcon className="h-7 w-7" />
+              <HangUpIcon className="h-7 w-7" />
             </button>
           </>
         )}
@@ -311,7 +373,7 @@ export default function CallOverlay({
                 aria-label={dict.endCall}
                 className="flex h-14 w-14 items-center justify-center rounded-full bg-red-600 transition hover:bg-red-700"
               >
-                <CloseIcon className="h-6 w-6" />
+                <HangUpIcon className="h-6 w-6" />
               </button>
             </div>
           </>

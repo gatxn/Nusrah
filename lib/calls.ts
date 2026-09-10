@@ -2,6 +2,7 @@ import { prisma } from "@/lib/db";
 import { isEligibleTarget } from "@/lib/profiles";
 import { isBlocked } from "@/lib/blocks";
 import { hasCapability, type Tier } from "@/lib/tiers";
+import { maybeNotifyMissedCall } from "@/lib/notifications";
 
 export type CallType = "VOICE" | "VIDEO";
 export type CallStatus = "RINGING" | "ACCEPTED" | "DECLINED" | "ENDED" | "MISSED";
@@ -14,6 +15,31 @@ const RING_TIMEOUT_SECONDS = 45;
 
 function isStale(createdAt: Date): boolean {
   return Date.now() - createdAt.getTime() > RING_TIMEOUT_SECONDS * 1000;
+}
+
+/**
+ * Flips a stale RINGING call to MISSED and notifies the callee. Both
+ * getIncomingCall's and getCallForParticipant's polls can race to expire the
+ * same call at nearly the same moment — the `status: "RINGING"` guard on the
+ * update means only one of them ever sees count === 1 and fires the
+ * notification, since Postgres serializes the two UPDATE...WHERE statements.
+ */
+async function markMissedIfStale(call: {
+  id: string;
+  createdAt: Date;
+  callerId: string;
+  calleeId: string;
+  type: string;
+}): Promise<boolean> {
+  if (!isStale(call.createdAt)) return false;
+  const result = await prisma.call.updateMany({
+    where: { id: call.id, status: "RINGING" },
+    data: { status: "MISSED" },
+  });
+  if (result.count === 1) {
+    await maybeNotifyMissedCall(call.calleeId, call.callerId, call.type as CallType);
+  }
+  return true;
 }
 
 export type IncomingCallView = {
@@ -34,10 +60,7 @@ export async function getIncomingCall(userId: string): Promise<IncomingCallView 
   });
   if (!call) return null;
 
-  if (isStale(call.createdAt)) {
-    await prisma.call.update({ where: { id: call.id }, data: { status: "MISSED" } });
-    return null;
-  }
+  if (await markMissedIfStale(call)) return null;
 
   return {
     id: call.id,
@@ -63,9 +86,8 @@ export async function getCallForParticipant(callId: string, userId: string): Pro
   const call = await prisma.call.findUnique({ where: { id: callId } });
   if (!call || (call.callerId !== userId && call.calleeId !== userId)) return null;
 
-  if (call.status === "RINGING" && isStale(call.createdAt)) {
-    const updated = await prisma.call.update({ where: { id: call.id }, data: { status: "MISSED" } });
-    return { ...updated, type: updated.type as CallType, status: updated.status as CallStatus };
+  if (call.status === "RINGING" && (await markMissedIfStale(call))) {
+    return { ...call, type: call.type as CallType, status: "MISSED" };
   }
 
   return { ...call, type: call.type as CallType, status: call.status as CallStatus };
