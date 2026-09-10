@@ -1,62 +1,61 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Prisma } from "@prisma/client";
 import { prisma } from "@/lib/db";
-import { checkOrderStatus, extractOrderIdFromWebhook } from "@/lib/payments/gateway";
+import { verifyWebhookSignature, parseWebhookPayload } from "@/lib/payments/gateway";
 
 // ---------------------------------------------------------------------------
 // GOLDEN RULE (spec §4.2): a member is never granted paid access merely
 // because the frontend displayed a "payment successful" message. This route
 // is the ONLY place a paid Subscription is ever activated.
 //
-// PalmPesa's webhook callbacks are not signed (see lib/payments/gateway.ts),
-// so unlike a signature-verified gateway, this route treats the incoming
-// body only as a trigger telling it which order to check — it then
-// independently re-queries PalmPesa's own /api/order-status endpoint with
-// our own API credentials, and only that authenticated response decides
-// whether to activate anything. A forged webhook can only cause a real
-// status check to run; it cannot activate a subscription on its own.
+// Unlike PalmPesa (unsigned callbacks, which forced an independent re-query
+// against a second endpoint that turned out to be broken — see the
+// palmpesa_order_id_correlation_broken project note), AzamPay signs its
+// webhook via the `x-azampay-signature` header. The trust boundary here is
+// signature verification, not a second API call — see the ⚠️ UNVERIFIED
+// warning in lib/payments/gateway.ts: the exact signing algorithm hasn't
+// been confirmed against a real webhook delivery yet. This gate fails
+// closed on any signature it can't positively verify.
 // ---------------------------------------------------------------------------
 
 export async function POST(request: NextRequest) {
   const rawBody = await request.text();
+  const signature = request.headers.get("x-azampay-signature");
 
-  const orderId = extractOrderIdFromWebhook(rawBody);
-  if (!orderId) {
+  if (!verifyWebhookSignature(rawBody, signature)) {
+    return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
+  }
+
+  const payload = parseWebhookPayload(rawBody);
+  if (!payload) {
     return NextResponse.json({ error: "Malformed payload" }, { status: 400 });
   }
 
-  const order = await prisma.order.findUnique({ where: { id: orderId }, include: { package: true } });
+  const order = await prisma.order.findUnique({ where: { id: payload.externalId }, include: { package: true } });
   if (!order) {
     return NextResponse.json({ error: "Order not found" }, { status: 404 });
   }
 
-  // Idempotency: PalmPesa may redeliver the same callback more than once.
+  // Idempotency: AzamPay may redeliver the same callback more than once.
   // Once an order has left PENDING, it's already been processed.
   if (order.status !== "PENDING") {
     return NextResponse.json({ message: "Already processed" });
   }
 
-  const verified = await checkOrderStatus(orderId);
-  if (!verified.ok) {
-    // Could not independently confirm — do nothing. PalmPesa will retry
-    // the webhook, and the order simply stays PENDING until it can.
-    return NextResponse.json({ message: "Could not verify status" }, { status: 202 });
-  }
-
-  if (verified.status === "PENDING") {
+  if (payload.status === "pending") {
     return NextResponse.json({ message: "Still pending" });
   }
 
   try {
-    if (verified.status === "COMPLETED") {
+    if (payload.status === "success") {
       const expiryDate = new Date(Date.now() + order.package.durationDays * 24 * 60 * 60 * 1000);
       await prisma.$transaction([
         prisma.transaction.create({
           data: {
             orderId: order.id,
-            gatewayTxnId: verified.transactionId,
-            gateway: verified.channel ?? "palmpesa",
-            phoneNumber: verified.msisdn,
+            gatewayTxnId: payload.transactionId,
+            gateway: payload.provider ?? "azampay",
+            phoneNumber: payload.msisdn,
             verifiedAt: new Date(),
             rawPayload: rawBody,
           },
@@ -73,9 +72,9 @@ export async function POST(request: NextRequest) {
         prisma.transaction.create({
           data: {
             orderId: order.id,
-            gatewayTxnId: verified.transactionId,
-            gateway: verified.channel ?? "palmpesa",
-            phoneNumber: verified.msisdn,
+            gatewayTxnId: payload.transactionId,
+            gateway: payload.provider ?? "azampay",
+            phoneNumber: payload.msisdn,
             verifiedAt: new Date(),
             rawPayload: rawBody,
           },

@@ -11,20 +11,9 @@ function formatTzs(amount: number) {
   return new Intl.NumberFormat("sw-TZ").format(amount);
 }
 
-export default async function PaymentPage({
-  params,
-  searchParams,
-}: {
-  params: Promise<{ orderId: string }>;
-  searchParams: Promise<{ paid?: string; cancelled?: string }>;
-}) {
+export default async function PaymentPage({ params }: { params: Promise<{ orderId: string }> }) {
   const { orderId } = await params;
-  const [{ paid, cancelled }, userId, locale, dict] = await Promise.all([
-    searchParams,
-    getSessionUserId(),
-    getLocale(),
-    getDictionary(),
-  ]);
+  const [userId, locale, dict] = await Promise.all([getSessionUserId(), getLocale(), getDictionary()]);
   if (!userId) redirect(localeHref(locale, "/ingia"));
 
   const order = await prisma.order.findUnique({
@@ -36,16 +25,17 @@ export default async function PaymentPage({
 
   const t = dict.malipo;
 
+  // No more redirect-back flow (AzamPay's MNO Checkout pushes the
+  // confirmation prompt straight to the customer's phone, unlike PalmPesa's
+  // hosted-checkout redirect) — the order's own status is the only source
+  // of truth here. PaymentForm handles the "waiting for confirmation" state
+  // itself via polling once a request has been sent.
   const statusBlock =
     order.status === "PAID"
       ? { heading: t.statusPaidHeading, body: t.statusPaidBody, cta: t.statusPaidCta, ctaHref: "/akaunti" }
       : order.status === "FAILED"
         ? { heading: t.statusCancelledHeading, body: t.statusCancelledBody, cta: t.statusCancelledCta, ctaHref: `/malipo/${order.id}` }
-        : paid === "1"
-          ? { heading: t.statusPendingHeading, body: t.statusPendingBody, cta: t.statusPendingCta, ctaHref: `/malipo/${order.id}` }
-          : cancelled === "1"
-            ? { heading: t.statusCancelledHeading, body: t.statusCancelledBody, cta: t.statusCancelledCta, ctaHref: `/malipo/${order.id}` }
-            : null;
+        : null;
 
   return (
     <div className="bg-mosque-pattern px-4 py-14 sm:px-6">
