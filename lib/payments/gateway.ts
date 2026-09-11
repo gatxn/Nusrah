@@ -35,19 +35,9 @@ export function isGatewayConfigured(): boolean {
 export type AzamPayProvider = "Airtel" | "Tigo" | "Halopesa" | "Azampesa" | "Mpesa";
 export const AZAMPAY_PROVIDERS: AzamPayProvider[] = ["Airtel", "Tigo", "Halopesa", "Azampesa", "Mpesa"];
 
-function decodeJwtExpiry(jwt: string): number | null {
-  try {
-    const payload = jwt.split(".")[1];
-    const decoded = JSON.parse(Buffer.from(payload, "base64url").toString("utf8"));
-    return typeof decoded.exp === "number" ? decoded.exp * 1000 : null;
-  } catch {
-    return null;
-  }
-}
-
-// In-memory token cache — AzamPay's token is a short-lived JWT (unlike
-// PalmPesa's static, non-expiring API key), so it's fetched once and reused
-// until it's within a minute of expiry.
+// In-memory token cache — AzamPay's token is short-lived (unlike PalmPesa's
+// static, non-expiring API key), so it's fetched once and reused until it's
+// within a minute of expiry.
 let cachedToken: { token: string; expiresAt: number } | null = null;
 
 async function fetchAzamPayToken(): Promise<{ token: string; expiresAt: number } | null> {
@@ -68,17 +58,20 @@ async function fetchAzamPayToken(): Promise<{ token: string; expiresAt: number }
     return null;
   }
 
-  // Confirmed real response envelope (observed directly from a live,
-  // failed-auth call): { data, message, success, messageCode, statusCode,
-  // sessionId, rememberMe }. `data` is null on failure — assumed to hold
-  // the token (or {accessToken}) on success; not yet confirmed which.
+  // CONFIRMED (live successful call, 2026-09-11): { data: { accessToken,
+  // expire, validFrom }, message, success, messageCode, statusCode,
+  // sessionId, rememberMe }. `expire` is an ISO timestamp — read directly
+  // rather than decoding the token, since accessToken is a JWE ("alg":
+  // "dir", "enc":"A128CBC-HS256" — 5 opaque dot-separated parts), not a
+  // plain JWT, so there's no local-decodable `exp` claim to read.
   const body = await res.json().catch(() => null);
   if (!res.ok || body?.success === false) return null;
 
-  const token = body?.data?.accessToken ?? body?.data?.token ?? (typeof body?.data === "string" ? body.data : null);
+  const token = body?.data?.accessToken;
   if (typeof token !== "string" || !token) return null;
 
-  const expiresAt = decodeJwtExpiry(token) ?? Date.now() + 55 * 60 * 1000;
+  const expireMs = Date.parse(body?.data?.expire);
+  const expiresAt = Number.isFinite(expireMs) ? expireMs : Date.now() + 55 * 60 * 1000;
   return { token, expiresAt };
 }
 
