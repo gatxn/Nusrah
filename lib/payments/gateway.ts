@@ -21,6 +21,14 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 
 const AZAMPAY_AUTH_URL = process.env.AZAMPAY_AUTH_URL;
 const AZAMPAY_CHECKOUT_URL = process.env.AZAMPAY_CHECKOUT_URL;
+// Not a documented MNO Checkout request field (their published schema is
+// just {accountNumber, amount, currency, externalId, provider}) — included
+// defensively in case AzamPay's real API silently accepts it anyway. The
+// value itself must still be registered with AzamPay directly for the
+// dedicated app (see azampay_webhook_destination_unknown project note);
+// this env var only makes the URL visible/documented in our own config and
+// gives it a real (if unconfirmed) shot at being honored per-request.
+const AZAMPAY_CALLBACK_URL = process.env.AZAMPAY_CALLBACK_URL;
 
 export function isGatewayConfigured(): boolean {
   return Boolean(
@@ -128,6 +136,9 @@ export async function initiateCharge(input: InitiateChargeInput): Promise<Initia
         currency: "TZS",
         externalId: input.orderId,
         provider: input.provider,
+        // Undocumented field, sent defensively — see AZAMPAY_CALLBACK_URL
+        // above. Harmless if AzamPay ignores it.
+        ...(AZAMPAY_CALLBACK_URL ? { callbackUrl: AZAMPAY_CALLBACK_URL } : {}),
       }),
     });
   } catch (err) {
