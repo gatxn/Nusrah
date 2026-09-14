@@ -6,6 +6,7 @@ import { isEligibleTarget } from "@/lib/profiles";
 import { createReportCreateSchema } from "@/lib/validation";
 import { jsonError, zodError, UNAUTHENTICATED, NOT_FOUND } from "@/lib/api";
 import { validationMessages, apiErrors } from "@/lib/i18n/api";
+import { createAdminAlert } from "@/lib/admin/alerts";
 
 const ALLOWED_EVIDENCE_TYPES = ["image/jpeg", "image/png", "image/webp"];
 const MAX_EVIDENCE_BYTES = 5 * 1024 * 1024;
@@ -53,7 +54,7 @@ export async function POST(request: NextRequest) {
     evidenceMimeType = evidence.type;
   }
 
-  await prisma.report.create({
+  const report = await prisma.report.create({
     data: {
       reporterId: userId,
       reportedUserId,
@@ -62,7 +63,14 @@ export async function POST(request: NextRequest) {
       evidenceEnc,
       evidenceMimeType,
     },
+    select: { id: true, reportedUser: { select: { name: true } } },
   });
+
+  await createAdminAlert(
+    "NEW_REPORT",
+    `New report filed against ${report.reportedUser.name} (${reason})`,
+    `/admin/reports/${report.id}`
+  );
 
   if (blockAfterSubmit) {
     try {

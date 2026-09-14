@@ -333,6 +333,25 @@ model Block {
   @@index([blockedUserId])
 }
 
+// type: "NEW_REPORT" | "NEW_REGISTRATION" — surfaced in the admin top bar
+// bell (components/admin/AdminNotificationBell.tsx). Deliberately its own
+// small table, not a reuse of Notification, which is member-facing (has a
+// required recipientUserId, hardcoded per-type Swahili text) and answers a
+// different question ("what happened to me") than this one ("what needs
+// admin attention"). No stuck-payment alert type here on purpose — that's
+// discovered by elapsed time, not a state change to hook; Phase 4's
+// /admin/payments/pending queue is already that surface.
+model AdminAlert {
+  id        String   @id @default(cuid())
+  type      String
+  message   String
+  linkHref  String?
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([isRead, createdAt])
+}
+
 // reason: one of REPORT_REASONS (lib/reports.ts) | status: "PENDING" (no
 // reviewer/admin workflow exists yet to act on these — see lib/reports.ts)
 model Report {
