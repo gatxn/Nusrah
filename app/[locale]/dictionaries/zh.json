@@ -372,6 +372,7 @@
       "registerSuccess": "我们已向您的电子邮箱发送了验证码（OTP）",
       "devNote": "测试模式：未发送真实邮件。",
       "invalidCredentials": "电话号码/邮箱或密码不正确",
+      "accountSuspended": "您的账户已被暂停。请联系客服。",
       "otpRequired": "请先使用OTP验证您的账户",
       "userNotFound": "未找到用户",
       "alreadyVerified": "账户已通过验证",

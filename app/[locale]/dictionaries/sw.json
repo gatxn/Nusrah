@@ -372,6 +372,7 @@
       "registerSuccess": "Tumetuma kodi ya uthibitisho (OTP) kwa barua pepe yako",
       "devNote": "Modi ya majaribio: hakuna barua pepe halisi imetumwa.",
       "invalidCredentials": "Namba ya simu/barua pepe au nenosiri sivyo",
+      "accountSuspended": "Akaunti yako imesimamishwa. Tafadhali wasiliana na huduma kwa wateja.",
       "otpRequired": "Thibitisha akaunti yako kwanza kwa kutumia OTP",
       "userNotFound": "Mtumiaji hajapatikana",
       "alreadyVerified": "Akaunti tayari imethibitishwa",

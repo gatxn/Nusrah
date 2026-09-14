@@ -30,6 +30,12 @@ model User {
   passwordHash String
   otpVerified  Boolean  @default(false)
   role         String   @default("MEMBER")
+  // Admin-level account suspension (login blocked entirely) — distinct from
+  // the member-to-member Block model below, which only mutes one member's
+  // ability to contact another. Named isSuspended, not "isBlocked", to keep
+  // that distinction unambiguous at the schema level; the admin UI/API can
+  // still say "Block"/"Unblock" since that's the moderation action it is.
+  isSuspended  Boolean  @default(false)
   createdAt    DateTime @default(now())
   termsAcceptedAt DateTime @default(now())
 

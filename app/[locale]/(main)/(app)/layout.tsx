@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
-import { getSessionUserId, getEffectiveTier } from "@/lib/auth";
+import { getSessionUserId, getEffectiveTier, clearSessionCookie } from "@/lib/auth";
 import { getNextIncompleteStep, STEP_ROUTES, hasPhoto } from "@/lib/onboarding";
 import { getOwnProfile } from "@/lib/onboarding-server";
 import { touchLastActive } from "@/lib/profiles";
@@ -22,6 +22,17 @@ import NotificationsProvider from "@/components/NotificationsProvider";
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   const [userId, locale] = await Promise.all([getSessionUserId(), getLocale()]);
   if (!userId) redirect(localeHref(locale, "/ingia"));
+
+  // Re-checked fresh from the DB on every request, never trusted from the
+  // session cookie — matches this project's existing "never trust a cached
+  // tier/role claim" precedent (see getActiveSubscription's comment in
+  // lib/auth.ts). An admin block takes effect on the very next page load,
+  // not just the member's next login attempt.
+  const sessionUser = await prisma.user.findUnique({ where: { id: userId }, select: { isSuspended: true } });
+  if (!sessionUser || sessionUser.isSuspended) {
+    await clearSessionCookie();
+    redirect(localeHref(locale, "/ingia"));
+  }
 
   const profile = await getOwnProfile(userId);
   const nextStep = getNextIncompleteStep(profile);

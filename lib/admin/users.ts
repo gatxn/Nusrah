@@ -86,6 +86,14 @@ export async function queryAdminUsers(params: AdminUserListParams): Promise<Admi
   };
 }
 
+export type AdminUserSubscription = {
+  packageId: string;
+  packageName: string;
+  tier: string;
+  status: string;
+  expiryDate: Date;
+};
+
 export type AdminUserDetail = AdminUserRow & {
   bio: string | null;
   occupation: string | null;
@@ -93,6 +101,8 @@ export type AdminUserDetail = AdminUserRow & {
   maritalStatus: string | null;
   religion: string | null;
   otpVerified: boolean;
+  isSuspended: boolean;
+  subscription: AdminUserSubscription | null;
 };
 
 export async function getAdminUserDetail(userId: string): Promise<AdminUserDetail | null> {
@@ -105,6 +115,8 @@ export async function getAdminUserDetail(userId: string): Promise<AdminUserDetai
       phone: true,
       createdAt: true,
       otpVerified: true,
+      isSuspended: true,
+      subscription: { include: { package: { select: { name: true, tier: true } } } },
       profile: {
         select: {
           gender: true,
@@ -141,7 +153,22 @@ export async function getAdminUserDetail(userId: string): Promise<AdminUserDetai
     maritalStatus: u.profile?.maritalStatus ?? null,
     religion: u.profile?.religion ?? null,
     otpVerified: u.otpVerified,
+    isSuspended: u.isSuspended,
+    subscription: u.subscription
+      ? {
+          packageId: u.subscription.packageId,
+          packageName: u.subscription.package.name,
+          tier: u.subscription.package.tier,
+          status: u.subscription.status,
+          expiryDate: u.subscription.expiryDate,
+        }
+      : null,
   };
+}
+
+export async function setUserSuspended(userId: string, suspended: boolean): Promise<boolean> {
+  const result = await prisma.user.updateMany({ where: { id: userId, role: "MEMBER" }, data: { isSuspended: suspended } });
+  return result.count === 1;
 }
 
 const VALID_VERIFICATION_STATUSES = ["NOT_STARTED", "PENDING", "VERIFIED", "REJECTED"] as const;

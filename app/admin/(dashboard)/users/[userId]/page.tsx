@@ -1,6 +1,9 @@
 import { notFound } from "next/navigation";
 import { getAdminUserDetail } from "@/lib/admin/users";
+import { listAdminPackages } from "@/lib/admin/packages";
 import VerificationActions from "@/components/admin/VerificationActions";
+import UserBlockActions from "@/components/admin/UserBlockActions";
+import UserPlanActions from "@/components/admin/UserPlanActions";
 
 const STATUS_LABELS: Record<string, string> = {
   VERIFIED: "Verified",
@@ -15,12 +18,17 @@ function formatDate(date: Date): string {
 
 export default async function AdminUserDetailPage({ params }: { params: Promise<{ userId: string }> }) {
   const { userId } = await params;
-  const user = await getAdminUserDetail(userId);
+  const [user, packages] = await Promise.all([getAdminUserDetail(userId), listAdminPackages()]);
   if (!user) notFound();
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold text-navy">{user.name}</h1>
+      <div className="flex items-center gap-3">
+        <h1 className="text-2xl font-bold text-navy">{user.name}</h1>
+        {user.isSuspended && (
+          <span className="rounded-full bg-red-100 px-2.5 py-1 text-xs font-semibold text-red-700">Blocked</span>
+        )}
+      </div>
       <p className="mt-1 text-sm text-neutral-500">Joined {formatDate(user.createdAt)}</p>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-3">
@@ -73,6 +81,40 @@ export default async function AdminUserDetailPage({ params }: { params: Promise<
             </p>
             <div className="mt-4">
               <VerificationActions userId={user.userId} currentStatus={user.verificationStatus} />
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-400">Membership Plan</h2>
+            <p className="mt-2 text-sm text-neutral-600">
+              {user.subscription ? (
+                <>
+                  Current: <span className="font-semibold text-navy">{user.subscription.packageName}</span> —
+                  expires {formatDate(user.subscription.expiryDate)}
+                </>
+              ) : (
+                "No active plan (FREE)."
+              )}
+            </p>
+            <p className="mt-1 text-xs text-neutral-400">
+              Sets the member&apos;s plan directly — no payment involved, separate from Payment Confirmations.
+            </p>
+            <div className="mt-4">
+              <UserPlanActions userId={user.userId} packages={packages} currentPackageId={user.subscription?.packageId ?? null} />
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
+            <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-400">Account Access</h2>
+            <p className="mt-2 text-sm text-neutral-600">
+              {user.isSuspended ? (
+                <>This account is <span className="font-semibold text-red-600">blocked</span> — the member cannot log in.</>
+              ) : (
+                "This account can log in and use the platform normally."
+              )}
+            </p>
+            <div className="mt-4">
+              <UserBlockActions userId={user.userId} isSuspended={user.isSuspended} />
             </div>
           </div>
 

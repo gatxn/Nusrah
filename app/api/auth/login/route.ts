@@ -29,6 +29,8 @@ export async function POST(request: NextRequest) {
   const validPassword = await verifyPassword(parsed.data.password, user.passwordHash);
   if (!validPassword) return jsonError(t.invalidCredentials, 401);
 
+  if (user.isSuspended) return jsonError(t.accountSuspended, 403);
+
   if (!user.otpVerified) {
     return jsonError(t.otpRequired, 403, {
       userId: user.id,

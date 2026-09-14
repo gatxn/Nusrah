@@ -372,6 +372,7 @@
       "registerSuccess": "Nous avons envoyé un code de vérification (OTP) à votre e-mail",
       "devNote": "Mode test : aucun e-mail réel n'a été envoyé.",
       "invalidCredentials": "Numéro de téléphone/e-mail ou mot de passe incorrect",
+      "accountSuspended": "Votre compte a été suspendu. Veuillez contacter le support.",
       "otpRequired": "Veuillez d'abord vérifier votre compte avec l'OTP",
       "userNotFound": "Utilisateur introuvable",
       "alreadyVerified": "Le compte est déjà vérifié",

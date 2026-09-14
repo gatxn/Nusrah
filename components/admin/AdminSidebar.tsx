@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AdminSidebarNavItem from "@/components/admin/AdminSidebarNavItem";
 import AdminLogoutButton from "@/components/admin/AdminLogoutButton";
+import type { AdminAttentionCounts } from "@/lib/admin/attention";
 import {
   GridIcon,
   UsersIcon,
@@ -14,24 +15,33 @@ import {
   ArrowRightIcon,
 } from "@/components/icons";
 
-type NavItem = { href: string; label: string; icon: React.ComponentType<{ className?: string }>; badge?: number };
+type NavItem = {
+  href: string;
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+  badge?: (a: AdminAttentionCounts) => number;
+};
 
 // Mirrors the mockup's sidebar order exactly. Routes beyond /admin/dashboard
 // don't exist yet as of Phase 1 — they're built out over the plan's later
 // phases; visiting one early just 404s, which is an honest state for
 // "phase 1 of a phased build," not a bug.
+//
+// badge is a live count of what needs a look in that section — see
+// lib/admin/attention.ts. Payments' badge counts orders stuck PENDING past
+// the same threshold the /admin/payments/pending queue uses.
 const NAV_ITEMS: NavItem[] = [
   { href: "/admin/dashboard", label: "Dashboard", icon: GridIcon },
   { href: "/admin/users", label: "Users", icon: UsersIcon },
-  { href: "/admin/verification", label: "Profiles & Verification", icon: ShieldCheckIcon },
+  { href: "/admin/verification", label: "Profiles & Verification", icon: ShieldCheckIcon, badge: (a) => a.pendingVerification },
   { href: "/admin/matches", label: "Matches", icon: HeartFilledIcon },
-  { href: "/admin/reports", label: "Messages/Reports", icon: FlagIcon },
+  { href: "/admin/reports", label: "Messages/Reports", icon: FlagIcon, badge: (a) => a.pendingReports },
   { href: "/admin/memberships", label: "Memberships", icon: MedalIcon },
-  { href: "/admin/payments", label: "Payments", icon: CreditCardIcon },
+  { href: "/admin/payments", label: "Payments", icon: CreditCardIcon, badge: (a) => a.pendingPayments },
   { href: "/admin/content/reviews", label: "Content Management", icon: DocumentIcon },
 ];
 
-export default function AdminSidebar() {
+export default function AdminSidebar({ attention }: { attention: AdminAttentionCounts }) {
   const content = (
     <div className="flex h-full flex-col">
       <div className="px-5 pb-2 pt-5">
@@ -48,7 +58,7 @@ export default function AdminSidebar() {
             href={item.href}
             label={item.label}
             icon={<item.icon className="h-5 w-5 shrink-0 text-primary" />}
-            badge={item.badge}
+            badge={item.badge?.(attention)}
           />
         ))}
       </nav>
