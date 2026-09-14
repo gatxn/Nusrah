@@ -12,6 +12,9 @@ datasource db {
   provider = "postgresql"
 }
 
+// role: "MEMBER" | "ADMIN" — an ADMIN row is a dedicated account created via
+// scripts/promote-admin.ts, never a member's own upgraded account, so an
+// admin session never intersects with the (app) layout's onboarding guard.
 model User {
   id           String   @id @default(cuid())
   name         String
@@ -19,6 +22,7 @@ model User {
   email        String?  @unique
   passwordHash String
   otpVerified  Boolean  @default(false)
+  role         String   @default("MEMBER")
   createdAt    DateTime @default(now())
   termsAcceptedAt DateTime @default(now())
 
