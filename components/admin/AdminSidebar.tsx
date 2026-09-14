@@ -28,7 +28,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: "/admin/reports", label: "Messages/Reports", icon: FlagIcon },
   { href: "/admin/memberships", label: "Memberships", icon: MedalIcon },
   { href: "/admin/payments", label: "Payments", icon: CreditCardIcon },
-  { href: "/admin/content", label: "Content Management", icon: DocumentIcon },
+  { href: "/admin/content/reviews", label: "Content Management", icon: DocumentIcon },
 ];
 
 export default function AdminSidebar() {
