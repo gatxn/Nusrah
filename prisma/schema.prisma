@@ -20,6 +20,13 @@ model User {
   name         String
   phone        String   @unique
   email        String?  @unique
+  // Admin-only login identifier — never set for a MEMBER row. Lets an admin
+  // account authenticate without exposing/reusing a real phone number or
+  // email, and keeps the admin login screen from asking for either. phone
+  // is still populated (with an internal placeholder, never a real number)
+  // for admin rows purely because the column is NOT NULL + unique; it is
+  // never read or displayed for an admin account.
+  username     String?  @unique
   passwordHash String
   otpVerified  Boolean  @default(false)
   role         String   @default("MEMBER")

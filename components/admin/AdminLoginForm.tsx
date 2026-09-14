@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function AdminLoginForm() {
-  const [identifier, setIdentifier] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -16,7 +16,7 @@ export default function AdminLoginForm() {
       const res = await fetch("/api/admin/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ identifier, password }),
+        body: JSON.stringify({ username, password }),
       });
       const json = await res.json();
       if (!res.ok) {
@@ -40,14 +40,14 @@ export default function AdminLoginForm() {
       {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{error}</p>}
 
       <div>
-        <label htmlFor="admin-identifier" className="mb-1 block text-sm font-medium text-navy">
-          Phone or email
+        <label htmlFor="admin-username" className="mb-1 block text-sm font-medium text-navy">
+          Username
         </label>
         <input
-          id="admin-identifier"
+          id="admin-username"
           type="text"
-          value={identifier}
-          onChange={(e) => setIdentifier(e.target.value)}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           className="w-full rounded-lg border border-black/10 px-3 py-2.5 text-sm focus:border-primary focus:outline-none"
           autoComplete="username"
         />
