@@ -131,10 +131,15 @@ model Profile {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  // Set to true only by the site owner manually reviewing a member (no ID
-  // document upload exists in-app) and flipping this via Prisma Studio — no
-  // in-app review workflow exists.
+  // Legacy — superseded by verificationStatus below (now the real source of
+  // truth, with an in-app admin review workflow). Kept only as a historical
+  // backfill source; never read or written past the migration that added
+  // verificationStatus. Safe to drop in a later cleanup once that new flow
+  // has been used for real.
   isVerified Boolean @default(false)
+  // "NOT_STARTED" | "PENDING" | "VERIFIED" | "REJECTED" — reviewed via the
+  // admin dashboard (app/admin/(dashboard)/verification).
+  verificationStatus String @default("NOT_STARTED")
   // Written opportunistically (throttled) from (app)/layout.tsx on every
   // authenticated page load — see lib/profiles.ts's touchLastActive. Never
   // exposed directly; only the derived boolean isOnline (SerializedProfile)

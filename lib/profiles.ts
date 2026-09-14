@@ -111,7 +111,7 @@ type ProfileForSerialization = Pick<
   | "wearsHijab"
   | "maritalStatus"
   | "createdAt"
-  | "isVerified"
+  | "verificationStatus"
   | "lastActiveAt"
   | "prayerHabit"
   | "quranLevel"
@@ -138,6 +138,7 @@ export function serializeProfileForViewer(
   const contactVisible = meetsMinimumTier(viewerTier, requiredTier);
 
   const ageMs = Date.now() - profile.createdAt.getTime();
+  const isVerified = profile.verificationStatus === "VERIFIED";
 
   return {
     userId: profile.userId,
@@ -160,7 +161,7 @@ export function serializeProfileForViewer(
     wearsHijab: profile.wearsHijab,
     maritalStatus: profile.maritalStatus,
     isNew: ageMs < NEW_PROFILE_WINDOW_DAYS * 24 * 60 * 60 * 1000,
-    isVerified: profile.isVerified,
+    isVerified,
     isOnline: isRecentlyActive(profile.lastActiveAt),
     prayerHabit: profile.prayerHabit,
     quranLevel: profile.quranLevel,
@@ -228,7 +229,7 @@ const PROFILE_LIST_SELECT = {
   wearsHijab: true,
   maritalStatus: true,
   createdAt: true,
-  isVerified: true,
+  verificationStatus: true,
   lastActiveAt: true,
   prayerHabit: true,
   quranLevel: true,
@@ -252,7 +253,7 @@ function scoreForBestMatch(
     photoUpdatedAt: Date | null;
     intentions: string[];
     createdAt: Date;
-    isVerified: boolean;
+    verificationStatus: string;
     lastActiveAt: Date | null;
   },
   viewerIntentions: Intention[]
@@ -263,7 +264,7 @@ function scoreForBestMatch(
   score += shared * 2;
   const ageDays = (Date.now() - p.createdAt.getTime()) / (24 * 60 * 60 * 1000);
   score += Math.max(0, 5 - ageDays / 7);
-  if (p.isVerified) score += 2;
+  if (p.verificationStatus === "VERIFIED") score += 2;
   if (isRecentlyActive(p.lastActiveAt)) score += 1;
   return score;
 }
@@ -321,7 +322,7 @@ export async function queryMembers(params: MembersQueryParams): Promise<MembersQ
     ...(maritalStatuses.length ? { maritalStatus: { in: maritalStatuses } } : {}),
     ...(madhhabs.length ? { madhhab: { in: madhhabs } } : {}),
     ...(hijab.length ? { wearsHijab: { in: hijab } } : {}),
-    ...(verifiedOnly ? { isVerified: true } : {}),
+    ...(verifiedOnly ? { verificationStatus: "VERIFIED" } : {}),
     ...(search
       ? {
           OR: [
