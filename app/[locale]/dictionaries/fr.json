@@ -2388,6 +2388,11 @@
     "statusPaidCta": "Aller au compte",
     "statusCancelledHeading": "Échec du paiement",
     "statusCancelledBody": "Le paiement n'a pas abouti. Vous pouvez réessayer à tout moment.",
-    "statusCancelledCta": "Réessayer"
+    "statusCancelledCta": "Réessayer",
+    "methodMobileMoney": "Mobile Money",
+    "methodPaypal": "PayPal",
+    "paypalProcessing": "Confirmation du paiement...",
+    "paypalError": "PayPal n'a pas pu finaliser ce paiement. Veuillez réessayer.",
+    "paypalLoadError": "Impossible de charger PayPal. Veuillez réessayer ou utiliser Mobile Money."
   }
 }

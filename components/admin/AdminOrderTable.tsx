@@ -11,6 +11,13 @@ function formatTzs(amount: number) {
   return new Intl.NumberFormat("en-US").format(amount);
 }
 
+function formatAmount(order: AdminOrderRow): string {
+  if (order.currency === "USD" && order.amountUsdCents != null) {
+    return `${(order.amountUsdCents / 100).toFixed(2)} USD`;
+  }
+  return `${formatTzs(order.amountTzs)} TZS`;
+}
+
 function formatDate(date: Date): string {
   return new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" }).format(date);
 }
@@ -38,7 +45,7 @@ export default function AdminOrderTable({ orders, showActions = false }: { order
             <tr key={o.id} className="border-b border-black/5 last:border-0">
               <td className="px-4 py-3 font-medium text-navy">{o.userName}</td>
               <td className="px-4 py-3 text-neutral-600">{o.packageName}</td>
-              <td className="px-4 py-3 text-neutral-600">{formatTzs(o.amountTzs)} TZS</td>
+              <td className="px-4 py-3 text-neutral-600">{formatAmount(o)}</td>
               <td className="px-4 py-3">
                 <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${STATUS_STYLES[o.status] ?? STATUS_STYLES.PENDING}`}>
                   {o.status}

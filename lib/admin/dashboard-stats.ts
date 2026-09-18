@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/db";
-import { confirmedRevenueTzs } from "@/lib/admin/revenue";
+import { confirmedRevenueTzs, confirmedRevenueUsdCents } from "@/lib/admin/revenue";
 import { countMutualMatches, matchesPerDay } from "@/lib/admin/matches";
 
 const DAY_MS = 24 * 60 * 60 * 1000;
@@ -31,6 +31,10 @@ export type DashboardStats = {
   activeMatches: StatWithChange;
   reportedAccounts: StatWithChange;
   confirmedRevenueTzs: StatWithChange;
+  // Kept separate from confirmedRevenueTzs rather than converted into it —
+  // a USD figure and a TZS figure are not the same unit, and combining them
+  // would misrepresent what was actually collected in each currency.
+  confirmedRevenueUsdCents: { value: number };
   verificationBreakdown: { notStarted: number; pending: number; verified: number; rejected: number };
 };
 
@@ -69,6 +73,7 @@ export async function getDashboardStats(): Promise<DashboardStats> {
     reportsLast30,
     reportsPrev30,
     revenueTotal,
+    revenueUsdCentsTotal,
     revenueLast30,
     revenuePrev30,
     verifiedCount,
@@ -85,12 +90,13 @@ export async function getDashboardStats(): Promise<DashboardStats> {
     prisma.report.count({ where: { createdAt: { gte: start30 } } }),
     prisma.report.count({ where: { createdAt: { gte: start60, lt: start30 } } }),
     confirmedRevenueTzs(),
+    confirmedRevenueUsdCents(),
     prisma.order.aggregate({
-      where: { status: "PAID", transactions: { some: { verifiedAt: { gte: start30 } } } },
+      where: { status: "PAID", currency: "TZS", transactions: { some: { verifiedAt: { gte: start30 } } } },
       _sum: { amountTzs: true },
     }),
     prisma.order.aggregate({
-      where: { status: "PAID", transactions: { some: { verifiedAt: { gte: start60, lt: start30 } } } },
+      where: { status: "PAID", currency: "TZS", transactions: { some: { verifiedAt: { gte: start60, lt: start30 } } } },
       _sum: { amountTzs: true },
     }),
     prisma.profile.count({ where: { verificationStatus: "VERIFIED" } }),
@@ -112,6 +118,7 @@ export async function getDashboardStats(): Promise<DashboardStats> {
       value: revenueTotal,
       changePercent: computeChange(revenueLast30._sum.amountTzs ?? 0, revenuePrev30._sum.amountTzs ?? 0),
     },
+    confirmedRevenueUsdCents: { value: revenueUsdCentsTotal },
     verificationBreakdown: {
       notStarted: notStartedCount,
       pending: pendingCount,

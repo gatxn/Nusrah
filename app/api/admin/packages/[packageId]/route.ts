@@ -5,6 +5,7 @@ import { updatePackage } from "@/lib/admin/packages";
 
 const updateSchema = z.object({
   priceTzs: z.number().int().min(0),
+  priceUsdCents: z.number().int().min(0).nullable(),
   durationDays: z.number().int().min(1),
   tagline: z.string().min(1),
   features: z.array(z.string().min(1)),

@@ -14,6 +14,7 @@ export async function listAdminPackages(): Promise<SerializedPackage[]> {
 
 export type UpdatePackageInput = {
   priceTzs: number;
+  priceUsdCents: number | null;
   durationDays: number;
   tagline: string;
   features: string[];
@@ -24,6 +25,7 @@ export async function updatePackage(packageId: string, input: UpdatePackageInput
     where: { id: packageId },
     data: {
       priceTzs: input.priceTzs,
+      priceUsdCents: input.priceUsdCents,
       durationDays: input.durationDays,
       tagline: input.tagline,
       features: JSON.stringify(input.features),

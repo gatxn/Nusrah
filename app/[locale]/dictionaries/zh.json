@@ -2388,6 +2388,11 @@
     "statusPaidCta": "前往账户",
     "statusCancelledHeading": "付款失败",
     "statusCancelledBody": "付款未完成，您可以随时重试。",
-    "statusCancelledCta": "重试"
+    "statusCancelledCta": "重试",
+    "methodMobileMoney": "移动支付",
+    "methodPaypal": "PayPal",
+    "paypalProcessing": "正在确认付款...",
+    "paypalError": "PayPal 无法完成此付款，请重试。",
+    "paypalLoadError": "无法加载 PayPal，请重试或改用移动支付。"
   }
 }

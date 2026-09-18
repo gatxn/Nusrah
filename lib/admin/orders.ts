@@ -9,6 +9,8 @@ export type AdminOrderRow = {
   userName: string;
   packageName: string;
   amountTzs: number;
+  currency: string;
+  amountUsdCents: number | null;
   status: string;
   createdAt: Date;
 };
@@ -42,6 +44,8 @@ export async function queryAdminOrders(
       select: {
         id: true,
         amountTzs: true,
+        currency: true,
+        amountUsdCents: true,
         status: true,
         createdAt: true,
         userId: true,
@@ -62,6 +66,8 @@ export async function queryAdminOrders(
       userName: o.user.name,
       packageName: o.package.name,
       amountTzs: o.amountTzs,
+      currency: o.currency,
+      amountUsdCents: o.amountUsdCents,
       status: o.status,
       createdAt: o.createdAt,
     })),
@@ -98,6 +104,8 @@ export async function getAdminOrderDetail(orderId: string): Promise<AdminOrderDe
     packageTier: o.package.tier,
     packageDurationDays: o.package.durationDays,
     amountTzs: o.amountTzs,
+    currency: o.currency,
+    amountUsdCents: o.amountUsdCents,
     status: o.status,
     createdAt: o.createdAt,
     transactions: o.transactions.map((t) => ({

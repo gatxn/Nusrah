@@ -40,7 +40,8 @@ export default async function AdminDashboardPage() {
         <StatCard icon={<ClockIcon className="h-4.5 w-4.5" />} label="Pending Verification" value={String(stats.pendingVerification.value)} />
         <StatCard icon={<HeartFilledIcon className="h-4.5 w-4.5" />} label="Active Matches" value={String(stats.activeMatches.value)} changePercent={stats.activeMatches.changePercent} />
         <StatCard icon={<FlagIcon className="h-4.5 w-4.5" />} label="Reported Accounts" value={String(stats.reportedAccounts.value)} changePercent={stats.reportedAccounts.changePercent} />
-        <StatCard icon={<CreditCardIcon className="h-4.5 w-4.5" />} label="Revenue" value={`${formatTzs(stats.confirmedRevenueTzs.value)} TZS`} changePercent={stats.confirmedRevenueTzs.changePercent} />
+        <StatCard icon={<CreditCardIcon className="h-4.5 w-4.5" />} label="Revenue (TZS)" value={`${formatTzs(stats.confirmedRevenueTzs.value)} TZS`} changePercent={stats.confirmedRevenueTzs.changePercent} />
+        <StatCard icon={<CreditCardIcon className="h-4.5 w-4.5" />} label="Revenue (PayPal)" value={`$${(stats.confirmedRevenueUsdCents.value / 100).toFixed(2)}`} />
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-3">

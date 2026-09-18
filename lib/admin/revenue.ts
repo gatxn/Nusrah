@@ -13,12 +13,25 @@ import { prisma } from "@/lib/db";
 // not yet worth counting as unconfirmed revenue at risk.
 const PENDING_AGE_THRESHOLD_HOURS = 1;
 
+// Only sums orders actually collected in TZS — a PayPal order's amountTzs
+// still holds the package's nominal TZS list price for display purposes
+// (see the Order.amountTzs comment in schema.prisma), but summing that
+// into "TZS revenue" would silently mix real TZS collected via mobile
+// money with a USD charge as if they were the same currency.
 export async function confirmedRevenueTzs(): Promise<number> {
   const result = await prisma.order.aggregate({
-    where: { status: "PAID" },
+    where: { status: "PAID", currency: "TZS" },
     _sum: { amountTzs: true },
   });
   return result._sum.amountTzs ?? 0;
+}
+
+export async function confirmedRevenueUsdCents(): Promise<number> {
+  const result = await prisma.order.aggregate({
+    where: { status: "PAID", currency: "USD" },
+    _sum: { amountUsdCents: true },
+  });
+  return result._sum.amountUsdCents ?? 0;
 }
 
 export async function pendingUnconfirmedRevenueTzs(): Promise<number> {

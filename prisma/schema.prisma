@@ -179,6 +179,11 @@ model Package {
   tier         String   @unique
   name         String
   priceTzs     Int
+  // USD price in cents (e.g. 150 = $1.50), for the PayPal checkout option.
+  // Stored as integer cents, not a decimal, to avoid float rounding when
+  // building PayPal's amount.value string. Null means PayPal isn't offered
+  // for this package (e.g. FREE, which needs no payment at all).
+  priceUsdCents Int?
   durationDays Int
   tagline      String
   features     String // JSON-encoded string[]
@@ -194,7 +199,13 @@ model Order {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   packageId String
   package   Package  @relation(fields: [packageId], references: [id])
-  amountTzs Int
+  // amountTzs always holds the package's TZS list price, regardless of which
+  // gateway actually charged the member — currency + amountUsdCents record
+  // what was ACTUALLY collected, so admin revenue reporting never silently
+  // mixes TZS and USD together as if they were the same figure.
+  amountTzs      Int
+  currency       String @default("TZS") // "TZS" | "USD" — which currency this order was actually charged in
+  amountUsdCents Int? // populated only when currency = "USD" (a PayPal-paid order)
   status    String   @default("PENDING")
   createdAt DateTime @default(now())
 

@@ -4,7 +4,7 @@ import { getSessionUserId } from "@/lib/auth";
 import { getDictionary, getLocale } from "@/app/[locale]/dictionaries";
 import { localeHref } from "@/lib/i18n/href";
 import LocaleLink from "@/components/LocaleLink";
-import PaymentForm from "@/components/PaymentForm";
+import PaymentMethodPicker from "@/components/PaymentMethodPicker";
 import TierBadge from "@/components/TierBadge";
 
 function formatTzs(amount: number) {
@@ -60,7 +60,12 @@ export default async function PaymentPage({ params }: { params: Promise<{ orderI
             </LocaleLink>
           </div>
         ) : (
-          <PaymentForm orderId={order.id} amountTzs={order.amountTzs} dict={t} />
+          <PaymentMethodPicker
+            orderId={order.id}
+            amountTzs={order.amountTzs}
+            amountUsdCents={order.package.priceUsdCents}
+            dict={t}
+          />
         )}
       </div>
     </div>

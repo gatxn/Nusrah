@@ -2388,6 +2388,11 @@
     "statusPaidCta": "Go to Account",
     "statusCancelledHeading": "Payment Failed",
     "statusCancelledBody": "The payment wasn't completed. You can try again anytime.",
-    "statusCancelledCta": "Try Again"
+    "statusCancelledCta": "Try Again",
+    "methodMobileMoney": "Mobile Money",
+    "methodPaypal": "PayPal",
+    "paypalProcessing": "Confirming your payment...",
+    "paypalError": "PayPal couldn't complete this payment. Please try again.",
+    "paypalLoadError": "Couldn't load PayPal. Please try again or use Mobile Money instead."
   }
 }

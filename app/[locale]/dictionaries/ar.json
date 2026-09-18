@@ -2388,6 +2388,11 @@
     "statusPaidCta": "الذهاب إلى الحساب",
     "statusCancelledHeading": "فشل الدفع",
     "statusCancelledBody": "لم تكتمل عملية الدفع. يمكنك المحاولة مرة أخرى في أي وقت.",
-    "statusCancelledCta": "حاول مرة أخرى"
+    "statusCancelledCta": "حاول مرة أخرى",
+    "methodMobileMoney": "الأموال عبر الهاتف",
+    "methodPaypal": "PayPal",
+    "paypalProcessing": "جارٍ تأكيد الدفع...",
+    "paypalError": "تعذر على PayPal إتمام هذه الدفعة. يرجى المحاولة مرة أخرى.",
+    "paypalLoadError": "تعذر تحميل PayPal. يرجى المحاولة مرة أخرى أو استخدام الأموال عبر الهاتف."
   }
 }

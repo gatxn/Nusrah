@@ -7,6 +7,7 @@ import type { SerializedPackage } from "@/lib/packages";
 export default function PackageEditForm({ pkg }: { pkg: SerializedPackage }) {
   const router = useRouter();
   const [priceTzs, setPriceTzs] = useState(String(pkg.priceTzs));
+  const [priceUsd, setPriceUsd] = useState(pkg.priceUsdCents != null ? (pkg.priceUsdCents / 100).toFixed(2) : "");
   const [durationDays, setDurationDays] = useState(String(pkg.durationDays));
   const [tagline, setTagline] = useState(pkg.tagline);
   const [featuresText, setFeaturesText] = useState(pkg.features.join("\n"));
@@ -24,6 +25,7 @@ export default function PackageEditForm({ pkg }: { pkg: SerializedPackage }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           priceTzs: Number(priceTzs),
+          priceUsdCents: priceUsd.trim() ? Math.round(Number(priceUsd) * 100) : null,
           durationDays: Number(durationDays),
           tagline,
           features: featuresText.split("\n").map((f) => f.trim()).filter(Boolean),
@@ -66,6 +68,20 @@ export default function PackageEditForm({ pkg }: { pkg: SerializedPackage }) {
             type="number"
             value={durationDays}
             onChange={(e) => setDurationDays(e.target.value)}
+            className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
+          />
+        </div>
+        <div>
+          <label className="mb-1 block text-xs font-medium text-neutral-500">
+            Price (USD, for PayPal — blank hides PayPal for this package)
+          </label>
+          <input
+            type="number"
+            step="0.01"
+            min="0"
+            value={priceUsd}
+            onChange={(e) => setPriceUsd(e.target.value)}
+            placeholder="e.g. 1.50"
             className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
           />
         </div>

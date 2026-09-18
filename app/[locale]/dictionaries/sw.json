@@ -2388,6 +2388,11 @@
     "statusPaidCta": "Nenda kwenye Akaunti",
     "statusCancelledHeading": "Malipo Hayakukamilika",
     "statusCancelledBody": "Malipo hayakukamilika. Unaweza kujaribu tena wakati wowote.",
-    "statusCancelledCta": "Jaribu Tena"
+    "statusCancelledCta": "Jaribu Tena",
+    "methodMobileMoney": "Pesa za Simu",
+    "methodPaypal": "PayPal",
+    "paypalProcessing": "Tunathibitisha malipo yako...",
+    "paypalError": "PayPal haikuweza kukamilisha malipo haya. Tafadhali jaribu tena.",
+    "paypalLoadError": "Imeshindwa kupakia PayPal. Tafadhali jaribu tena au tumia Pesa za Simu."
   }
 }
