@@ -1,5 +1,23 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Platforms & Services
+
+External platforms this project currently depends on, what each is used for, and whether it costs money.
+
+| Platform | Used for | Cost |
+|---|---|---|
+| **Namecheap hosting** (cPanel + Node.js Selector) | Runs the live production site (`nusrah-app` on `business168.web-hosting.com`) | Paid — hosting plan subscription |
+| **Domain — nusrah.co.tz** | The site's web address | Paid — annual domain registration |
+| **GitHub** ([gatxn/Nusrah](https://github.com/gatxn/Nusrah)) | Source code hosting / version control | Free |
+| **Neon** (serverless Postgres) | The entire database — users, profiles, orders, messages, etc. | Free tier available; paid tiers for more storage/compute |
+| **AzamPay** | Mobile money checkout (Airtel Money, Tigo Pesa, HaloPesa, Azam Pesa, M-Pesa) | Free to integrate; takes a transaction fee per real payment |
+| **PayPal** | Card / PayPal-balance checkout | Free to integrate; takes a transaction fee per real payment |
+| **Resend** | Sending OTP verification codes by email | Free tier (limited emails/month); paid plans for higher volume |
+| **Agora** | Real-time voice and video calling between members | Free tier (some free minutes/month); paid usage-based pricing beyond that |
+| **Claude Code (Anthropic)** | AI pair-programmer used to build, debug, and deploy this project | Covered by the Claude subscription/plan in use |
+
+Not yet wired up: a real SMS provider for OTP (`SMS_PROVIDER` is currently empty in `.env` — email OTP via Resend is the only channel live today).
+
 ## Getting Started
 
 First, run the development server:
