@@ -399,6 +399,7 @@
       "cannotBlockSelf": "لا يمكنك حظر نفسك",
       "cannotMessageSelf": "لا يمكنك مراسلة نفسك",
       "cannotFavoriteSelf": "لا يمكنك إضافة نفسك إلى المفضلة",
+      "likeLimitReached": "لقد وصلت إلى حد {limit} إعجابات جديدة لهذا اليوم. عد غدًا أو قم بترقية باقتك.",
       "cannotReportSelf": "لا يمكنك الإبلاغ عن نفسك",
       "invalidPhotoType": "نوع الصورة غير صالح",
       "photoTooLarge": "الصورة كبيرة جداً",
@@ -1167,7 +1168,9 @@
       "seekingPrefix": "يبحث عن:",
       "sendMessageAria": "إرسال رسالة",
       "addFavoriteAria": "إضافة إلى المفضلة",
-      "removeFavoriteAria": "إزالة من المفضلة"
+      "removeFavoriteAria": "إزالة من المفضلة",
+      "likeLimitReachedShort": "تم بلوغ حد اليوم",
+      "likeLimitUpgrade": "ترقية الباقة"
     },
     "filterPanel": {
       "heading": "فلاتر البحث",

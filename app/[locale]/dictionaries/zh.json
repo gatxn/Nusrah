@@ -399,6 +399,7 @@
       "cannotBlockSelf": "您不能屏蔽自己",
       "cannotMessageSelf": "您不能给自己发消息",
       "cannotFavoriteSelf": "您不能将自己加入收藏",
+      "likeLimitReached": "您今天已达到 {limit} 个新喜欢的上限。请明天再来，或升级您的套餐。",
       "cannotReportSelf": "您不能举报自己",
       "invalidPhotoType": "照片类型无效",
       "photoTooLarge": "照片文件过大",
@@ -1167,7 +1168,9 @@
       "seekingPrefix": "寻找：",
       "sendMessageAria": "发送消息",
       "addFavoriteAria": "加入收藏",
-      "removeFavoriteAria": "从收藏中移除"
+      "removeFavoriteAria": "从收藏中移除",
+      "likeLimitReachedShort": "已达今日上限",
+      "likeLimitUpgrade": "升级套餐"
     },
     "filterPanel": {
       "heading": "搜索筛选",

@@ -399,6 +399,7 @@
       "cannotBlockSelf": "You can't block yourself",
       "cannotMessageSelf": "You can't message yourself",
       "cannotFavoriteSelf": "You can't favorite yourself",
+      "likeLimitReached": "You've reached today's limit of {limit} new likes. Come back tomorrow, or upgrade your plan.",
       "cannotReportSelf": "You can't report yourself",
       "invalidPhotoType": "Invalid photo type",
       "photoTooLarge": "Photo is too large",
@@ -1167,7 +1168,9 @@
       "seekingPrefix": "Looking for:",
       "sendMessageAria": "Send a message",
       "addFavoriteAria": "Add to favorites",
-      "removeFavoriteAria": "Remove from favorites"
+      "removeFavoriteAria": "Remove from favorites",
+      "likeLimitReachedShort": "Today's limit reached",
+      "likeLimitUpgrade": "Upgrade Plan"
     },
     "filterPanel": {
       "heading": "Search Filters",

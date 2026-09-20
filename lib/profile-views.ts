@@ -1,7 +1,7 @@
 import { prisma } from "@/lib/db";
 import { TIER_CAPABILITIES, type Tier } from "@/lib/tiers";
 
-function startOfToday(): Date {
+export function startOfToday(): Date {
   const now = new Date();
   return new Date(now.getFullYear(), now.getMonth(), now.getDate());
 }

@@ -5,8 +5,9 @@ import { getSessionUserId, getEffectiveTier } from "@/lib/auth";
 import { isEligibleTarget, queryMembers } from "@/lib/profiles";
 import { isBlocked } from "@/lib/blocks";
 import { maybeNotifyProfileLiked } from "@/lib/notifications";
+import { checkFavoriteAccess } from "@/lib/favorite-limits";
 import { createFavoriteSchema } from "@/lib/validation";
-import { jsonError, zodError, UNAUTHENTICATED, NOT_FOUND } from "@/lib/api";
+import { jsonError, zodError, UNAUTHENTICATED, NOT_FOUND, FORBIDDEN } from "@/lib/api";
 import { validationMessages, apiErrors } from "@/lib/i18n/api";
 
 export async function GET(request: NextRequest) {
@@ -53,6 +54,19 @@ export async function POST(request: NextRequest) {
   ]);
   if (!target || !isEligibleTarget(viewer?.gender, target.gender)) return NOT_FOUND(request);
   if (await isBlocked(userId, favoritedUserId)) return NOT_FOUND(request);
+
+  // Daily new-like allowance mirrors lib/tiers.ts's profileViewLimit exactly
+  // (see lib/favorite-limits.ts) — re-favoriting an already-liked profile is
+  // always free and never checked against it.
+  const tier = await getEffectiveTier(userId);
+  const access = await checkFavoriteAccess(userId, favoritedUserId, tier);
+  if (!access.allowed) {
+    const t = await apiErrors(request);
+    return FORBIDDEN(request, t.likeLimitReached.replace("{limit}", String(access.limit)), {
+      limit: access.limit,
+      usedToday: access.usedToday,
+    });
+  }
 
   try {
     await prisma.favorite.create({ data: { userId, favoritedUserId } });

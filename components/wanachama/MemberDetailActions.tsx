@@ -26,7 +26,10 @@ export default function MemberDetailActions({
   viewerTier: Tier;
   initialFavorited: boolean;
   dict: Dictionary["wanachama"]["detail"];
-  cardLabels: Pick<Dictionary["wanachama"]["card"], "addFavoriteAria" | "removeFavoriteAria">;
+  cardLabels: Pick<
+    Dictionary["wanachama"]["card"],
+    "addFavoriteAria" | "removeFavoriteAria" | "likeLimitReachedShort" | "likeLimitUpgrade"
+  >;
   reportDict: Dictionary["ripotiMtumiaji"]["modal"];
   reportReasons: Dictionary["common"]["reportReasons"];
 }) {

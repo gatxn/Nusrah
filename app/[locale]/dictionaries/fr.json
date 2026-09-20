@@ -399,6 +399,7 @@
       "cannotBlockSelf": "Vous ne pouvez pas vous bloquer vous-même",
       "cannotMessageSelf": "Vous ne pouvez pas vous envoyer un message à vous-même",
       "cannotFavoriteSelf": "Vous ne pouvez pas vous ajouter vous-même en favori",
+      "likeLimitReached": "Vous avez atteint la limite de {limit} nouveaux j'aime pour aujourd'hui. Revenez demain ou améliorez votre forfait.",
       "cannotReportSelf": "Vous ne pouvez pas vous signaler vous-même",
       "invalidPhotoType": "Type de photo invalide",
       "photoTooLarge": "La photo est trop volumineuse",
@@ -1167,7 +1168,9 @@
       "seekingPrefix": "Recherche :",
       "sendMessageAria": "Envoyer un message",
       "addFavoriteAria": "Ajouter aux favoris",
-      "removeFavoriteAria": "Retirer des favoris"
+      "removeFavoriteAria": "Retirer des favoris",
+      "likeLimitReachedShort": "Limite du jour atteinte",
+      "likeLimitUpgrade": "Améliorer le forfait"
     },
     "filterPanel": {
       "heading": "Filtres de recherche",

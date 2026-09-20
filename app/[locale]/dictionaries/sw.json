@@ -399,6 +399,7 @@
       "cannotBlockSelf": "Huwezi kujizuia mwenyewe",
       "cannotMessageSelf": "Huwezi kujitumia ujumbe",
       "cannotFavoriteSelf": "Huwezi kujipenda mwenyewe",
+      "likeLimitReached": "Umefikia kikomo cha kupenda wasifu {limit} mpya kwa leo. Rudi kesho, au boresha kifurushi chako.",
       "cannotReportSelf": "Huwezi kujiripoti mwenyewe",
       "invalidPhotoType": "Aina ya picha si sahihi",
       "photoTooLarge": "Picha ni kubwa mno",
@@ -1167,7 +1168,9 @@
       "seekingPrefix": "Anatafuta:",
       "sendMessageAria": "Tuma ujumbe",
       "addFavoriteAria": "Ongeza kwenye wanaopendwa",
-      "removeFavoriteAria": "Ondoa kwenye wanaopendwa"
+      "removeFavoriteAria": "Ondoa kwenye wanaopendwa",
+      "likeLimitReachedShort": "Kikomo cha leo kimefikiwa",
+      "likeLimitUpgrade": "Boresha Kifurushi"
     },
     "filterPanel": {
       "heading": "Vigezo vya Utafutaji",
