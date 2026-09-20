@@ -78,6 +78,7 @@ export type SerializedProfile = {
   madhhab: string | null;
   wearsHijab: string | null;
   maritalStatus: string | null;
+  tribe: string | null;
   isNew: boolean;
   isVerified: boolean;
   isOnline: boolean;
@@ -111,6 +112,7 @@ type ProfileForSerialization = Pick<
   | "madhhab"
   | "wearsHijab"
   | "maritalStatus"
+  | "tribe"
   | "createdAt"
   | "verificationStatus"
   | "lastActiveAt"
@@ -161,6 +163,7 @@ export function serializeProfileForViewer(
     madhhab: profile.madhhab,
     wearsHijab: profile.wearsHijab,
     maritalStatus: profile.maritalStatus,
+    tribe: profile.tribe,
     isNew: ageMs < NEW_PROFILE_WINDOW_DAYS * 24 * 60 * 60 * 1000,
     isVerified,
     isOnline: isRecentlyActive(profile.lastActiveAt),
@@ -229,6 +232,7 @@ const PROFILE_LIST_SELECT = {
   madhhab: true,
   wearsHijab: true,
   maritalStatus: true,
+  tribe: true,
   createdAt: true,
   verificationStatus: true,
   lastActiveAt: true,

@@ -28,6 +28,7 @@ export default async function OnboardingPersonalPage() {
         initialRegion={profile.region}
         initialCity={profile.city}
         initialMaritalStatus={profile.maritalStatus}
+        initialTribe={profile.tribe}
         dict={dict.onboarding}
         labels={dict.common.labels}
       />

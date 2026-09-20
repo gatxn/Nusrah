@@ -23,6 +23,7 @@ export default function PersonalDetailsForm({
   initialRegion,
   initialCity,
   initialMaritalStatus,
+  initialTribe,
   standalone,
   dict,
   labels,
@@ -35,6 +36,7 @@ export default function PersonalDetailsForm({
   initialRegion: string | null;
   initialCity: string | null;
   initialMaritalStatus: string | null;
+  initialTribe: string | null;
   // True in My Profile (Wasifu Wangu) — shows inline "Imehifadhiwa" feedback
   // instead of the wizard's next-step navigation. A plain boolean (not a
   // callback) since this component is rendered from a Server Component page
@@ -57,6 +59,7 @@ export default function PersonalDetailsForm({
   const [maritalStatus, setMaritalStatus] = useState<MaritalStatus | "">(
     (initialMaritalStatus as MaritalStatus) ?? ""
   );
+  const [tribe, setTribe] = useState(initialTribe ?? "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -99,6 +102,7 @@ export default function PersonalDetailsForm({
           region,
           city,
           maritalStatus,
+          tribe: isTanzania ? tribe : "",
         }),
       });
       const json = await res.json();
@@ -255,6 +259,22 @@ export default function PersonalDetailsForm({
           />
         )}
       </div>
+
+      {isTanzania && (
+        <div>
+          <label htmlFor="tribe" className="mb-1 block text-sm font-medium text-navy">
+            {t.tribeLabel}
+          </label>
+          <input
+            id="tribe"
+            value={tribe}
+            onChange={(e) => setTribe(e.target.value)}
+            placeholder={t.tribePlaceholder}
+            maxLength={80}
+            className="w-full rounded-lg border border-black/10 px-3 py-2 text-sm focus:border-primary focus:outline-none"
+          />
+        </div>
+      )}
 
       <div>
         <label htmlFor="maritalStatus" className="mb-1 block text-sm font-medium text-navy">

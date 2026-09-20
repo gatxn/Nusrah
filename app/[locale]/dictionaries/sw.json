@@ -1039,6 +1039,8 @@
       "cityInputPlaceholder": "Wilaya / Mji",
       "maritalStatusLabel": "Hali ya Ndoa",
       "maritalStatusPlaceholder": "Chagua hali yako ya ndoa",
+      "tribeLabel": "Kabila (si lazima)",
+      "tribePlaceholder": "Mfano: Chagga, Haya, Sukuma",
       "underMinAge": "Lazima uwe na umri wa miaka {minAge} au zaidi kutumia Nusrah."
     },
     "religion": {
@@ -1192,6 +1194,7 @@
       "hijabLabel": "Hijab",
       "lifeSection": "Maisha",
       "maritalStatusLabel": "Hali ya Ndoa",
+      "tribeLabel": "Kabila",
       "occupationLabel": "Kazi",
       "educationLabel": "Elimu",
       "heightLabel": "Urefu",

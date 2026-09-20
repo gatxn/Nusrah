@@ -172,6 +172,14 @@ export function createOnboardingPersonalSchema(t: ValidationMessages) {
     region: z.string().trim().min(2, t.regionRequired).max(80),
     city: z.string().trim().min(2, t.cityRequired).max(80),
     maritalStatus: z.enum(MARITAL_STATUSES),
+    // Always optional — only ever asked when country is Tanzania, but not
+    // enforced server-side either way, since skipping it is always allowed.
+    tribe: z
+      .string()
+      .trim()
+      .max(80)
+      .optional()
+      .transform((v) => (v && v.length > 0 ? v : null)),
   });
 }
 

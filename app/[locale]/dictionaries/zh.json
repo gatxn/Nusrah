@@ -1039,6 +1039,8 @@
       "cityInputPlaceholder": "区/城镇",
       "maritalStatusLabel": "婚姻状况",
       "maritalStatusPlaceholder": "请选择您的婚姻状况",
+      "tribeLabel": "部落（可选）",
+      "tribePlaceholder": "例如：查加、哈亚、苏库马",
       "underMinAge": "您必须年满 {minAge} 岁才能使用 Nusrah。"
     },
     "religion": {
@@ -1192,6 +1194,7 @@
       "hijabLabel": "希贾布",
       "lifeSection": "生活",
       "maritalStatusLabel": "婚姻状况",
+      "tribeLabel": "部落",
       "occupationLabel": "职业",
       "educationLabel": "教育程度",
       "heightLabel": "身高",

@@ -1039,6 +1039,8 @@
       "cityInputPlaceholder": "District / Ville",
       "maritalStatusLabel": "Statut matrimonial",
       "maritalStatusPlaceholder": "Choisissez votre statut matrimonial",
+      "tribeLabel": "Ethnie (facultatif)",
+      "tribePlaceholder": "Ex. Chagga, Haya, Sukuma",
       "underMinAge": "Vous devez avoir {minAge} ans ou plus pour utiliser Nusrah."
     },
     "religion": {
@@ -1192,6 +1194,7 @@
       "hijabLabel": "Hijab",
       "lifeSection": "Vie",
       "maritalStatusLabel": "Statut matrimonial",
+      "tribeLabel": "Ethnie",
       "occupationLabel": "Profession",
       "educationLabel": "Éducation",
       "heightLabel": "Taille",

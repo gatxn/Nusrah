@@ -57,6 +57,7 @@ export default async function MyProfilePage() {
           initialRegion={profile.region}
           initialCity={profile.city}
           initialMaritalStatus={profile.maritalStatus}
+          initialTribe={profile.tribe}
           standalone
           dict={dict.onboarding}
           labels={labels}

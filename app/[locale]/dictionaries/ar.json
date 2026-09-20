@@ -1039,6 +1039,8 @@
       "cityInputPlaceholder": "الحي / المدينة",
       "maritalStatusLabel": "الحالة الاجتماعية",
       "maritalStatusPlaceholder": "اختر حالتك الاجتماعية",
+      "tribeLabel": "القبيلة (اختياري)",
+      "tribePlaceholder": "مثال: تشاغا، هايا، سوكوما",
       "underMinAge": "يجب أن يكون عمرك {minAge} سنة أو أكثر لاستخدام نصرة."
     },
     "religion": {
@@ -1192,6 +1194,7 @@
       "hijabLabel": "الحجاب",
       "lifeSection": "الحياة",
       "maritalStatusLabel": "الحالة الاجتماعية",
+      "tribeLabel": "القبيلة",
       "occupationLabel": "المهنة",
       "educationLabel": "التعليم",
       "heightLabel": "الطول",

@@ -78,6 +78,11 @@ model Profile {
   // Step 1 (Taarifa Binafsi) additions
   displayName   String?
   maritalStatus String? // AMEOA_AMEOLEWA | SIJAOA_SIJAOLEWA | TALAKA | MJANE | AMETENGANA
+  // Free-text, always optional — only ever asked/shown when country = "TZ"
+  // (see the isTanzania check in PersonalDetailsForm.tsx); not a fixed
+  // enum, since Tanzania has hundreds of tribes and a hardcoded list would
+  // inevitably miss someone's.
+  tribe         String?
 
   // Step 2 (Maelezo ya Dini) — all new
   religion     String?

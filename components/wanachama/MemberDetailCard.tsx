@@ -197,6 +197,7 @@ export default function MemberDetailCard({
                     label={dict.maritalStatusLabel}
                     value={labelOf(profile.maritalStatus, isMaritalStatus, labels.maritalStatus)}
                   />
+                  <DetailRow label={dict.tribeLabel} value={profile.tribe} />
                   <DetailRow label={dict.occupationLabel} value={profile.occupation} />
                   <DetailRow
                     label={dict.educationLabel}
