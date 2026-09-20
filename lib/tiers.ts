@@ -27,7 +27,7 @@ export type TierCapabilities = {
 
 export const TIER_CAPABILITIES: Record<Tier, TierCapabilities> = {
   FREE: {
-    profileViewLimit: 5,
+    profileViewLimit: 2,
     canInitiateMessage: false,
     canReplyToMessage: false,
     canVoiceCall: false,
@@ -37,7 +37,7 @@ export const TIER_CAPABILITIES: Record<Tier, TierCapabilities> = {
     canSeeWhoLikedYou: false,
   },
   BASIC: {
-    profileViewLimit: 20,
+    profileViewLimit: 4,
     canInitiateMessage: false,
     canReplyToMessage: true,
     canVoiceCall: false,
@@ -47,7 +47,7 @@ export const TIER_CAPABILITIES: Record<Tier, TierCapabilities> = {
     canSeeWhoLikedYou: false,
   },
   SILVER: {
-    profileViewLimit: 60,
+    profileViewLimit: 6,
     canInitiateMessage: true,
     canReplyToMessage: true,
     canVoiceCall: false,
