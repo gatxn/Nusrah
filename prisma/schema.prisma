@@ -255,6 +255,11 @@ model Message {
   body       String
   isRead     Boolean  @default(false)
   sentAt     DateTime @default(now())
+  editedAt   DateTime?
+  // Soft delete only — body is kept in the DB (never shown to either party
+  // once true; see lib/messages.ts) rather than erased, in case it's ever
+  // needed for moderation.
+  isDeleted  Boolean  @default(false)
 
   @@index([senderId, receiverId])
   @@index([receiverId, isRead])

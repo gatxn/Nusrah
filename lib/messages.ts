@@ -12,7 +12,8 @@ export type ConversationPreview = {
   otherUserId: string;
   otherUserName: string;
   otherUserHasPhoto: boolean;
-  lastMessageBody: string;
+  lastMessageBody: string | null;
+  lastMessageDeleted: boolean;
   lastMessageAt: string;
   lastMessageWasMine: boolean;
   unreadCount: number;
@@ -28,6 +29,7 @@ export async function getConversations(userId: string): Promise<ConversationPrev
         senderId: true,
         receiverId: true,
         body: true,
+        isDeleted: true,
         sentAt: true,
         sender: { select: { name: true } },
         receiver: { select: { name: true } },
@@ -55,7 +57,8 @@ export async function getConversations(userId: string): Promise<ConversationPrev
     previews.push({
       otherUserId,
       otherUserName: isMine ? row.receiver.name : row.sender.name,
-      lastMessageBody: row.body,
+      lastMessageBody: row.isDeleted ? null : row.body,
+      lastMessageDeleted: row.isDeleted,
       lastMessageAt: row.sentAt.toISOString(),
       lastMessageWasMine: isMine,
       unreadCount: unreadBySender.get(otherUserId) ?? 0,
@@ -78,9 +81,11 @@ export type ThreadMessage = {
   id: string;
   senderId: string;
   receiverId: string;
-  body: string;
+  body: string | null;
   sentAt: string;
   isRead: boolean;
+  editedAt: string | null;
+  isDeleted: boolean;
 };
 
 /** Backs both GET /api/messages?with= and the SSR initial load on the thread page. */
@@ -98,9 +103,14 @@ export async function getThreadMessages(userId: string, otherUserId: string): Pr
     id: m.id,
     senderId: m.senderId,
     receiverId: m.receiverId,
-    body: m.body,
+    // Never sent over the wire once deleted — the body column is kept in the
+    // DB (see the schema comment) but the API itself should behave as if it
+    // were gone, not just rely on the client to hide it.
+    body: m.isDeleted ? null : m.body,
     sentAt: m.sentAt.toISOString(),
     isRead: m.isRead,
+    editedAt: m.editedAt ? m.editedAt.toISOString() : null,
+    isDeleted: m.isDeleted,
   }));
 }
 

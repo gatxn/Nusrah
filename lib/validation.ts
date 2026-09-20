@@ -142,6 +142,12 @@ export function createSendMessageSchema(t: ValidationMessages) {
   });
 }
 
+export function createEditMessageSchema(t: ValidationMessages) {
+  return z.object({
+    body: z.string().trim().min(1, t.messageBodyRequired).max(2000),
+  });
+}
+
 // Parsed from FormData (multipart, since the attachment is an optional file
 // alongside these fields) — mirrors reportCreateSchema's shape.
 export function createContactFormSchema(t: ValidationMessages) {

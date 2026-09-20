@@ -400,6 +400,7 @@
       "cannotMessageSelf": "You can't message yourself",
       "cannotFavoriteSelf": "You can't favorite yourself",
       "likeLimitReached": "You've reached today's limit of {limit} new likes. Come back tomorrow, or upgrade your plan.",
+      "messageAlreadyDeleted": "You can't edit a message that's already been deleted",
       "cannotReportSelf": "You can't report yourself",
       "invalidPhotoType": "Invalid photo type",
       "photoTooLarge": "Photo is too large",
@@ -1274,7 +1275,8 @@
       "subtitle": "Your conversations with other members",
       "emptyState": "You have no conversations yet. Send a message from a member's profile to start.",
       "youPrefix": "You: ",
-      "unreadCap": "9+"
+      "unreadCap": "9+",
+      "messageDeleted": "Message deleted"
     },
     "thread": {
       "emptyThread": "No messages yet. Start the conversation below.",
@@ -1286,7 +1288,15 @@
       "cannotReply": "Your plan doesn't allow replying to messages. Upgrade your plan.",
       "cannotInitiate": "Your plan doesn't allow starting new conversations. Upgrade your plan.",
       "voiceCallAria": "Voice Call",
-      "videoCallAria": "Video Call"
+      "videoCallAria": "Video Call",
+      "edited": "(edited)",
+      "messageOptionsAria": "Message Options",
+      "editAction": "Edit",
+      "deleteAction": "Delete",
+      "confirmDeleteAction": "Confirm Delete",
+      "cancelAction": "Cancel",
+      "saveAction": "Save",
+      "messageDeleted": "This message was deleted"
     }
   },
   "calls": {

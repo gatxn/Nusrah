@@ -400,6 +400,7 @@
       "cannotMessageSelf": "لا يمكنك مراسلة نفسك",
       "cannotFavoriteSelf": "لا يمكنك إضافة نفسك إلى المفضلة",
       "likeLimitReached": "لقد وصلت إلى حد {limit} إعجابات جديدة لهذا اليوم. عد غدًا أو قم بترقية باقتك.",
+      "messageAlreadyDeleted": "لا يمكنك تعديل رسالة تم حذفها بالفعل",
       "cannotReportSelf": "لا يمكنك الإبلاغ عن نفسك",
       "invalidPhotoType": "نوع الصورة غير صالح",
       "photoTooLarge": "الصورة كبيرة جداً",
@@ -1274,7 +1275,8 @@
       "subtitle": "محادثاتك مع الأعضاء الآخرين",
       "emptyState": "ليس لديك محادثات بعد. أرسل رسالة من الملف الشخصي لعضو لتبدأ.",
       "youPrefix": "أنت: ",
-      "unreadCap": "+9"
+      "unreadCap": "+9",
+      "messageDeleted": "تم حذف الرسالة"
     },
     "thread": {
       "emptyThread": "لا توجد رسائل بعد. ابدأ المحادثة أدناه.",
@@ -1286,7 +1288,15 @@
       "cannotReply": "باقتك لا تسمح بالرد على الرسائل. قم بترقية باقتك.",
       "cannotInitiate": "باقتك لا تسمح ببدء محادثات جديدة. قم بترقية باقتك.",
       "voiceCallAria": "مكالمة صوتية",
-      "videoCallAria": "مكالمة فيديو"
+      "videoCallAria": "مكالمة فيديو",
+      "edited": "(تم التعديل)",
+      "messageOptionsAria": "خيارات الرسالة",
+      "editAction": "تعديل",
+      "deleteAction": "حذف",
+      "confirmDeleteAction": "تأكيد الحذف",
+      "cancelAction": "إلغاء",
+      "saveAction": "حفظ",
+      "messageDeleted": "تم حذف هذه الرسالة"
     }
   },
   "calls": {

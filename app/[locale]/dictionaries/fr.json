@@ -400,6 +400,7 @@
       "cannotMessageSelf": "Vous ne pouvez pas vous envoyer un message à vous-même",
       "cannotFavoriteSelf": "Vous ne pouvez pas vous ajouter vous-même en favori",
       "likeLimitReached": "Vous avez atteint la limite de {limit} nouveaux j'aime pour aujourd'hui. Revenez demain ou améliorez votre forfait.",
+      "messageAlreadyDeleted": "Vous ne pouvez pas modifier un message déjà supprimé",
       "cannotReportSelf": "Vous ne pouvez pas vous signaler vous-même",
       "invalidPhotoType": "Type de photo invalide",
       "photoTooLarge": "La photo est trop volumineuse",
@@ -1274,7 +1275,8 @@
       "subtitle": "Vos conversations avec d'autres membres",
       "emptyState": "Vous n'avez encore aucune conversation. Envoyez un message depuis le profil d'un membre pour commencer.",
       "youPrefix": "Vous : ",
-      "unreadCap": "9+"
+      "unreadCap": "9+",
+      "messageDeleted": "Message supprimé"
     },
     "thread": {
       "emptyThread": "Aucun message pour le moment. Démarrez la conversation ci-dessous.",
@@ -1286,7 +1288,15 @@
       "cannotReply": "Votre forfait ne permet pas de répondre aux messages. Améliorez votre forfait.",
       "cannotInitiate": "Votre forfait ne permet pas de démarrer de nouvelles conversations. Améliorez votre forfait.",
       "voiceCallAria": "Appel vocal",
-      "videoCallAria": "Appel vidéo"
+      "videoCallAria": "Appel vidéo",
+      "edited": "(modifié)",
+      "messageOptionsAria": "Options du message",
+      "editAction": "Modifier",
+      "deleteAction": "Supprimer",
+      "confirmDeleteAction": "Confirmer la suppression",
+      "cancelAction": "Annuler",
+      "saveAction": "Enregistrer",
+      "messageDeleted": "Ce message a été supprimé"
     }
   },
   "calls": {

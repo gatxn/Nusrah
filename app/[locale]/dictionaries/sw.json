@@ -400,6 +400,7 @@
       "cannotMessageSelf": "Huwezi kujitumia ujumbe",
       "cannotFavoriteSelf": "Huwezi kujipenda mwenyewe",
       "likeLimitReached": "Umefikia kikomo cha kupenda wasifu {limit} mpya kwa leo. Rudi kesho, au boresha kifurushi chako.",
+      "messageAlreadyDeleted": "Huwezi kuhariri ujumbe ambao tayari umefutwa",
       "cannotReportSelf": "Huwezi kujiripoti mwenyewe",
       "invalidPhotoType": "Aina ya picha si sahihi",
       "photoTooLarge": "Picha ni kubwa mno",
@@ -1274,7 +1275,8 @@
       "subtitle": "Mazungumzo yako na wanachama wengine",
       "emptyState": "Bado huna mazungumzo. Tuma ujumbe kutoka kwenye wasifu wa mwanachama ili kuanza.",
       "youPrefix": "Wewe: ",
-      "unreadCap": "9+"
+      "unreadCap": "9+",
+      "messageDeleted": "Ujumbe umefutwa"
     },
     "thread": {
       "emptyThread": "Bado hakuna ujumbe. Anza mazungumzo hapa chini.",
@@ -1286,7 +1288,15 @@
       "cannotReply": "Kifurushi chako hakiruhusu kujibu ujumbe. Boresha kifurushi chako.",
       "cannotInitiate": "Kifurushi chako hakiruhusu kuanzisha mazungumzo mapya. Boresha kifurushi chako.",
       "voiceCallAria": "Piga Simu ya Sauti",
-      "videoCallAria": "Piga Simu ya Video"
+      "videoCallAria": "Piga Simu ya Video",
+      "edited": "(imehaririwa)",
+      "messageOptionsAria": "Chaguo za Ujumbe",
+      "editAction": "Hariri",
+      "deleteAction": "Futa",
+      "confirmDeleteAction": "Thibitisha Kufuta",
+      "cancelAction": "Ghairi",
+      "saveAction": "Hifadhi",
+      "messageDeleted": "Ujumbe huu umefutwa"
     }
   },
   "calls": {

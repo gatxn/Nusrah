@@ -400,6 +400,7 @@
       "cannotMessageSelf": "您不能给自己发消息",
       "cannotFavoriteSelf": "您不能将自己加入收藏",
       "likeLimitReached": "您今天已达到 {limit} 个新喜欢的上限。请明天再来，或升级您的套餐。",
+      "messageAlreadyDeleted": "您无法编辑已删除的消息",
       "cannotReportSelf": "您不能举报自己",
       "invalidPhotoType": "照片类型无效",
       "photoTooLarge": "照片文件过大",
@@ -1274,7 +1275,8 @@
       "subtitle": "您与其他会员的对话",
       "emptyState": "您还没有任何对话。请从某位会员的资料页面发送消息以开始对话。",
       "youPrefix": "您：",
-      "unreadCap": "9+"
+      "unreadCap": "9+",
+      "messageDeleted": "消息已删除"
     },
     "thread": {
       "emptyThread": "暂无消息，请在下方开始对话。",
@@ -1286,7 +1288,15 @@
       "cannotReply": "您的套餐不允许回复消息。请升级您的套餐。",
       "cannotInitiate": "您的套餐不允许发起新的对话。请升级您的套餐。",
       "voiceCallAria": "语音通话",
-      "videoCallAria": "视频通话"
+      "videoCallAria": "视频通话",
+      "edited": "（已编辑）",
+      "messageOptionsAria": "消息选项",
+      "editAction": "编辑",
+      "deleteAction": "删除",
+      "confirmDeleteAction": "确认删除",
+      "cancelAction": "取消",
+      "saveAction": "保存",
+      "messageDeleted": "此消息已被删除"
     }
   },
   "calls": {

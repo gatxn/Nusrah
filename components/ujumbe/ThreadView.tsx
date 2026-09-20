@@ -8,9 +8,11 @@ type ThreadMessage = {
   id: string;
   senderId: string;
   receiverId: string;
-  body: string;
+  body: string | null;
   sentAt: string;
   isRead: boolean;
+  editedAt: string | null;
+  isDeleted: boolean;
 };
 
 const POLL_INTERVAL_MS = 9000;
@@ -35,6 +37,14 @@ export default function ThreadView({
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
+
+  // Own-message actions (Edit/Delete) — keyed by message id, one at a time.
+  const [activeMenuId, setActiveMenuId] = useState<string | null>(null);
+  const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editDraft, setEditDraft] = useState("");
+  const [editSaving, setEditSaving] = useState(false);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ block: "end" });
@@ -84,6 +94,8 @@ export default function ThreadView({
       body,
       sentAt: new Date().toISOString(),
       isRead: false,
+      editedAt: null,
+      isDeleted: false,
     };
     setMessages((prev) => [...prev, optimistic]);
     setInput("");
@@ -101,13 +113,79 @@ export default function ThreadView({
         setError(json.error ?? dict.genericError);
         return;
       }
-      setMessages((prev) => prev.map((m) => (m.id === tempId ? json.message : m)));
+      setMessages((prev) =>
+        prev.map((m) => (m.id === tempId ? { ...json.message, editedAt: null, isDeleted: false } : m))
+      );
     } catch {
       setMessages((prev) => prev.filter((m) => m.id !== tempId));
       setInput(body);
       setError(dict.networkError);
     } finally {
       setSending(false);
+    }
+  }
+
+  function openActions(messageId: string) {
+    setConfirmDeleteId(null);
+    setActiveMenuId((prev) => (prev === messageId ? null : messageId));
+  }
+
+  function startEdit(message: ThreadMessage) {
+    setActiveMenuId(null);
+    setConfirmDeleteId(null);
+    setEditingId(message.id);
+    setEditDraft(message.body ?? "");
+  }
+
+  function cancelEdit() {
+    setEditingId(null);
+    setEditDraft("");
+  }
+
+  async function saveEdit(messageId: string) {
+    const body = editDraft.trim();
+    if (!body || editSaving) return;
+    setEditSaving(true);
+    setError(null);
+    try {
+      const res = await fetch(`/api/messages/${messageId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ body }),
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        setError(json.error ?? dict.genericError);
+        return;
+      }
+      setMessages((prev) =>
+        prev.map((m) => (m.id === messageId ? { ...m, body: json.message.body, editedAt: json.message.editedAt } : m))
+      );
+      setEditingId(null);
+    } catch {
+      setError(dict.networkError);
+    } finally {
+      setEditSaving(false);
+    }
+  }
+
+  async function confirmDelete(messageId: string) {
+    setDeletingId(messageId);
+    setError(null);
+    try {
+      const res = await fetch(`/api/messages/${messageId}`, { method: "DELETE" });
+      if (!res.ok) {
+        const json = await res.json().catch(() => null);
+        setError(json?.error ?? dict.genericError);
+        return;
+      }
+      setMessages((prev) => prev.map((m) => (m.id === messageId ? { ...m, isDeleted: true, body: null } : m)));
+    } catch {
+      setError(dict.networkError);
+    } finally {
+      setDeletingId(null);
+      setConfirmDeleteId(null);
+      setActiveMenuId(null);
     }
   }
 
@@ -119,15 +197,115 @@ export default function ThreadView({
         ) : (
           messages.map((m) => {
             const mine = m.senderId === viewerId;
-            return (
-              <div key={m.id} className={`flex ${mine ? "justify-end" : "justify-start"}`}>
-                <div
-                  className={`max-w-[75%] rounded-2xl px-4 py-2.5 text-sm ${
-                    mine ? "bg-primary text-white" : "bg-blush-50 text-navy"
-                  }`}
-                >
-                  <p className="whitespace-pre-wrap break-words">{m.body}</p>
+            const isEditing = editingId === m.id;
+
+            if (m.isDeleted) {
+              return (
+                <div key={m.id} className={`flex ${mine ? "justify-end" : "justify-start"}`}>
+                  <div className="max-w-[75%] rounded-2xl border border-dashed border-black/10 bg-transparent px-4 py-2.5 text-sm italic text-neutral-400">
+                    {dict.messageDeleted}
+                  </div>
                 </div>
+              );
+            }
+
+            return (
+              <div key={m.id} className={`flex flex-col ${mine ? "items-end" : "items-start"}`}>
+                {isEditing ? (
+                  <div className="w-[75%] min-w-[220px] rounded-2xl border border-primary/30 bg-white p-2.5 shadow-sm">
+                    <textarea
+                      value={editDraft}
+                      onChange={(e) => setEditDraft(e.target.value)}
+                      rows={2}
+                      className="w-full resize-none rounded-lg border border-black/10 px-2.5 py-1.5 text-sm focus:border-primary focus:outline-none"
+                    />
+                    <div className="mt-1.5 flex justify-end gap-3">
+                      <button
+                        type="button"
+                        onClick={cancelEdit}
+                        disabled={editSaving}
+                        className="text-xs font-semibold text-neutral-500 hover:underline disabled:opacity-60"
+                      >
+                        {dict.cancelAction}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => saveEdit(m.id)}
+                        disabled={editSaving || !editDraft.trim()}
+                        className="text-xs font-semibold text-primary hover:underline disabled:opacity-60"
+                      >
+                        {editSaving ? "..." : dict.saveAction}
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex items-end gap-1">
+                    <div
+                      className={`max-w-[75%] rounded-2xl px-4 py-2.5 text-sm ${
+                        mine ? "bg-primary text-white" : "bg-blush-50 text-navy"
+                      }`}
+                    >
+                      <p className="whitespace-pre-wrap break-words">{m.body}</p>
+                      {m.editedAt && (
+                        <span className={`mt-0.5 block text-[10px] ${mine ? "text-white/70" : "text-neutral-400"}`}>
+                          {dict.edited}
+                        </span>
+                      )}
+                    </div>
+                    {mine && (
+                      <button
+                        type="button"
+                        onClick={() => openActions(m.id)}
+                        aria-label={dict.messageOptionsAria}
+                        className="shrink-0 rounded-full px-1.5 py-1 text-neutral-300 hover:text-neutral-500"
+                      >
+                        •••
+                      </button>
+                    )}
+                  </div>
+                )}
+
+                {mine && activeMenuId === m.id && !isEditing && (
+                  <div className="mt-1 flex items-center gap-3 px-1">
+                    {confirmDeleteId === m.id ? (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => confirmDelete(m.id)}
+                          disabled={deletingId === m.id}
+                          className="text-xs font-semibold text-red-600 hover:underline disabled:opacity-60"
+                        >
+                          {deletingId === m.id ? "..." : dict.confirmDeleteAction}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setConfirmDeleteId(null)}
+                          disabled={deletingId === m.id}
+                          className="text-xs font-semibold text-neutral-500 hover:underline disabled:opacity-60"
+                        >
+                          {dict.cancelAction}
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => startEdit(m)}
+                          className="text-xs font-semibold text-neutral-500 hover:underline"
+                        >
+                          {dict.editAction}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setConfirmDeleteId(m.id)}
+                          className="text-xs font-semibold text-red-600 hover:underline"
+                        >
+                          {dict.deleteAction}
+                        </button>
+                      </>
+                    )}
+                  </div>
+                )}
               </div>
             );
           })

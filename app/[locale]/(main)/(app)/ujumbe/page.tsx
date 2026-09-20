@@ -68,8 +68,7 @@ export default async function UjumbeePage() {
                       c.unreadCount > 0 ? "font-medium text-navy" : "text-neutral-500"
                     }`}
                   >
-                    {c.lastMessageWasMine ? t.youPrefix : ""}
-                    {c.lastMessageBody}
+                    {c.lastMessageDeleted ? t.messageDeleted : `${c.lastMessageWasMine ? t.youPrefix : ""}${c.lastMessageBody}`}
                   </p>
                 </div>
 
