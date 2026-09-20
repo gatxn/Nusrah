@@ -1150,7 +1150,7 @@
       "listViewAria": "Vue en liste",
       "filtersButton": "Filtres",
       "removeRegionAria": "Retirer",
-      "viewLimitNote": "Votre forfait vous permet de voir jusqu'à {limit} profils par jour",
+      "viewLimitNote": "Vous pouvez ouvrir {limit} nouveaux profils par jour avec votre forfait",
       "emptyFavorites": "Vous n'avez encore ajouté personne à vos favoris.",
       "emptyBrowse": "Aucun membre trouvé pour ces filtres. Essayez de les ajuster.",
       "clearFilters": "Effacer les filtres",
@@ -1218,6 +1218,12 @@
       "upgradePlanLink": "Améliorez votre forfait.",
       "voiceCallAria": "Appel vocal",
       "videoCallAria": "Appel vidéo"
+    },
+    "viewLimitReached": {
+      "heading": "Limite Quotidienne de Profils Atteinte",
+      "body": "Vous avez consulté {limit} nouveaux profils aujourd'hui avec votre forfait actuel. Revenez demain, ou passez à un forfait supérieur pour en voir davantage dès maintenant.",
+      "upgradeButton": "Améliorer le Forfait",
+      "backButton": "Retour aux Membres"
     }
   },
   "vipendwa": {

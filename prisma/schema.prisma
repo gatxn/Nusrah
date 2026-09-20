@@ -60,6 +60,9 @@ model User {
 
   callsInitiated Call[] @relation("CallsInitiated")
   callsReceived  Call[] @relation("CallsReceived")
+
+  profileViewsGiven    ProfileView[] @relation("ProfileViewsGiven")
+  profileViewsReceived ProfileView[] @relation("ProfileViewsReceived")
 }
 
 // gender: "MALE" | "FEMALE"
@@ -326,6 +329,24 @@ model Favorite {
 
   @@unique([userId, favoritedUserId])
   @@index([favoritedUserId])
+}
+
+// One row per member viewing another member's full profile — the real
+// enforcement point for each tier's profileViewLimit (lib/tiers.ts), which
+// is a genuine per-calendar-day allowance, not a one-time cap. Recorded at
+// most once per (viewerId, viewedUserId) per day (see lib/profile-views.ts);
+// re-opening a profile already viewed today is always free and never
+// re-counted against the limit.
+model ProfileView {
+  id           String   @id @default(cuid())
+  viewerId     String
+  viewer       User     @relation("ProfileViewsGiven", fields: [viewerId], references: [id], onDelete: Cascade)
+  viewedUserId String
+  viewedUser   User     @relation("ProfileViewsReceived", fields: [viewedUserId], references: [id], onDelete: Cascade)
+  viewedAt     DateTime @default(now())
+
+  @@index([viewerId, viewedAt])
+  @@index([viewedUserId])
 }
 
 // type: "PROFILE_LIKED" | "MESSAGE_RECEIVED" | "MISSED_VOICE_CALL" |

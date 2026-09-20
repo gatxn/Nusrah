@@ -1150,7 +1150,7 @@
       "listViewAria": "List View",
       "filtersButton": "Filters",
       "removeRegionAria": "Remove",
-      "viewLimitNote": "You're shown up to {limit} profiles a day on your plan",
+      "viewLimitNote": "You can open {limit} new profiles a day on your plan",
       "emptyFavorites": "You haven't favorited anyone yet.",
       "emptyBrowse": "No members found for these filters. Try adjusting them.",
       "clearFilters": "Clear Filters",
@@ -1218,6 +1218,12 @@
       "upgradePlanLink": "Upgrade your plan.",
       "voiceCallAria": "Voice Call",
       "videoCallAria": "Video Call"
+    },
+    "viewLimitReached": {
+      "heading": "Daily Profile View Limit Reached",
+      "body": "You've viewed {limit} new profiles today on your current plan. Come back tomorrow, or upgrade to see more right away.",
+      "upgradeButton": "Upgrade Plan",
+      "backButton": "Back to Members"
     }
   },
   "vipendwa": {

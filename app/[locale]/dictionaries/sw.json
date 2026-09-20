@@ -1150,7 +1150,7 @@
       "listViewAria": "Mtazamo wa Orodha",
       "filtersButton": "Vigezo",
       "removeRegionAria": "Ondoa",
-      "viewLimitNote": "Unaonyeshwa hadi wasifu {limit} kwa siku kwenye kifurushi chako",
+      "viewLimitNote": "Unaweza kufungua wasifu {limit} mpya kwa siku kwenye kifurushi chako",
       "emptyFavorites": "Bado hujampenda mwanachama yeyote.",
       "emptyBrowse": "Hakuna wanachama waliopatikana kwa vigezo hivi. Jaribu kubadilisha uchujaji.",
       "clearFilters": "Futa Vigezo",
@@ -1218,6 +1218,12 @@
       "upgradePlanLink": "Boresha kifurushi chako.",
       "voiceCallAria": "Piga Simu ya Sauti",
       "videoCallAria": "Piga Simu ya Video"
+    },
+    "viewLimitReached": {
+      "heading": "Umefikia Kikomo cha Kutazama Wasifu kwa Leo",
+      "body": "Umeshafungua wasifu {limit} mpya leo kwenye kifurushi chako cha sasa. Rudi kesho, au boresha kifurushi kuona zaidi sasa hivi.",
+      "upgradeButton": "Boresha Kifurushi",
+      "backButton": "Rudi kwa Wanachama"
     }
   },
   "vipendwa": {

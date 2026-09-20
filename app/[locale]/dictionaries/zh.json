@@ -1150,7 +1150,7 @@
       "listViewAria": "列表视图",
       "filtersButton": "筛选",
       "removeRegionAria": "移除",
-      "viewLimitNote": "根据您的套餐，您每天最多可浏览 {limit} 份资料",
+      "viewLimitNote": "根据您的套餐，您每天可打开 {limit} 份新资料",
       "emptyFavorites": "您还没有收藏任何人。",
       "emptyBrowse": "未找到符合这些筛选条件的会员，请尝试调整筛选条件。",
       "clearFilters": "清除筛选条件",
@@ -1218,6 +1218,12 @@
       "upgradePlanLink": "升级您的套餐。",
       "voiceCallAria": "语音通话",
       "videoCallAria": "视频通话"
+    },
+    "viewLimitReached": {
+      "heading": "已达到每日资料浏览上限",
+      "body": "您今天已在当前套餐下查看了 {limit} 份新资料。请明天再来，或立即升级套餐以查看更多。",
+      "upgradeButton": "升级套餐",
+      "backButton": "返回会员列表"
     }
   },
   "vipendwa": {

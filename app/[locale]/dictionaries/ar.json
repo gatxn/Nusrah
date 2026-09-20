@@ -1150,7 +1150,7 @@
       "listViewAria": "عرض قائمة",
       "filtersButton": "الفلاتر",
       "removeRegionAria": "إزالة",
-      "viewLimitNote": "يُعرض لك حتى {limit} ملفًا يوميًا حسب باقتك",
+      "viewLimitNote": "يمكنك فتح {limit} ملفًا جديدًا يوميًا حسب باقتك",
       "emptyFavorites": "لم تُضِف أحدًا إلى المفضلة بعد.",
       "emptyBrowse": "لم يتم العثور على أعضاء بهذه الفلاتر. حاول تعديلها.",
       "clearFilters": "مسح الفلاتر",
@@ -1218,6 +1218,12 @@
       "upgradePlanLink": "قم بترقية باقتك.",
       "voiceCallAria": "مكالمة صوتية",
       "videoCallAria": "مكالمة فيديو"
+    },
+    "viewLimitReached": {
+      "heading": "لقد وصلت إلى الحد اليومي لعرض الملفات",
+      "body": "لقد شاهدت {limit} ملفًا جديدًا اليوم ضمن باقتك الحالية. عد غدًا، أو قم بالترقية لرؤية المزيد الآن.",
+      "upgradeButton": "ترقية الباقة",
+      "backButton": "العودة إلى الأعضاء"
     }
   },
   "vipendwa": {

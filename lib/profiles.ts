@@ -2,13 +2,14 @@ import type { Prisma, Profile } from "@prisma/client";
 import { prisma } from "@/lib/db";
 import { decryptField } from "@/lib/crypto";
 import { isTier, meetsMinimumTier, hasCapability, type Tier } from "@/lib/tiers";
-import { TIER_CAPABILITIES } from "@/lib/tiers";
 import { getAge } from "@/lib/dates";
 import { MEMBERS_PAGE_SIZE, NEW_PROFILE_WINDOW_DAYS, isIntention, type Intention } from "@/lib/onboarding";
 import { getBlockedUserIds } from "@/lib/blocks";
 import type { MemberSortMode } from "@/lib/validation";
 
-// Demo-scale hard cap even for tiers with an "unlimited" profileViewLimit.
+// Flat, demo-scale pagination safety cap on the browse list — unrelated to
+// any tier's profileViewLimit, which is enforced separately when a profile
+// is actually opened (see lib/profile-views.ts).
 const ABSOLUTE_MAX = 100;
 
 // A profile counts as "online" while lastActiveAt is within this window.
@@ -301,8 +302,11 @@ export async function queryMembers(params: MembersQueryParams): Promise<MembersQ
     sort = "recent",
   } = params;
 
-  const limit = Math.min(TIER_CAPABILITIES[tier].profileViewLimit, ABSOLUTE_MAX);
-  const remaining = limit - (page - 1) * MEMBERS_PAGE_SIZE;
+  // The browse list itself shows the full matching pool regardless of
+  // tier — profileViewLimit is enforced where a profile is actually
+  // opened (see lib/profile-views.ts), not by hiding list results. This
+  // is just a flat, demo-scale pagination safety cap.
+  const remaining = ABSOLUTE_MAX - (page - 1) * MEMBERS_PAGE_SIZE;
   if (remaining <= 0) {
     return { profiles: [], page, pageSize: MEMBERS_PAGE_SIZE, hasMore: false };
   }
@@ -356,7 +360,7 @@ export async function queryMembers(params: MembersQueryParams): Promise<MembersQ
       where,
       select,
       orderBy: { createdAt: "desc" },
-      take: limit,
+      take: ABSOLUTE_MAX,
     });
     const sorted = [...allEligible].sort(
       (a, b) => scoreForBestMatch(b, viewerIntentions) - scoreForBestMatch(a, viewerIntentions)
