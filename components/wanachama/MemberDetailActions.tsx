@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { ChatIcon } from "@/components/icons";
-import FavoriteButton from "@/components/wanachama/FavoriteButton";
 import ReportUserModal from "@/components/wanachama/ReportUserModal";
 import CallButton from "@/components/calls/CallButton";
 import LocaleLink from "@/components/LocaleLink";
@@ -14,9 +13,7 @@ export default function MemberDetailActions({
   userName,
   userHasPhoto,
   viewerTier,
-  initialFavorited,
   dict,
-  cardLabels,
   reportDict,
   reportReasons,
 }: {
@@ -24,12 +21,7 @@ export default function MemberDetailActions({
   userName: string;
   userHasPhoto: boolean;
   viewerTier: Tier;
-  initialFavorited: boolean;
   dict: Dictionary["wanachama"]["detail"];
-  cardLabels: Pick<
-    Dictionary["wanachama"]["card"],
-    "addFavoriteAria" | "removeFavoriteAria" | "likeLimitReachedShort" | "likeLimitUpgrade"
-  >;
   reportDict: Dictionary["ripotiMtumiaji"]["modal"];
   reportReasons: Dictionary["common"]["reportReasons"];
 }) {
@@ -72,7 +64,6 @@ export default function MemberDetailActions({
   return (
     <div className="mt-5">
       <div className="flex gap-3">
-        <FavoriteButton favoritedUserId={userId} initialFavorited={initialFavorited} labels={cardLabels} />
         <CallButton
           calleeId={userId}
           calleeName={userName}

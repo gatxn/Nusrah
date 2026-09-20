@@ -79,45 +79,54 @@ export default function ProfilePhotoCarousel({
   }
 
   return (
-    <div className={`relative w-full ${HEIGHT_CLASS} bg-blush-50`}>
-      <div
-        ref={scrollerRef}
-        onScroll={handleScroll}
-        className="flex h-full w-full snap-x snap-mandatory overflow-x-auto scroll-smooth"
-      >
-        {slides.map((src) => (
-          // eslint-disable-next-line @next/next/no-img-element -- private cookie-gated route
-          <img key={src} src={src} alt="" className="h-full w-full shrink-0 snap-start object-contain" />
-        ))}
+    <div className={`flex w-full flex-col ${HEIGHT_CLASS}`}>
+      <div className="relative min-h-0 w-full flex-1 bg-blush-50">
+        <div
+          ref={scrollerRef}
+          onScroll={handleScroll}
+          className="flex h-full w-full snap-x snap-mandatory overflow-x-auto scroll-smooth"
+        >
+          {slides.map((src) => (
+            // eslint-disable-next-line @next/next/no-img-element -- private cookie-gated route
+            <img key={src} src={src} alt="" className="h-full w-full shrink-0 snap-start object-contain" />
+          ))}
+        </div>
+
+        {isOnline && <OnlineBadge />}
+
+        <button
+          type="button"
+          onClick={() => scrollToIndex(activeIndex - 1)}
+          aria-label="Picha iliyopita"
+          className="absolute inset-y-0 start-2 my-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-navy shadow-sm transition hover:bg-white"
+        >
+          <ChevronLeftIcon className="h-4 w-4" />
+        </button>
+        <button
+          type="button"
+          onClick={() => scrollToIndex(activeIndex + 1)}
+          aria-label="Picha inayofuata"
+          className="absolute inset-y-0 end-2 my-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-navy shadow-sm transition hover:bg-white"
+        >
+          <ChevronRightIcon className="h-4 w-4" />
+        </button>
       </div>
 
-      {isOnline && <OnlineBadge />}
-
-      <button
-        type="button"
-        onClick={() => scrollToIndex(activeIndex - 1)}
-        aria-label="Picha iliyopita"
-        className="absolute inset-y-0 start-2 my-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-navy shadow-sm transition hover:bg-white"
-      >
-        <ChevronLeftIcon className="h-4 w-4" />
-      </button>
-      <button
-        type="button"
-        onClick={() => scrollToIndex(activeIndex + 1)}
-        aria-label="Picha inayofuata"
-        className="absolute inset-y-0 end-2 my-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-navy shadow-sm transition hover:bg-white"
-      >
-        <ChevronRightIcon className="h-4 w-4" />
-      </button>
-
-      <div className="absolute bottom-3 start-1/2 flex -translate-x-1/2 gap-1.5">
+      <div className="flex shrink-0 gap-2 overflow-x-auto bg-white p-2">
         {slides.map((src, i) => (
-          <span
+          <button
             key={src}
-            className={`h-1.5 rounded-full transition-all ${
-              i === activeIndex ? "w-4 bg-white" : "w-1.5 bg-white/60"
+            type="button"
+            onClick={() => scrollToIndex(i)}
+            aria-label={`Picha ${i + 1}`}
+            aria-current={i === activeIndex}
+            className={`h-14 w-14 shrink-0 overflow-hidden rounded-lg border-2 transition sm:h-16 sm:w-16 ${
+              i === activeIndex ? "border-primary" : "border-transparent opacity-70 hover:opacity-100"
             }`}
-          />
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element -- private cookie-gated route */}
+            <img src={src} alt="" className="h-full w-full object-cover" />
+          </button>
         ))}
       </div>
     </div>

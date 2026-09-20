@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import MemberDetailActions from "@/components/wanachama/MemberDetailActions";
 import ProfilePhotoCarousel from "@/components/wanachama/ProfilePhotoCarousel";
+import FavoriteButton from "@/components/wanachama/FavoriteButton";
+import LocaleLink from "@/components/LocaleLink";
 import { ChevronDownIcon, LockIcon, MapPinIcon, ShieldCheckIcon } from "@/components/icons";
 import type { Tier } from "@/lib/tiers";
 import {
@@ -37,6 +39,14 @@ function Section({ title, children }: { title: string; children: React.ReactNode
       <h2 className="text-sm font-semibold text-navy">{title}</h2>
       <dl className="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3">{children}</dl>
     </div>
+  );
+}
+
+function Pill({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="rounded-full border border-black/10 px-3 py-1.5 text-xs font-medium text-navy">
+      {children}
+    </span>
   );
 }
 
@@ -103,10 +113,17 @@ export default function MemberDetailCard({
     profile.partnerAgeMin !== null && profile.partnerAgeMax !== null
       ? `${profile.partnerAgeMin} - ${profile.partnerAgeMax}`
       : null;
+  const educationValue = labelOf(profile.educationLevel, isEducationLevel, labels.educationLevel);
+  const madhhabValue = labelOf(profile.madhhab, isMadhhab, labels.madhhab);
+  const maritalStatusValue = labelOf(profile.maritalStatus, isMaritalStatus, labels.maritalStatus);
+  const heightValue = profile.height ? `${profile.height} ${dict.heightUnit}` : null;
+  const quickPills = [educationValue, profile.occupation, heightValue, madhhabValue, maritalStatusValue].filter(
+    (v): v is string => !!v
+  );
 
   return (
     <div className="overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm lg:flex lg:h-[70vh] lg:max-h-[720px]">
-      <div className="lg:h-full lg:w-[45%] lg:shrink-0">
+      <div className="relative lg:h-full lg:w-[45%] lg:shrink-0">
         <ProfilePhotoCarousel
           userId={profile.userId}
           hasPhoto={profile.hasPhoto}
@@ -114,14 +131,49 @@ export default function MemberDetailCard({
           extraPhotoIds={galleryPhotoIds}
           isOnline={profile.isOnline}
         />
+        <FavoriteButton
+          favoritedUserId={profile.userId}
+          initialFavorited={initialFavorited}
+          className="absolute right-3 top-3 z-10"
+          labels={cardDict}
+        />
       </div>
 
       <div className="lg:h-full lg:flex-1 lg:overflow-y-auto">
+        {/* Always visible — never hidden behind the mobile "show more details"
+            toggle below, so a member never has to tap anything just to see
+            whose profile this is. */}
+        <div className="p-6 pb-0">
+          <p className="flex items-center gap-1.5 text-xl font-bold text-navy">
+            {profile.name}
+            {profile.age !== null && (
+              <span className="font-normal text-neutral-500">, {profile.age}</span>
+            )}
+            {profile.isVerified && (
+              <span title={cardDict.verifiedTitle}>
+                <ShieldCheckIcon className="h-5 w-5 shrink-0 text-primary" />
+              </span>
+            )}
+          </p>
+          {location && (
+            <p className="mt-1 flex items-center gap-1 text-sm text-neutral-500">
+              <MapPinIcon className="h-4 w-4" /> {location}
+            </p>
+          )}
+          {quickPills.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {quickPills.map((value, i) => (
+                <Pill key={i}>{value}</Pill>
+              ))}
+            </div>
+          )}
+        </div>
+
         <button
           type="button"
           onClick={() => setDetailsOpen((v) => !v)}
           aria-expanded={detailsOpen}
-          className="flex w-full items-center justify-center gap-1.5 border-b border-black/5 py-3 text-sm font-semibold text-primary lg:hidden"
+          className="mt-5 flex w-full items-center justify-center gap-1.5 border-y border-black/5 py-3 text-sm font-semibold text-primary lg:hidden"
         >
           {detailsOpen ? dict.hideDetails : dict.showMoreDetails}
           <ChevronDownIcon className={`h-4 w-4 transition-transform ${detailsOpen ? "rotate-180" : ""}`} />
@@ -133,24 +185,7 @@ export default function MemberDetailCard({
           }`}
         >
           <div className="overflow-hidden">
-            <div className="p-6">
-              <p className="flex items-center gap-1.5 text-xl font-bold text-navy">
-                {profile.name}
-                {profile.age !== null && (
-                  <span className="font-normal text-neutral-500">, {profile.age}</span>
-                )}
-                {profile.isVerified && (
-                  <span title={cardDict.verifiedTitle}>
-                    <ShieldCheckIcon className="h-5 w-5 shrink-0 text-primary" />
-                  </span>
-                )}
-              </p>
-              {location && (
-                <p className="mt-1 flex items-center gap-1 text-sm text-neutral-500">
-                  <MapPinIcon className="h-4 w-4" /> {location}
-                </p>
-              )}
-
+            <div className="p-6 lg:pt-6">
               {profile.intentions.length > 0 && (
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {profile.intentions.filter(isIntention).map((intention) => (
@@ -227,7 +262,10 @@ export default function MemberDetailCard({
                   <span className="text-neutral-600">{profile.phone}</span>
                 ) : (
                   <span className="flex items-center gap-1 text-neutral-400">
-                    <LockIcon className="h-4 w-4" /> {dict.contactLocked}
+                    <LockIcon className="h-4 w-4" /> {dict.contactLocked}{" "}
+                    <LocaleLink href="/boresha-kifurushi" className="font-semibold text-primary hover:underline">
+                      {dict.contactLockedUpgradeLink}
+                    </LocaleLink>
                   </span>
                 )}
               </div>
@@ -237,9 +275,7 @@ export default function MemberDetailCard({
                 userName={profile.name}
                 userHasPhoto={profile.hasPhoto}
                 viewerTier={viewerTier}
-                initialFavorited={initialFavorited}
                 dict={dict}
-                cardLabels={cardDict}
                 reportDict={reportDict}
                 reportReasons={reportReasons}
               />

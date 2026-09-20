@@ -61,7 +61,13 @@ export default function FavoriteButton({
   }
 
   return (
-    <div className={`relative inline-block ${className}`}>
+    // The caller's className is expected to carry a position utility
+    // (e.g. "absolute right-3 top-3" to overlay a photo). Falling back to
+    // "relative" only when none is given avoids stacking a conflicting
+    // "relative" + "absolute" pair on the same element — Tailwind's cascade
+    // order isn't guaranteed to make the later class in the string win, so
+    // this must never both be applied at once.
+    <div className={`inline-block ${className || "relative"}`}>
       <button
         type="button"
         onClick={toggle}
