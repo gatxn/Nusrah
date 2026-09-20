@@ -9,6 +9,7 @@
       "howItWorks": "Comment ça marche",
       "membership": "Abonnement",
       "successStories": "Témoignages",
+      "about": "À Propos",
       "help": "Aide",
       "login": "Connexion",
       "joinNow": "Rejoindre",
@@ -197,9 +198,9 @@
     }
   },
   "home": {
-    "headline1": "Trouvez votre",
-    "headline2": "partenaire de vie",
-    "subtitle": "Nusrah est une plateforme islamique sûre qui met en relation des personnes aux intentions sincères, à la recherche d'un partenaire de vie.",
+    "headline1": "Trouvez un partenaire.",
+    "headline2": "Construisez une vie.",
+    "subtitle": "Une plateforme matrimoniale fiable pour les personnes recherchant le mariage avec sincérité, respect et intention.",
     "checklist": [
       "Sûr et privé",
       "Profils vérifiés et de qualité",
@@ -209,46 +210,47 @@
       "Pour une vie meilleure ensemble"
     ],
     "ctaJoin": "Rejoindre - Gratuit",
+    "heroCtaJoin": "Trouvez Votre Match",
     "ctaMembers": "Voir les membres",
-    "ctaLearnMore": "Comment ça marche",
+    "ctaLearnMore": "Comment Nusrah fonctionne",
     "statsLinePrefix": "Plus de",
-    "statsLineMiddle": "mariages réussis en",
+    "statsLineSuffix1": "membres inscrits",
+    "statsLineSuffix2": "couples mis en relation",
     "welcomeBackNote": "⛨ Bon retour, continuez votre voyage !",
     "easySignupNote": "⛨ L'inscription est facile, rapide et gratuite !",
     "trustBadgeTitle": "Nos membres",
     "trustBadgeSubtitle": "À la recherche de quelqu'un comme vous",
     "heroPhotoAlt": "Un couple ensemble, réfléchissant à leur voyage vers un partenaire de vie",
     "statsBar": [
-      "Membres actifs",
-      "Mariages réussis",
+      "Membres Inscrits",
+      "Couples Mis en Relation via Nusrah",
       "Sûr et privé",
       "Profils vérifiés",
       "Support 24/7"
     ],
+    "statsDisclaimer": "Basé sur les membres inscrits et les mariages signalés via la plateforme Nusrah.",
+    "featuresHeading": "Pourquoi Nusrah ?",
+    "featuresSubtitle": "Ce qui distingue Nusrah d'une application de rencontre classique.",
     "features": [
       {
-        "title": "Sûr et privé",
-        "body": "Vos informations restent protégées. Votre vie privée est notre première priorité."
+        "title": "Mariage, Pas Rencontre",
+        "body": "Conçu pour les personnes qui recherchent sincèrement le mariage, pas une rencontre occasionnelle."
       },
       {
-        "title": "Vrais profils",
-        "body": "Chaque membre passe par une vérification pour préserver l'authenticité de la communauté."
+        "title": "Confidentialité d'Abord",
+        "body": "Vos informations personnelles restent protégées pendant que vous apprenez à connaître vos correspondances potentielles."
       },
       {
-        "title": "Recherche intelligente",
-        "body": "Recherchez un partenaire avec des filtres avancés pour des résultats plus précis."
+        "title": "Membres Vérifiés",
+        "body": "La vérification aide à créer une communauté plus authentique et digne de confiance."
       },
       {
-        "title": "Communication respectueuse",
-        "body": "Apprenez à vous connaître avec respect avant de décider des prochaines étapes."
+        "title": "Correspondances Pertinentes",
+        "body": "Recherchez et découvrez des personnes selon les qualités et préférences qui comptent pour vous."
       },
       {
-        "title": "Intentions de mariage",
-        "body": "Une plateforme pour les personnes ayant des intentions sincères de se marier selon les valeurs islamiques."
-      },
-      {
-        "title": "Vrais succès",
-        "body": "Nous avons un historique de couples qui ont trouvé le bonheur grâce à Nusrah."
+        "title": "Connexions Respectueuses",
+        "body": "Une plateforme conçue autour de la dignité, du respect et d'une communication sincère."
       }
     ],
     "quote": {
@@ -466,28 +468,28 @@
     "subtitle": "Des étapes simples pour vous aider à trouver votre partenaire de vie",
     "steps": [
       {
-        "title": "Inscrivez-vous",
-        "desc": "Créez votre compte gratuit avec des informations de base."
+        "title": "Créez Votre Profil",
+        "desc": "Inscrivez-vous et renseignez les informations essentielles de votre profil."
       },
       {
-        "title": "Complétez votre profil",
-        "desc": "Parlez-nous de vous et de ce que vous recherchez chez un partenaire."
+        "title": "Dites-nous Ce Que Vous Recherchez",
+        "desc": "Partagez vos préférences pour que nous trouvions les bonnes correspondances."
       },
       {
-        "title": "Recherchez",
+        "title": "Découvrez des Profils Compatibles",
         "desc": "Parcourez les profils qui correspondent à ce que vous recherchez."
       },
       {
-        "title": "Communiquez",
+        "title": "Connectez-vous avec Respect",
         "desc": "Entamez des conversations sûres et respectueuses."
       },
       {
-        "title": "Vérifiez",
-        "desc": "Confirmez les intentions et les informations avant de poursuivre."
+        "title": "Impliquez Votre Famille Quand Vous Êtes Prêt",
+        "desc": "Impliquez un tuteur ou une personne de confiance à l'étape appropriée."
       },
       {
-        "title": "Construisez une vie ensemble",
-        "desc": "Avancez dans le processus de mariage, si Dieu le veut."
+        "title": "Avancez Vers le Mariage",
+        "desc": "Avancez avec confiance vers la construction d'une vie commune."
       }
     ],
     "tiersHeading": "Fonctionnalités par niveau (Gratuit à Premium)",
@@ -498,6 +500,29 @@
       "Pour le mariage uniquement",
       "Support rapide"
     ]
+  },
+  "kuhusu": {
+    "title": "À Propos de Nusrah",
+    "subtitle": "Qui nous sommes et ce que nous défendons.",
+    "ourStoryHeading": "Notre Histoire",
+    "ourStoryBody": "Nusrah est né d'un constat simple : les personnes en quête de mariage méritent une plateforme conçue spécifiquement pour cet objectif — pas une application de rencontre générale adaptée pour quelque chose de plus sérieux. Chaque aspect de Nusrah, de la vérification à l'implication familiale, est construit en plaçant le mariage comme point de départ, et non comme une réflexion après coup.",
+    "ourMissionHeading": "Notre Mission",
+    "ourMissionBody": "Aider les personnes à trouver un partenaire de vie grâce à un processus sûr, respectueux et honnête — en mettant en relation des personnes sincères aux intentions authentiques.",
+    "whatWeStandForHeading": "Ce Que Nusrah Défend",
+    "whatWeStandForItems": [
+      "Le mariage comme objectif, pas comme réflexion après coup.",
+      "La confidentialité et la dignité pour chaque membre.",
+      "La vérification comme fondement de la confiance, pas une simple formalité.",
+      "Une communication respectueuse à chaque étape.",
+      "L'implication familiale, selon vos conditions, quand vous êtes prêt."
+    ],
+    "privacyHeading": "Notre Engagement pour la Confidentialité",
+    "privacyBody": "Les informations sensibles — comme votre numéro de téléphone et votre localisation exacte — restent chiffrées et ne sont partagées qu'avec votre consentement. Vous contrôlez ce qui est visible, et par qui.",
+    "teamHeading": "Notre Équipe",
+    "teamBody": "Nusrah est conçu et géré par une petite équipe dévouée basée en Tanzanie, engagée à construire une plateforme à laquelle les membres peuvent faire confiance pour quelque chose d'aussi important que de trouver un partenaire de vie.",
+    "contactHeading": "Contact",
+    "contactBody": "Une question, ou envie de nous contacter directement ?",
+    "contactCta": "Nous Contacter"
   },
   "kuwaMwanachama": {
     "title": "Choisissez votre forfait",
@@ -525,11 +550,11 @@
     "stats": [
       {
         "value": "35 000+",
-        "label": "Membres actifs"
+        "label": "Membres Inscrits"
       },
       {
         "value": "2 000+",
-        "label": "Mariages réussis"
+        "label": "Couples Mis en Relation via Nusrah"
       },
       {
         "value": "98 %",
@@ -540,6 +565,7 @@
         "label": "Sûr et privé"
       }
     ],
+    "statsDisclaimer": "Basé sur les membres inscrits et les mariages signalés via la plateforme Nusrah.",
     "ctaHeading": "Devenez notre prochaine réussite",
     "ctaLoggedIn": "Continuez à parcourir les autres membres de Nusrah en toute sécurité et avec respect.",
     "ctaLoggedOut": "Rejoignez Nusrah dès aujourd'hui et commencez votre voyage vers un partenaire de vie, en toute sécurité et avec respect.",
@@ -731,6 +757,14 @@
     "title": "Centre de sécurité Nusrah",
     "subtitle": "Votre sécurité avant tout",
     "intro": "Nusrah.co.tz vise à vous aider à trouver un partenaire de vie de manière respectueuse, privée, honnête et sûre.",
+    "quickOverviewItems": [
+      { "number": "1", "title": "Vérifiez", "body": "Comprenez à qui vous parlez." },
+      { "number": "2", "title": "Protégez Votre Confidentialité", "body": "Gardez vos informations personnelles privées." },
+      { "number": "3", "title": "Signalez et Bloquez", "body": "Signalez tout comportement suspect ou inapproprié." },
+      { "number": "4", "title": "Rencontrez en Sécurité", "body": "Conseils pour une première rencontre." },
+      { "number": "5", "title": "Impliquez Votre Famille", "body": "Impliquez un tuteur ou une personne de confiance lorsque c'est approprié." }
+    ],
+    "readFullGuidelines": "Lire nos Consignes de Sécurité Complètes",
     "sections": [
       {
         "icon": "🛡️",

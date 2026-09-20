@@ -12,7 +12,27 @@ export default async function SafetyCenterPage() {
         <p className="mx-auto mt-4 max-w-xl leading-relaxed text-neutral-600">{t.intro}</p>
       </div>
 
-      <div className="mt-10 space-y-6">
+      <div className="mt-10 grid gap-4 sm:grid-cols-2">
+        {t.quickOverviewItems.map((item) => (
+          <div key={item.number} className="flex items-start gap-4 rounded-2xl border border-black/5 bg-white p-5 shadow-sm">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+              {item.number}
+            </span>
+            <div>
+              <p className="font-semibold text-navy">{item.title}</p>
+              <p className="mt-0.5 text-sm text-neutral-600">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-8 flex items-center gap-4 text-sm text-neutral-400">
+        <span className="h-px flex-1 bg-black/5" />
+        {t.readFullGuidelines}
+        <span className="h-px flex-1 bg-black/5" />
+      </div>
+
+      <div className="mt-8 space-y-6">
         {t.sections.map((section) => (
           <section key={section.heading} className="rounded-2xl border border-black/5 bg-white p-6 shadow-sm sm:p-7">
             <h2 className="flex items-center gap-2.5 text-lg font-semibold text-navy">

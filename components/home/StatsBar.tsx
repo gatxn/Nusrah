@@ -14,7 +14,7 @@ const HEADLINES: React.ReactNode[] = [
   "24/7 Support",
 ];
 
-export default function StatsBar({ items }: { items: string[] }) {
+export default function StatsBar({ items, disclaimer }: { items: string[]; disclaimer?: string }) {
   return (
     <div
       className="border-y-[3px] border-gold px-6 py-6 sm:px-12 lg:px-20"
@@ -39,6 +39,7 @@ export default function StatsBar({ items }: { items: string[] }) {
           );
         })}
       </div>
+      {disclaimer && <p className="mt-4 text-center text-[11px] text-white/40">{disclaimer}</p>}
     </div>
   );
 }

@@ -9,6 +9,7 @@
       "howItWorks": "Jinsi Inavyofanyakazi",
       "membership": "Kuwa Mwanachama",
       "successStories": "Mafanikio",
+      "about": "Kuhusu Sisi",
       "help": "Msaada",
       "login": "Ingia",
       "joinNow": "Jiunge Sasa",
@@ -197,9 +198,9 @@
     }
   },
   "home": {
-    "headline1": "Pata mwenzi wako",
-    "headline2": "wa maisha",
-    "subtitle": "Nusrah ni jukwaa salama la Kiislamu linalowaunganisha wanaotafuta mwenzi wa maisha kwa nia njema.",
+    "headline1": "Pata Mwenzi.",
+    "headline2": "Jenga Maisha.",
+    "subtitle": "Jukwaa la kuaminika la ndoa kwa watu wanaotafuta ndoa kwa nia njema, heshima na malengo.",
     "checklist": [
       "Salama na la faragha",
       "Uchaguzi sahihi kwa viwango",
@@ -209,46 +210,47 @@
       "Kwa ajili ya maisha bora"
     ],
     "ctaJoin": "Jiunge Sasa - Bure",
+    "heroCtaJoin": "Tafuta Mwenzako",
     "ctaMembers": "Nenda kwenye Wanachama",
-    "ctaLearnMore": "Jinsi Inavyofanyakazi",
-    "statsLinePrefix": "Wanachama zaidi ya",
-    "statsLineMiddle": "Mafanikio ya ndoa zaidi ya",
+    "ctaLearnMore": "Jinsi Nusrah Inavyofanyakazi",
+    "statsLinePrefix": "Zaidi ya",
+    "statsLineSuffix1": "wanachama waliosajiliwa",
+    "statsLineSuffix2": "wanandoa waliounganishwa",
     "welcomeBackNote": "⛨ Karibu tena, endelea na safari yako!",
     "easySignupNote": "⛨ Usajili ni rahisi, wa haraka na bure!",
     "trustBadgeTitle": "Wanachama Wetu",
     "trustBadgeSubtitle": "Wanautafuta kama wewe",
     "heroPhotoAlt": "Wanandoa wakiwa pamoja, wakitafakari safari yao ya kupata mwenzi wa maisha",
     "statsBar": [
-      "Wanachama Hai",
-      "Mafanikio ya Ndoa",
+      "Wanachama Waliosajiliwa",
+      "Wanandoa Walioungana Kupitia Nusrah",
       "Salama & La Faragha",
       "Taarifa Zilizo Hakikiwa",
       "Msaada wa Haraka"
     ],
+    "statsDisclaimer": "Kulingana na wanachama waliosajiliwa na ndoa zilizoripotiwa kupitia jukwaa la Nusrah.",
+    "featuresHeading": "Kwa Nini Nusrah?",
+    "featuresSubtitle": "Kinachofanya Nusrah kuwa tofauti na programu za kawaida za uchumba.",
     "features": [
       {
-        "title": "Salama & La Faragha",
-        "body": "Taarifa zako zipo salama. Faragha yako ni kipaumbele chetu cha kwanza."
+        "title": "Ndoa, Sio Uchumba",
+        "body": "Imejengwa kwa ajili ya watu wanaotafuta ndoa kwa dhati, sio uchumba wa kawaida."
       },
       {
-        "title": "Profaili Halisi",
-        "body": "Wanachama wote hupitia uthibitisho wa taarifa ili kuhakikisha uhalisia."
+        "title": "Faragha Kwanza",
+        "body": "Taarifa zako binafsi zinabaki salama unapofahamiana na wanachama wengine."
       },
       {
-        "title": "Uchaguzi wa Kijanja",
-        "body": "Tafuta mwenzi kwa kutumia vichujio vya hali ya juu kwa matokeo sahihi zaidi."
+        "title": "Wanachama Waliohakikiwa",
+        "body": "Uthibitisho husaidia kujenga jamii ya kuaminika na halisi zaidi."
       },
       {
-        "title": "Mawasiliano Bora",
-        "body": "Wasiliana kwa heshima na kujenga uelewa kabla ya kuamua hatua zaidi."
+        "title": "Uchaguzi wenye Maana",
+        "body": "Tafuta na gundua watu kwa kuzingatia sifa na mapendeleo yanayokuhusu."
       },
       {
-        "title": "Nia ya Ndoa",
-        "body": "Jukwaa la watu wenye nia ya dhati ya kuoa na kuishi kwa maadili ya Kiislamu."
-      },
-      {
-        "title": "Mafanikio Halisi",
-        "body": "Tuna historia ya mafanikio ya wanandoa waliopata furaha kupitia Nusrah."
+        "title": "Uhusiano wa Heshima",
+        "body": "Jukwaa lililojengwa kwa msingi wa heshima, hadhi na mawasiliano yenye maana."
       }
     ],
     "quote": {
@@ -466,28 +468,28 @@
     "subtitle": "Hatua rahisi kukusaidia kupata mwenzi wako wa maisha",
     "steps": [
       {
-        "title": "Jisajili",
-        "desc": "Unda akaunti yako bure kwa taarifa za msingi."
+        "title": "Unda Profaili Yako",
+        "desc": "Jisajili na uweke taarifa za msingi za profaili yako."
       },
       {
-        "title": "Jaza Profaili",
-        "desc": "Eleza kuhusu wewe na unachotafuta kwa mwenzi."
+        "title": "Tueleze Unachotafuta",
+        "desc": "Shiriki mapendeleo yako ili tukusaidie kupata walinganifu sahihi."
       },
       {
-        "title": "Tafuta",
+        "title": "Gundua Profaili Zinazolingana",
         "desc": "Vinjari wasifu unaolingana na mahitaji yako."
       },
       {
-        "title": "Mawasiliano",
+        "title": "Wasiliana kwa Heshima",
         "desc": "Anzisha mazungumzo salama na ya heshima."
       },
       {
-        "title": "Thibitisha",
-        "desc": "Thibitisha nia na taarifa kabla ya kuendelea."
+        "title": "Shirikisha Familia Utakapokuwa Tayari",
+        "desc": "Mhusishe mlezi au mtu unayemwamini katika hatua inayofaa."
       },
       {
-        "title": "Pata Maisha ya Pamoja",
-        "desc": "Endelea na taratibu za ndoa kwa baraka."
+        "title": "Endelea na Hatua ya Ndoa",
+        "desc": "Songa mbele kwa ujasiri kuelekea kujenga maisha ya pamoja."
       }
     ],
     "tiersHeading": "Taarifa kwa Ngazi (Free hadi Premium)",
@@ -498,6 +500,29 @@
       "Kwa Ajili ya Ndoa Pekee",
       "Msaada wa Haraka"
     ]
+  },
+  "kuhusu": {
+    "title": "Kuhusu Nusrah",
+    "subtitle": "Sisi ni akina nani na tunasimamia nini.",
+    "ourStoryHeading": "Historia Yetu",
+    "ourStoryBody": "Nusrah ilijengwa kutokana na uchunguzi rahisi: watu wanaotafuta ndoa wanastahili jukwaa lililojengwa mahususi kwa lengo hilo — sio programu ya kawaida ya uchumba iliyobadilishwa kwa jambo zito zaidi. Kila sehemu ya Nusrah, kuanzia uthibitisho hadi ushirikishwaji wa familia, imejengwa ikiwa na ndoa kama mwanzo, sio jambo la ziada.",
+    "ourMissionHeading": "Dhamira Yetu",
+    "ourMissionBody": "Kusaidia watu kupata mwenzi wa maisha kupitia mchakato ulio salama, wa heshima na wa uaminifu — kuunganisha watu halisi wenye nia njema.",
+    "whatWeStandForHeading": "Nusrah Inasimamia Nini",
+    "whatWeStandForItems": [
+      "Ndoa kama lengo, sio jambo la ziada.",
+      "Faragha na hadhi kwa kila mwanachama.",
+      "Uthibitisho kama msingi wa uaminifu, sio kigezo tu.",
+      "Mawasiliano ya heshima katika kila hatua.",
+      "Ushirikishwaji wa familia, kwa masharti yako, utakapokuwa tayari."
+    ],
+    "privacyHeading": "Ahadi Yetu ya Faragha",
+    "privacyBody": "Taarifa nyeti — kama namba yako ya simu na eneo lako halisi — zinabaki salama kwa usimbaji fiche na hazishirikiwi ila kwa idhini yako. Wewe ndiye unayedhibiti kinachoonekana, na kwa nani.",
+    "teamHeading": "Timu Yetu",
+    "teamBody": "Nusrah inajengwa na kuendeshwa na timu ndogo, iliyojitolea, iliyoko Tanzania, yenye lengo la kujenga jukwaa ambalo wanachama wanaweza kuliamini kwa jambo muhimu kama kupata mwenzi wa maisha.",
+    "contactHeading": "Wasiliana Nasi",
+    "contactBody": "Una swali, au unataka kuwasiliana nasi moja kwa moja?",
+    "contactCta": "Wasiliana Nasi"
   },
   "kuwaMwanachama": {
     "title": "Chagua Kifurushi Chako",
@@ -525,11 +550,11 @@
     "stats": [
       {
         "value": "35,000+",
-        "label": "Wanachama Hai"
+        "label": "Wanachama Waliosajiliwa"
       },
       {
         "value": "2,000+",
-        "label": "Mafanikio ya Ndoa"
+        "label": "Wanandoa Walioungana Kupitia Nusrah"
       },
       {
         "value": "98%",
@@ -540,6 +565,7 @@
         "label": "Salama & Faragha"
       }
     ],
+    "statsDisclaimer": "Kulingana na wanachama waliosajiliwa na ndoa zilizoripotiwa kupitia jukwaa la Nusrah.",
     "ctaHeading": "Uwe Hadithi Yetu Ijayo ya Mafanikio",
     "ctaLoggedIn": "Endelea kuvinjari wanachama wenzako kwenye Nusrah kwa njia salama na ya heshima.",
     "ctaLoggedOut": "Jiunge leo na Nusrah, uanze safari yako ya kutafuta mwenzi wa maisha kwa njia salama na ya heshima.",
@@ -731,6 +757,14 @@
     "title": "Nusrah Safety Center",
     "subtitle": "Usalama Wako ni Jambo Letu la Kwanza",
     "intro": "Nusrah.co.tz inalenga kukusaidia kupata mwenza wa maisha kwa njia yenye heshima, faragha, uaminifu na usalama.",
+    "quickOverviewItems": [
+      { "number": "1", "title": "Thibitisha", "body": "Elewa unayezungumza naye ni nani." },
+      { "number": "2", "title": "Linda Faragha Yako", "body": "Weka taarifa zako binafsi kuwa siri." },
+      { "number": "3", "title": "Ripoti na Zuia", "body": "Ripoti tabia za kutiliwa shaka au zisizofaa." },
+      { "number": "4", "title": "Kutana kwa Usalama", "body": "Mwongozo wa kukutana na mtu kwa mara ya kwanza." },
+      { "number": "5", "title": "Shirikisha Familia Yako", "body": "Mhusishe wali, mlezi au mtu unayemwamini utakapoona inafaa." }
+    ],
+    "readFullGuidelines": "Soma Mwongozo Wetu Kamili wa Usalama",
     "sections": [
       {
         "icon": "🛡️",

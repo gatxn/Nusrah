@@ -23,6 +23,7 @@ export default async function Footer() {
               <li><LocaleLink href="/jinsi-inavyofanyakazi" className="hover:text-white">{nav.howItWorks}</LocaleLink></li>
               <li><LocaleLink href="/kuwa-mwanachama" className="hover:text-white">{nav.membership}</LocaleLink></li>
               <li><LocaleLink href="/mafanikio" className="hover:text-white">{nav.successStories}</LocaleLink></li>
+              <li><LocaleLink href="/kuhusu" className="hover:text-white">{nav.about}</LocaleLink></li>
             </ul>
           </div>
 

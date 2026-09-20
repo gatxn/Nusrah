@@ -22,8 +22,8 @@ export default async function HomePage() {
   return (
     <div className="bg-hero-photo">
       <HeroAnimated dict={dict.home} />
-      <StatsBar items={dict.home.statsBar} />
-      <FeatureGrid items={dict.home.features} />
+      <StatsBar items={dict.home.statsBar} disclaimer={dict.home.statsDisclaimer} />
+      <FeatureGrid items={dict.home.features} heading={dict.home.featuresHeading} subtitle={dict.home.featuresSubtitle} />
       <QuoteCtaSection dict={dict.home} />
     </div>
   );

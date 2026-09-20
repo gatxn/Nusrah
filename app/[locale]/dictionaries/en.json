@@ -9,6 +9,7 @@
       "howItWorks": "How It Works",
       "membership": "Membership",
       "successStories": "Success Stories",
+      "about": "About Us",
       "help": "Help",
       "login": "Log In",
       "joinNow": "Join Now",
@@ -197,9 +198,9 @@
     }
   },
   "home": {
-    "headline1": "Find your",
-    "headline2": "life partner",
-    "subtitle": "Nusrah is a safe Islamic platform connecting people seeking a life partner with sincere intentions.",
+    "headline1": "Find a Partner.",
+    "headline2": "Build a Life.",
+    "subtitle": "A trusted matrimonial platform for people seeking marriage with sincerity, respect and purpose.",
     "checklist": [
       "Safe and private",
       "Verified, quality matches",
@@ -209,46 +210,47 @@
       "For a better life together"
     ],
     "ctaJoin": "Join Now - Free",
+    "heroCtaJoin": "Find Your Match",
     "ctaMembers": "Go to Members",
-    "ctaLearnMore": "How It Works",
+    "ctaLearnMore": "How Nusrah Works",
     "statsLinePrefix": "Over",
-    "statsLineMiddle": "successful marriages over",
+    "statsLineSuffix1": "registered members",
+    "statsLineSuffix2": "couples connected",
     "welcomeBackNote": "⛨ Welcome back, continue your journey!",
     "easySignupNote": "⛨ Sign-up is easy, fast, and free!",
     "trustBadgeTitle": "Our Members",
     "trustBadgeSubtitle": "Looking for someone like you",
     "heroPhotoAlt": "A couple together, reflecting on their journey to finding a life partner",
     "statsBar": [
-      "Active Members",
-      "Successful Marriages",
+      "Registered Members",
+      "Couples Connected Through Nusrah",
       "Safe & Private",
       "Verified Profiles",
       "24/7 Support"
     ],
+    "statsDisclaimer": "Based on registered members and reported marriages through the Nusrah platform.",
+    "featuresHeading": "Why Nusrah?",
+    "featuresSubtitle": "What makes Nusrah different from a typical dating app.",
     "features": [
       {
-        "title": "Safe & Private",
-        "body": "Your information stays protected. Your privacy is our first priority."
+        "title": "Marriage, Not Dating",
+        "body": "Built for people who are genuinely seeking marriage, not casual dating."
       },
       {
-        "title": "Real Profiles",
-        "body": "Every member goes through verification to keep the community genuine."
+        "title": "Privacy First",
+        "body": "Your personal information remains protected while you get to know potential matches."
       },
       {
-        "title": "Smart Matching",
-        "body": "Search for a partner with advanced filters for more accurate results."
+        "title": "Verified Members",
+        "body": "Verification helps create a more trusted and authentic community."
       },
       {
-        "title": "Respectful Communication",
-        "body": "Get to know each other with respect before deciding on next steps."
+        "title": "Meaningful Matches",
+        "body": "Search and discover people based on the qualities and preferences that matter to you."
       },
       {
-        "title": "Marriage Intentions",
-        "body": "A platform for people with sincere intentions to marry within Islamic values."
-      },
-      {
-        "title": "Real Success",
-        "body": "We have a track record of couples who found happiness through Nusrah."
+        "title": "Respectful Connections",
+        "body": "A platform designed around dignity, respect and meaningful communication."
       }
     ],
     "quote": {
@@ -466,28 +468,28 @@
     "subtitle": "Simple steps to help you find your life partner",
     "steps": [
       {
-        "title": "Sign Up",
-        "desc": "Create your free account with basic information."
+        "title": "Create Your Profile",
+        "desc": "Sign up and set up your profile with the essentials."
       },
       {
-        "title": "Complete Your Profile",
-        "desc": "Tell us about yourself and what you're looking for in a partner."
+        "title": "Tell Us What You're Looking For",
+        "desc": "Share your preferences so we can find the right matches."
       },
       {
-        "title": "Search",
+        "title": "Discover Compatible Profiles",
         "desc": "Browse profiles that match what you're looking for."
       },
       {
-        "title": "Communicate",
+        "title": "Connect Respectfully",
         "desc": "Start safe, respectful conversations."
       },
       {
-        "title": "Verify",
-        "desc": "Confirm intentions and information before proceeding."
+        "title": "Involve Family When Ready",
+        "desc": "Bring a guardian or trusted person into the process at the right stage."
       },
       {
-        "title": "Build a Life Together",
-        "desc": "Move forward with the marriage process, God willing."
+        "title": "Take the Next Step Toward Marriage",
+        "desc": "Move forward with confidence toward building a life together."
       }
     ],
     "tiersHeading": "Features by Tier (Free to Premium)",
@@ -498,6 +500,29 @@
       "For Marriage Only",
       "Fast Support"
     ]
+  },
+  "kuhusu": {
+    "title": "About Nusrah",
+    "subtitle": "Who we are and what we stand for.",
+    "ourStoryHeading": "Our Story",
+    "ourStoryBody": "Nusrah was built out of a simple observation: people looking for marriage deserve a platform designed around that goal specifically — not a general dating app repurposed for something more serious. Every part of Nusrah, from verification to guardian involvement, is built with marriage as the starting point, not an afterthought.",
+    "ourMissionHeading": "Our Mission",
+    "ourMissionBody": "To help people find a life partner through a process that is safe, respectful, and honest — connecting genuine people with sincere intentions.",
+    "whatWeStandForHeading": "What Nusrah Stands For",
+    "whatWeStandForItems": [
+      "Marriage as the goal, not an afterthought.",
+      "Privacy and dignity for every member.",
+      "Verification as a foundation of trust, not a formality.",
+      "Respectful communication at every stage.",
+      "Family involvement, on your terms, when you're ready."
+    ],
+    "privacyHeading": "Our Commitment to Privacy",
+    "privacyBody": "Sensitive information — like your phone number and exact location — stays encrypted and is only ever shared with your consent. You control what's visible, and to whom.",
+    "teamHeading": "Our Team",
+    "teamBody": "Nusrah is built and run by a small, dedicated team based in Tanzania, committed to building a platform members can trust with something as important as finding a life partner.",
+    "contactHeading": "Contact",
+    "contactBody": "Have a question, or want to reach us directly?",
+    "contactCta": "Get in Touch"
   },
   "kuwaMwanachama": {
     "title": "Choose Your Plan",
@@ -525,11 +550,11 @@
     "stats": [
       {
         "value": "35,000+",
-        "label": "Active Members"
+        "label": "Registered Members"
       },
       {
         "value": "2,000+",
-        "label": "Successful Marriages"
+        "label": "Couples Connected Through Nusrah"
       },
       {
         "value": "98%",
@@ -540,6 +565,7 @@
         "label": "Safe & Private"
       }
     ],
+    "statsDisclaimer": "Based on registered members and reported marriages through the Nusrah platform.",
     "ctaHeading": "Be Our Next Success Story",
     "ctaLoggedIn": "Keep browsing fellow members on Nusrah in a safe and respectful way.",
     "ctaLoggedOut": "Join Nusrah today and start your journey to find a life partner, safely and respectfully.",
@@ -731,6 +757,14 @@
     "title": "Nusrah Safety Center",
     "subtitle": "Your Safety Comes First",
     "intro": "Nusrah.co.tz aims to help you find a life partner in a way that is respectful, private, honest, and safe.",
+    "quickOverviewItems": [
+      { "number": "1", "title": "Verify", "body": "Understand who you're speaking with." },
+      { "number": "2", "title": "Protect Your Privacy", "body": "Keep personal information private." },
+      { "number": "3", "title": "Report & Block", "body": "Report suspicious or inappropriate behaviour." },
+      { "number": "4", "title": "Meet Safely", "body": "Guidelines for meeting someone for the first time." },
+      { "number": "5", "title": "Involve Your Family", "body": "Bring a wali, guardian or trusted person into the process when appropriate." }
+    ],
+    "readFullGuidelines": "Read our full Safety Guidelines",
     "sections": [
       {
         "icon": "🛡️",

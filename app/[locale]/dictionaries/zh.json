@@ -9,6 +9,7 @@
       "howItWorks": "使用方法",
       "membership": "会员套餐",
       "successStories": "成功故事",
+      "about": "关于我们",
       "help": "帮助",
       "login": "登录",
       "joinNow": "立即加入",
@@ -197,9 +198,9 @@
     }
   },
   "home": {
-    "headline1": "寻找您的",
-    "headline2": "人生伴侣",
-    "subtitle": "Nusrah 是一个安全的伊斯兰平台，连接真心寻找人生伴侣的人们。",
+    "headline1": "寻找伴侣，",
+    "headline2": "共建人生。",
+    "subtitle": "一个值得信赖的婚恋平台，帮助真心寻求婚姻、注重诚意、尊重与目标的人们。",
     "checklist": [
       "安全且私密",
       "经过验证的优质匹配",
@@ -209,46 +210,47 @@
       "共创更美好的生活"
     ],
     "ctaJoin": "立即加入 - 免费",
+    "heroCtaJoin": "寻找您的匹配",
     "ctaMembers": "浏览会员",
-    "ctaLearnMore": "了解使用方法",
+    "ctaLearnMore": "了解 Nusrah 如何运作",
     "statsLinePrefix": "超过",
-    "statsLineMiddle": "对成功的婚姻，历时",
+    "statsLineSuffix1": "位注册会员",
+    "statsLineSuffix2": "对成功配对的伴侣",
     "welcomeBackNote": "⛨ 欢迎回来，继续您的旅程！",
     "easySignupNote": "⛨ 注册简单、快速且免费！",
     "trustBadgeTitle": "我们的会员",
     "trustBadgeSubtitle": "正在寻找像您这样的人",
     "heroPhotoAlt": "一对夫妇在一起，回顾他们寻找人生伴侣的旅程",
     "statsBar": [
-      "活跃会员",
-      "成功婚姻",
+      "注册会员",
+      "通过 Nusrah 成功配对的伴侣",
       "安全私密",
       "已验证资料",
       "全天候支持"
     ],
+    "statsDisclaimer": "数据基于 Nusrah 平台上的注册会员及已上报的婚姻情况。",
+    "featuresHeading": "为什么选择 Nusrah？",
+    "featuresSubtitle": "Nusrah 与普通交友软件的不同之处。",
     "features": [
       {
-        "title": "安全且私密",
-        "body": "您的信息将受到保护。您的隐私是我们的首要任务。"
+        "title": "以结婚为目的，而非约会",
+        "body": "专为真心寻求婚姻的人们打造，而非普通的休闲约会。"
       },
       {
-        "title": "真实资料",
-        "body": "每位会员都需经过验证，以保持社区的真实性。"
+        "title": "隐私优先",
+        "body": "在您了解潜在匹配对象的过程中，您的个人信息将始终受到保护。"
       },
       {
-        "title": "智能匹配",
-        "body": "使用高级筛选条件搜索伴侣，获得更精准的结果。"
+        "title": "已验证会员",
+        "body": "身份验证有助于建立一个更值得信赖、更真实的社区。"
       },
       {
-        "title": "尊重的沟通",
-        "body": "在决定下一步之前，以尊重的方式相互了解。"
+        "title": "有意义的匹配",
+        "body": "根据对您真正重要的特质和偏好来搜索和发现合适的人。"
       },
       {
-        "title": "婚姻意向",
-        "body": "为真心希望依照伊斯兰价值观结婚的人们提供的平台。"
-      },
-      {
-        "title": "真实的成功案例",
-        "body": "我们见证了许多通过 Nusrah 找到幸福的伴侣。"
+        "title": "相互尊重的联系",
+        "body": "一个围绕尊严、尊重和真诚沟通而设计的平台。"
       }
     ],
     "quote": {
@@ -466,28 +468,28 @@
     "subtitle": "简单几步，助您找到人生伴侣",
     "steps": [
       {
-        "title": "注册",
-        "desc": "使用基本信息创建您的免费账户。"
+        "title": "创建您的资料",
+        "desc": "注册并填写您的基本资料信息。"
       },
       {
-        "title": "完善资料",
-        "desc": "告诉我们关于您自己以及您希望寻找的伴侣类型。"
+        "title": "告诉我们您的需求",
+        "desc": "分享您的偏好，以便我们为您找到合适的匹配。"
       },
       {
-        "title": "搜索",
+        "title": "发现匹配资料",
         "desc": "浏览符合您需求的资料。"
       },
       {
-        "title": "沟通交流",
+        "title": "以尊重的方式沟通",
         "desc": "开始安全、尊重的对话。"
       },
       {
-        "title": "核实确认",
-        "desc": "在进一步发展之前，确认双方的意向和信息。"
+        "title": "适时让家人参与",
+        "desc": "在合适的阶段，邀请监护人或您信任的人参与其中。"
       },
       {
-        "title": "共同建立生活",
-        "desc": "若真主意愿，推进婚姻进程。"
+        "title": "迈向婚姻的下一步",
+        "desc": "满怀信心地迈向共同生活。"
       }
     ],
     "tiersHeading": "各等级功能对比（免费至尊享版）",
@@ -498,6 +500,29 @@
       "仅限婚姻目的",
       "快速支持"
     ]
+  },
+  "kuhusu": {
+    "title": "关于 Nusrah",
+    "subtitle": "我们是谁，我们坚持什么。",
+    "ourStoryHeading": "我们的故事",
+    "ourStoryBody": "Nusrah 的创立源于一个简单的观察：寻求婚姻的人们值得拥有一个专门为这一目标而设计的平台——而不是一个为更严肃的目的而改造的普通交友软件。从身份验证到家人参与，Nusrah 的每一个环节都以婚姻为出发点，而非事后添加的功能。",
+    "ourMissionHeading": "我们的使命",
+    "ourMissionBody": "通过安全、尊重且诚实的流程，帮助人们找到人生伴侣——将真诚、意图纯正的人们联系在一起。",
+    "whatWeStandForHeading": "Nusrah 所坚持的理念",
+    "whatWeStandForItems": [
+      "以婚姻为目标，而非事后考虑。",
+      "尊重每一位会员的隐私与尊严。",
+      "将身份验证视为信任的基础，而非形式。",
+      "在每个阶段都保持尊重的沟通。",
+      "在您准备好时，按您的意愿让家人参与。"
+    ],
+    "privacyHeading": "我们对隐私的承诺",
+    "privacyBody": "敏感信息——如您的电话号码和确切位置——始终经过加密处理，并且只有在您同意的情况下才会被分享。您可以自主决定哪些信息可见，以及向谁展示。",
+    "teamHeading": "我们的团队",
+    "teamBody": "Nusrah 由一支位于坦桑尼亚的专注团队创建和运营，致力于打造一个会员可以信赖的平台，帮助他们完成寻找人生伴侣这件重要的事。",
+    "contactHeading": "联系我们",
+    "contactBody": "有疑问，或想直接联系我们？",
+    "contactCta": "联系我们"
   },
   "kuwaMwanachama": {
     "title": "选择您的套餐",
@@ -525,11 +550,11 @@
     "stats": [
       {
         "value": "35,000+",
-        "label": "活跃会员"
+        "label": "注册会员"
       },
       {
         "value": "2,000+",
-        "label": "成功婚姻"
+        "label": "通过 Nusrah 成功配对的伴侣"
       },
       {
         "value": "98%",
@@ -540,6 +565,7 @@
         "label": "安全私密"
       }
     ],
+    "statsDisclaimer": "数据基于 Nusrah 平台上的注册会员及已上报的婚姻情况。",
     "ctaHeading": "成为我们下一个成功故事",
     "ctaLoggedIn": "继续以安全、尊重的方式浏览 Nusrah 上的其他会员。",
     "ctaLoggedOut": "立即加入 Nusrah，安全、尊重地开启您寻找人生伴侣的旅程。",
@@ -731,6 +757,14 @@
     "title": "Nusrah 安全中心",
     "subtitle": "您的安全至上",
     "intro": "Nusrah.co.tz 致力于以尊重、私密、诚实和安全的方式，帮助您找到人生伴侣。",
+    "quickOverviewItems": [
+      { "number": "1", "title": "验证", "body": "了解您正在与谁交流。" },
+      { "number": "2", "title": "保护您的隐私", "body": "对个人信息保密。" },
+      { "number": "3", "title": "举报与屏蔽", "body": "举报可疑或不当行为。" },
+      { "number": "4", "title": "安全见面", "body": "首次见面的安全指南。" },
+      { "number": "5", "title": "让家人参与", "body": "在适当的时候，邀请监护人或您信任的人参与其中。" }
+    ],
+    "readFullGuidelines": "阅读完整安全指南",
     "sections": [
       {
         "icon": "🛡️",

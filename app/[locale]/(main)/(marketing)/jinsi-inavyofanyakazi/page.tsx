@@ -5,19 +5,20 @@ import TrustBadgeBar from "@/components/TrustBadgeBar";
 import TierBadge from "@/components/TierBadge";
 import {
   PersonIcon,
-  DocumentIcon,
+  SlidersIcon,
   SearchIcon,
   ChatIcon,
-  ShieldCheckIcon,
+  UsersIcon,
   HeartHandIcon,
   ArrowRightIcon,
   LockIcon,
   CheckIcon,
   ClockIcon,
+  ShieldCheckIcon,
 } from "@/components/icons";
 import { getDictionary } from "../../../dictionaries";
 
-const STEP_ICONS = [PersonIcon, DocumentIcon, SearchIcon, ChatIcon, ShieldCheckIcon, HeartHandIcon];
+const STEP_ICONS = [PersonIcon, SlidersIcon, SearchIcon, ChatIcon, UsersIcon, HeartHandIcon];
 const TRUST_ICONS = [<ShieldCheckIcon key="a" />, <HeartHandIcon key="b" />, <LockIcon key="c" />, <ClockIcon key="d" />];
 
 export default async function HowItWorksPage() {

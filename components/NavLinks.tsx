@@ -26,6 +26,7 @@ export default function NavLinks({
     { href: "/jinsi-inavyofanyakazi", label: labels.howItWorks },
     { href: "/kuwa-mwanachama", label: labels.membership },
     { href: "/mafanikio", label: labels.successStories },
+    { href: "/kuhusu", label: labels.about },
     { href: "/msaada", label: labels.help },
   ];
 

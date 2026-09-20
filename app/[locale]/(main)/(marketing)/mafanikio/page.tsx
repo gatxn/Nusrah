@@ -51,6 +51,7 @@ export default async function SuccessStoriesPage() {
             </div>
           ))}
         </div>
+        <p className="mt-6 text-center text-[11px] text-white/40">{t.statsDisclaimer}</p>
       </section>
 
       <section className="bg-blush-50 px-4 py-14 text-center sm:px-6">

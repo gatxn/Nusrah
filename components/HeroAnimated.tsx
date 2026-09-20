@@ -44,7 +44,7 @@ export default function HeroAnimated({
             style={{ background: "linear-gradient(135deg,#e4416f,#c31f56)" }}
           >
             <PersonPlusIcon className="h-4.5 w-4.5" />
-            {dict.ctaJoin}
+            {dict.heroCtaJoin}
           </LocaleLink>
           <LocaleLink
             href="/jinsi-inavyofanyakazi"
@@ -59,9 +59,9 @@ export default function HeroAnimated({
 
         <p className="mt-5 flex items-center gap-2 text-sm text-muted">
           <span className="text-primary">⛨</span> {dict.statsLinePrefix}{" "}
-          <strong className="text-primary-dark">35,000+</strong>{" "}
-          <span className="text-blush-200">|</span> {dict.statsLineMiddle}{" "}
-          <strong className="text-primary-dark">2,000+</strong>
+          <strong className="text-primary-dark">35,000+</strong> {dict.statsLineSuffix1}{" "}
+          <span className="text-blush-200">|</span>{" "}
+          <strong className="text-primary-dark">2,000+</strong> {dict.statsLineSuffix2}
         </p>
       </div>
 
