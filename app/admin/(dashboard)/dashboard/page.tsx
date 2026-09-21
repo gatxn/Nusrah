@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { getDashboardStats, registrationsPerDay } from "@/lib/admin/dashboard-stats";
 import { matchesPerDay } from "@/lib/admin/matches";
-import { pendingOrderCount } from "@/lib/admin/revenue";
+import { pendingOrderCount, confirmedRevenueByGateway } from "@/lib/admin/revenue";
 import { queryAdminUsers } from "@/lib/admin/users";
 import { queryAdminReports } from "@/lib/admin/reports";
 import StatCard from "@/components/admin/StatCard";
+import RevenueStatCard from "@/components/admin/RevenueStatCard";
 import DonutChart from "@/components/admin/DonutChart";
 import BarLineChart from "@/components/admin/BarLineChart";
 import AdminUserTable from "@/components/admin/AdminUserTable";
@@ -18,14 +19,16 @@ function formatTzs(amount: number) {
 const CHART_DAYS = 30;
 
 export default async function AdminDashboardPage() {
-  const [stats, registrations, matches, pendingPayments, recentUsers, recentReports] = await Promise.all([
-    getDashboardStats(),
-    registrationsPerDay(CHART_DAYS),
-    matchesPerDay(CHART_DAYS),
-    pendingOrderCount(),
-    queryAdminUsers({ page: 1, sort: "newest" }),
-    queryAdminReports({ page: 1, status: "PENDING" }),
-  ]);
+  const [stats, registrations, matches, pendingPayments, recentUsers, recentReports, revenueByGateway] =
+    await Promise.all([
+      getDashboardStats(),
+      registrationsPerDay(CHART_DAYS),
+      matchesPerDay(CHART_DAYS),
+      pendingOrderCount(),
+      queryAdminUsers({ page: 1, sort: "newest" }),
+      queryAdminReports({ page: 1, status: "PENDING" }),
+      confirmedRevenueByGateway(),
+    ]);
 
   const v = stats.verificationBreakdown;
 
@@ -40,7 +43,7 @@ export default async function AdminDashboardPage() {
         <StatCard icon={<ClockIcon className="h-4.5 w-4.5" />} label="Pending Verification" value={String(stats.pendingVerification.value)} />
         <StatCard icon={<HeartFilledIcon className="h-4.5 w-4.5" />} label="Active Matches" value={String(stats.activeMatches.value)} changePercent={stats.activeMatches.changePercent} />
         <StatCard icon={<FlagIcon className="h-4.5 w-4.5" />} label="Reported Accounts" value={String(stats.reportedAccounts.value)} changePercent={stats.reportedAccounts.changePercent} />
-        <StatCard icon={<CreditCardIcon className="h-4.5 w-4.5" />} label="Revenue (TZS)" value={`${formatTzs(stats.confirmedRevenueTzs.value)} TZS`} changePercent={stats.confirmedRevenueTzs.changePercent} />
+        <RevenueStatCard icon={<CreditCardIcon className="h-4.5 w-4.5" />} label="Revenue (TZS)" value={`${formatTzs(stats.confirmedRevenueTzs.value)} TZS`} changePercent={stats.confirmedRevenueTzs.changePercent} breakdown={revenueByGateway} />
         <StatCard icon={<CreditCardIcon className="h-4.5 w-4.5" />} label="Revenue (PayPal)" value={`$${(stats.confirmedRevenueUsdCents.value / 100).toFixed(2)}`} />
       </div>
 

@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/db";
+import { gatewayCategory, GATEWAY_CATEGORY_LABELS } from "@/lib/admin/gateway-labels";
 
 // Always shown as TWO figures, never one — this project's payment gateway
 // history (PalmPesa, then AzamPay) has repeatedly shown that a webhook
@@ -46,4 +47,40 @@ export async function pendingUnconfirmedRevenueTzs(): Promise<number> {
 export async function pendingOrderCount(): Promise<number> {
   const cutoff = new Date(Date.now() - PENDING_AGE_THRESHOLD_HOURS * 60 * 60 * 1000);
   return prisma.order.count({ where: { status: "PENDING", createdAt: { lt: cutoff } } });
+}
+
+export type GatewayRevenueLine = { label: string; amountTzs: number; amountUsdCents: number; orderCount: number };
+
+/**
+ * Confirmed revenue split by gateway category (see lib/admin/gateway-labels)
+ * within each currency it was actually collected in — never force-converted
+ * into one combined number, for the same reason confirmedRevenueTzs and
+ * confirmedRevenueUsdCents are already kept separate above.
+ */
+export async function confirmedRevenueByGateway(): Promise<GatewayRevenueLine[]> {
+  const paidOrders = await prisma.order.findMany({
+    where: { status: "PAID" },
+    select: {
+      currency: true,
+      amountTzs: true,
+      amountUsdCents: true,
+      transactions: { orderBy: { createdAt: "desc" }, take: 1, select: { gateway: true } },
+    },
+  });
+
+  const totals = new Map<string, GatewayRevenueLine>();
+  for (const order of paidOrders) {
+    const category = gatewayCategory(order.transactions[0]?.gateway ?? null);
+    const label = GATEWAY_CATEGORY_LABELS[category];
+    const line = totals.get(label) ?? { label, amountTzs: 0, amountUsdCents: 0, orderCount: 0 };
+    if (order.currency === "USD") {
+      line.amountUsdCents += order.amountUsdCents ?? 0;
+    } else {
+      line.amountTzs += order.amountTzs;
+    }
+    line.orderCount += 1;
+    totals.set(label, line);
+  }
+
+  return Array.from(totals.values()).sort((a, b) => b.amountTzs - a.amountTzs);
 }
