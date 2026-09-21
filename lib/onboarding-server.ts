@@ -21,19 +21,32 @@ export const getOwnProfile = cache(async (userId: string) => {
 export async function requireOnboardingStep(step: OnboardingStep) {
   const [userId, locale] = await Promise.all([getSessionUserId(), getLocale()]);
   if (!userId) redirect(localeHref(locale, "/ingia"));
-  const profile = await getOwnProfile(userId);
+
+  let profile = await getOwnProfile(userId);
+  if (!profile) {
+    // Some existing accounts can be missing a profile row because of legacy data
+    // or partial onboarding state. The onboarding flow should recover by creating
+    // the minimal profile instead of crashing on a nullable dereference.
+    profile = await prisma.profile.create({ data: { userId } });
+  }
+
   const next = getNextIncompleteStep(profile);
   if (next === null) redirect(localeHref(locale, "/wanachama"));
   if (STEP_NUMBER[step] > STEP_NUMBER[next]) redirect(localeHref(locale, STEP_ROUTES[next]));
-  return { userId, profile: profile! };
+  return { userId, profile };
 }
 
 /** Guard for the optional photo page: steps 1-3 must already be done. */
 export async function requireOnboardingReady() {
   const [userId, locale] = await Promise.all([getSessionUserId(), getLocale()]);
   if (!userId) redirect(localeHref(locale, "/ingia"));
-  const profile = await getOwnProfile(userId);
+
+  let profile = await getOwnProfile(userId);
+  if (!profile) {
+    profile = await prisma.profile.create({ data: { userId } });
+  }
+
   const next = getNextIncompleteStep(profile);
   if (next !== null) redirect(localeHref(locale, STEP_ROUTES[next]));
-  return { userId, profile: profile! };
+  return { userId, profile };
 }
