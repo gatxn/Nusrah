@@ -312,7 +312,7 @@
     "joinNow": "Jiunge Sasa",
     "genericError": "Hitilafu imetokea",
     "networkError": "Imeshindwa kuunganisha na seva. Jaribu tena.",
-    "sessionExpiredNotice": "Umetoka kiotomatiki kwa sababu hukuwa na shughuli kwa dakika 5. Tafadhali ingia tena.",
+    "sessionExpiredNotice": "Umetoka kiotomatiki kwa sababu hukuwa na shughuli kwa dakika 10. Tafadhali ingia tena.",
     "passwordResetSuccess": "Nenosiri lako limebadilishwa. Sasa unaweza kuingia."
   },
   "sahauNenosiri": {

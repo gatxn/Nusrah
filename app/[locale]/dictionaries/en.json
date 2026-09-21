@@ -312,7 +312,7 @@
     "joinNow": "Join Now",
     "genericError": "Something went wrong",
     "networkError": "Failed to connect to the server. Please try again.",
-    "sessionExpiredNotice": "You were automatically logged out after 5 minutes of inactivity. Please sign in again.",
+    "sessionExpiredNotice": "You were automatically logged out after 10 minutes of inactivity. Please sign in again.",
     "passwordResetSuccess": "Your password has been reset. You can now log in."
   },
   "sahauNenosiri": {

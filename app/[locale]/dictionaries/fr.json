@@ -312,7 +312,7 @@
     "joinNow": "Rejoindre",
     "genericError": "Une erreur est survenue",
     "networkError": "Échec de la connexion au serveur. Veuillez réessayer.",
-    "sessionExpiredNotice": "Vous avez été automatiquement déconnecté(e) après 5 minutes d'inactivité. Veuillez vous reconnecter.",
+    "sessionExpiredNotice": "Vous avez été automatiquement déconnecté(e) après 10 minutes d'inactivité. Veuillez vous reconnecter.",
     "passwordResetSuccess": "Votre mot de passe a été réinitialisé. Vous pouvez maintenant vous connecter."
   },
   "sahauNenosiri": {

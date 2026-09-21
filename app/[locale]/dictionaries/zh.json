@@ -312,7 +312,7 @@
     "joinNow": "立即加入",
     "genericError": "出现错误",
     "networkError": "无法连接到服务器，请重试。",
-    "sessionExpiredNotice": "由于5分钟内无操作，您已被自动登出。请重新登录。",
+    "sessionExpiredNotice": "由于10分钟内无操作，您已被自动登出。请重新登录。",
     "passwordResetSuccess": "您的密码已重置，现在可以登录了。"
   },
   "sahauNenosiri": {
