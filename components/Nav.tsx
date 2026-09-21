@@ -44,77 +44,97 @@ export default async function Nav() {
   const nav = dict.common.nav;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-blush-200 bg-white/95 backdrop-blur">
+    <>
+      {/* Lives outside <header> on purpose — the header's backdrop-blur
+          creates a new containing block for position:fixed descendants
+          (same effect as `filter`/`transform`), which would confine the
+          drawer/backdrop below to the header's own ~80px height instead of
+          the full viewport. The label/peer wiring still works from here:
+          `peer-checked:` only needs this checkbox and its targets to be
+          siblings, not for the checkbox to sit next to the toggle button —
+          the toggle `<label>` inside the header targets it by id alone. */}
       <input type="checkbox" id="nav-toggle" className="peer hidden" />
 
-      <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3 sm:px-6 md:justify-between">
-        <div className="flex items-center gap-3">
-          <label
-            htmlFor="nav-toggle"
-            aria-label={dict.common.sidebar.openMenuAria}
-            className="flex h-9 w-9 cursor-pointer flex-col items-center justify-center gap-1.5 md:hidden"
-          >
-            <span className="h-0.5 w-6 bg-navy" />
-            <span className="h-0.5 w-6 bg-navy" />
-            <span className="h-0.5 w-6 bg-navy" />
-          </label>
+      <header className="sticky top-0 z-50 border-b border-blush-200 bg-white/95 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3 sm:px-6 md:justify-between">
+          <div className="flex items-center gap-3">
+            <label
+              htmlFor="nav-toggle"
+              aria-label={dict.common.sidebar.openMenuAria}
+              className="flex h-9 w-9 cursor-pointer flex-col items-center justify-center gap-1.5 md:hidden"
+            >
+              <span className="h-0.5 w-6 bg-navy" />
+              <span className="h-0.5 w-6 bg-navy" />
+              <span className="h-0.5 w-6 bg-navy" />
+            </label>
 
-          <Logo tagline={dict.common.tagline} />
-        </div>
+            <Logo tagline={dict.common.tagline} />
+          </div>
 
-        <NavLinks
-          className="hidden items-center gap-6 md:flex"
-          loggedIn={!!user}
-          unreadMessageCount={unreadMessageCount}
-          labels={nav}
-        />
+          <NavLinks
+            className="hidden items-center gap-6 md:flex"
+            loggedIn={!!user}
+            unreadMessageCount={unreadMessageCount}
+            labels={nav}
+          />
 
-        <div className="hidden items-center gap-3 md:flex">
-          <LanguageSwitcher currentLocale={locale} label={dict.common.languageSwitcher.label} />
-          {user ? (
-            <>
-              <NotificationBell initialUnreadCount={unreadCount} dict={dict.common.topBar.notifications} />
-              <LocaleLink
-                href="/akaunti"
-                className="flex items-center gap-2 rounded-full border-[1.5px] border-blush-200 py-1.5 ps-1.5 pe-4 text-sm font-semibold text-primary transition hover:bg-blush-50"
-              >
-                <AccountAvatar name={user.name} photo={photo} />
-                {firstName(user.name)}
-              </LocaleLink>
-              <form action={logoutAction}>
-                <button
-                  type="submit"
+          <div className="hidden items-center gap-3 md:flex">
+            <LanguageSwitcher currentLocale={locale} label={dict.common.languageSwitcher.label} />
+            {user ? (
+              <>
+                <NotificationBell initialUnreadCount={unreadCount} dict={dict.common.topBar.notifications} />
+                <LocaleLink
+                  href="/akaunti"
+                  className="flex items-center gap-2 rounded-full border-[1.5px] border-blush-200 py-1.5 ps-1.5 pe-4 text-sm font-semibold text-primary transition hover:bg-blush-50"
+                >
+                  <AccountAvatar name={user.name} photo={photo} />
+                  {firstName(user.name)}
+                </LocaleLink>
+                <form action={logoutAction}>
+                  <button
+                    type="submit"
+                    className="rounded-full px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(198,42,88,0.28)] transition hover:brightness-[1.06]"
+                    style={{ background: "linear-gradient(135deg,#e4416f,#c31f56)" }}
+                  >
+                    {nav.logout}
+                  </button>
+                </form>
+              </>
+            ) : (
+              <>
+                <LocaleLink
+                  href="/ingia"
+                  className="flex items-center gap-2 rounded-full border-[1.5px] border-blush-200 py-1.5 ps-1.5 pe-5 text-sm font-semibold text-primary transition hover:bg-blush-50"
+                >
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blush-50">
+                    <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
+                  </span>
+                  {nav.login}
+                </LocaleLink>
+                <LocaleLink
+                  href="/jisajili"
                   className="rounded-full px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(198,42,88,0.28)] transition hover:brightness-[1.06]"
                   style={{ background: "linear-gradient(135deg,#e4416f,#c31f56)" }}
                 >
-                  {nav.logout}
-                </button>
-              </form>
-            </>
-          ) : (
-            <>
-              <LocaleLink
-                href="/ingia"
-                className="flex items-center gap-2 rounded-full border-[1.5px] border-blush-200 py-1.5 ps-1.5 pe-5 text-sm font-semibold text-primary transition hover:bg-blush-50"
-              >
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blush-50">
-                  <ArrowRightIcon className="h-4 w-4 rtl:rotate-180" />
-                </span>
-                {nav.login}
-              </LocaleLink>
-              <LocaleLink
-                href="/jisajili"
-                className="rounded-full px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(198,42,88,0.28)] transition hover:brightness-[1.06]"
-                style={{ background: "linear-gradient(135deg,#e4416f,#c31f56)" }}
-              >
-                {nav.joinNow}
-              </LocaleLink>
-            </>
-          )}
+                  {nav.joinNow}
+                </LocaleLink>
+              </>
+            )}
+          </div>
         </div>
-      </div>
+      </header>
 
-      <div className="hidden flex-col gap-1 border-t border-blush-200 bg-white px-4 py-3 peer-checked:flex md:hidden">
+      {/* Mobile: off-canvas drawer from the start (left in LTR, right in
+          RTL) — same checkbox/peer + full-screen backdrop-label convention
+          as components/sidebar/Sidebar.tsx, so tapping anywhere outside the
+          drawer closes it (the label toggles the same checkbox) and
+          clicking the hamburger again also closes it. */}
+      <label
+        htmlFor="nav-toggle"
+        className="fixed inset-0 z-40 hidden bg-black/40 peer-checked:block md:hidden"
+        aria-hidden="true"
+      />
+      <div className="fixed inset-y-0 start-0 z-50 flex w-72 -translate-x-full flex-col gap-1 overflow-y-auto bg-white px-4 py-4 shadow-xl transition-transform duration-200 peer-checked:translate-x-0 rtl:translate-x-full rtl:peer-checked:translate-x-0 md:hidden">
         <NavLinks
           className="flex flex-col gap-1"
           variant="mobile"
@@ -158,6 +178,6 @@ export default async function Nav() {
           )}
         </div>
       </div>
-    </header>
+    </>
   );
 }
