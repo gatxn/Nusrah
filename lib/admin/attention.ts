@@ -16,7 +16,7 @@ export type AdminAttentionCounts = {
 export async function getAdminAttentionCounts(): Promise<AdminAttentionCounts> {
   const [pendingReports, pendingVerification, pendingPayments] = await Promise.all([
     prisma.report.count({ where: { status: "PENDING" } }),
-    prisma.profile.count({ where: { verificationStatus: "PENDING" } }),
+    prisma.profile.count({ where: { verificationStatus: "PENDING", user: { role: "MEMBER" } } }),
     pendingOrderCount(),
   ]);
 

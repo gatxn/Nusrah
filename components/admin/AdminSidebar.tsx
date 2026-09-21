@@ -11,6 +11,7 @@ import {
   MedalIcon,
   CreditCardIcon,
   DocumentIcon,
+  ListIcon,
   GearIcon,
   ArrowRightIcon,
 } from "@/components/icons";
@@ -39,6 +40,7 @@ const NAV_ITEMS: NavItem[] = [
   { href: "/admin/memberships", label: "Memberships", icon: MedalIcon },
   { href: "/admin/payments", label: "Payments", icon: CreditCardIcon, badge: (a) => a.pendingPayments },
   { href: "/admin/content/reviews", label: "Content Management", icon: DocumentIcon },
+  { href: "/admin/system-report", label: "System Report", icon: ListIcon },
 ];
 
 export default function AdminSidebar({ attention }: { attention: AdminAttentionCounts }) {
@@ -76,11 +78,11 @@ export default function AdminSidebar({ attention }: { attention: AdminAttentionC
 
   return (
     <>
-      <aside className="fixed inset-y-0 start-0 z-40 hidden w-64 border-e border-blush-200 bg-white lg:block">
+      <aside className="fixed inset-y-0 start-0 z-40 hidden w-64 border-e border-blush-200 bg-white lg:block print:hidden">
         {content}
       </aside>
 
-      <div className="lg:hidden">
+      <div className="lg:hidden print:hidden">
         <input type="checkbox" id="admin-sidebar-toggle" className="peer hidden" />
         <label
           htmlFor="admin-sidebar-toggle"

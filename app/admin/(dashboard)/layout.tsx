@@ -14,7 +14,7 @@ export default async function AdminDashboardLayout({ children }: { children: Rea
   return (
     <div className="min-h-screen bg-neutral-50">
       <AdminSidebar attention={attention} />
-      <div className="lg:ps-64">
+      <div className="lg:ps-64 print:ps-0">
         <AdminTopBar name={admin.name} unreadAlerts={unreadAlerts} />
         <main>{children}</main>
       </div>

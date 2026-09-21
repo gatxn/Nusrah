@@ -3,7 +3,7 @@ import GlobalSearchBox from "@/components/admin/GlobalSearchBox";
 
 export default function AdminTopBar({ name, unreadAlerts }: { name: string; unreadAlerts: number }) {
   return (
-    <header className="sticky top-0 z-30 border-b border-blush-200 bg-white/95 px-4 py-2.5 backdrop-blur sm:px-6">
+    <header className="sticky top-0 z-30 border-b border-blush-200 bg-white/95 px-4 py-2.5 backdrop-blur sm:px-6 print:hidden">
       <div className="flex items-center gap-3">
         <label
           htmlFor="admin-sidebar-toggle"

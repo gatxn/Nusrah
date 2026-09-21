@@ -99,10 +99,10 @@ export async function getDashboardStats(): Promise<DashboardStats> {
       where: { status: "PAID", currency: "TZS", transactions: { some: { verifiedAt: { gte: start60, lt: start30 } } } },
       _sum: { amountTzs: true },
     }),
-    prisma.profile.count({ where: { verificationStatus: "VERIFIED" } }),
-    prisma.profile.count({ where: { verificationStatus: "PENDING" } }),
-    prisma.profile.count({ where: { verificationStatus: "NOT_STARTED" } }),
-    prisma.profile.count({ where: { verificationStatus: "REJECTED" } }),
+    prisma.profile.count({ where: { verificationStatus: "VERIFIED", user: { role: "MEMBER" } } }),
+    prisma.profile.count({ where: { verificationStatus: "PENDING", user: { role: "MEMBER" } } }),
+    prisma.profile.count({ where: { verificationStatus: "NOT_STARTED", user: { role: "MEMBER" } } }),
+    prisma.profile.count({ where: { verificationStatus: "REJECTED", user: { role: "MEMBER" } } }),
   ]);
 
   const matchesLast30 = matchesPerDay60.slice(WINDOW_DAYS).reduce((a, b) => a + b, 0);
