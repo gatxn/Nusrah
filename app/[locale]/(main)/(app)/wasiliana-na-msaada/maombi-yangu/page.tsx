@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
 import { getSessionUserId } from "@/lib/auth";
 import { formatDateSw } from "@/lib/dates";
-import { formatTicketNumber, isSupportCategory, SUPPORT_CATEGORY_LABELS } from "@/lib/support";
+import { formatTicketNumber, isSupportCategory } from "@/lib/support";
 import LocaleLink from "@/components/LocaleLink";
 import { getDictionary } from "@/app/[locale]/dictionaries";
 
@@ -46,7 +46,7 @@ export default async function MyRequestsAppPage() {
                 </span>
               </div>
               {r.category && isSupportCategory(r.category) && (
-                <p className="mt-2 text-sm text-neutral-600">{SUPPORT_CATEGORY_LABELS[r.category]}</p>
+                <p className="mt-2 text-sm text-neutral-600">{dict.common.supportCategories[r.category]}</p>
               )}
               {r.subject && <p className="mt-1 text-sm font-medium text-navy">{r.subject}</p>}
               <p className="mt-2 line-clamp-2 text-sm text-neutral-600">{r.body}</p>

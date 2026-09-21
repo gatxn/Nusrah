@@ -7,14 +7,17 @@ const TIER_STYLES: Record<string, string> = {
 };
 
 // BASIC/SILVER/GOLD/PREMIUM are used as brand-style tier names in every
-// language (unchanged); only FREE has a real word to translate.
+// language (unchanged); only FREE has a real word to translate. freeLabel is
+// required (no default) so every call site is forced to pass a localized
+// value — dict.common.tiers.FREE — instead of silently falling back to a
+// hardcoded Swahili word regardless of the viewer's locale.
 export default function TierBadge({
   tier,
-  freeLabel = "Bure",
+  freeLabel,
   className = "",
 }: {
   tier: string;
-  freeLabel?: string;
+  freeLabel: string;
   className?: string;
 }) {
   const style = TIER_STYLES[tier] ?? TIER_STYLES.FREE;

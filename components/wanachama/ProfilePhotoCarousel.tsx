@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import AvatarIllustration from "@/components/illustrations/AvatarIllustration";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
+import type { Dictionary } from "@/app/[locale]/dictionaries";
 
 const AUTO_ADVANCE_MS = 5000;
 
@@ -12,18 +13,25 @@ const AUTO_ADVANCE_MS = 5000;
 // there and gives that column a fixed height itself.
 const HEIGHT_CLASS = "h-[80vh] max-h-[720px] sm:h-[520px] lg:h-full lg:max-h-none";
 
+type CarouselLabels = Pick<
+  Dictionary["wanachama"]["card"],
+  "onlineAria" | "previousPhotoAria" | "nextPhotoAria" | "photoNumberAria"
+>;
+
 export default function ProfilePhotoCarousel({
   userId,
   hasPhoto,
   name,
   extraPhotoIds,
   isOnline,
+  labels,
 }: {
   userId: string;
   hasPhoto: boolean;
   name: string;
   extraPhotoIds: string[];
   isOnline: boolean;
+  labels: CarouselLabels;
 }) {
   const slides = [
     ...(hasPhoto ? [`/api/profiles/${userId}/photo`] : []),
@@ -63,7 +71,7 @@ export default function ProfilePhotoCarousel({
         <div className="flex h-full w-full items-center justify-center">
           <AvatarIllustration name={name} className="h-28 w-28" />
         </div>
-        {isOnline && <OnlineBadge />}
+        {isOnline && <OnlineBadge label={labels.onlineAria} />}
       </div>
     );
   }
@@ -73,7 +81,7 @@ export default function ProfilePhotoCarousel({
       <div className={`relative w-full ${HEIGHT_CLASS} bg-blush-50`}>
         {/* eslint-disable-next-line @next/next/no-img-element -- private cookie-gated route */}
         <img src={slides[0]} alt="" className="h-full w-full object-contain" />
-        {isOnline && <OnlineBadge />}
+        {isOnline && <OnlineBadge label={labels.onlineAria} />}
       </div>
     );
   }
@@ -92,12 +100,12 @@ export default function ProfilePhotoCarousel({
           ))}
         </div>
 
-        {isOnline && <OnlineBadge />}
+        {isOnline && <OnlineBadge label={labels.onlineAria} />}
 
         <button
           type="button"
           onClick={() => scrollToIndex(activeIndex - 1)}
-          aria-label="Picha iliyopita"
+          aria-label={labels.previousPhotoAria}
           className="absolute inset-y-0 start-2 my-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-navy shadow-sm transition hover:bg-white"
         >
           <ChevronLeftIcon className="h-4 w-4" />
@@ -105,7 +113,7 @@ export default function ProfilePhotoCarousel({
         <button
           type="button"
           onClick={() => scrollToIndex(activeIndex + 1)}
-          aria-label="Picha inayofuata"
+          aria-label={labels.nextPhotoAria}
           className="absolute inset-y-0 end-2 my-auto flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-navy shadow-sm transition hover:bg-white"
         >
           <ChevronRightIcon className="h-4 w-4" />
@@ -118,7 +126,7 @@ export default function ProfilePhotoCarousel({
             key={src}
             type="button"
             onClick={() => scrollToIndex(i)}
-            aria-label={`Picha ${i + 1}`}
+            aria-label={labels.photoNumberAria.replace("{number}", String(i + 1))}
             aria-current={i === activeIndex}
             className={`h-14 w-14 shrink-0 overflow-hidden rounded-lg border-2 transition sm:h-16 sm:w-16 ${
               i === activeIndex ? "border-primary" : "border-transparent opacity-70 hover:opacity-100"
@@ -133,10 +141,10 @@ export default function ProfilePhotoCarousel({
   );
 }
 
-function OnlineBadge() {
+function OnlineBadge({ label }: { label: string }) {
   return (
     <span className="absolute bottom-4 left-4 flex items-center gap-1.5 rounded-full bg-white/95 px-2.5 py-1 text-xs font-semibold text-green-700 shadow-sm">
-      <span className="h-2 w-2 rounded-full bg-green-500" /> Mtandaoni
+      <span className="h-2 w-2 rounded-full bg-green-500" /> {label}
     </span>
   );
 }

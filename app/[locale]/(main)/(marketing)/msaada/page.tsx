@@ -82,6 +82,7 @@ export default async function HelpPage() {
         <div className="mt-6">
           <ContactForm
             dict={t.contactForm}
+            categoryLabels={dict.common.supportCategories}
             loggedIn={!!viewer}
             initialName={viewer?.name ?? ""}
             initialEmail={viewer?.email ?? ""}

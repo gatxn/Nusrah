@@ -41,7 +41,7 @@ export default async function PaymentPage({ params }: { params: Promise<{ orderI
     <div className="bg-mosque-pattern px-4 py-14 sm:px-6">
       <div className="mx-auto max-w-md rounded-2xl border border-black/5 bg-white p-8 shadow-sm">
         <div className="mb-6 text-center">
-          <TierBadge tier={order.package.tier} className="mx-auto" />
+          <TierBadge tier={order.package.tier} freeLabel={dict.common.tiers.FREE} className="mx-auto" />
           <h1 className="mt-4 text-xl font-bold text-navy">
             {order.package.name} {t.membershipHeading}
           </h1>

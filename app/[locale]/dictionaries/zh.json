@@ -4,6 +4,10 @@
       "line1": "寻找.连接.结婚",
       "line2": "生活是一段旅程"
     },
+    "seo": {
+      "title": "Nusrah — 寻找您的人生伴侣",
+      "metaDescription": "Nusrah 是一个伊斯兰婚恋平台，以安全、尊重和基于信仰的方式帮助您寻找人生伴侣。"
+    },
     "nav": {
       "home": "首页",
       "howItWorks": "使用方法",
@@ -228,6 +232,7 @@
       "已验证资料",
       "全天候支持"
     ],
+    "statsHeadlines": ["已验证资料", "全天候支持"],
     "statsDisclaimer": "数据基于 Nusrah 平台上的注册会员及已上报的婚姻情况。",
     "featuresHeading": "为什么选择 Nusrah？",
     "featuresSubtitle": "Nusrah 与普通交友软件的不同之处。",
@@ -1164,6 +1169,9 @@
     "card": {
       "newBadge": "新",
       "onlineAria": "在线",
+      "previousPhotoAria": "上一张照片",
+      "nextPhotoAria": "下一张照片",
+      "photoNumberAria": "照片 {number}",
       "verifiedTitle": "已验证",
       "contactLocked": "联系方式已锁定",
       "seekingPrefix": "寻找：",
@@ -1268,7 +1276,9 @@
     "browseMembersSubtitle": "查看与您匹配的会员",
     "goToMembersButton": "浏览会员",
     "phoneTestHeading": "电话号码（GOLD/PREMIUM）",
-    "phoneTestSubtitle": "根据您的套餐测试电话号码访问权限"
+    "phoneTestSubtitle": "根据您的套餐测试电话号码访问权限",
+    "voiceCallButton": "语音通话",
+    "videoCallButton": "视频通话"
   },
   "ujumbe": {
     "list": {

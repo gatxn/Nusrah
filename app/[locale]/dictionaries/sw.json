@@ -4,6 +4,10 @@
       "line1": "Tafuta.Unganika.Oana",
       "line2": "Maisha ni safari"
     },
+    "seo": {
+      "title": "Nusrah — Pata Mwenzi Wako wa Maisha",
+      "metaDescription": "Nusrah ni jukwaa la ndoa la Kiislamu linalokusaidia kupata mwenzi wa maisha kwa njia salama, ya heshima na yenye misingi ya dini."
+    },
     "nav": {
       "home": "Nyumbani",
       "howItWorks": "Jinsi Inavyofanyakazi",
@@ -166,15 +170,15 @@
       }
     },
     "supportCategories": {
-      "ACCOUNT_LOGIN": "🔐 Account & Login",
-      "PROFILE_VERIFICATION": "👤 Profile & Verification",
-      "PAYMENTS_SUBSCRIPTION": "💳 Payments & Subscription",
-      "SAFETY_REPORT": "🚩 Safety & Report",
-      "MESSAGES_COMMUNICATION": "💬 Messages & Communication",
-      "PRIVACY_DATA": "🔒 Privacy & Data",
-      "TECHNICAL_PROBLEM": "⚙️ Technical Problem",
-      "TERMS_POLICY": "📋 Terms & Policy",
-      "OTHER": "❓ Other"
+      "ACCOUNT_LOGIN": "🔐 Akaunti na Kuingia",
+      "PROFILE_VERIFICATION": "👤 Wasifu na Uthibitishaji",
+      "PAYMENTS_SUBSCRIPTION": "💳 Malipo na Usajili",
+      "SAFETY_REPORT": "🚩 Usalama na Kuripoti",
+      "MESSAGES_COMMUNICATION": "💬 Ujumbe na Mawasiliano",
+      "PRIVACY_DATA": "🔒 Faragha na Taarifa",
+      "TECHNICAL_PROBLEM": "⚙️ Tatizo la Kiufundi",
+      "TERMS_POLICY": "📋 Masharti na Sera",
+      "OTHER": "❓ Nyingine"
     },
     "reportReasons": {
       "FAKE_PROFILE": "Akaunti ya Uongo",
@@ -228,6 +232,7 @@
       "Taarifa Zilizo Hakikiwa",
       "Msaada wa Haraka"
     ],
+    "statsHeadlines": ["Wasifu Zilizothibitishwa", "Msaada Muda Wote"],
     "statsDisclaimer": "Kulingana na wanachama waliosajiliwa na ndoa zilizoripotiwa kupitia jukwaa la Nusrah.",
     "featuresHeading": "Kwa Nini Nusrah?",
     "featuresSubtitle": "Kinachofanya Nusrah kuwa tofauti na programu za kawaida za uchumba.",
@@ -1164,6 +1169,9 @@
     "card": {
       "newBadge": "Mpya",
       "onlineAria": "Mtandaoni",
+      "previousPhotoAria": "Picha iliyopita",
+      "nextPhotoAria": "Picha inayofuata",
+      "photoNumberAria": "Picha {number}",
       "verifiedTitle": "Amethibitishwa",
       "contactLocked": "Mawasiliano yamefungwa",
       "seekingPrefix": "Anatafuta:",
@@ -1268,7 +1276,9 @@
     "browseMembersSubtitle": "Tazama wanachama wanaolingana na wewe",
     "goToMembersButton": "Nenda Wanachama",
     "phoneTestHeading": "Simu (GOLD/PREMIUM)",
-    "phoneTestSubtitle": "Jaribu upatikanaji wa simu kulingana na kifurushi chako"
+    "phoneTestSubtitle": "Jaribu upatikanaji wa simu kulingana na kifurushi chako",
+    "voiceCallButton": "Simu ya Sauti",
+    "videoCallButton": "Simu ya Video"
   },
   "ujumbe": {
     "list": {

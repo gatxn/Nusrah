@@ -4,6 +4,10 @@
       "line1": "Cherchez.Connectez.Mariez-vous",
       "line2": "La vie est un voyage"
     },
+    "seo": {
+      "title": "Nusrah — Trouvez Votre Partenaire de Vie",
+      "metaDescription": "Nusrah est une plateforme de mariage islamique qui vous aide à trouver un partenaire de vie de manière sûre, respectueuse et fondée sur la foi."
+    },
     "nav": {
       "home": "Accueil",
       "howItWorks": "Comment ça marche",
@@ -228,6 +232,7 @@
       "Profils vérifiés",
       "Support 24/7"
     ],
+    "statsHeadlines": ["Profils vérifiés", "Support 24/7"],
     "statsDisclaimer": "Basé sur les membres inscrits et les mariages signalés via la plateforme Nusrah.",
     "featuresHeading": "Pourquoi Nusrah ?",
     "featuresSubtitle": "Ce qui distingue Nusrah d'une application de rencontre classique.",
@@ -1164,6 +1169,9 @@
     "card": {
       "newBadge": "Nouveau",
       "onlineAria": "En ligne",
+      "previousPhotoAria": "Photo précédente",
+      "nextPhotoAria": "Photo suivante",
+      "photoNumberAria": "Photo {number}",
       "verifiedTitle": "Vérifié",
       "contactLocked": "Contact verrouillé",
       "seekingPrefix": "Recherche :",
@@ -1268,7 +1276,9 @@
     "browseMembersSubtitle": "Voir les membres qui vous correspondent",
     "goToMembersButton": "Voir les membres",
     "phoneTestHeading": "Téléphone (GOLD/PREMIUM)",
-    "phoneTestSubtitle": "Tester l'accès au téléphone selon votre forfait"
+    "phoneTestSubtitle": "Tester l'accès au téléphone selon votre forfait",
+    "voiceCallButton": "Appel vocal",
+    "videoCallButton": "Appel vidéo"
   },
   "ujumbe": {
     "list": {

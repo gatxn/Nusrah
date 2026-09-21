@@ -65,7 +65,7 @@ export default async function DashboardPage() {
         <div className="rounded-2xl border border-black/5 bg-white p-5 shadow-sm">
           <p className="text-xs font-semibold uppercase tracking-wide text-neutral-500">{t.packageLabel}</p>
           <div className="mt-2 flex items-center gap-2">
-            <TierBadge tier={tier} />
+            <TierBadge tier={tier} freeLabel={dict.common.tiers.FREE} />
           </div>
           {subscription && (
             <p className="mt-2 flex items-center gap-1 text-xs text-neutral-500">

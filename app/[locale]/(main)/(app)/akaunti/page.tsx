@@ -67,7 +67,7 @@ export default async function AccountPage({
         <div className="mt-6 rounded-2xl border border-black/5 bg-white p-6 shadow-sm">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <TierBadge tier={tier} />
+              <TierBadge tier={tier} freeLabel={dict.common.tiers.FREE} />
               <span className="text-sm font-semibold text-neutral-700">
                 {subscription ? t.statusActive : `${dict.common.tiers.FREE} ${t.noExpiryNote}`}
               </span>
@@ -127,7 +127,7 @@ export default async function AccountPage({
             <h2 className="text-sm font-semibold text-navy">{t.phoneTestHeading}</h2>
             <p className="mt-1 text-sm text-neutral-600">{t.phoneTestSubtitle}</p>
             <div className="mt-4">
-              <CallButtons />
+              <CallButtons dict={{ ...t, ...dict.calls }} />
             </div>
           </div>
         </div>

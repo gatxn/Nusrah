@@ -2,11 +2,12 @@
 
 import { useRef, useState, type FormEvent } from "react";
 import LocaleLink from "@/components/LocaleLink";
-import { SUPPORT_CATEGORIES, SUPPORT_CATEGORY_LABELS, type SupportCategory } from "@/lib/support";
+import { SUPPORT_CATEGORIES, type SupportCategory } from "@/lib/support";
 import type { Dictionary } from "@/app/[locale]/dictionaries";
 
 export default function ContactForm({
   dict,
+  categoryLabels,
   loggedIn = false,
   initialName = "",
   initialEmail = "",
@@ -14,6 +15,7 @@ export default function ContactForm({
   myRequestsHref = "/msaada/maombi-yangu",
 }: {
   dict: Dictionary["msaada"]["contactForm"];
+  categoryLabels: Dictionary["common"]["supportCategories"];
   loggedIn?: boolean;
   initialName?: string;
   initialEmail?: string;
@@ -134,7 +136,7 @@ export default function ContactForm({
                 onChange={() => setCategory(c)}
                 className="h-4 w-4 text-primary focus:ring-primary"
               />
-              {SUPPORT_CATEGORY_LABELS[c]}
+              {categoryLabels[c]}
             </label>
           ))}
         </div>

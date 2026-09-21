@@ -51,7 +51,7 @@ export default async function Nav() {
         <div className="flex items-center gap-3">
           <label
             htmlFor="nav-toggle"
-            aria-label="Fungua menyu"
+            aria-label={dict.common.sidebar.openMenuAria}
             className="flex h-9 w-9 cursor-pointer flex-col items-center justify-center gap-1.5 md:hidden"
           >
             <span className="h-0.5 w-6 bg-navy" />

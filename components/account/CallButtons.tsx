@@ -2,8 +2,14 @@
 
 import { useState } from "react";
 import { PhoneCallIcon, VideoIcon } from "@/components/icons";
+import type { Dictionary } from "@/app/[locale]/dictionaries";
 
-export default function CallButtons() {
+export default function CallButtons({
+  dict,
+}: {
+  dict: Pick<Dictionary["akaunti"], "voiceCallButton" | "videoCallButton"> &
+    Pick<Dictionary["calls"], "networkError">;
+}) {
   const [status, setStatus] = useState<{ type: "ok" | "error"; text: string } | null>(null);
   const [loading, setLoading] = useState<"voice" | "video" | null>(null);
 
@@ -15,7 +21,7 @@ export default function CallButtons() {
       const json = await res.json();
       setStatus({ type: res.ok ? "ok" : "error", text: json.message ?? json.error });
     } catch {
-      setStatus({ type: "error", text: "Imeshindwa kuunganisha na seva." });
+      setStatus({ type: "error", text: dict.networkError });
     } finally {
       setLoading(null);
     }
@@ -30,7 +36,7 @@ export default function CallButtons() {
           disabled={loading !== null}
           className="flex flex-1 items-center justify-center gap-2 rounded-full border border-primary px-4 py-2 text-sm font-semibold text-primary transition hover:bg-blush-50 disabled:opacity-60"
         >
-          <PhoneCallIcon className="h-4 w-4" /> Simu ya Sauti
+          <PhoneCallIcon className="h-4 w-4" /> {dict.voiceCallButton}
         </button>
         <button
           type="button"
@@ -38,7 +44,7 @@ export default function CallButtons() {
           disabled={loading !== null}
           className="flex flex-1 items-center justify-center gap-2 rounded-full border border-primary px-4 py-2 text-sm font-semibold text-primary transition hover:bg-blush-50 disabled:opacity-60"
         >
-          <VideoIcon className="h-4 w-4" /> Simu ya Video
+          <VideoIcon className="h-4 w-4" /> {dict.videoCallButton}
         </button>
       </div>
       {status && (

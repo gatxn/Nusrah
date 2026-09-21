@@ -4,6 +4,10 @@
       "line1": "Search.Connect.Marry",
       "line2": "Life is a journey"
     },
+    "seo": {
+      "title": "Nusrah — Find Your Life Partner",
+      "metaDescription": "Nusrah is an Islamic marriage platform that helps you find a life partner in a safe, respectful, and faith-based way."
+    },
     "nav": {
       "home": "Home",
       "howItWorks": "How It Works",
@@ -228,6 +232,7 @@
       "Verified Profiles",
       "24/7 Support"
     ],
+    "statsHeadlines": ["Verified Profiles", "24/7 Support"],
     "statsDisclaimer": "Based on registered members and reported marriages through the Nusrah platform.",
     "featuresHeading": "Why Nusrah?",
     "featuresSubtitle": "What makes Nusrah different from a typical dating app.",
@@ -1164,6 +1169,9 @@
     "card": {
       "newBadge": "New",
       "onlineAria": "Online",
+      "previousPhotoAria": "Previous photo",
+      "nextPhotoAria": "Next photo",
+      "photoNumberAria": "Photo {number}",
       "verifiedTitle": "Verified",
       "contactLocked": "Contact locked",
       "seekingPrefix": "Looking for:",
@@ -1268,7 +1276,9 @@
     "browseMembersSubtitle": "See members who match you",
     "goToMembersButton": "Go to Members",
     "phoneTestHeading": "Phone (GOLD/PREMIUM)",
-    "phoneTestSubtitle": "Test phone access based on your plan"
+    "phoneTestSubtitle": "Test phone access based on your plan",
+    "voiceCallButton": "Voice Call",
+    "videoCallButton": "Video Call"
   },
   "ujumbe": {
     "list": {

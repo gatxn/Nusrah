@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/db";
-import { getSessionUserId, getEffectiveTier, clearSessionCookie } from "@/lib/auth";
+import { getSessionUserId, getEffectiveTier } from "@/lib/auth";
 import { getNextIncompleteStep, STEP_ROUTES, hasPhoto } from "@/lib/onboarding";
 import { getOwnProfile } from "@/lib/onboarding-server";
 import { touchLastActive } from "@/lib/profiles";
@@ -28,9 +28,15 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   // tier/role claim" precedent (see getActiveSubscription's comment in
   // lib/auth.ts). An admin block takes effect on the very next page load,
   // not just the member's next login attempt.
+  // Doesn't clear the session cookie — Next.js only allows mutating cookies
+  // from a Server Action or Route Handler, never from a Server Component's
+  // render (this used to call clearSessionCookie() here and crashed the
+  // entire app shell with a generic error page for every suspended/deleted
+  // account instead of redirecting). The stale cookie is harmless: this same
+  // DB check re-runs and redirects again on every subsequent request, and
+  // logging in as anyone overwrites it via setSessionCookie anyway.
   const sessionUser = await prisma.user.findUnique({ where: { id: userId }, select: { isSuspended: true } });
   if (!sessionUser || sessionUser.isSuspended) {
-    await clearSessionCookie();
     redirect(localeHref(locale, "/ingia"));
   }
 

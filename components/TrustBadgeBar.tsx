@@ -1,15 +1,9 @@
-import { ShieldCheckIcon, HeartHandIcon, CheckIcon, ClockIcon } from "@/components/icons";
-
 type Badge = { icon: React.ReactNode; label: string };
 
-const DEFAULT_BADGES: Badge[] = [
-  { icon: <ShieldCheckIcon />, label: "Salama & Faragha" },
-  { icon: <HeartHandIcon />, label: "Kwa Ajili ya Ndoa Pekee" },
-  { icon: <CheckIcon />, label: "Wanachama Waliothibitishwa" },
-  { icon: <ClockIcon />, label: "Huduma kwa Ufanisi" },
-];
-
-export default function TrustBadgeBar({ badges = DEFAULT_BADGES }: { badges?: Badge[] }) {
+// No hardcoded default — every caller must pass its own localized badges
+// (dict.kuwaMwanachama.trustBadges), so a future call site can't silently
+// render hardcoded Swahili regardless of locale.
+export default function TrustBadgeBar({ badges }: { badges: Badge[] }) {
   return (
     <section className="bg-navy py-10">
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 sm:grid-cols-4 sm:px-6">

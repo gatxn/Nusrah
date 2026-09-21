@@ -3,18 +3,25 @@ import { PersonIcon, HeartOutlineIcon, ShieldCheckIcon, MedalIcon, HeadsetIcon }
 
 const ICONS = [PersonIcon, HeartOutlineIcon, ShieldCheckIcon, MedalIcon, HeadsetIcon];
 
-// The first three show a live animated count; the last two are short badge
-// words kept in English in every locale (a stylistic flourish, same as
-// PREMIUM/VIP elsewhere) — the translated text is the label below each.
-const HEADLINES: React.ReactNode[] = [
-  <CountUpNumber key="members" end={35000} suffix="+" />,
-  <CountUpNumber key="marriages" end={2000} suffix="+" />,
-  <CountUpNumber key="safety" end={100} suffix="%" />,
-  "Verified Profiles",
-  "24/7 Support",
-];
-
-export default function StatsBar({ items, disclaimer }: { items: string[]; disclaimer?: string }) {
+export default function StatsBar({
+  items,
+  headlines,
+  disclaimer,
+}: {
+  items: string[];
+  headlines: string[];
+  disclaimer?: string;
+}) {
+  // The first three show a live animated count; the last two are localized
+  // badge headlines (dict.home.statsHeadlines) — the translated sub-label is
+  // rendered below each either way.
+  const HEADLINES: React.ReactNode[] = [
+    <CountUpNumber key="members" end={35000} suffix="+" />,
+    <CountUpNumber key="marriages" end={2000} suffix="+" />,
+    <CountUpNumber key="safety" end={100} suffix="%" />,
+    headlines[0],
+    headlines[1],
+  ];
   return (
     <div
       className="border-y-[3px] border-gold px-6 py-6 sm:px-12 lg:px-20"

@@ -130,6 +130,7 @@ export default function MemberDetailCard({
           name={profile.name}
           extraPhotoIds={galleryPhotoIds}
           isOnline={profile.isOnline}
+          labels={cardDict}
         />
         <FavoriteButton
           favoritedUserId={profile.userId}

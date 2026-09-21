@@ -4,6 +4,10 @@
       "line1": "ابحث.تواصل.تزوّج",
       "line2": "الحياة رحلة"
     },
+    "seo": {
+      "title": "نُصرة — اعثر على شريك حياتك",
+      "metaDescription": "نُصرة هي منصة زواج إسلامية تساعدك على إيجاد شريك حياة بطريقة آمنة ومحترمة وقائمة على أسس دينية."
+    },
     "nav": {
       "home": "الرئيسية",
       "howItWorks": "كيف يعمل الموقع",
@@ -228,6 +232,7 @@
       "ملفات موثقة",
       "دعم على مدار الساعة"
     ],
+    "statsHeadlines": ["ملفات موثقة", "دعم على مدار الساعة"],
     "statsDisclaimer": "استنادًا إلى الأعضاء المسجلين وحالات الزواج المُبلَّغ عنها عبر منصة نُصرة.",
     "featuresHeading": "لماذا نُصرة؟",
     "featuresSubtitle": "ما الذي يجعل نُصرة مختلفة عن تطبيقات المواعدة التقليدية.",
@@ -1164,6 +1169,9 @@
     "card": {
       "newBadge": "جديد",
       "onlineAria": "متصل الآن",
+      "previousPhotoAria": "الصورة السابقة",
+      "nextPhotoAria": "الصورة التالية",
+      "photoNumberAria": "الصورة {number}",
       "verifiedTitle": "موثّق",
       "contactLocked": "التواصل مغلق",
       "seekingPrefix": "يبحث عن:",
@@ -1268,7 +1276,9 @@
     "browseMembersSubtitle": "شاهد الأعضاء المناسبين لك",
     "goToMembersButton": "الذهاب إلى الأعضاء",
     "phoneTestHeading": "الهاتف (GOLD/PREMIUM)",
-    "phoneTestSubtitle": "جرّب إتاحة الهاتف حسب باقتك"
+    "phoneTestSubtitle": "جرّب إتاحة الهاتف حسب باقتك",
+    "voiceCallButton": "مكالمة صوتية",
+    "videoCallButton": "مكالمة فيديو"
   },
   "ujumbe": {
     "list": {
